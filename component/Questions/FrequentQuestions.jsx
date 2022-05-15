@@ -24,7 +24,7 @@ const FrequentQuestions = ({ title,bg}) => {
             <div className={styles.question_div_data}>
                 {frequentQuestions.map((item, index) => {
                     return (
-                        <Accordion    style={{borderRadius:10,marginBottom:10,maxWidth:"990px",width:"100%"}}  >
+                        <Accordion  key={index}  style={{borderRadius:10,marginBottom:10,maxWidth:"990px",width:"100%"}}  >
                             <AccordionSummary
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"

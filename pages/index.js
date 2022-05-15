@@ -3,18 +3,17 @@ import {Layer} from "../component/Layer/Layer";
 import {ButtonComponent} from "../component/ButtonComponent/ButtonComponent";
 import React, {useEffect, useState} from "react";
 import InfoBlock from "../component/InfoBlock/InfoBlock";
-import Questions from "../component/Questions/Questions";
-import ReactStars from 'react-stars'
+import ReactStars from 'react-stars';
 import Comment from "../component/Comment/Comment";
 import Review from "../component/Review/Review";
 import {useRouter} from "next/router";
-import Head from 'next/head'
-import {frequentQuestions} from "../questions/Questions";
+import Head from 'next/head';
 import FrequentQuestions from "../component/Questions/FrequentQuestions";
-import { Typewriter } from 'react-typewriting-effect'
-import 'react-typewriting-effect/dist/index.css'
+import { Typewriter } from 'react-typewriting-effect';
+import 'react-typewriting-effect/dist/index.css';
 import styles1 from "../styles/Home.module.sass";
 import useAxios from "../hooks/useAxios";
+
 export default function Home() {
 
     const [windowInnerWidth, setWindowInnerWidth] = useState(false);
@@ -41,9 +40,9 @@ export default function Home() {
     }, [])
 
     return (
-        <div className={styles.background} >
-        <div style={{maxWidth:1920,width:"100%",margin:"0 auto",overflowX:"hidden"}}>
-        <div className={styles.container}  >
+      <div className={styles.background} >
+        <div style={{margin:"0 auto",overflowX:"hidden"}}>
+        <div className={styles.container} >
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
                 <meta name="facebook-domain-verification" content="qyk8si5jqwk9m6240785cypx4jcij9" />
@@ -67,29 +66,33 @@ export default function Home() {
 
                 {windowInnerWidth > 760 ? <img src="/phone.png" alt="buy Instagram likes" className={styles.phone}/> :
                     <img src="/phone-mobile.png" alt="buy Instagram likes" className={styles.phone}/>}
-
+        </div>
 
             <Layer firstPage={true}>
-                <div className={`container`}>
-                    <div className={`${styles.content}`}>
-                        <h1><Typewriter
-                            string='Grow your online presence with Instagram Followers, Likes and Views'
-                            delay={80}
-                            stopBlinkinOnComplete
-                            cursor=""
-                        />
-                    </h1>
-                        <h2>Real followers, real engagement, real growth. All with tagiamtop</h2>
-                        <div>
-                            <ButtonComponent text={'Buy Likes'} type={'mainFill'}
-                                             onClick={() => router.push('/buy-instagram-likes')}/>
-                            <ButtonComponent text={'Buy followers'} type={'mainFill'} onClick={() => router.push('/buy-instagram-followers')}/>
-                        </div>
-                        <img src="/arrow-detail.svg" alt="" onClick={() => window.scrollTo(0, document.body.scrollHeight)}/>
-                    </div>
+                <div style={{maxWidth:1920,width:"100%",margin:"0 auto"}}>
+                  <div className={`container`}>
+                      <div className={`${styles.content}`}>
+                          <h1><Typewriter
+                              string='Grow your online presence with Instagram Followers, Likes and Views'
+                              delay={80}
+                              stopBlinkinOnComplete
+                              cursor=""
+                          />
+                      </h1>
+                          <h2>Real followers, real engagement, real growth. All with tagiamtop</h2>
+                          <div>
+                              <ButtonComponent text={'Buy Likes'} type={'mainFill'}
+                                               onClick={() => router.push('/buy-instagram-likes')}/>
+                              <ButtonComponent text={'Buy followers'} type={'mainFill'} onClick={() => router.push('/buy-instagram-followers')}/>
+                          </div>
+                          <img src="/arrow-detail.svg" alt="" onClick={() => window.scrollTo(0, document.body.scrollHeight)}/>
+                      </div>
+                </div>
                 </div>
 
-                <div className={styles.container_work}>
+              
+              <div className={styles.container_work}>
+                  <div style={{maxWidth:1920,width:"100%",margin:"0 auto"}}>
                     <div className={`container ${styles.work}`}>
                         <div className={styles.work_box}>
                             <div className={styles.work_title}>
@@ -117,7 +120,8 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                      </div>
+                  </div>
                 </div>
 
                 <div    data-aos="fade-up" data-aos-duration="1500" data-aos-offset="600" >
@@ -227,8 +231,7 @@ export default function Home() {
                     </div>
                 </div>
             </Layer>
-        </div>
-        </div>
-        </div>
+          </div>
+          </div>
     )
 }

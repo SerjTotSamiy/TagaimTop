@@ -54,7 +54,8 @@ const ModalBuy = ({
     const [result, setResult] = useState({});
     const [type, setType] = useState({});
 
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false);
+
     const getPosts = async () => {
 
         if (!userName || !userEmail) return setError(true)
@@ -356,7 +357,7 @@ const ModalBuy = ({
                     </div>
                 </div>}
 
-                {pageActive === 2 && <ChildModal1 setPageActive={setPageActive} setOpen={setOpen} userInfo={userInfo}
+                {pageActive === 2 && <ChildModal1 setPageActive={setPageActive} pageActive={pageActive} setOpen={setOpen} userInfo={userInfo}
                                                   userEmail={userEmail} setUserEmail={setUserEmail}/>}
 
                 {/*{pageActive === 4 && <StageModal stage={2} setOpen={() => setPageActive(5)} open={stageOpen}/>}*/}

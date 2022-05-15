@@ -1,8 +1,5 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import styles from "./ModalBuy.module.sass";
-import likesStyles from "../../styles/BuyInstagramLikes.module.sass";
-import {ButtonComponent} from "../ButtonComponent/ButtonComponent";
-import StageModal from "./StageModal";
 import {useRouter} from "next/router";
 import {MeContext} from "../../pages/_app";
 import Link from "next/link";
@@ -10,13 +7,13 @@ import Link from "next/link";
 const Stage3 = ({setOpen,amount,autoLike,sendOrder, price, result}) => {
 
     const {allInfo} = useContext(MeContext)
-    const[payType,setPayType]=useState({
+    const payType = {
         'Coinbase':'/bitcoin.svg',
         'Visa':'/visa.svg',
         'Mastercard':'/mastercard.svg',
         'BitPay':'/bitpay.svg'
 
-    })
+    }
     const router=useRouter()
 
     return (

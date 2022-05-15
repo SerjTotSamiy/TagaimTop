@@ -1,12 +1,9 @@
 import React, {useContext, useState} from 'react';
 import styles from "./ModalBuy.module.sass";
 import {ButtonComponent} from "../ButtonComponent/ButtonComponent";
-import likesStyles from '/styles/BuyInstagramLikes.module.sass'
-import Stage3 from "./Stage3";
-import StageModal from "./StageModal";
 import {MeContext} from "../../pages/_app";
 import CheckIcon from '@mui/icons-material/Check';
-import {BarLoader, CircleLoader, ClipLoader, DotLoader, PulseLoader, RingLoader} from "react-spinners";
+import {DotLoader} from "react-spinners";
 const AddAccount = ({setOpen,amount,autoLike, setPageActive, userInfo, setActivePost, activePost, count, service,sendOrder, type, setType,setLoading,isLoading,errorMessage}) => {
 
     const {allInfo} = useContext(MeContext)
@@ -70,7 +67,7 @@ const AddAccount = ({setOpen,amount,autoLike, setPageActive, userInfo, setActive
                 {
                     userInfo?.posts?.map((post,index)=>{
                         return(
-                            <div className={`${styles.post} ${activePost.includes(post)?styles.postChosen:''}`} style={{background:`url(${post.img})`,width:100,height:100, backgroundSize: 'cover',borderRadius:5}}
+                            <div key={index} className={`${styles.post} ${activePost.includes(post)?styles.postChosen:''}`} style={{background:`url(${post.img})`,width:100,height:100, backgroundSize: 'cover',borderRadius:5}}
                                    onClick={()=>
                                        activePost.includes(post)?
                                            deleteActivePost(post): activePost.length <= 9 ?

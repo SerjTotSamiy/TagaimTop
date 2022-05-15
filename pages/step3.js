@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import React, {useContext, useEffect, useState} from 'react';
 import {Layer} from "../component/Layer/Layer";
 import { Modal} from "@mui/material";
@@ -89,6 +91,7 @@ const Step3 = (props) => {
             <Modal open={true} >
                 <div className={styles.modalBuy_container} style={{height: "calc(100% - 30px)", overflowY: 'scroll',overflowX:'hidden' }}>
                     <div style={{maxHeight:"calc(100%-10px)",height:"100%",display:'flex',flexDirection:'column',alignItems:'center',gap:30,width:'100%' }}>
+                        <p className={styles.backButton} onClick={() => router.push('/step2')}> {"< Back"} </p>
                         <img className={styles.close} src="/closegrey.svg" onClick={() =>
                             router.push(url)} />
                         <p className={styles.modalBuy_title}>Choose post</p>

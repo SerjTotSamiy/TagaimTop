@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import React, {useContext, useState} from 'react';
 import {useRouter} from "next/router";
 import useAxios from "../hooks/useAxios";
@@ -23,7 +25,7 @@ const Step4 = () => {
         <Layer firstPage={false}>
             <Modal open={true} >
                 <div className={styles.modalBuy_container}>
-
+                    <p className={styles.backButton} onClick={() => router.push('/step3')}> {"< Back"} </p>
                     <img className={styles.close} src="/closegrey.svg" onClick={() =>
                         router.push(url)} />
 

@@ -4,21 +4,24 @@ import {useRouter} from "next/router";
 import useAxios from "../hooks/useAxios";
 import styles from "../component/ModalBuy/ModalBuy.module.sass";
 import { Modal} from "@mui/material";
-import {MeContext} from "./_app";
+import { MeContext } from "./_app";
+
 const Step2 = () => {
-    const router = useRouter()
-    const {query} = useRouter()
-    const axios = useAxios()
-    const [isLoading, setIsLoading] = useState(true)
+    const router = useRouter();
+    const {query} = useRouter();
+    const axios = useAxios();
+    const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
-    const {price, allInfo,userInfo,setUserInfo,result,setResult,type, setType,url, setUrl} = useContext(MeContext)
+    const { price, allInfo, userInfo, setUserInfo, result, setResult, type, setType, url, setUrl } = useContext(MeContext);
+
     return (
         <Layer firstPage={false}>
         <Modal open={true}>
             {!userInfo?
             <p>Loading...</p>:
             <div className={styles.modalBuy_container}>
+              <p className={styles.backButton} onClick={() => router.push('/step1')}> {"< Back"} </p>
                 <img className={styles.close} src="/closegrey.svg" onClick={() =>
                     router.push(url)} />
                 {

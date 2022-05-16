@@ -69,7 +69,7 @@ export default function Home() {
         </div>
 
             <Layer firstPage={true}>
-                <div style={{maxWidth:1920,width:"100%",margin:"0 auto"}}>
+                <div style={{maxWidth:1400,width:"100%",margin:"0 auto"}}>
                   <div className={`container`}>
                       <div className={`${styles.content}`}>
                           <h1><Typewriter
@@ -92,7 +92,7 @@ export default function Home() {
 
               
               <div className={styles.container_work}>
-                  <div style={{maxWidth:1920,width:"100%",margin:"0 auto"}}>
+                  <div style={{maxWidth:1400,width:"100%",margin:"0 auto"}}>
                     <div className={`container ${styles.work}`}>
                         <div className={styles.work_box}>
                             <div className={styles.work_title}>

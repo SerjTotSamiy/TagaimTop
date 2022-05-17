@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import {useRouter} from "next/router";
 import useAxios from "../hooks/useAxios";
 import { Layer } from "../component/Layer/Layer";
@@ -8,33 +8,46 @@ import { Modal } from "@mui/material";
 import styles from "../component/ModalBuy/ModalBuy.module.sass";
 import Link from "next/link";
 import { MeContext } from "./_app";
+import { ModalSceleton } from "./../component/Modal/ModalSceleton";
+
 const Step4 = () => {
     const { allInfo, setResult, result, url, setUrl } = useContext(MeContext)
     const router = useRouter()
     const { query } = useRouter()
     const axios = useAxios()
     const [userInfo, setUserInfo] = useState({});
-    const [payType, setPayType] = useState({
+    const [isSkeleton, setIsSkeleton] = useState(true);
+
+    useEffect(() => {
+      const delay = setTimeout(() => {
+        setIsSkeleton(false);
+      }, 1200);
+      return () => clearTimeout(delay)
+    }, []);
+
+    const payType = {
         'Coinbase': '/bitcoin.svg',
         'CGBilling': '/visa.svg',
         'CCBill': '/mastercard.svg',
         'Trustly': '/bitpay.svg',
         'PayPal': '/paypal.svg'
 
-    })
+    }
+
     return (
         <Layer firstPage={false}>
             <Modal open={true} >
                 <div className={styles.modalBuy_container}>
-                    <p className={styles.backButton} onClick={() => router.push('/step3')}> {"< Back"} </p>
-                    <img className={styles.close} src="/closegrey.svg" onClick={() =>
+                {isSkeleton && <ModalSceleton />}
+                    <p className={styles.backButton} style={{ filter: `${isSkeleton ? 'blur(8px)' : 'blur(0px)'}` }} onClick={() => router.push('/step3')}> {"< Back"} </p>
+                    <img className={styles.close} style={{ filter: `${isSkeleton ? 'blur(8px)' : 'blur(0px)'}` }} src="/closegrey.svg" onClick={() =>
                         router.push(url)} />
 
-                    <p className={styles.modalBuy_title}>{allInfo?.sym_b}{query.priceValue}{!allInfo?.sym_b ? allInfo?.sym_a : ''}</p>
+                    <p className={styles.modalBuy_title} style={{ filter: `${isSkeleton ? 'blur(8px)' : 'blur(0px)'}` }}>{allInfo?.sym_b}{query.priceValue}{!allInfo?.sym_b ? allInfo?.sym_a : ''}</p>
 
 
 
-                    <span style={{ display: 'flex', gap: 20, alignItems: 'center', justifyContent: 'center' }}>
+                    <span style={{ display: 'flex', gap: 20, alignItems: 'center', justifyContent: 'center', filter: `${isSkeleton ? 'blur(8px)' : 'blur(0px)'}` }}>
                         <img className={styles.line} src="/modalline.svg" />
                         <p className={styles.modalBuy_stage} style={{ backgroundColor: '#E64652' }}>
                             1
@@ -50,7 +63,7 @@ const Step4 = () => {
 
                     {result.data === undefined ?
                         <p>Loading...</p> :
-                        <div className={styles.stage3_container}>
+                        <div className={styles.stage3_container} style={{ filter: `${isSkeleton ? 'blur(8px)' : 'blur(0px)'}` }}>
                             {result?.data?.methods?.map((item) => <div key={item?.url_to_pay} className={styles.payment_block} onClick={() => router.push(item?.url_to_pay)}>
                                 <img src={payType[item?.name]} width={55} height={55} style={{ border: "1px solid grey", padding: "5px", borderRadius: "50%" }} />
                                 {console.log(payType[item], item)}
@@ -72,7 +85,7 @@ const Step4 = () => {
                 }}/>
                 <img src="/basket.svg"  />
             </div>*/}
-                    <p style={{ color: '#A4A4A4' }}>By pershing you agree with <Link href="/pages/terms"><a style={{ textDecoration: "underline" }} > rules</a></Link></p>
+                    <p style={{ color: '#A4A4A4', filter: `${isSkeleton ? 'blur(8px)' : 'blur(0px)'}` }}>By pershing you agree with <Link href="/pages/terms"><a style={{ textDecoration: "underline" }} > rules</a></Link></p>
 
 
                 </div>

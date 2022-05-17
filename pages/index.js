@@ -72,12 +72,12 @@ export default function Home() {
                 <div style={{maxWidth:1400,width:"100%",margin:"0 auto"}}>
                   <div className={`container`}>
                       <div className={`${styles.content}`}>
-                          <h1><Typewriter
-                              string='Grow your online presence with Instagram Followers, Likes and Views'
-                              delay={80}
-                              stopBlinkinOnComplete
-                              cursor=""
-                          />
+                      <h1><Typewriter
+                          string='Grow your online presence with Instagram Followers, Likes and Views'
+                          delay={80}
+                          stopBlinkinOnComplete
+                          cursor=""
+                      />
                       </h1>
                           <h2>Real followers, real engagement, real growth. All with tagiamtop</h2>
                           <div>

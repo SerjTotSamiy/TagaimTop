@@ -15,7 +15,7 @@ const ChildModal1 = ({setOpen, amount, autoLike, setPageActive, userInfo}) => {
 
     return (
 
-                <div className={styles.modalBuy_container}>
+            <div className={styles.modalBuy_container}>
                     <img className={styles.close} src="/closegrey.svg" onClick={() => setOpen(false)}/>
                     {
                         autoLike ? <p className={styles.modalBuy_title}>Instagram {amount} autolikes per post</p> :
@@ -33,8 +33,7 @@ const ChildModal1 = ({setOpen, amount, autoLike, setPageActive, userInfo}) => {
                     <p className={styles.modalBuy_stage} style={{backgroundColor: '#F0F0F0', color: 'black'}}>
                     3
                     </p>
-
-                </span>
+                    </span>
 
                     <div className={styles.postList}>
                         <div className={styles.account_item} onClick={() => setPageActive(3)

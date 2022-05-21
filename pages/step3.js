@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import React, {useContext, useEffect, useState} from 'react';
 import {Layer} from "../component/Layer/Layer";
 import { Modal} from "@mui/material";
@@ -8,6 +10,8 @@ import CheckIcon from "@mui/icons-material/Check";
 import {DotLoader} from "react-spinners";
 import {useRouter} from "next/router";
 import useAxios from "../hooks/useAxios";
+import { ModalSceleton } from "./../component/Modal/ModalSceleton";
+
 const Step3 = (props) => {
     const {allInfo,setResult,userInfo,setUserInfo,url, setUrl,type, setType} = useContext(MeContext)
     const [choose, setChoose] = useState({
@@ -23,7 +27,15 @@ const Step3 = (props) => {
 
 
     const [errorMessage, setErrorMessage] = useState('');
-    const [activePost, setActivePost] = useState([])
+    const [activePost, setActivePost] = useState([]);
+    const [isSkeleton, setIsSkeleton] = useState(true);
+
+    useEffect(() => {
+      const delay = setTimeout(() => {
+        setIsSkeleton(false);
+      }, 1200);
+      return () => clearTimeout(delay)
+    }, []);
 
     const [style, setStyle] = useState({
         outline: {
@@ -87,8 +99,10 @@ const Step3 = (props) => {
     return (
         <Layer firstPage={false}>
             <Modal open={true} >
-                <div className={styles.modalBuy_container} style={{height: "calc(100% - 30px)", overflowY: 'scroll',overflowX:'hidden' }}>
-                    <div style={{maxHeight:"calc(100%-10px)",height:"100%",display:'flex',flexDirection:'column',alignItems:'center',gap:30,width:'100%' }}>
+          <div className={styles.modalBuy_container} style={{ height: "calc(100% - 30px)", overflowY: 'scroll', overflowX: 'hidden' }}>
+                    {isSkeleton && <ModalSceleton />}
+                    <div style={{maxHeight:"calc(100%-10px)",height:"100%",display:'flex',flexDirection:'column',alignItems:'center',gap:30,width:'100%', filter: `${isSkeleton ? 'blur(8px)' : 'blur(0px)'}` }}>
+                        <p className={styles.backButton} onClick={() => router.push('/step2')}> {"< Back"} </p>
                         <img className={styles.close} src="/closegrey.svg" onClick={() =>
                             router.push(url)} />
                         <p className={styles.modalBuy_title}>Choose post</p>

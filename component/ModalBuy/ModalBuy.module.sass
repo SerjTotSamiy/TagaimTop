@@ -7,7 +7,7 @@
   background-color: rgba(0,0,0,0.4)
   z-index: 3
 .modalBuy_container
-  position: absolute
+  position: relative
   top: 50%
   left: 50%
   max-width: 1300px
@@ -22,6 +22,12 @@
   align-items: center
   flex-direction: column
   gap: 20px
+  .backButton
+    position: absolute
+    top: 30px
+    left: 30px
+    color: #414141
+    cursor: pointer
   a
     color: #8C66FA
     text-decoration: underline
@@ -87,6 +93,16 @@
   height: 50px
   margin-right: 10px
   background-color: #F0F0F0
+  justify-content: center
+  align-items: center
+.account_green
+  background-color: #00831D1A
+  color: #00831D
+  display: flex
+  border-radius: 5px
+  width: 50px
+  height: 50px
+  margin-right: 10px
   justify-content: center
   align-items: center
 .account_item_block
@@ -268,4 +284,3 @@
   background: rgba(61, 41, 119, 1)
   /* color of the scroll thumb */
   border-radius: 20px
-

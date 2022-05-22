@@ -3,11 +3,13 @@
   .inputLogin
     border-radius: 5px
     padding: 20px 20px 20px 90px
-    border-color: #272D4D42
+    border-color: transparent
     font-size: 16px
     font-weight: 400
     width: 100%
     height: 75px
+    &:focus
+      outline-color: rgba(61, 41, 119, 1)
   .inputLogin::placeholder
     color: #272D4D42
 
@@ -24,8 +26,6 @@
     width: 1px
     height: 42px
     background-color: rgba(39, 45, 77, 0.25)
-
-
 
 .loginBg
   background: url("/LoginBg.png")
@@ -51,7 +51,7 @@
     min-width: 500px
 
 .tarifP
-  color: gray
+  color: black
   display: flex
   flex-direction: row
   gap: 30px
@@ -59,10 +59,5 @@
   padding: 5px
   cursor: pointer
   &:hover
-    color: black
+    color: #25125c
     //border-bottom: 2px solid #272D4D42
-
-
-
-
-

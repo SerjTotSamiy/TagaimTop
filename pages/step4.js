@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import React, {useContext, useState, useEffect} from 'react';
-import {useRouter} from "next/router";
+import React, { useContext, useState, useEffect } from 'react';
+import { useRouter } from "next/router";
 import useAxios from "../hooks/useAxios";
 import { Layer } from "../component/Layer/Layer";
 import { Modal } from "@mui/material";
@@ -19,10 +19,10 @@ const Step4 = () => {
     const [isSkeleton, setIsSkeleton] = useState(true);
 
     useEffect(() => {
-      const delay = setTimeout(() => {
-        setIsSkeleton(false);
-      }, 1200);
-      return () => clearTimeout(delay)
+        const delay = setTimeout(() => {
+            setIsSkeleton(false);
+        }, 1200);
+        return () => clearTimeout(delay)
     }, []);
 
     const payType = {
@@ -38,7 +38,7 @@ const Step4 = () => {
         <Layer firstPage={false}>
             <Modal open={true} >
                 <div className={styles.modalBuy_container}>
-                {isSkeleton && <ModalSceleton />}
+                    {isSkeleton && <ModalSceleton />}
                     <p className={styles.backButton} style={{ filter: `${isSkeleton ? 'blur(8px)' : 'blur(0px)'}` }} onClick={() => router.push('/step3')}> {"< Back"} </p>
                     <img className={styles.close} style={{ filter: `${isSkeleton ? 'blur(8px)' : 'blur(0px)'}` }} src="/closegrey.svg" onClick={() =>
                         router.push(url)} />
@@ -66,7 +66,7 @@ const Step4 = () => {
                         <div className={styles.stage3_container} style={{ filter: `${isSkeleton ? 'blur(8px)' : 'blur(0px)'}` }}>
                             {result?.data?.methods?.map((item) => <div key={item?.url_to_pay} className={styles.payment_block} onClick={() => router.push(item?.url_to_pay)}>
                                 <img src={payType[item?.name]} width={55} height={55} style={{ border: "1px solid grey", padding: "5px", borderRadius: "50%" }} />
-                                {console.log(payType[item], item)}
+                                {console.log(result?.data)}
                                 <span>
                                     <p>{item?.name}</p>
                                     <p style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -74,7 +74,7 @@ const Step4 = () => {
                                         {item?.tax !== 0 && <p style={{ color: "#C4C4C4" }}>+ {item?.tax}% Vat</p>}
                                     </p>
                                 </span>
-                                <p className={item?.discount < -0 ? styles.account_green : styles.account_check}>
+                                <p key={item.discount} className={item?.discount < -0 ? styles.account_green : styles.account_check}>
                                     {item?.discount}%
                                 </p>
                             </div>)}

@@ -65,7 +65,7 @@ export default function Home() {
 
 
                 {windowInnerWidth > 760 ? <img src="/phone.png" alt="buy Instagram likes" className={styles.phone}/> :
-                    <img src="/phone-mobile.png" alt="buy Instagram likes" className={styles.phone}/>}
+                    <img src="/phone-mobile.webp" alt="buy Instagram likes" className={styles.phone}/>}
         </div>
 
             <Layer firstPage={true}>
@@ -142,7 +142,7 @@ export default function Home() {
                                                        onClick={() => router.push('/buy-instagram-likes')}/>
                                <ButtonComponent text="Autolikes" type={"outline"}
                                                 onClick={() => router.push('/buy-instagram-likes')}/></>}
-                           img="/instagramlikesandauto-likes.png" alt={"get Instagram likes"}  fade={true}/>
+                           img="/instagramlikesandauto-likes.webp" alt={"get Instagram likes"}  fade={true}/>
                 </div>
                 <div    data-aos="fade-up" data-aos-duration="1500" data-aos-offset="700" >
                 <InfoBlock reverse={true}
@@ -157,7 +157,7 @@ export default function Home() {
                                        enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. </p></div>}
                            buttons={<ButtonComponent text="Buy Followers" type={'fill'}
                                                      onClick={() => router.push('/buy-instagram-followers')}/>}
-                           img="/instagramfollowers.png" alt={"get new Instagram followers"}/>
+                           img="/instagramfollowers.webp" alt={"get new Instagram followers"}/>
                 </div>
                 <div    data-aos="fade-up" data-aos-duration="1500" data-aos-offset="1000"  >
                 <InfoBlock reverse={false} text={
@@ -170,7 +170,7 @@ export default function Home() {
                             nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
                             justo. </p></div>}
                            buttons={<ButtonComponent text="Buy Comments" type={'fill'}  onClick={() => router.push('/buy-instagram-comments')}/>}
-                           img="instagramcomments.png" alt={"get Instagram comments"}/>
+                           img="instagramcomments.webp" alt={"get Instagram comments"}/>
                 </div>
                 <div    data-aos="fade-up" data-aos-duration="1500" data-aos-offset="1200"   ><InfoBlock reverse={true} text={
                     <div   >
@@ -181,7 +181,7 @@ export default function Home() {
                             pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
                             nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
                             justo. </p></div>} buttons={<ButtonComponent text="Buy Views" type={'fill'} onClick={() => router.push('/buy-instagram-views')}/>}
-                           img="instagramview.png" alt={"get Instagram views"} />
+                           img="instagramview.webp" alt={"get Instagram views"} />
                 </div>
 
 
@@ -195,7 +195,7 @@ export default function Home() {
                 </div>
 
                 <div className={styles.getStartedBanner}>
-                    <img src="/buy_banner.png"/>
+                    <img src="/buy_banner.webp"/>
                     <div >
                         <p className={styles.banner_title}>Get Started</p>
                         <p className={styles.banner_text}>Simply enter your username, select your photos and see the likes

@@ -19,16 +19,16 @@ const BuyLikes = ({first, last, likes, price, banner, text, autoLike, onClick, b
     //
     // }, [])
     const bg={
-        0: "/pricebg1.png",
-        1: "/pricebg2.png",
-        2: "/pricebg3.png",
-        3: "/pricebg4.png",
-        4:"/pricebg1.png",
-        5:"/pricebg2.png",
-        6:"/pricebg3.png",
-        7:"/pricebg4.png",
-        8:"/pricebg1.png",
-        9:"/pricebg1.png"
+        0: "/pricebg1.webp",
+        1: "/pricebg2.webp",
+        2: "/pricebg3.webp",
+        3: "/pricebg4.webp",
+        4:"/pricebg1.webp",
+        5:"/pricebg2.webp",
+        6:"/pricebg3.webp",
+        7:"/pricebg4.webp",
+        8:"/pricebg1.webp",
+        9:"/pricebg1.webp"
     }
     const {allInfo} = useContext(MeContext)
 

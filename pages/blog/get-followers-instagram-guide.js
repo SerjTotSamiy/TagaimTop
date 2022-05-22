@@ -115,9 +115,9 @@ const GetFollowersInstagramGuide = () => {
 
 
             <div className={guideStyles.photos}>
-                <img src="/buylikesinfo1.png"    />
+                <img src="/buylikesinfo1.webp"    />
                 <img src="/guidephoto1.png"   />
-                <img src="/buylikesinfo1.png"    />
+                <img src="/buylikesinfo1.webp"    />
 
             </div>
             <TextComponent title="Design Original and Authentic Content" text="You can put as much information as you want on your Instagram page. The

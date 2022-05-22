@@ -1,37 +1,38 @@
 /* eslint-disable @next/next/no-img-element */
-import React, {useContext, useEffect, useMemo, useRef, useState} from 'react';
-import {Layer} from "../component/Layer/Layer";
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { Layer } from "../component/Layer/Layer";
 import styles from '/styles/BuyInstagramLikes.module.sass'
 import styles1 from '/styles/Home.module.sass'
-import {ButtonComponent} from "../component/ButtonComponent/ButtonComponent";
+import { ButtonComponent } from "../component/ButtonComponent/ButtonComponent";
 import BuyLikes from "../component/BuyLikes/BuyLikes";
 import InfoBlock from "../component/InfoBlock/InfoBlock";
 import Comment from "../component/Comment/Comment";
 import Review from "../component/Review/Review";
 import ReactStars from "react-stars";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import ModalBuy from "../component/ModalBuy/ModalBuy";
-import {PageTitle} from "../component/PageTitle/PageTitle";
+import { PageTitle } from "../component/PageTitle/PageTitle";
 import Carousel from 'nuka-carousel';
 import AmbientBlock from "../component/AmbientBlock/AmbientBlock";
-import {MeContext} from "./_app";
+import { MeContext } from "./_app";
 import useAxios from "../hooks/useAxios";
-import {NextSeo} from 'next-seo';
-import {metatags} from "../meta/meta";
+import { NextSeo } from 'next-seo';
+import { metatags } from "../meta/meta";
 import NextHead from 'next/head'
-const BuyInstagramLikes = ({text}) => {
+import Image from 'next/image';
+const BuyInstagramLikes = ({ text }) => {
 
     const router = useRouter()
-    const {price, allInfo, setUrl} = useContext(MeContext)
+    const { price, allInfo, setUrl } = useContext(MeContext)
     const axios = useAxios()
     const [readMore, setReadMore] = useState(3)
-    const [type, setType] = useState({1: 'fill', 2: 'outline'})
+    const [type, setType] = useState({ 1: 'fill', 2: 'outline' })
 
     let [bgArray, setBgArray] = useState({
-        0: "/pricebg1.png",
-        1: "/pricebg2.png",
-        2: "/pricebg3.png",
-        3: "/pricebg4.png"
+        0: "/pricebg1.webp",
+        1: "/pricebg2.webp",
+        2: "/pricebg3.webp",
+        3: "/pricebg4.webp"
     });
     const [windowInnerWidth, setWindowInnerWidth] = useState('');
     const [buyType, setBuyType] = useState('');
@@ -82,61 +83,59 @@ const BuyInstagramLikes = ({text}) => {
         if (window) setWindowInnerWidth(window.innerWidth)
         getComment()
     }, [])
-    window.addEventListener("resize", () => {
-        setWindowInnerWidth(window.innerWidth)
-        getComment()
-    })
     let ref1 = useRef()
     let ref2 = useRef()
 
     return (
         <>  <NextHead>
-            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-            <meta name="facebook-domain-verification" content="qyk8si5jqwk9m6240785cypx4jcij9"/>
-            <meta name="google-site-verification" content="oxb8vz7MsAwxDNG7gbs5_RfYolWa5a9UITEh9d1CQKE"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+            <meta name="facebook-domain-verification" content="qyk8si5jqwk9m6240785cypx4jcij9" />
+            <meta name="google-site-verification" content="oxb8vz7MsAwxDNG7gbs5_RfYolWa5a9UITEh9d1CQKE" />
             <title>Tagiamtop</title>
             <meta name="description"
-                  content="Buy Instagram likes from TagIamTop now with a price under $1 per one. Instant delivery and support. We can help you to develop your online business."/>
+                content="Buy Instagram likes from TagIamTop now with a price under $1 per one. Instant delivery and support. We can help you to develop your online business." />
             <meta name="og:description"
-                  content="Buy Instagram likes from TagIamTop now with a price under $1 per one. Instant delivery and support. We can help you to develop your online business."/>
-            <meta property="og:locale" content="en_US"/>
-            <meta property="og:type" content="article"/>
-            <meta property="og:title" content="Buy Instagram Likes - Social Media Services Store - TagIamTop"/>
-            <meta property="title" content="Buy Instagram Likes - Social Media Services Store - TagIamTop"/>
-            <meta name="twitter:card" content="summary"/>
+                content="Buy Instagram likes from TagIamTop now with a price under $1 per one. Instant delivery and support. We can help you to develop your online business." />
+            <meta property="og:locale" content="en_US" />
+            <meta property="og:type" content="article" />
+            <meta property="og:title" content="Buy Instagram Likes - Social Media Services Store - TagIamTop" />
+            <meta property="title" content="Buy Instagram Likes - Social Media Services Store - TagIamTop" />
+            <meta name="twitter:card" content="summary" />
             <meta name="twitter:description"
-                  content="Buy Instagram likes from TagIamTop now with a price under $1 per one. Instant delivery and support. We can help you to develop your online business."/>
+                content="Buy Instagram likes from TagIamTop now with a price under $1 per one. Instant delivery and support. We can help you to develop your online business." />
             <meta name="twitter:description"
-                  content="Buy Instagram likes from TagIamTop now with a price under $1 per one. Instant delivery and support. We can help you to develop your online business."/>
-            <meta name="twitter:title" content="Buy Instagram Likes - Social Media Services Store - TagIamTop"/>
-            <meta name="twitter:title" content="Buy Instagram Likes - Social Media Services Store - TagIamTop"/>
-            <meta property="og:url" content="https://tagiamtop.com/buy-instagram-likes"/>
-            <link rel="canonical" href="https://tagiamtop.com/buy-instagram-likes"/>
-            <script id="__NEXT_DATA__" type="application/json"/>
+                content="Buy Instagram likes from TagIamTop now with a price under $1 per one. Instant delivery and support. We can help you to develop your online business." />
+            <meta name="twitter:title" content="Buy Instagram Likes - Social Media Services Store - TagIamTop" />
+            <meta name="twitter:title" content="Buy Instagram Likes - Social Media Services Store - TagIamTop" />
+            <meta property="og:url" content="https://tagiamtop.com/buy-instagram-likes" />
+            <link rel="canonical" href="https://tagiamtop.com/buy-instagram-likes" />
+            <script id="__NEXT_DATA__" type="application/json" />
         </NextHead>
             <Layer firstPage={false}>
 
 
                 <div className={styles.header_banner}>
-                    <p className={styles.header_title}>Buy Instagram likes and auto-likes <img src="/like.svg"
-                                                                                               alt="Instagram like"/>
+                    <p className={styles.header_title}>Buy Instagram likes and auto-likes <Image src="/like.svg"
+                        alt="Instagram like"
+                        width={54}
+                        height={41} />
                     </p>
                     <p className={styles.header_text}>At tagiamtop, you can buy Instagram likes quickly, safely and
                         easily
                         with just a few clicks. See our deals below!</p>
 
-                    <img className={styles.header_arrow} src="/arrow-detail.svg" alt=""
-                         onClick={() => window.scrollTo(0, document.body.scrollHeight)}/>
+                    <img className={styles.header_arrow} src="/arrow-detail.svg" alt="header_arrow"
+                        onClick={() => window.scrollTo(0, document.body.scrollHeight)} />
                 </div>
                 {
                     open &&
                     <ModalBuy setOpen={setOpen} open={open} count={counts} amount={priceValue} times={'one time'}
-                              service={buyType} tarifs={price?.Likes?.plans} setService={setBuyType}
-                              setCounts={setCounts} setAmount={setPriceValue}/>
+                        service={buyType} tarifs={price?.Likes?.plans} setService={setBuyType}
+                        setCounts={setCounts} setAmount={setPriceValue} />
                 }
 
                 <div className={styles.header_background}>
-                    <PageTitle title={'Buy Instagram likes and auto-likes'}/>
+                    <PageTitle title={'Buy Instagram likes and auto-likes'} />
 
                     <p className={styles.buyLikes_title}>Buy Likes</p>
                     <div className={styles.buyLikes_item_container} ref={ref1}>
@@ -146,24 +145,24 @@ const BuyInstagramLikes = ({text}) => {
                             scrollMode="remainder"
                             slidesToShow={windowInnerWidth < 610 ? 1 : windowInnerWidth < 1000 ? 2 : windowInnerWidth < 1300 ? 3 : 4}>
                             {price?.Likes?.plans.map((item, index) => <BuyLikes key={item?.count} likes={item?.count}
-                                                                                price={item?.price} bgArray={bgArray}
-                                                                                index={index}
-                                                                                banner="/buylikesbanner2.png"
-                                                                                text="Instagram Likes" id={"LIKES"}
-                                                                                onClick={() => {
-                                                                                    setPriceValue(prev => item?.price)
-                                                                                    setCounts(prev => item?.count)
-                                                                                    setBuyType(prev => 'Likes')
-                                                                                    setUrl('buy-instagram-likes')
-                                                                                    router.push({
-                                                                                        pathname: `/step1`,
-                                                                                        query: {
-                                                                                            service: "Likes",
-                                                                                            counts: item?.count,
-                                                                                            priceValue: item?.price
-                                                                                        }
-                                                                                    })
-                                                                                }}/>)}
+                                price={item?.price} bgArray={bgArray}
+                                index={index}
+                                banner="/buylikesbanner2.png"
+                                text="Instagram Likes" id={"LIKES"}
+                                onClick={() => {
+                                    setPriceValue(prev => item?.price)
+                                    setCounts(prev => item?.count)
+                                    setBuyType(prev => 'Likes')
+                                    setUrl('buy-instagram-likes')
+                                    router.push({
+                                        pathname: `/step1`,
+                                        query: {
+                                            service: "Likes",
+                                            counts: item?.count,
+                                            priceValue: item?.price
+                                        }
+                                    })
+                                }} />)}
 
                         </Carousel>
 
@@ -171,25 +170,25 @@ const BuyInstagramLikes = ({text}) => {
                     <div data-aos="fade-up" data-aos-duration="1500" data-aos-offset="600">
                         <InfoBlock text={
                             <p>
-                                <p className={styles1.info_text} style={{float: 'left'}}><img src="/buylikesinfo1.png"
-                                                                                              alt="buy Instagram likes by crypto"
-                                                                                              style={{
-                                                                                                  float: 'left',
-                                                                                                  marginRight: 80,
-                                                                                                  marginBottom: 30
-                                                                                              }}/>
+                                <p className={styles1.info_text} style={{ float: 'left' }}><img src="/buylikesinfo1.webp"
+                                    alt="buy Instagram likes by crypto"
+                                    style={{
+                                        float: 'left',
+                                        marginRight: 80,
+                                        marginBottom: 30
+                                    }} />
                                     <p className={styles1.info_title}>{text[0].title}</p>{text[0].content} </p>
-                            </p>} fade={true}/></div>
+                            </p>} fade={true} /></div>
                     <div data-aos="fade-up" data-aos-duration="1500" data-aos-offset="600">
                         <InfoBlock text={
                             <p>
 
-                                <p className={styles1.info_text}><img src="/buylikesinfo2.png"
-                                                                      alt="cheap Instagram likes" style={{
-                                    float: 'right',
-                                    marginLeft: 80,
-                                    marginBottom: 30
-                                }}/>
+                                <p className={styles1.info_text}><img src="/buylikesinfo2.webp"
+                                    alt="cheap Instagram likes" style={{
+                                        float: 'right',
+                                        marginLeft: 80,
+                                        marginBottom: 30
+                                    }} />
                                     <p className={styles1.info_title}>{text[1].title}</p>
                                     {text[1].content}</p>
                             </p>} reverse={true}
@@ -200,57 +199,57 @@ const BuyInstagramLikes = ({text}) => {
                 <div className={styles.autoLike_buttons}>
                     <ButtonComponent text="Instant" style={style[type['2']]} type={type["2"]} onClick={() => {
                         setChange(!change)
-                        setType({1: "outline", 2: 'fill'})
+                        setType({ 1: "outline", 2: 'fill' })
                         ref1?.current?.scrollIntoView()
-                    }}/>
+                    }} />
                     <ButtonComponent text="Gradual" style={style[type['1']]} type={type["1"]} onClick={() => {
                         setChange(!change)
-                        setType({1: 'fill', 2: 'outline'})
+                        setType({ 1: 'fill', 2: 'outline' })
                         ref2?.current?.scrollIntoView()
-                    }}/>
+                    }} />
                 </div>
                 <div className={styles.autoLike_banner}>
-                    <img src="/buylikespurchasebanner.png" alt="buy Instagram auto likes"/>
+                    <img src="/buylikespurchasebanner.webp" alt="buy Instagram auto likes" />
                     <p>
-                        Want to make a purchase?<br/> click here!
+                        Want to make a purchase?<br /> click here!
                     </p>
                 </div>
 
 
-                <div style={{background: "url('/bacgraund-works.jpg')"}}>
+                <div style={{ background: "url('/bacgraund-works.jpg')" }}>
                     <div className={'container'}>
                         <div data-aos="fade-up" data-aos-duration="1500" data-aos-offset="1400"><InfoBlock text={
                             <p>
-                                <p className={styles1.info_title} style={{textAlign: 'right'}}>{text[2].title}</p>
-                                <p className={styles1.info_text}><img src="/buylikesinfo3.png"
-                                                                      alt="real Instagram likes" style={{
-                                    float: 'left',
-                                    marginRight: 100,
-                                    marginBottom: 30
-                                }}/>
-                                    {text[2].content} </p></p>} reverse={false}/></div>
+                                <p className={styles1.info_title} style={{ textAlign: 'right' }}>{text[2].title}</p>
+                                <p className={styles1.info_text}><img src="/buylikesinfo3.webp"
+                                    alt="real Instagram likes" style={{
+                                        float: 'left',
+                                        marginRight: 100,
+                                        marginBottom: 30
+                                    }} />
+                                    {text[2].content} </p></p>} reverse={false} /></div>
                         <div data-aos="fade-up" data-aos-duration="1500" data-aos-offset="1600">
                             <InfoBlock
                                 text={<p>
                                     <p className={styles1.info_title}>{text[3].title}</p>
-                                    <p className={styles1.info_text}><img src="/buylikesinfo4.png"
-                                                                          alt="instant Instagram likes" style={{
-                                        float: 'right',
-                                        marginLeft: 100,
-                                        marginBottom: 30
-                                    }}/>
+                                    <p className={styles1.info_text}><img src="/buylikesinfo4.webp"
+                                        alt="instant Instagram likes" style={{
+                                            float: 'right',
+                                            marginLeft: 100,
+                                            marginBottom: 30
+                                        }} />
                                         {text[3].content}</p>
-                                    <p className={styles1.info_title} style={{marginTop: 30}}>{
+                                    <p className={styles1.info_title} style={{ marginTop: 30 }}>{
                                         text[3].title2
                                     }</p>
                                     <p className={styles1.info_text}>
                                         <li>{text[3].li1}</li>
-                                        <p style={{marginBottom: 10}}>{text[3].content2}</p>
+                                        <p style={{ marginBottom: 10 }}>{text[3].content2}</p>
                                         <li>{text[3].li2}</li>
                                         <p>{text[3].content3}</p>
                                     </p>
                                 </p>}
-                                reverse={true}/></div>
+                                reverse={true} /></div>
                     </div>
                 </div>
 
@@ -264,22 +263,22 @@ const BuyInstagramLikes = ({text}) => {
                                 scrollMode="remainder"
                                 slidesToShow={windowInnerWidth < 610 ? 1 : windowInnerWidth < 1000 ? 2 : windowInnerWidth < 1300 ? 3 : 4}>
                                 {price?.Likes?.plans.map((item, index) => <BuyLikes key={item?.count}
-                                                                                    likes={item?.count}
-                                                                                    price={item?.price}
-                                                                                    bgArray={bgArray} index={index}
-                                                                                    banner="/buylikesbanner2.png"
-                                                                                    text="Instagram Auto-Likes"
-                                                                                    id={"AUTOLIKES"} onClick={() => {
-                                    setPriceValue(prev => item?.price)
-                                    setCounts(prev => item?.count)
-                                    setBuyType(prev => 'Likes')
-                                    setUrl('buy-instagram-likes')
-                                    router.push({
-                                        pathname: `/step1`,
-                                        query: {service: "Likes", counts: item?.count, priceValue: item?.price}
-                                    })
+                                    likes={item?.count}
+                                    price={item?.price}
+                                    bgArray={bgArray} index={index}
+                                    banner="/buylikesbanner2.png"
+                                    text="Instagram Auto-Likes"
+                                    id={"AUTOLIKES"} onClick={() => {
+                                        setPriceValue(prev => item?.price)
+                                        setCounts(prev => item?.count)
+                                        setBuyType(prev => 'Likes')
+                                        setUrl('buy-instagram-likes')
+                                        router.push({
+                                            pathname: `/step1`,
+                                            query: { service: "Likes", counts: item?.count, priceValue: item?.price }
+                                        })
 
-                                }}/>)}
+                                    }} />)}
 
                             </Carousel>
 
@@ -293,26 +292,26 @@ const BuyInstagramLikes = ({text}) => {
                                 scrollMode="remainder"
                                 slidesToShow={windowInnerWidth < 610 ? 1 : windowInnerWidth < 1000 ? 2 : windowInnerWidth < 1300 ? 3 : 4}>
                                 {price["Auto-Likes"]?.plans.map((item, index) => <BuyLikes key={item?.count}
-                                                                                    likes={item?.count}
-                                                                                    price={item?.price}
-                                                                                    bgArray={bgArray} index={index}
-                                                                                    banner="/buylikesbanner2.png"
-                                                                                    text="Instagram Auto-Likes"
-                                                                                    onClick={() => {
-                                                                                        setPriceValue(prev => item?.price)
-                                                                                        setCounts(prev => item?.count)
-                                                                                        setBuyType(prev => 'Likes')
-                                                                                        setUrl('buy-instagram-likes')
-                                                                                        router.push({
-                                                                                            pathname: `/step1`,
-                                                                                            query: {
-                                                                                                service: "Likes",
-                                                                                                counts: item?.count,
-                                                                                                priceValue: item?.price
-                                                                                            }
-                                                                                        })
+                                    likes={item?.count}
+                                    price={item?.price}
+                                    bgArray={bgArray} index={index}
+                                    banner="/buylikesbanner2.png"
+                                    text="Instagram Auto-Likes"
+                                    onClick={() => {
+                                        setPriceValue(prev => item?.price)
+                                        setCounts(prev => item?.count)
+                                        setBuyType(prev => 'Likes')
+                                        setUrl('buy-instagram-likes')
+                                        router.push({
+                                            pathname: `/step1`,
+                                            query: {
+                                                service: "Likes",
+                                                counts: item?.count,
+                                                priceValue: item?.price
+                                            }
+                                        })
 
-                                                                                    }}/>)}
+                                    }} />)}
 
                             </Carousel>
 
@@ -329,15 +328,15 @@ const BuyInstagramLikes = ({text}) => {
 
 
                         <div className={styles1.review_comment_row}>
-                            <Review service={'Likes'}/>
+                            <Review service={'Likes'} />
                             <div className={styles1.comments_container}>
                                 {comment?.map((item, index) => index < readMore &&
                                     <Comment key={item.name} bg="#E4E0FE" border="2px dashed #D8BFD8" name={item.name}
-                                             star={item.star} text={item.text}/>)}
+                                        star={item.star} text={item.text} />)}
 
 
-                                <p style={{marginTop: 20}}><a style={{color: "#8C66FA", cursor: 'pointer'}}
-                                                              onClick={() => comment && setReadMore(comment.length)}>Read
+                                <p style={{ marginTop: 20 }}><a style={{ color: "#8C66FA", cursor: 'pointer' }}
+                                    onClick={() => comment && setReadMore(comment.length)}>Read
                                     More
                                     Reviews</a></p>
                             </div>
@@ -352,12 +351,12 @@ const BuyInstagramLikes = ({text}) => {
     );
 }
 
-export async function getStaticProps({params}) {
+export async function getStaticProps({ params }) {
 
 
     return {
         props: {
-            meta:{description:"Buy Instagram likes from TagIamTop now with a price under $1 per one. Instant delivery and support. We can help you to develop your online business."},
+            meta: { description: "Buy Instagram likes from TagIamTop now with a price under $1 per one. Instant delivery and support. We can help you to develop your online business." },
             text: [
                 {
                     title: "Why are Instagram likes valuable?",

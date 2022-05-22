@@ -136,7 +136,7 @@ const BuyInstagramComments = ({text}) => {
                         <Review service={'Comments'}/>
                     </div>
                 </div>
-                <div data-aos="fade-up" data-aos-duration="2000" data-aos-offset="400">
+                <div data-aos="fade-up" data-aos-duration="200" data-aos-offset="400">
                     <InfoBlock
                         text={
                             <p style={{marginBottom: 30, padding: 20}}>

@@ -144,7 +144,7 @@ export default function Home() {
                                                 onClick={() => router.push('/buy-instagram-likes')}/></>}
                            img="/instagramlikesandauto-likes.webp" alt={"get Instagram likes"}  fade={true}/>
                 </div>
-                <div    data-aos="fade-up" data-aos-duration="1500" data-aos-offset="700" >
+                <div    data-aos="fade-up" data-aos-duration="500" data-aos-offset="700" >
                 <InfoBlock reverse={true}
                            text={
                                <div   >

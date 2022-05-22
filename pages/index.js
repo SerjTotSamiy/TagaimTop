@@ -85,7 +85,7 @@ export default function Home() {
                                                onClick={() => router.push('/buy-instagram-likes')}/>
                               <ButtonComponent text={'Buy followers'} type={'mainFill'} onClick={() => router.push('/buy-instagram-followers')}/>
                           </div>
-                          <img src="/arrow-detail.svg" alt="" onClick={() => window.scrollTo(0, document.body.scrollHeight)}/>
+                          <img src="/arrow-detail.svg" alt="" onClick={() => window.scrollTo(0, window.screen.availHeight)}/>
                       </div>
                 </div>
                 </div>

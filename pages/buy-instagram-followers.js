@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useContext, useEffect, useState } from "react";
 import { Layer } from "../component/Layer/Layer";
 import styles from "../styles/BuyInstagramLikes.module.sass";
@@ -100,7 +101,12 @@ const BuyInstagramFollowers = ({ text }) => {
           with just a few clicks. See our deals below!
         </p>
 
-        <img className={styles.header_arrow} src="/arrow-detail.svg" alt="" onClick={() => window.scrollTo(0, 500)} />
+        <img
+          className={styles.header_arrow}
+          src="/arrow-detail.svg"
+          onClick={() => window.scrollTo(0, 500)}
+          alt=""
+        />
       </div>
 
       {open && (
@@ -128,10 +134,10 @@ const BuyInstagramFollowers = ({ text }) => {
               windowInnerWidth < 690
                 ? 1
                 : windowInnerWidth < 1000
-                  ? 2
-                  : windowInnerWidth < 1300
-                    ? 3
-                    : 4
+                ? 2
+                : windowInnerWidth < 1300
+                ? 3
+                : 4
             }
           >
             {price?.Followers?.plans.map((item, index) => (

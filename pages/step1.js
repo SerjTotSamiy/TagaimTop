@@ -123,9 +123,10 @@ const Step1 = () => {
         }
       }
       const res = axios.post(
-        `${query.priceValue === "0.00"
-          ? "/create_test_order_v2.php"
-          : "/create_order_v2.php"
+        `${
+          query.priceValue === "0.00"
+            ? "/create_test_order_v2.php"
+            : "/create_order_v2.php"
         }`,
         data
       );

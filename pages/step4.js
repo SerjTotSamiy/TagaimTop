@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @next/next/no-img-element */
 import React, { useContext, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import useAxios from "../hooks/useAxios";
@@ -51,6 +49,7 @@ const Step4 = () => {
             style={{ filter: `${isSkeleton ? "blur(8px)" : "blur(0px)"}` }}
             src="/closegrey.svg"
             onClick={() => router.push(url)}
+            alt=""
           />
 
           <p
@@ -71,7 +70,7 @@ const Step4 = () => {
               filter: `${isSkeleton ? "blur(8px)" : "blur(0px)"}`,
             }}
           >
-            <img className={styles.line} src="/modalline.svg" />
+            <img className={styles.line} src="/modalline.svg" alt="" />
             <p
               className={styles.modalBuy_stage}
               style={{ backgroundColor: "#E64652" }}
@@ -115,6 +114,7 @@ const Step4 = () => {
                       padding: "5px",
                       borderRadius: "50%",
                     }}
+                    alt=""
                   />
                   <span>
                     <p>{item?.name}</p>

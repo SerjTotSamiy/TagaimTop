@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @next/next/no-img-element */
 import React, { useContext, useEffect, useState } from "react";
 import { Layer } from "../component/Layer/Layer";
 import { Modal } from "@mui/material";
@@ -156,6 +154,7 @@ const Step3 = (props) => {
               className={styles.close}
               src="/closegrey.svg"
               onClick={() => router.push(url)}
+              alt=""
             />
             <p className={styles.modalBuy_title}>Choose post</p>
             {!query.autoLike && (
@@ -167,7 +166,7 @@ const Step3 = (props) => {
                   justifyContent: "center",
                 }}
               >
-                <img className={styles.line} src="/modalline.svg" />
+                <img className={styles.line} src="/modalline.svg" alt="" />
                 <p
                   className={styles.modalBuy_stage}
                   style={{ backgroundColor: "#E64652" }}
@@ -222,20 +221,21 @@ const Step3 = (props) => {
                           opacity: 10,
                         }}
                       >
-                        <img src="/check.svg" className={styles.postCheck} />
+                        <img src="/check.svg" className={styles.postCheck} alt="" />
                         <p className={styles.postChosenHeart}>
                           {query.service === "Likes" ? (
-                            <img src="/heart.svg" />
+                            <img src="/heart.svg" alt="" />
                           ) : query.service === "Followers" ? (
-                            <img src="/repost.svg" width={30} height={30} />
+                            <img src="/repost.svg" width={30} height={30} alt="" />
                           ) : query.service === "Views" ? (
-                            <img src="/view.svg" width={30} height={30} />
+                            <img src="/view.svg" width={30} height={30} alt="" />
                           ) : (
                             query.service === "Comments" && (
                               <img
                                 src="/modalcomment.svg"
                                 width={30}
                                 height={30}
+                                alt=""
                               />
                             )
                           )}
@@ -248,9 +248,9 @@ const Step3 = (props) => {
               })}
             </div>
             <span style={{ display: "flex", gap: 10 }}>
-              <img src="/ellipsered.svg" />
-              <img src="/ellipsered.svg" />
-              <img src="/ellipsered.svg" />
+              <img src="/ellipsered.svg" alt="" />
+              <img src="/ellipsered.svg" alt="" />
+              <img src="/ellipsered.svg" alt="" />
             </span>
             <div className={styles.addAccount_buttons}>
               <ButtonComponent
@@ -313,7 +313,7 @@ const Step3 = (props) => {
                 </span>
                 <p style={{ color: "red" }}>+ $5.4</p>
                 <img
-                  src="/info.svg"
+                  src="/info.svg" alt=""
                   style={{ width: "22px", height: "22px" }}
                 />
               </div>
@@ -338,7 +338,7 @@ const Step3 = (props) => {
                 </span>
                 <p style={{ color: "red" }}>+ $5.4</p>
                 <img
-                  src="/info.svg"
+                  src="/info.svg" alt=""
                   style={{ width: "22px", height: "22px" }}
                 />
               </div>
@@ -363,7 +363,7 @@ const Step3 = (props) => {
                 </span>
                 <p style={{ color: "red" }}>+ $5.4</p>
                 <img
-                  src="/info.svg"
+                  src="/info.svg" alt=""
                   style={{ width: "22px", height: "22px" }}
                 />
               </div>
@@ -381,7 +381,7 @@ const Step3 = (props) => {
                 }}
               />
 
-              <img src="/basket.svg" />
+              <img src="/basket.svg" alt="" />
             </div>
           </div>
         </div>

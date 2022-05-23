@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write shared/* --write pages/* --write pages/*/* --write component/*",
+    "format": "prettier --write shared/* --write pages/* --write pages/*/* --write component/* --write component/*/*",
     "generate:sitemap": "node generate-sitemap.js"
   },
   "dependencies": {

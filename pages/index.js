@@ -336,7 +336,7 @@ export default function Home() {
             </div>
 
             <div className={styles.getStartedBanner}>
-              <img src="/buy_banner.webp" />
+              <img src="/buy_banner.webp" alt="" />
               <div>
                 <p className={styles.banner_title}>Get Started</p>
                 <p className={styles.banner_text}>

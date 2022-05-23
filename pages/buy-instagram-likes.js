@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
 import { Layer } from "../component/Layer/Layer";
 import styles from "/styles/BuyInstagramLikes.module.sass";
@@ -8,7 +7,6 @@ import BuyLikes from "../component/BuyLikes/BuyLikes";
 import InfoBlock from "../component/InfoBlock/InfoBlock";
 import Comment from "../component/Comment/Comment";
 import Review from "../component/Review/Review";
-import ReactStars from "react-stars";
 import { useRouter } from "next/router";
 import ModalBuy from "../component/ModalBuy/ModalBuy";
 import { PageTitle } from "../component/PageTitle/PageTitle";
@@ -82,7 +80,9 @@ const BuyInstagramLikes = ({ text }) => {
   useEffect(() => {
     if (window) setWindowInnerWidth(window.innerWidth);
     getComment();
-    window.addEventListener("resize", () => setWindowInnerWidth(window.innerWidth))
+    window.addEventListener("resize", () =>
+      setWindowInnerWidth(window.innerWidth)
+    );
   }, []);
   let ref1 = useRef();
   let ref2 = useRef();

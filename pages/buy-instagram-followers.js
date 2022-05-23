@@ -93,14 +93,19 @@ const BuyInstagramFollowers = ({ text }) => {
       )}
       <div className={styles.header_banner}>
         <p className={styles.header_title}>
-          buy Instagram Followers <img src="/like.svg" />
+          buy Instagram Followers <img src="/like.svg" alt="" />
         </p>
         <p className={styles.header_text}>
           At tagiamtop, you can buy Instagram likes quickly, safely and easily
           with just a few clicks. See our deals below!
         </p>
 
-        <img className={styles.header_arrow} src="/arrow-detail.svg" alt="" onClick={() => window.scrollTo(0, 500)} />
+        <img
+          className={styles.header_arrow}
+          src="/arrow-detail.svg"
+          onClick={() => window.scrollTo(0, 500)}
+          alt=""
+        />
       </div>
 
       {open && (
@@ -128,10 +133,10 @@ const BuyInstagramFollowers = ({ text }) => {
               windowInnerWidth < 690
                 ? 1
                 : windowInnerWidth < 1000
-                  ? 2
-                  : windowInnerWidth < 1300
-                    ? 3
-                    : 4
+                ? 2
+                : windowInnerWidth < 1300
+                ? 3
+                : 4
             }
           >
             {price?.Followers?.plans.map((item, index) => (

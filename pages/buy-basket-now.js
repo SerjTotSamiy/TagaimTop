@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import styles from "../styles/BuyInstagramLikes.module.sass";
 import { ButtonComponent } from "../component/ButtonComponent/ButtonComponent";
@@ -13,8 +14,16 @@ const BuyBasketNow = () => {
       <Head>
         <title>Tagiamtop | Terms of Service</title>
 
-        <meta name="url" property="og:url" content="https://likes.io/buy-basket-now" />
-        <meta name="title" property="og:title" content="Checkout - Tag I am Top" />
+        <meta
+          name="url"
+          property="og:url"
+          content="https://likes.io/buy-basket-now"
+        />
+        <meta
+          name="title"
+          property="og:title"
+          content="Checkout - Tag I am Top"
+        />
         <meta name="twitter:title" content="Checkout - Tag I am Top" />
         <meta
           name="description"
@@ -30,7 +39,7 @@ const BuyBasketNow = () => {
       </Head>
       <div className={styles.header_banner_full}>
         <div className={`container ${styles.header_banner_inst}`}>
-          <img src="/buybasketfull.svg" />
+          <img src="/buybasketfull.svg" alt="" />
           <p className={styles.header_title_full}>Basket</p>
           <div
             style={{
@@ -43,7 +52,7 @@ const BuyBasketNow = () => {
             }}
           >
             <div style={{ marginTop: 35 }}>
-              <img src="/basketheart.svg" />
+              <img src="/basketheart.svg" alt="" />
               <p style={{ fontWeight: "600px", fontSize: 18 }}>100</p>
             </div>
           </div>

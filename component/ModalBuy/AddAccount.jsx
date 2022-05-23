@@ -1,8 +1,8 @@
 import React, {useContext, useState} from 'react';
 import styles from "./ModalBuy.module.sass";
 import {ButtonComponent} from "../ButtonComponent/ButtonComponent";
+import { Icon } from "../Icon/Icon";
 import {MeContext} from "../../pages/_app";
-import CheckIcon from '@mui/icons-material/Check';
 import {DotLoader} from "react-spinners";
 const AddAccount = ({setOpen,amount,autoLike, setPageActive, userInfo, setActivePost, activePost, count, service,sendOrder, type, setType,setLoading,isLoading,errorMessage}) => {
 
@@ -109,34 +109,40 @@ const AddAccount = ({setOpen,amount,autoLike, setPageActive, userInfo, setActive
                 <div className={styles.account_item} onClick={()=>setChoose({...choose,impressions: !choose["impressions"] })}>
                         <span style={{display: 'flex', alignItems: 'center'}}>
                             <div className={styles.account_check}>
-                                {choose["impressions"]&&<CheckIcon  style={{color:'green'}}/>}
+                                {choose["impressions"] 
+                                    && <Icon type="check" width="24px" height="24px" color='green' />
+                                }
                             </div>
                          <p>+ 500 Impressoins</p>
 
                     </span>
                     <p style={{color:'red'}}>+ $5.4</p>
-                    <img src="/info.svg" style={{width: '22px', height: '22px'}} />
+                    <Icon type="info" width="22px" height="22px" />
                 </div>
                 <div className={styles.account_item} onClick={()=>setChoose({...choose,reach:!choose["reach"]  })}>
                         <span style={{display: 'flex', alignItems: 'center'}}>
                             <div className={styles.account_check}>
-                                 {choose["reach"]&&<CheckIcon  style={{color:'green'}}/>}
+                                {choose["reach"]
+                                    && <Icon type="check" width="24px" height="24px" color='green' /> 
+                                }
                             </div>
                          <p>+ 500 Reach</p>
                     </span>
                     <p style={{color:'red'}}>+ $5.4</p>
-                    <img src="/info.svg"  style={{width: '22px', height: '22px'}}/>
+                    <Icon type="info" width="22px" height="22px" />
                 </div>
                 <div className={styles.account_item} onClick={()=>setChoose({...choose,saves: !choose["saves"]})}>
                         <span style={{display: 'flex', alignItems: 'center'}}>
                             <div className={styles.account_check}>
-                                 {choose["saves"]&&<CheckIcon   style={{color:'green'}}/>}
+                                {choose["saves"]
+                                   && <Icon type="check" width="24px" height="24px" color='green' />
+                                }
                             </div>
                          <p>+ 100 Saves</p>
 
                     </span>
                     <p style={{color:'red'}}>+ $5.4</p>
-                    <img src="/info.svg" style={{width: '22px', height: '22px'}} />
+                    <Icon type="info" width="22px" height="22px" />
                 </div>
             </div>
             <p style={{color:'red',textAlign:'center'}}>{errorMessage}</p>

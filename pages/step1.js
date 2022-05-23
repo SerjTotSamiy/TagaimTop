@@ -6,10 +6,9 @@ import useAxios from "../hooks/useAxios";
 import {MeContext} from "./_app";
 import {Accordion, AccordionDetails, AccordionSummary, Modal} from "@mui/material";
 import styles from "../component/ModalBuy/ModalBuy.module.sass";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Icon } from "../component/Icon/Icon";
 import homeStyles from "../styles/Home.module.sass";
 import loginStyles from "../styles/Login.module.sass";
-import CheckIcon from "@mui/icons-material/Check";
 import {ButtonComponent} from "../component/ButtonComponent/ButtonComponent";
 import ChildModal1 from "../component/ModalBuy/ChildModal1";
 import AddAccount from "../component/ModalBuy/AddAccount";
@@ -158,7 +157,7 @@ const Step1 = () => {
                                 <AccordionSummary
                                     aria-controls="panel1a-content"
                                     id="panel1a-header"
-                                    expandIcon={<ExpandMoreIcon/>}
+                                    expandIcon={<Icon type="expandmore" width="24px" height="24px" />}
                                     className={homeStyles.question_div}>
                                     <div className={loginStyles.input_container}
                                           style={{width: "100%", borderColor: 'transparent',padding: "20px 20px 20px 60px"}}>
@@ -213,7 +212,7 @@ const Step1 = () => {
                                     justifyContent: 'center'
                                 }}
                                       onClick={() => setSendCheck(!sendCheck)}
-                                >{sendCheck && <CheckIcon style={{fontSize: 20}}/>} </div>
+                                >{sendCheck && <Icon type="check" width="20px" height="20px" />} </div>
                                 <p>Send me special promotions and discounts</p></div>
                         </div>
 

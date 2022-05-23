@@ -123,10 +123,9 @@ const Step1 = () => {
         }
       }
       const res = axios.post(
-        `${
-          query.priceValue === "0.00"
-            ? "/create_test_order_v2.php"
-            : "/create_order_v2.php"
+        `${query.priceValue === "0.00"
+          ? "/create_test_order_v2.php"
+          : "/create_order_v2.php"
         }`,
         data
       );
@@ -296,7 +295,10 @@ const Step1 = () => {
                 <input
                   className={loginStyles.inputLogin}
                   placeholder="Username"
+                  minLength={3}
+                  maxLength={15}
                   value={userName}
+                  required={true}
                   onChange={(e) => setUserName((prev) => e.target.value)}
                 />
                 <img src="/login.svg" alt="" />
@@ -309,6 +311,8 @@ const Step1 = () => {
               <div className={loginStyles.input_container}>
                 <input
                   className={loginStyles.inputLogin}
+                  required={true}
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                   placeholder="Email"
                   value={userEmail}
                   onChange={(e) => setUserEmail((prev) => e.target.value)}

@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import styles from "../../styles/Home.module.sass";
 import { generalQuestions } from "../../questions/Questions";
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-} from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { Icon } from "../Icon/Icon";
 
 const GeneralQuestions = ({ title, bg }) => {

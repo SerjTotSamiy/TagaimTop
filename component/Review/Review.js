@@ -9,7 +9,7 @@ const Review = ({ service }) => {
 
   const [name, setName] = useState("");
   const [textComment, setTextComment] = useState("");
-  const [stare, setStare] = useState("");
+  const [stare, setStare] = useState(0);
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
@@ -55,7 +55,7 @@ const Review = ({ service }) => {
       >
         <p>Rate it</p>
         <ReactStars
-          value={stare}
+          value={Number(stare)}
           count={5}
           size={40}
           onChange={(e) => setStare(e)}

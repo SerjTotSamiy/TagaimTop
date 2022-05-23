@@ -7,7 +7,6 @@ import BuyLikes from "../component/BuyLikes/BuyLikes";
 import InfoBlock from "../component/InfoBlock/InfoBlock";
 import Comment from "../component/Comment/Comment";
 import Review from "../component/Review/Review";
-import ReactStars from "react-stars";
 import { useRouter } from "next/router";
 import ModalBuy from "../component/ModalBuy/ModalBuy";
 import { PageTitle } from "../component/PageTitle/PageTitle";

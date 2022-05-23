@@ -24,7 +24,7 @@ const Comment = ({ avatar, bg, border, name, star, text }) => {
             <img src={avatar} alt="" />
             <span> {name} </span>
             <ReactStars
-              value={star}
+              value={Number(star)}
               count={5}
               size={24}
               edit={false}
@@ -35,7 +35,7 @@ const Comment = ({ avatar, bg, border, name, star, text }) => {
           <div className={styles.commentRate}>
             <span> {name} </span>
             <ReactStars
-              value={star}
+              value={Number(star)}
               count={5}
               size={24}
               edit={false}

@@ -5,11 +5,7 @@ import styles from "./AmbientBlock.module.sass";
 const AmbientBlock = ({reverse, text, buttons, img}) => {
     const [windowInnerWidth, setWindowInnerWidth] = useState(false);
     useEffect(() => {
-        if (window){
-            setWindowInnerWidth(window.innerWidth)
-            console.log(windowInnerWidth)
-        }
-
+        if (window) setWindowInnerWidth(window.innerWidth)
     }, [])
     // style={{flexDirection:reverse?'row-reverse':'row' }}
     return (

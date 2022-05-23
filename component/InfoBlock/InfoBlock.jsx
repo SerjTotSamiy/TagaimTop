@@ -4,11 +4,7 @@ import styles from '/styles/Home.module.sass'
 const InfoBlock = ({reverse, text, buttons, img,fade,alt}) => {
     const [windowInnerWidth, setWindowInnerWidth] = useState(false);
     useEffect(() => {
-        if (window){
-            setWindowInnerWidth(window.innerWidth)
-            console.log(windowInnerWidth)
-        }
-
+        if (window) setWindowInnerWidth(window.innerWidth)
     }, [])
 
     return (

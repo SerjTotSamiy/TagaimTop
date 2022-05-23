@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import styles from "./ModalBuy.module.sass";
 import loginStyles from "../../styles/Login.module.sass";

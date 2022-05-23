@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React, { useContext, useEffect, useState } from "react";
 import {
   Box,

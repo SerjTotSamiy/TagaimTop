@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @next/next/no-img-element */
 import React, { useContext, useEffect, useState } from "react";
 import { Layer } from "../component/Layer/Layer";
 import { useRouter } from "next/router";
@@ -58,6 +56,7 @@ const Step2 = () => {
               style={{ filter: `${isSkeleton ? "blur(8px)" : "blur(0px)"}` }}
               src="/closegrey.svg"
               onClick={() => router.push(url)}
+              alt=""
             />
             {query.autoLike ? (
               <p
@@ -83,7 +82,7 @@ const Step2 = () => {
                 filter: `${isSkeleton ? "blur(8px)" : "blur(0px)"}`,
               }}
             >
-              <img className={styles.line} src="/modalline.svg" />
+              <img className={styles.line} src="/modalline.svg" alt="" />
               <p
                 className={styles.modalBuy_stage}
                 style={{ backgroundColor: "#E64652" }}
@@ -127,7 +126,7 @@ const Step2 = () => {
               >
                 <span style={{ display: "flex", alignItems: "center" }}>
                   <div className={styles.account_check} />
-                  <img src={userInfo?.avatar} />
+                  <img src={userInfo?.avatar} alt="" />
                 </span>
               </div>
             </div>

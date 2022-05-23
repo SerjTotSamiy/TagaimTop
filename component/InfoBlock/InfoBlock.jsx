@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
 import styles from "/styles/Home.module.sass";
 

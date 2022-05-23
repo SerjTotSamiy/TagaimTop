@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React, { useContext, useMemo, useState, useEffect } from "react";
 import styles from "../../styles/BuyInstagramLikes.module.sass";
 import { ButtonComponent } from "../ButtonComponent/ButtonComponent";

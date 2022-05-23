@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable jsx-a11y/alt-text */
 import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import useAxios from "../hooks/useAxios";
@@ -188,6 +186,7 @@ const Step1 = () => {
               className={styles.close}
               src="/closegrey.svg"
               onClick={() => router.push(url)}
+              alt=""
             />
             {query.autoLike ? (
               <p className={styles.modalBuy_title}>Only 3 Steps</p>
@@ -205,7 +204,7 @@ const Step1 = () => {
                 justifyContent: "center",
               }}
             >
-              <img className={styles.line} src="/modalline.svg" />
+              <img className={styles.line} src="/modalline.svg" alt="" />
               <p
                 className={styles.modalBuy_stage}
                 style={{ backgroundColor: "#E64652" }}
@@ -382,7 +381,7 @@ const Step1 = () => {
                     borderStyle: "solid",
                   }}
                 >
-                  <img src="/q&a.png" width={65} />
+                  <img src="/q&a.png" width={65} alt="" />
                 </div>
                 <p
                   style={{
@@ -436,7 +435,7 @@ const Step1 = () => {
                       justifyContent: "center",
                     }}
                   >
-                    <img src="/icon.png" width={45} />
+                    <img src="/icon.png" width={45} alt="" />
                   </div>
                 </div>
               </div>
@@ -451,7 +450,7 @@ const Step1 = () => {
                     borderStyle: "solid",
                   }}
                 >
-                  <img src="/q&a.png" width={65} />
+                  <img src="/q&a.png" width={65} alt="" />
                 </div>
                 <p
                   style={{
@@ -507,7 +506,7 @@ const Step1 = () => {
                       justifyContent: "center",
                     }}
                   >
-                    <img src="/icon.png" width={45} />
+                    <img src="/icon.png" width={45} alt="" />
                   </div>
                 </div>
               </div>

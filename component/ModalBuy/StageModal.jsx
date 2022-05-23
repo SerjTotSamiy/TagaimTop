@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import styles from "./ModalBuy.module.sass";
 import { ButtonComponent } from "../ButtonComponent/ButtonComponent";

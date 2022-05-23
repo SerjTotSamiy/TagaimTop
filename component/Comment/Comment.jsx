@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import ReactStars from "react-stars";
 import styles from "./Comment.module.sass";

@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React, { useContext, useEffect, useState } from "react";
 import { Layer } from "../component/Layer/Layer";
 import styles from "../styles/BuyInstagramLikes.module.sass";
@@ -94,7 +93,7 @@ const BuyInstagramFollowers = ({ text }) => {
       )}
       <div className={styles.header_banner}>
         <p className={styles.header_title}>
-          buy Instagram Followers <img src="/like.svg" />
+          buy Instagram Followers <img src="/like.svg" alt="" />
         </p>
         <p className={styles.header_text}>
           At tagiamtop, you can buy Instagram likes quickly, safely and easily

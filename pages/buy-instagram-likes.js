@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
 import { Layer } from "../component/Layer/Layer";
 import styles from "/styles/BuyInstagramLikes.module.sass";

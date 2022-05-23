@@ -132,7 +132,17 @@ const Step2 = () => {
               </div>
             </div>
 
-            <a style={{ filter: `${isSkeleton ? "blur(8px)" : "blur(0px)"}` }}>
+            <a
+              style={{ filter: `${isSkeleton ? "blur(8px)" : "blur(0px)"}` }}
+              onClick={() =>
+                router.push({
+                  pathname: `/step1`,
+                  query: {
+                    service: "Likes",
+                  },
+                })
+              }
+            >
               Add new one
             </a>
           </div>

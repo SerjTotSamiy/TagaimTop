@@ -221,14 +221,28 @@ const Step3 = (props) => {
                           opacity: 10,
                         }}
                       >
-                        <img src="/check.svg" className={styles.postCheck} alt="" />
+                        <img
+                          src="/check.svg"
+                          className={styles.postCheck}
+                          alt=""
+                        />
                         <p className={styles.postChosenHeart}>
                           {query.service === "Likes" ? (
                             <img src="/heart.svg" alt="" />
                           ) : query.service === "Followers" ? (
-                            <img src="/repost.svg" width={30} height={30} alt="" />
+                            <img
+                              src="/repost.svg"
+                              width={30}
+                              height={30}
+                              alt=""
+                            />
                           ) : query.service === "Views" ? (
-                            <img src="/view.svg" width={30} height={30} alt="" />
+                            <img
+                              src="/view.svg"
+                              width={30}
+                              height={30}
+                              alt=""
+                            />
                           ) : (
                             query.service === "Comments" && (
                               <img
@@ -313,7 +327,8 @@ const Step3 = (props) => {
                 </span>
                 <p style={{ color: "red" }}>+ $5.4</p>
                 <img
-                  src="/info.svg" alt=""
+                  src="/info.svg"
+                  alt=""
                   style={{ width: "22px", height: "22px" }}
                 />
               </div>
@@ -338,7 +353,8 @@ const Step3 = (props) => {
                 </span>
                 <p style={{ color: "red" }}>+ $5.4</p>
                 <img
-                  src="/info.svg" alt=""
+                  src="/info.svg"
+                  alt=""
                   style={{ width: "22px", height: "22px" }}
                 />
               </div>
@@ -363,7 +379,8 @@ const Step3 = (props) => {
                 </span>
                 <p style={{ color: "red" }}>+ $5.4</p>
                 <img
-                  src="/info.svg" alt=""
+                  src="/info.svg"
+                  alt=""
                   style={{ width: "22px", height: "22px" }}
                 />
               </div>

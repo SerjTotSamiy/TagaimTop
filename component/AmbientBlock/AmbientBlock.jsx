@@ -12,7 +12,7 @@ const AmbientBlock = ({ reverse, text, buttons, img }) => {
     <div className={styles.ambientBlock}>
       <div>
         {text}
-        <img src={img} align="left" width={300} alt=""/>
+        <img src={img} align="left" width={300} alt="" />
         <span className={styles.ambient_buttons}>{buttons}</span>
       </div>
     </div>

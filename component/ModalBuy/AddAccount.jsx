@@ -148,12 +148,21 @@ const AddAccount = ({
                         opacity: 10,
                       }}
                     >
-                      <img src="/check.svg" className={styles.postCheck} alt="" />
+                      <img
+                        src="/check.svg"
+                        className={styles.postCheck}
+                        alt=""
+                      />
                       <p className={styles.postChosenHeart}>
                         {service === "Likes" ? (
                           <img src="/heart.svg" alt="" />
                         ) : service === "Followers" ? (
-                          <img src="/repost.svg" width={30} height={30} alt="" />
+                          <img
+                            src="/repost.svg"
+                            width={30}
+                            height={30}
+                            alt=""
+                          />
                         ) : service === "Views" ? (
                           <img src="/view.svg" width={30} height={30} alt="" />
                         ) : (

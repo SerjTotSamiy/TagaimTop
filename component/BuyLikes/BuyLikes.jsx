@@ -5,19 +5,15 @@ import ModalBuy from "../ModalBuy/ModalBuy";
 import {MeContext} from "../../pages/_app";
 
 const BuyLikes = ({first, last, likes, price, banner, text, autoLike, onClick, bgArray, index,id}) => {
-
-
     // useEffect(() => {
-    //     console.log(index)
     //     if (!Object.keys(bgArray).includes(index)) {
     //        bgArray = Object.fromEntries(
     //             // преобразовать в массив, затем map, затем fromEntries обратно объект
     //             Object.entries(bgArray).map(([key, value]) => [parseInt(key)+4, value ])
     //         );
-    //
     //     }
-    //
     // }, [])
+
     const bg={
         0: "/pricebg1.webp",
         1: "/pricebg2.webp",

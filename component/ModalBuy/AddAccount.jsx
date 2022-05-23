@@ -31,7 +31,6 @@ const AddAccount = ({setOpen,amount,autoLike, setPageActive, userInfo, setActive
             height: 75
         }
     })
-    console.log('type', type)
     const deleteActivePost=(index)=>{
         const newPost=activePost.filter(post=>post!==index)
         setActivePost(newPost)

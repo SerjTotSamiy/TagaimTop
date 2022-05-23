@@ -6,7 +6,7 @@ import { Modal} from "@mui/material";
 import {MeContext} from "./_app";
 import styles from "../component/ModalBuy/ModalBuy.module.sass";
 import {ButtonComponent} from "../component/ButtonComponent/ButtonComponent";
-import CheckIcon from "@mui/icons-material/Check";
+import { Icon } from "../component/Icon/Icon";
 import {DotLoader} from "react-spinners";
 import {useRouter} from "next/router";
 import useAxios from "../hooks/useAxios";
@@ -166,7 +166,9 @@ const Step3 = (props) => {
                             <div className={styles.account_item} onClick={()=>setChoose({...choose,impressions: !choose["impressions"] })}>
                         <span style={{display: 'flex', alignItems: 'center'}}>
                             <div className={styles.account_check}>
-                                {choose["impressions"]&&<CheckIcon  style={{color:'green'}}/>}
+                                {choose["impressions"]
+                                    && <Icon type="check" width="24px" height="24px" color="green" />
+                                }
                             </div>
                          <p>+ 500 Impressoins</p>
 
@@ -177,7 +179,9 @@ const Step3 = (props) => {
                             <div className={styles.account_item} onClick={()=>setChoose({...choose,reach:!choose["reach"]  })}>
                         <span style={{display: 'flex', alignItems: 'center'}}>
                             <div className={styles.account_check}>
-                                 {choose["reach"]&&<CheckIcon  style={{color:'green'}}/>}
+                                 {choose["reach"]
+                                    && <Icon type="check" width="24px" height="24px" color="green" />
+                                }
                             </div>
                          <p>+ 500 Reach</p>
                     </span>
@@ -187,7 +191,9 @@ const Step3 = (props) => {
                             <div className={styles.account_item} onClick={()=>setChoose({...choose,saves: !choose["saves"]})}>
                         <span style={{display: 'flex', alignItems: 'center'}}>
                             <div className={styles.account_check}>
-                                 {choose["saves"]&&<CheckIcon   style={{color:'green'}}/>}
+                                 {choose["saves"]
+                                    && <Icon type="check" width="24px" height="24px" color="green" />
+                                }
                             </div>
                          <p>+ 100 Saves</p>
 

@@ -23,8 +23,7 @@ import Stage3 from "./Stage3";
 import useAxios from "../../hooks/useAxios";
 import {MeContext} from "../../pages/_app";
 import {BarLoader, CircleLoader, ClipLoader, DotLoader, PulseLoader, RingLoader} from "react-spinners";
-import CheckIcon from '@mui/icons-material/Check';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Icon from "../Icon/Icon";
 
 const ModalBuy = ({
                       open,
@@ -167,7 +166,7 @@ const ModalBuy = ({
                             <AccordionSummary
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
-                                expandIcon={<ExpandMoreIcon/>}
+                                expandIcon={<Icon type="expandmore" width="24px" height="24px" />}
                                 className={homeStyles.question_div}
 
                             >
@@ -224,7 +223,7 @@ const ModalBuy = ({
                                 justifyContent: 'center'
                             }}
                                  onClick={() => setSendCheck(!sendCheck)}
-                            >{sendCheck && <CheckIcon style={{fontSize: 20}}/>} </div>
+                            >{sendCheck && <Icon type="check" width="20px" height="20px" />} </div>
                             <p>Send me special promotions and discounts</p></div>
                     </div>
 

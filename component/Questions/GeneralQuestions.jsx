@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import styles from "../../styles/Home.module.sass";
-import {billingQuestions, generalQuestions} from "../../questions/Questions";
+import {generalQuestions} from "../../questions/Questions";
 import {Accordion, AccordionDetails, AccordionSummary, Typography} from "@mui/material";
-import RemoveIcon from "@mui/icons-material/Remove";
-import AddIcon from "@mui/icons-material/Add";
+import { Icon } from "../Icon/Icon";
 
 const GeneralQuestions = ({ title,bg}) => {
     const [activePost,setActivePost]=useState([])
@@ -23,12 +22,15 @@ const GeneralQuestions = ({ title,bg}) => {
             <div className={styles.question_div_data}>
                 {generalQuestions.map((item, index) => {
                     return (
-                        <Accordion    style={{borderRadius:10,marginBottom:10,maxWidth:"990px",width:"100%"}}  >
+                        <Accordion key={index} style={{borderRadius:10,marginBottom:10,maxWidth:"990px",width:"100%"}}  >
                             <AccordionSummary
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                                 className={styles.question_div}
-                                expandIcon={activePost.includes(item.index)?<RemoveIcon/>:<AddIcon/>}
+                                expandIcon={activePost.includes(item.index)
+                                    ?<Icon type="remove" width="24px" height="24px" />
+                                    :<Icon type="add" width="24px" height="24px" />
+                                }
                                 onClick={()=>{
                                     activePost.includes(item.index)?
                                         deleteActivePost(item.index):

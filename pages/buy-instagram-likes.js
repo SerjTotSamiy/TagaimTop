@@ -78,9 +78,11 @@ const BuyInstagramLikes = ({ text }) => {
     slidesToScroll: 1,
   };
   const [open, setOpen] = useState(false);
+
   useEffect(() => {
     if (window) setWindowInnerWidth(window.innerWidth);
     getComment();
+    window.addEventListener("resize", () => setWindowInnerWidth(window.innerWidth))
   }, []);
   let ref1 = useRef();
   let ref2 = useRef();

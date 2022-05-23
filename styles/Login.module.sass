@@ -4,14 +4,17 @@
     border-radius: 5px
     padding: 20px 20px 20px 90px
     border-color: transparent
+    outline-color: transparent
     font-size: 16px
     font-weight: 400
     width: 100%
     height: 75px
-    &:focus
-      outline-color: rgba(61, 41, 119, 1)
   .inputLogin::placeholder
     color: #272D4D42
+  .inputLogin:invalid
+    border: 2px dashed rgba(61, 41, 119, 1)
+  .inputLogin:valid
+    outline-color: rgba(61, 41, 119, 1)
 
   img
     position: absolute
@@ -54,10 +57,12 @@
   color: black
   display: flex
   flex-direction: row
-  gap: 30px
+  gap: 20px
   justify-content: space-between
-  padding: 5px
+  padding: 8px
   cursor: pointer
   &:hover
-    color: #25125c
+    color: #312164
+    background-color: #ebe9f5
+    border-radius: 10px
     //border-bottom: 2px solid #272D4D42

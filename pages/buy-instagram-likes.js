@@ -143,7 +143,7 @@ const BuyInstagramLikes = ({ text }) => {
             className={styles.header_arrow}
             src="/arrow-detail.svg"
             alt="header_arrow"
-            onClick={() => window.scrollTo(0, document.body.scrollHeight)}
+            onClick={() => window.scrollTo(0, 500)}
           />
         </div>
         {open && (

@@ -210,7 +210,7 @@ const BuyInstagramFollowers = ({ text }) => {
 
         <div style={{ height: "100px" }} />
 
-        <div data-aos="fade-up" data-aos-duration="1500" data-aos-offset="300">
+        <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="300">
           <TextComponent
             title={text[1].title}
             text={
@@ -226,7 +226,7 @@ const BuyInstagramFollowers = ({ text }) => {
           />
         </div>
 
-        <div data-aos="fade-up" data-aos-duration="1500" data-aos-offset="500">
+        <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="500">
           <InfoBlock
             text={
               <div>
@@ -248,7 +248,7 @@ const BuyInstagramFollowers = ({ text }) => {
             reverse={false}
           />
         </div>
-        <div data-aos="fade-up" data-aos-duration="1500" data-aos-offset="500">
+        <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="500">
           <TextComponent
             title={text[3].title}
             text={

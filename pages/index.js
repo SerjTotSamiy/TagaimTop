@@ -171,7 +171,7 @@ export default function Home() {
 
             <div
               data-aos="fade-up"
-              data-aos-duration="1500"
+              data-aos-duration="500"
               data-aos-offset="600"
             >
               <InfoBlock
@@ -214,7 +214,7 @@ export default function Home() {
             </div>
             <div
               data-aos="fade-up"
-              data-aos-duration="200"
+              data-aos-duration="500"
               data-aos-offset="700"
             >
               <InfoBlock
@@ -247,7 +247,7 @@ export default function Home() {
             </div>
             <div
               data-aos="fade-up"
-              data-aos-duration="1500"
+              data-aos-duration="500"
               data-aos-offset="1000"
             >
               <InfoBlock
@@ -280,7 +280,7 @@ export default function Home() {
             </div>
             <div
               data-aos="fade-up"
-              data-aos-duration="1500"
+              data-aos-duration="500"
               data-aos-offset="1200"
             >
               <InfoBlock

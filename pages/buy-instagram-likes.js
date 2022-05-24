@@ -209,7 +209,7 @@ const BuyInstagramLikes = ({ text }) => {
           </div>
           <div
             data-aos="fade-up"
-            data-aos-duration="1500"
+            data-aos-duration="500"
             data-aos-offset="600"
           >
             <InfoBlock
@@ -235,7 +235,7 @@ const BuyInstagramLikes = ({ text }) => {
           </div>
           <div
             data-aos="fade-up"
-            data-aos-duration="1500"
+            data-aos-duration="500"
             data-aos-offset="600"
           >
             <InfoBlock
@@ -298,7 +298,7 @@ const BuyInstagramLikes = ({ text }) => {
           <div className={"container"}>
             <div
               data-aos="fade-up"
-              data-aos-duration="1500"
+              data-aos-duration="500"
               data-aos-offset="1400"
             >
               <InfoBlock
@@ -329,7 +329,7 @@ const BuyInstagramLikes = ({ text }) => {
             </div>
             <div
               data-aos="fade-up"
-              data-aos-duration="1500"
+              data-aos-duration="500"
               data-aos-offset="1600"
             >
               <InfoBlock

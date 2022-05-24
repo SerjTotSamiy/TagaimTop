@@ -170,7 +170,7 @@ const BuyInstagramLikes = ({ text }) => {
               wrapAround={true}
               scrollMode="remainder"
               slidesToShow={
-                windowInnerWidth < 610
+                windowInnerWidth < 690
                   ? 1
                   : windowInnerWidth < 1000
                   ? 2

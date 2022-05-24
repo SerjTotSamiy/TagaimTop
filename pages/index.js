@@ -214,7 +214,7 @@ export default function Home() {
             </div>
             <div
               data-aos="fade-up"
-              data-aos-duration="500"
+              data-aos-duration="200"
               data-aos-offset="700"
             >
               <InfoBlock

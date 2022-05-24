@@ -33,12 +33,12 @@ export const Footer = () => {
             Buy Instagram Views
           </span>
           <span onClick={() => router.push("/buy-instagram-comments")}>
-            Buy Instagram Сomments
+            Buy Instagram Comments
           </span>
         </div>
 
         <div className={styles.info}>
-          <span onClick={() => router.push("/contact")}>Сontact</span>
+          <span onClick={() => router.push("/contact")}>Contact</span>
           <span onClick={() => router.push("/support")}>Support</span>
           <span onClick={() => router.push("/terms")}>Terms</span>
         </div>

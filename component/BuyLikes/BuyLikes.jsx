@@ -20,7 +20,6 @@ const BuyLikes = ({
   // useEffect(() => {
   //     if (!Object.keys(bgArray).includes(index)) {
   //        bgArray = Object.fromEntries(
-  //             // преобразовать в массив, затем map, затем fromEntries обратно объект
   //             Object.entries(bgArray).map(([key, value]) => [parseInt(key)+4, value ])
   //         );
   //     }

@@ -17,13 +17,6 @@ const BuyLikes = ({
   index,
   id,
 }) => {
-  // useEffect(() => {
-  //     if (!Object.keys(bgArray).includes(index)) {
-  //        bgArray = Object.fromEntries(
-  //             Object.entries(bgArray).map(([key, value]) => [parseInt(key)+4, value ])
-  //         );
-  //     }
-  // }, [])
 
   const bg = {
     0: "/pricebg1.webp",

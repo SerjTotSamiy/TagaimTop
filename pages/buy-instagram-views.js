@@ -15,7 +15,6 @@ import useAxios from "../hooks/useAxios";
 import Head from "next/head";
 import ModalBuy from "../component/ModalBuy/ModalBuy";
 
-/* eslint-disable */
 const BuyInstagramViews = ({ text }) => {
   const axios = useAxios();
   const router = useRouter();
@@ -98,7 +97,7 @@ const BuyInstagramViews = ({ text }) => {
       )}
       <div className={styles.header_banner}>
         <p className={styles.header_title}>
-          Buy Instagram Views <img src="/like.svg" />
+          Buy Instagram Views <img src="/like.svg" alt="" />
         </p>
         <p className={styles.header_text}>
           At TagIamTop, you can buy Instagram likes quickly, safely and easily
@@ -132,6 +131,7 @@ const BuyInstagramViews = ({ text }) => {
           >
             {price?.Views?.plans.map((item, index) => (
               <BuyLikes
+                key={index}
                 likes={item.count}
                 price={item.price}
                 banner="/buylikesbanner.png"

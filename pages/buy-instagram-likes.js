@@ -207,11 +207,7 @@ const BuyInstagramLikes = ({ text }) => {
               ))}
             </Carousel>
           </div>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="500"
-            data-aos-offset="600"
-          >
+          <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="600">
             <InfoBlock
               text={
                 <p>
@@ -233,11 +229,7 @@ const BuyInstagramLikes = ({ text }) => {
               fade={true}
             />
           </div>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="500"
-            data-aos-offset="600"
-          >
+          <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="600">
             <InfoBlock
               text={
                 <p>

@@ -74,6 +74,7 @@ const Support = () => {
                   ? "generalknowledgefocus.svg"
                   : "generalknowledge.svg"
               }
+              alt=""
             />
             <p>General Knowledge</p>
           </p>
@@ -89,7 +90,10 @@ const Support = () => {
               setButton({ genKnowledge: false, account: false, billing: true });
             }}
           >
-            <img src={button.billing ? "billingfocus.svg" : "billing.svg"} />
+            <img
+              src={button.billing ? "billingfocus.svg" : "billing.svg"}
+              alt=""
+            />
             <p>Billing Questions</p>
           </p>
         </div>

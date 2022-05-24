@@ -105,7 +105,7 @@ const BuyInstagramViews = ({ text }) => {
         <img
           className={styles.header_arrow}
           src="/arrow-detail.svg"
-          onClick={() => window.scrollTo(0, 500)}
+          onClick={() => window.scrollTo(0, 450)}
           alt=""
         />
       </div>
@@ -191,7 +191,7 @@ const BuyInstagramViews = ({ text }) => {
           </div>
           <Review service={"Views"} />
         </div>
-        <div data-aos="fade-up" data-aos-duration="2000" data-aos-offset="600">
+        <div data-aos="fade-up" data-aos-duration="1000" data-aos-offset="400">
           <InfoBlock
             text={
               <p style={{ marginBottom: 30, padding: 20 }}>
@@ -210,7 +210,7 @@ const BuyInstagramViews = ({ text }) => {
             fade={true}
           />
         </div>
-        <div data-aos="fade-up" data-aos-duration="2000" data-aos-offset="600">
+        <div data-aos="fade-up" data-aos-duration="1000" data-aos-offset="500">
           <InfoBlock
             text={
               <p style={{ marginBottom: 30, padding: 20 }}>
@@ -238,7 +238,7 @@ const BuyInstagramViews = ({ text }) => {
             reverse={true}
           />
         </div>
-        <div data-aos="fade-up" data-aos-duration="2000" data-aos-offset="600">
+        <div data-aos="fade-up" data-aos-duration="1000" data-aos-offset="600">
           <TextComponent
             text={
               <p
@@ -251,7 +251,7 @@ const BuyInstagramViews = ({ text }) => {
             title={<p className={styles1.info_title}>{text[2].title}</p>}
           />
         </div>
-        <div data-aos="fade-up" data-aos-duration="2000" data-aos-offset="700">
+        <div data-aos="fade-up" data-aos-duration="1000" data-aos-offset="600">
           <TextComponent
             text={
               <div className={styles1.textColumns}>

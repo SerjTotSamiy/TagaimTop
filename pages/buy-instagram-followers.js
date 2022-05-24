@@ -103,7 +103,7 @@ const BuyInstagramFollowers = ({ text }) => {
         <img
           className={styles.header_arrow}
           src="/arrow-detail.svg"
-          onClick={() => window.scrollTo(0, 500)}
+          onClick={() => window.scrollTo(0, 450)}
           alt=""
         />
       </div>

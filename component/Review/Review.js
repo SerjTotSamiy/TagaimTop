@@ -74,8 +74,8 @@ const Review = ({ service }) => {
           onChange={(e) => setTextComment((prev) => e.target.value)}
         />
       </div>
-      <p style={{ color: "red", textAlign: "center" }}>{errorMessage}</p>
-      <p style={{ color: "green", textAlign: "center" }}>{successMessage}</p>
+      {errorMessage && <p style={{ color: "red", textAlign: "center" }}>{errorMessage}</p>}
+      {successMessage && <p style={{ color: "green", textAlign: "center" }}>{successMessage}</p>}
       <ButtonComponent typeInput="submit" text="Post a review" type="fill" />
     </form>
   );

@@ -49,7 +49,7 @@ export const Header = ({ firstPage }) => {
       </Link>
       <Link href={"/buy-instagram-comments"}>
         <span className={`${firstPage ? styles.white : styles.link}`}>
-          Buy Instagram Сomments
+          Buy Instagram Comments
         </span>
       </Link>
 
@@ -64,7 +64,7 @@ export const Header = ({ firstPage }) => {
           <span className={styles.mobile_span}>Buy Instagram Views</span>
         </Link>
         <Link href={"/buy-instagram-comments"}>
-          <span className={styles.mobile_span}>Buy Instagram Сomments</span>
+          <span className={styles.mobile_span}>Buy Instagram Comments</span>
         </Link>
       </div>
     </div>

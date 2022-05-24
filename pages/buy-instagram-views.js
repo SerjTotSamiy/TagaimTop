@@ -43,6 +43,9 @@ const BuyInstagramViews = ({ text }) => {
   useEffect(() => {
     if (window) setWindowInnerWidth(window?.innerWidth);
     getComment();
+    window.addEventListener("resize", () =>
+      setWindowInnerWidth(window.innerWidth)
+    );
   }, []);
   const [buyType, setBuyType] = useState("");
   return (

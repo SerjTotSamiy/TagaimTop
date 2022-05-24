@@ -41,7 +41,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Tagiamtop</title>
+        <title>TagIamTop</title>
 
         <meta name="url" property="og:url" content="https://tagiamtop.com" />
         <meta
@@ -98,7 +98,7 @@ export default function Home() {
                   </h1>
                   <h2>
                     Real followers, real engagement, real growth. All with
-                    tagiamtop
+                    TagIamTop
                   </h2>
                   <div>
                     <ButtonComponent

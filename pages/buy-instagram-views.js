@@ -48,7 +48,7 @@ const BuyInstagramViews = ({ text }) => {
   return (
     <Layer firstPage={false}>
       <Head>
-        <title>Tagiamtop</title>
+        <title>TagIamTop</title>
 
         <meta
           name="url"
@@ -98,7 +98,7 @@ const BuyInstagramViews = ({ text }) => {
           Buy Instagram Views <img src="/like.svg" />
         </p>
         <p className={styles.header_text}>
-          At tagiamtop, you can buy Instagram likes quickly, safely and easily
+          At TagIamTop, you can buy Instagram likes quickly, safely and easily
           with just a few clicks. See our deals below!
         </p>
 

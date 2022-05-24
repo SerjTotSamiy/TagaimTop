@@ -46,7 +46,7 @@ const BuyInstagramFollowers = ({ text }) => {
   return (
     <Layer firstPage={false}>
       <Head>
-        <title>Tagiamtop</title>
+        <title>TagIamTop</title>
 
         <meta
           name="url"
@@ -96,7 +96,7 @@ const BuyInstagramFollowers = ({ text }) => {
           buy Instagram Followers <img src="/like.svg" alt="" />
         </p>
         <p className={styles.header_text}>
-          At tagiamtop, you can buy Instagram likes quickly, safely and easily
+          At TagIamTop, you can buy Instagram likes quickly, safely and easily
           with just a few clicks. See our deals below!
         </p>
 
@@ -275,7 +275,7 @@ export async function getStaticProps({ params }) {
             "customers say about our Instagram followers below",
         },
         {
-          title: "What’s the quality of tagiamtop followers?",
+          title: "What’s the quality of TagIamTop followers?",
           content:
             "It's one thing to get\n" +
             "                                   thousands of new\n" +
@@ -284,7 +284,7 @@ export async function getStaticProps({ params }) {
             "                                   This is the primary difference between high-quality Instagram followers and cheap or\n" +
             "                                   low-quality\n" +
             "                                   followers.\n" +
-            "                                   Here at tagiamtop, we don’t even bother with low-quality followers. These followers have\n" +
+            "                                   Here at TagIamTop, we don’t even bother with low-quality followers. These followers have\n" +
             "                                   very low\n" +
             "                                   engagement with the platform and are often booted off Instagram after a couple of\n" +
             "                                   weeks.\n" +
@@ -325,9 +325,9 @@ export async function getStaticProps({ params }) {
             "soon).",
         },
         {
-          title: "Why choose tagiamtop?",
+          title: "Why choose TagIamTop?",
           content:
-            " Tagiamtop was created by a team of social media" +
+            " TagIamTop was created by a team of social media" +
             "experts with over 12 years of experience on social media platforms. We’re constantly testing and" +
             "improving our process to stay one step ahead of the competition." +
             "We're constantly running tests within the Instagram ecosystem. This allows us to find the optimal" +

@@ -49,7 +49,7 @@ const BuyInstagramComments = ({ text }) => {
   return (
     <Layer firstPage={false}>
       <Head>
-        <title>Tagiamtop</title>
+        <title>TagIamTop</title>
 
         <meta
           name="url"
@@ -99,7 +99,7 @@ const BuyInstagramComments = ({ text }) => {
           Comments <img src="/like.svg" />
         </p>
         <p className={styles.header_text}>
-          At tagiamtop, you can buy Instagram likes quickly, safely and easily
+          At TagIamTop, you can buy Instagram likes quickly, safely and easily
           with just a few clicks. See our deals below!
         </p>
 

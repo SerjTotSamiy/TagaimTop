@@ -22,7 +22,7 @@ const Support = () => {
   return (
     <Layer firstPage={false}>
       <Head>
-        <title>Tagiamtop | Support</title>
+        <title>TagIamTop | Support</title>
 
         <meta name="url" property="og:url" content="https://tagiamtop.com" />
         <meta
@@ -46,7 +46,7 @@ const Support = () => {
       <div className={styles.header_banner}>
         <p className={styles.header_title}>Frequently Asked Questions</p>
         <p className={styles.header_text}>
-          Have a different question about how tagiamtop works or the pricing
+          Have a different question about how TagIamTop works or the pricing
           plans available? Get in touch with one of our specialists.
         </p>
 

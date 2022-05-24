@@ -11,7 +11,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <title>VitrinaBrands</title>
+        <title>TagIamTop</title>
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link

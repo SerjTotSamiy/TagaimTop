@@ -73,7 +73,7 @@ const Contact = () => {
   return (
     <Layer firstPage={false}>
       <Head>
-        <title>Tagiamtop | Contact</title>
+        <title>TagIamTop | Contact</title>
 
         <meta name="url" property="og:url" content="https://likes.io/contact" />
         <meta

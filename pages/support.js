@@ -22,7 +22,7 @@ const Support = () => {
   return (
     <Layer firstPage={false}>
       <Head>
-        <title>Tagiamtop | Support</title>
+        <title>TagIamTop | Support</title>
 
         <meta name="url" property="og:url" content="https://tagiamtop.com" />
         <meta
@@ -46,7 +46,7 @@ const Support = () => {
       <div className={styles.header_banner}>
         <p className={styles.header_title}>Frequently Asked Questions</p>
         <p className={styles.header_text}>
-          Have a different question about how tagiamtop works or the pricing
+          Have a different question about how TagIamTop works or the pricing
           plans available? Get in touch with one of our specialists.
         </p>
 
@@ -74,6 +74,7 @@ const Support = () => {
                   ? "generalknowledgefocus.svg"
                   : "generalknowledge.svg"
               }
+              alt=""
             />
             <p>General Knowledge</p>
           </p>
@@ -89,7 +90,10 @@ const Support = () => {
               setButton({ genKnowledge: false, account: false, billing: true });
             }}
           >
-            <img src={button.billing ? "billingfocus.svg" : "billing.svg"} />
+            <img
+              src={button.billing ? "billingfocus.svg" : "billing.svg"}
+              alt=""
+            />
             <p>Billing Questions</p>
           </p>
         </div>

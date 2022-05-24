@@ -34,7 +34,7 @@ const Blog = () => {
   return (
     <Layer firstPage={false}>
       <Head>
-        <title>Tagiamtop | Blog</title>
+        <title>TagIamTop | Blog</title>
 
         <meta name="url" property="og:url" content="https://likes.io/blog" />
         <meta name="title" property="og:title" content="Blog - Tag I am Top" />
@@ -57,7 +57,7 @@ const Blog = () => {
           Blog <img src="/buyfollowerfull.svg" width={50} height={40} />
         </p>
         <p className={styles.header_text}>
-          At tagiamtop, you can buy Instagram likes quickly, safely and easily
+          At TagIamTop, you can buy Instagram likes quickly, safely and easily
           with just a few clicks. See our deals below!
         </p>
 

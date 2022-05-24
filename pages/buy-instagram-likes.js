@@ -91,7 +91,7 @@ const BuyInstagramLikes = ({ text }) => {
     <>
       {" "}
       <NextHead>
-        <title>Tagiamtop</title>
+        <title>TagIamTop</title>
 
         <meta
           name="url"
@@ -135,7 +135,7 @@ const BuyInstagramLikes = ({ text }) => {
             />
           </p>
           <p className={styles.header_text}>
-            At tagiamtop, you can buy Instagram likes quickly, safely and easily
+            At TagIamTop, you can buy Instagram likes quickly, safely and easily
             with just a few clicks. See our deals below!
           </p>
 
@@ -207,11 +207,7 @@ const BuyInstagramLikes = ({ text }) => {
               ))}
             </Carousel>
           </div>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1500"
-            data-aos-offset="600"
-          >
+          <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="600">
             <InfoBlock
               text={
                 <p>
@@ -233,11 +229,7 @@ const BuyInstagramLikes = ({ text }) => {
               fade={true}
             />
           </div>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1500"
-            data-aos-offset="600"
-          >
+          <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="600">
             <InfoBlock
               text={
                 <p>
@@ -298,7 +290,7 @@ const BuyInstagramLikes = ({ text }) => {
           <div className={"container"}>
             <div
               data-aos="fade-up"
-              data-aos-duration="1500"
+              data-aos-duration="500"
               data-aos-offset="1400"
             >
               <InfoBlock
@@ -329,7 +321,7 @@ const BuyInstagramLikes = ({ text }) => {
             </div>
             <div
               data-aos="fade-up"
-              data-aos-duration="1500"
+              data-aos-duration="500"
               data-aos-offset="1600"
             >
               <InfoBlock
@@ -527,7 +519,7 @@ export async function getStaticProps({ params }) {
             "connect directly to your desired market and demographic.",
         },
         {
-          title: "Why should I choose tagiamtop?",
+          title: "Why should I choose TagIamTop?",
           content:
             "With our long-term commitment to understanding and working with\n" +
             "Instagram, we bring expertise and high-quality service to every user.\n" +

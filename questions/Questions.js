@@ -104,7 +104,7 @@ export const generalQuestions = [
   },
   {
     question:
-      "Is There a Way to Cancel the Followers That I Purchased from Tagiamtop",
+      "Is There a Way to Cancel the Followers That I Purchased from TagIamTop",
     answer:
       "All of the followers we provide you are real Instagram users. This means that we can’t transfer or remove them. If there are some individual accounts you wish to remove from your follower list, you can block them one by one.",
     index: 12,
@@ -183,7 +183,7 @@ export const frequentQuestions = [
     index: 2,
   },
   {
-    question: "Is it safe to use tagiamtop?",
+    question: "Is it safe to use TagIamTop?",
     isOpen: false,
     answer:
       "We’ve created the safest and most stable growth platform possible, but automation does have some risks. Any type of third-party use on Instagram can risk blocks and bans, but it’s not common at all. We’ve never had an account get banned.\n" +

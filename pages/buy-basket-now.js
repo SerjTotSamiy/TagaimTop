@@ -11,7 +11,7 @@ const BuyBasketNow = () => {
   return (
     <Layer firstPage={false}>
       <Head>
-        <title>Tagiamtop | Terms of Service</title>
+        <title>TagIamTop | Terms of Service</title>
 
         <meta
           name="url"

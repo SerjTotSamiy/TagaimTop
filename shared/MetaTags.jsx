@@ -14,7 +14,7 @@ const MetaTags = () => (
       name="google-site-verification"
       content="oxb8vz7MsAwxDNG7gbs5_RfYolWa5a9UITEh9d1CQKE"
     />
-    <meta name="site_name" property="og:site_name" content="Tagiamtop" />
+    <meta name="site_name" property="og:site_name" content="TagIamTop" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@StormlikesN" />
   </>

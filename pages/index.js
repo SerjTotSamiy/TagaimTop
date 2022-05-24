@@ -41,7 +41,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Tagiamtop</title>
+        <title>TagIamTop</title>
 
         <meta name="url" property="og:url" content="https://tagiamtop.com" />
         <meta
@@ -98,7 +98,7 @@ export default function Home() {
                   </h1>
                   <h2>
                     Real followers, real engagement, real growth. All with
-                    tagiamtop
+                    TagIamTop
                   </h2>
                   <div>
                     <ButtonComponent
@@ -171,7 +171,7 @@ export default function Home() {
 
             <div
               data-aos="fade-up"
-              data-aos-duration="1500"
+              data-aos-duration="500"
               data-aos-offset="600"
             >
               <InfoBlock
@@ -214,7 +214,7 @@ export default function Home() {
             </div>
             <div
               data-aos="fade-up"
-              data-aos-duration="200"
+              data-aos-duration="500"
               data-aos-offset="700"
             >
               <InfoBlock
@@ -247,7 +247,7 @@ export default function Home() {
             </div>
             <div
               data-aos="fade-up"
-              data-aos-duration="1500"
+              data-aos-duration="500"
               data-aos-offset="1000"
             >
               <InfoBlock
@@ -280,7 +280,7 @@ export default function Home() {
             </div>
             <div
               data-aos="fade-up"
-              data-aos-duration="1500"
+              data-aos-duration="500"
               data-aos-offset="1200"
             >
               <InfoBlock

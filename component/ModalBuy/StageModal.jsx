@@ -8,7 +8,6 @@ const StageModal = ({ stage, setOpen, open }) => {
       <div className={styles.stageModal} style={{ padding: 0, gap: 0 }}>
         <div className={styles.stageModal_container}>
           <img src={`/stagebanner.png`} width="100%" height="100%" alt="" />
-          {/*<img src={`/${stage}stagesLeft.png`} className={styles.stageModal_number}/>*/}
 
           <p className={styles.stageModal_number}>
             {stage}

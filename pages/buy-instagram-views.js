@@ -15,7 +15,6 @@ import useAxios from "../hooks/useAxios";
 import Head from "next/head";
 import ModalBuy from "../component/ModalBuy/ModalBuy";
 
-/* eslint-disable */
 const BuyInstagramViews = ({ text }) => {
   const axios = useAxios();
   const router = useRouter();
@@ -51,7 +50,7 @@ const BuyInstagramViews = ({ text }) => {
   return (
     <Layer firstPage={false}>
       <Head>
-        <title>Tagiamtop</title>
+        <title>TagIamTop</title>
 
         <meta
           name="url"
@@ -98,10 +97,10 @@ const BuyInstagramViews = ({ text }) => {
       )}
       <div className={styles.header_banner}>
         <p className={styles.header_title}>
-          Buy Instagram Views <img src="/like.svg" />
+          Buy Instagram Views <img src="/like.svg" alt="" />
         </p>
         <p className={styles.header_text}>
-          At tagiamtop, you can buy Instagram likes quickly, safely and easily
+          At TagIamTop, you can buy Instagram likes quickly, safely and easily
           with just a few clicks. See our deals below!
         </p>
 
@@ -132,6 +131,7 @@ const BuyInstagramViews = ({ text }) => {
           >
             {price?.Views?.plans.map((item, index) => (
               <BuyLikes
+                key={index}
                 likes={item.count}
                 price={item.price}
                 banner="/buylikesbanner.png"
@@ -194,7 +194,7 @@ const BuyInstagramViews = ({ text }) => {
           </div>
           <Review service={"Views"} />
         </div>
-        <div data-aos="fade-up" data-aos-duration="1000" data-aos-offset="400">
+        <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="400">
           <InfoBlock
             text={
               <p style={{ marginBottom: 30, padding: 20 }}>
@@ -213,7 +213,7 @@ const BuyInstagramViews = ({ text }) => {
             fade={true}
           />
         </div>
-        <div data-aos="fade-up" data-aos-duration="1000" data-aos-offset="500">
+        <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="500">
           <InfoBlock
             text={
               <p style={{ marginBottom: 30, padding: 20 }}>
@@ -241,7 +241,7 @@ const BuyInstagramViews = ({ text }) => {
             reverse={true}
           />
         </div>
-        <div data-aos="fade-up" data-aos-duration="1000" data-aos-offset="600">
+        <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="600">
           <TextComponent
             text={
               <p
@@ -254,7 +254,7 @@ const BuyInstagramViews = ({ text }) => {
             title={<p className={styles1.info_title}>{text[2].title}</p>}
           />
         </div>
-        <div data-aos="fade-up" data-aos-duration="1000" data-aos-offset="600">
+        <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="600">
           <TextComponent
             text={
               <div className={styles1.textColumns}>

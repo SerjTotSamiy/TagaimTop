@@ -52,7 +52,7 @@ const BuyInstagramComments = ({ text }) => {
   return (
     <Layer firstPage={false}>
       <Head>
-        <title>Tagiamtop</title>
+        <title>TagIamTop</title>
 
         <meta
           name="url"
@@ -102,7 +102,7 @@ const BuyInstagramComments = ({ text }) => {
           Comments <img src="/like.svg" />
         </p>
         <p className={styles.header_text}>
-          At tagiamtop, you can buy Instagram likes quickly, safely and easily
+          At TagIamTop, you can buy Instagram likes quickly, safely and easily
           with just a few clicks. See our deals below!
         </p>
 
@@ -192,7 +192,7 @@ const BuyInstagramComments = ({ text }) => {
             <Review service={"Comments"} />
           </div>
         </div>
-        <div data-aos="fade-up" data-aos-duration="200" data-aos-offset="400">
+        <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="400">
           <InfoBlock
             text={
               <p style={{ marginBottom: 30, padding: 20 }}>
@@ -220,7 +220,7 @@ const BuyInstagramComments = ({ text }) => {
             fade={true}
           />
         </div>
-        <div data-aos="fade-up" data-aos-duration="2000" data-aos-offset="500">
+        <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="500">
           <InfoBlock
             text={
               <p style={{ marginBottom: 30, padding: 20 }}>
@@ -242,7 +242,7 @@ const BuyInstagramComments = ({ text }) => {
             reverse={true}
           />
         </div>
-        <div data-aos="fade-up" data-aos-duration="2000" data-aos-offset="500">
+        <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="500">
           <TextComponent
             title={<p className={styles1.info_title}>{text[2].title}</p>}
             text={
@@ -255,7 +255,7 @@ const BuyInstagramComments = ({ text }) => {
             }
           />
         </div>
-        <div data-aos="fade-up" data-aos-duration="2000" data-aos-offset="600">
+        <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="600">
           <TextComponent
             title={<p className={styles1.info_title}>{text[3].title}</p>}
             text={
@@ -266,7 +266,7 @@ const BuyInstagramComments = ({ text }) => {
           />
         </div>
 
-        <div data-aos="fade-up" data-aos-duration="2000" data-aos-offset="700">
+        <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="700">
           <InfoBlock
             text={
               <p style={{ marginLeft: 60, marginBottom: 30 }}>

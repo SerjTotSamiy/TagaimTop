@@ -61,7 +61,7 @@ function MyApp({ Component, pageProps }) {
           setUrl,
         }}
       >
-        {price?.Comments ? <Component {...pageProps} /> : <div></div>}
+        <Component {...pageProps} />
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link rel="shortcut icon" href="/icon.ico" />
       </MeContext.Provider>

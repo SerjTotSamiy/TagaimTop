@@ -33,7 +33,12 @@ const Step4 = () => {
 
   return (
     <Layer firstPage={false}>
-      <Modal open={true}>
+      <Modal open={true} onClose={() => {
+        // setOpen(false)
+        router.push({
+          pathname: url
+        })
+      }}>
         <div className={styles.modalBuy_container}>
           {isSkeleton && <ModalSceleton />}
           <p

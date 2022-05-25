@@ -37,7 +37,12 @@ const Step2 = () => {
 
   return (
     <Layer firstPage={false}>
-      <Modal open={true}>
+      <Modal open={true} onClose={() => {
+        // setOpen(false)
+        router.push({
+          pathname: url
+        })
+      }}>
         {!userInfo ? (
           <p>Loading...</p>
         ) : (

@@ -403,7 +403,7 @@ const Step3 = (props) => {
                 }}
               />
 
-              <img src="/basket.svg" alt="" />
+              {/* <img src="/basket.svg" alt="" /> */}
             </div>
           </div>
         </div>

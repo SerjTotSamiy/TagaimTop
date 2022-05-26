@@ -108,7 +108,9 @@ const Step4 = () => {
                 <div
                   key={item?.url_to_pay}
                   className={styles.payment_block}
-                  onClick={() => router.push(item?.url_to_pay)}
+                  onClick={() => {
+                    if (item?.url_to_pay) router.push(item?.url_to_pay)
+                  }}
                 >
                   <img
                     src={payType[item?.name]}
@@ -129,7 +131,7 @@ const Step4 = () => {
                         justifyContent: "space-between",
                       }}
                     >
-                      <p style={{ color: "#00831D" }}>
+                      <p style={{ color: (item?.url_to_pay) ? "#00831D" : "#666" }}>
                         + {allInfo?.sym_b}
                         {item?.price_local}
                         {!allInfo?.sym_b ? allInfo?.sym_a : ""}

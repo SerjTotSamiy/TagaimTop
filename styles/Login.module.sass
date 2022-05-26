@@ -2,8 +2,8 @@
   position: relative
   .inputLogin
     border-radius: 5px
+    border: 1px solid lightgrey
     padding: 20px 20px 20px 90px
-    border-color: transparent
     outline: 1px solid transparent
     font-size: 16px
     font-weight: 400
@@ -11,13 +11,8 @@
     height: 75px
   .inputLogin::placeholder
     color: #272D4D42
-  .inputLogin:invalid
-    outline-color: red
   .inputLogin:focus
-    outline-width: 2px
-    outline-color: rgba(61, 41, 119, 1)
-  .inputLogin:valid
-    outline-color: green
+    border-color: rgba(61, 41, 119, 1) !important
 
   img
     position: absolute

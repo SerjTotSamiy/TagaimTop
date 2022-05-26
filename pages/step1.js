@@ -46,12 +46,19 @@ const Step1 = () => {
   const [counts, setCounts] = useState(0);
   const [priceValue, setPriceValue] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [isSkeleton, setIsSkeleton] = useState(true);
 
   useEffect(() => {
     setPriceValue(query.priceValue);
     setCounts(query.counts);
   }, []);
+
+  useEffect(() => {
+    if (!!errorMessage && !!userName && !!userEmail) {
+      setErrorMessage("")
+    }
+  }, [userName, userEmail]);
 
   useEffect(() => {
     const delay = setTimeout(() => {
@@ -61,7 +68,11 @@ const Step1 = () => {
   }, []);
 
   const getPosts = async () => {
-    if (!userName || !userEmail) return setError(true);
+    if (!userName || !userEmail) {
+      setErrorMessage("Don't leave empty fields")
+      return setError(true);
+    }
+    setErrorMessage("")
     if (query.service === "Followers") {
       await sendOrder();
     }
@@ -121,10 +132,9 @@ const Step1 = () => {
         }
       }
       const res = axios.post(
-        `${
-          query.priceValue === "0.00"
-            ? "/create_test_order_v2.php"
-            : "/create_order_v2.php"
+        `${query.priceValue === "0.00"
+          ? "/create_test_order_v2.php"
+          : "/create_order_v2.php"
         }`,
         data
       );
@@ -159,7 +169,12 @@ const Step1 = () => {
 
   return (
     <Layer firstPage={false}>
-      <Modal open={true}>
+      <Modal open={true} onClose={() => {
+        setOpen(false)
+        router.push({
+          pathname: url
+        })
+      }}>
         <div
           className={styles.modalBuy_container}
           style={{
@@ -227,6 +242,7 @@ const Step1 = () => {
             <div style={{ width: "100%" }}>
               <p style={{ marginBottom: 10 }}>Number Instagram Likes</p>
               <Accordion
+                expanded={isExpanded}
                 sx={{
                   border: `1px solid #272D4D42`,
                   "&:not(:last-child)": {
@@ -235,6 +251,7 @@ const Step1 = () => {
                 }}
               >
                 <AccordionSummary
+                  onClick={() => {setIsExpanded((prev) => !prev)}}
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                   expandIcon={
@@ -277,6 +294,7 @@ const Step1 = () => {
                         onClick={() => {
                           setCounts(tarif.count);
                           setPriceValue(tarif.price);
+                          setIsExpanded(false)
                         }}
                       >
                         <p>
@@ -294,6 +312,7 @@ const Step1 = () => {
               <div className={loginStyles.input_container}>
                 <input
                   className={loginStyles.inputLogin}
+                  style={{ borderColor: (errorMessage !== '' && !userName) ? "red" : 'rgba(119, 119, 119, 1)' }}
                   placeholder="Username"
                   minLength={3}
                   maxLength={15}
@@ -310,6 +329,7 @@ const Step1 = () => {
               <p style={{ marginBottom: 10 }}>Your email</p>
               <div className={loginStyles.input_container}>
                 <input
+                  style={{ borderColor: (errorMessage !== '' && !userEmail) ? "red" : 'rgba(119, 119, 119, 1)' }}
                   className={loginStyles.inputLogin}
                   required={true}
                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
@@ -320,7 +340,7 @@ const Step1 = () => {
                 <img src="/mail.svg" alt="" />
                 <div />
               </div>
-              <div
+              {/* <div
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -345,7 +365,7 @@ const Step1 = () => {
                   )}{" "}
                 </div>
                 <p>Send me special promotions and discounts</p>
-              </div>
+              </div> */}
             </div>
 
             <p style={{ color: "red", textAlign: "center" }}>{errorMessage}</p>

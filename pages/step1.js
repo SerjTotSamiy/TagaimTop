@@ -298,6 +298,7 @@ const Step1 = () => {
               <div className={loginStyles.input_container}>
                 <input
                   className={loginStyles.inputLogin}
+                  style={{ borderColor: errorMessage !== '' ? "red" : 'rgba(61, 41, 119, 1)' }}
                   placeholder="Username"
                   minLength={3}
                   maxLength={15}
@@ -314,6 +315,7 @@ const Step1 = () => {
               <p style={{ marginBottom: 10 }}>Your email</p>
               <div className={loginStyles.input_container}>
                 <input
+                  style={{ borderColor: errorMessage !== '' ? "red" : 'rgba(61, 41, 119, 1)' }}
                   className={loginStyles.inputLogin}
                   required={true}
                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"

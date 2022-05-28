@@ -37,12 +37,15 @@ const Step2 = () => {
 
   return (
     <Layer firstPage={false}>
-      <Modal open={true} onClose={() => {
-        // setOpen(false)
-        router.push({
-          pathname: url
-        })
-      }}>
+      <Modal
+        open={true}
+        onClose={() => {
+          // setOpen(false)
+          router.push({
+            pathname: url,
+          });
+        }}
+      >
         {!userInfo ? (
           <p>Loading...</p>
         ) : (
@@ -112,27 +115,33 @@ const Step2 = () => {
               className={styles.postList}
               style={{ filter: `${isSkeleton ? "blur(8px)" : "blur(0px)"}` }}
             >
-              <div
-                className={styles.account_item}
-                onClick={() =>
-                  router.push({
-                    pathname: "/step3",
-                    query: {
-                      autoLike: false,
-                      counts: query.counts,
-                      priceValue: query.priceValue,
-                      userEmail: query.userEmail,
-                      userInfo: userInfo,
-                      service: query.service,
-                      userName: query.userName,
-                    },
-                  })
-                }
-              >
-                <span style={{ display: "flex", alignItems: "center" }}>
-                  <div className={styles.account_check} />
-                  <img src={userInfo?.avatar} alt="" />
-                </span>
+              <div className={styles.account_item}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    cursor: "pointer",
+                  }}
+                  onClick={() =>
+                    router.push({
+                      pathname: "/step3",
+                      query: {
+                        autoLike: false,
+                        counts: query.counts,
+                        priceValue: query.priceValue,
+                        userEmail: query.userEmail,
+                        userInfo: userInfo,
+                        service: query.service,
+                        userName: query.userName,
+                      },
+                    })
+                  }
+                >
+                  <div className={styles.account_img}>
+                    <img src={userInfo?.avatar} alt="" />
+                  </div>
+                  <span className={styles.account_title}>{query.userName}</span>
+                </div>
               </div>
             </div>
 

@@ -17,7 +17,6 @@ const BuyLikes = ({
   index,
   id,
 }) => {
-
   const bg = {
     0: "/pricebg1.webp",
     1: "/pricebg2.webp",

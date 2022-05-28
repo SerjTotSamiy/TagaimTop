@@ -33,12 +33,15 @@ const Step4 = () => {
 
   return (
     <Layer firstPage={false}>
-      <Modal open={true} onClose={() => {
-        // setOpen(false)
-        router.push({
-          pathname: url
-        })
-      }}>
+      <Modal
+        open={true}
+        onClose={() => {
+          // setOpen(false)
+          router.push({
+            pathname: url,
+          });
+        }}
+      >
         <div className={styles.modalBuy_container}>
           {isSkeleton && <ModalSceleton />}
           <p
@@ -109,7 +112,7 @@ const Step4 = () => {
                   key={item?.url_to_pay}
                   className={styles.payment_block}
                   onClick={() => {
-                    if (item?.url_to_pay) router.push(item?.url_to_pay)
+                    if (item?.url_to_pay) router.push(item?.url_to_pay);
                   }}
                 >
                   <img
@@ -131,7 +134,9 @@ const Step4 = () => {
                         justifyContent: "space-between",
                       }}
                     >
-                      <p style={{ color: (item?.url_to_pay) ? "#00831D" : "#666" }}>
+                      <p
+                        style={{ color: item?.url_to_pay ? "#00831D" : "#666" }}
+                      >
                         + {allInfo?.sym_b}
                         {item?.price_local}
                         {!allInfo?.sym_b ? allInfo?.sym_a : ""}

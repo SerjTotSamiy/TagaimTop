@@ -121,12 +121,15 @@ const Step3 = (props) => {
   };
   return (
     <Layer firstPage={false}>
-      <Modal open={true} onClose={() => {
-        // setOpen(false)
-        router.push({
-          pathname: url
-        })
-      }}>
+      <Modal
+        open={true}
+        onClose={() => {
+          // setOpen(false)
+          router.push({
+            pathname: url,
+          });
+        }}
+      >
         <div
           className={styles.modalBuy_container}
           style={{
@@ -328,7 +331,7 @@ const Step3 = (props) => {
                       />
                     )}
                   </div>
-                  <p>+ 500 Impressoins</p>
+                  <p>+ 500 Impressions</p>
                 </span>
                 <p style={{ color: "red" }}>+ $5.4</p>
                 <img

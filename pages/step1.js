@@ -56,7 +56,7 @@ const Step1 = () => {
 
   useEffect(() => {
     if (!!errorMessage && !!userName && !!userEmail) {
-      setErrorMessage("")
+      setErrorMessage("");
     }
   }, [userName, userEmail]);
 
@@ -69,10 +69,10 @@ const Step1 = () => {
 
   const getPosts = async () => {
     if (!userName || !userEmail) {
-      setErrorMessage("Don't leave empty fields")
+      setErrorMessage("Don't leave empty fields");
       return setError(true);
     }
-    setErrorMessage("")
+    setErrorMessage("");
     if (query.service === "Followers") {
       await sendOrder();
     }
@@ -132,9 +132,10 @@ const Step1 = () => {
         }
       }
       const res = axios.post(
-        `${query.priceValue === "0.00"
-          ? "/create_test_order_v2.php"
-          : "/create_order_v2.php"
+        `${
+          query.priceValue === "0.00"
+            ? "/create_test_order_v2.php"
+            : "/create_order_v2.php"
         }`,
         data
       );
@@ -169,12 +170,15 @@ const Step1 = () => {
 
   return (
     <Layer firstPage={false}>
-      <Modal open={true} onClose={() => {
-        setOpen(false)
-        router.push({
-          pathname: url
-        })
-      }}>
+      <Modal
+        open={true}
+        onClose={() => {
+          setOpen(false);
+          router.push({
+            pathname: url,
+          });
+        }}
+      >
         <div
           className={styles.modalBuy_container}
           style={{
@@ -251,7 +255,9 @@ const Step1 = () => {
                 }}
               >
                 <AccordionSummary
-                  onClick={() => {setIsExpanded((prev) => !prev)}}
+                  onClick={() => {
+                    setIsExpanded((prev) => !prev);
+                  }}
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                   expandIcon={
@@ -294,7 +300,7 @@ const Step1 = () => {
                         onClick={() => {
                           setCounts(tarif.count);
                           setPriceValue(tarif.price);
-                          setIsExpanded(false)
+                          setIsExpanded(false);
                         }}
                       >
                         <p>
@@ -312,7 +318,12 @@ const Step1 = () => {
               <div className={loginStyles.input_container}>
                 <input
                   className={loginStyles.inputLogin}
-                  style={{ borderColor: (errorMessage !== '' && !userName) ? "red" : 'rgba(119, 119, 119, 1)' }}
+                  style={{
+                    borderColor:
+                      errorMessage !== "" && !userName
+                        ? "red"
+                        : "rgba(119, 119, 119, 1)",
+                  }}
                   placeholder="Username"
                   minLength={3}
                   maxLength={15}
@@ -329,7 +340,12 @@ const Step1 = () => {
               <p style={{ marginBottom: 10 }}>Your email</p>
               <div className={loginStyles.input_container}>
                 <input
-                  style={{ borderColor: (errorMessage !== '' && !userEmail) ? "red" : 'rgba(119, 119, 119, 1)' }}
+                  style={{
+                    borderColor:
+                      errorMessage !== "" && !userEmail
+                        ? "red"
+                        : "rgba(119, 119, 119, 1)",
+                  }}
                   className={loginStyles.inputLogin}
                   required={true}
                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"

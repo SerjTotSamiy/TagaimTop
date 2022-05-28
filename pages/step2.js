@@ -34,15 +34,17 @@ const Step2 = () => {
     }, 1200);
     return () => clearTimeout(delay);
   }, []);
-
   return (
     <Layer firstPage={false}>
-      <Modal open={true} onClose={() => {
-        // setOpen(false)
-        router.push({
-          pathname: url
-        })
-      }}>
+      <Modal
+        open={true}
+        onClose={() => {
+          // setOpen(false)
+          router.push({
+            pathname: url,
+          });
+        }}
+      >
         {!userInfo ? (
           <p>Loading...</p>
         ) : (
@@ -75,7 +77,7 @@ const Step2 = () => {
                 className={styles.modalBuy_title}
                 style={{ filter: `${isSkeleton ? "blur(8px)" : "blur(0px)"}` }}
               >
-                Choose account
+                Check account
               </p>
             )}
             <span
@@ -90,13 +92,13 @@ const Step2 = () => {
               <img className={styles.line} src="/modalline.svg" alt="" />
               <p
                 className={styles.modalBuy_stage}
-                style={{ backgroundColor: "#E64652" }}
+                style={{ backgroundColor: "#F0F0F0", color: "black" }}
               >
                 1
               </p>
               <p
                 className={styles.modalBuy_stage}
-                style={{ backgroundColor: "#F0F0F0", color: "black" }}
+                style={{ backgroundColor: "#E64652" }}
               >
                 2
               </p>
@@ -112,27 +114,34 @@ const Step2 = () => {
               className={styles.postList}
               style={{ filter: `${isSkeleton ? "blur(8px)" : "blur(0px)"}` }}
             >
-              <div
-                className={styles.account_item}
-                onClick={() =>
-                  router.push({
-                    pathname: "/step3",
-                    query: {
-                      autoLike: false,
-                      counts: query.counts,
-                      priceValue: query.priceValue,
-                      userEmail: query.userEmail,
-                      userInfo: userInfo,
-                      service: query.service,
-                      userName: query.userName,
-                    },
-                  })
-                }
-              >
-                <span style={{ display: "flex", alignItems: "center" }}>
-                  <div className={styles.account_check} />
-                  <img src={userInfo?.avatar} alt="" />
-                </span>
+              <div className={styles.account_item}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    cursor: "pointer",
+                  }}
+                  onClick={() =>
+                    router.push({
+                      pathname: "/step3",
+                      query: {
+                        autoLike: false,
+                        counts: query.counts,
+                        priceValue: query.priceValue,
+                        userEmail: query.userEmail,
+                        userInfo: userInfo,
+                        service: query.service,
+                        userName: query.userName,
+                      },
+                    })
+                  }
+                >
+                  <div className={styles.account_img}>
+                    <img style={{ "boxShadow": "0 0 10px 1px #8c66fa" }} src={userInfo?.avatar} alt="" />
+                  </div>
+                  <span className={styles.account_title}>{query.userName}</span>
+                </div>
+                <div style={{"padding": "30px"}}>Click on avatar to continue</div>
               </div>
             </div>
 
@@ -147,7 +156,7 @@ const Step2 = () => {
                 })
               }
             >
-              Add new one
+              Change account
             </a>
           </div>
         )}

@@ -86,14 +86,27 @@
     width: 100px
     height: 100px
     object-fit: contain
+  p
+    white-space: nowrap
 .account_check
   display: flex
   border-radius: 5px
-  width: 50px
-  height: 50px
+  border: 1px solid transparent
+  width: 40px
+  height: 40px
+  margin-right: 5px
   background-color: #F0F0F0
   justify-content: center
   align-items: center
+  cursor: pointer
+  &:hover
+    border-color: #8C66FA
+.account_img
+  border-radius: 5px
+  aspect-ratio: 1
+  overflow: hidden
+.account_title
+  padding-left: 8px
 .account_green
   background-color: #00831D1A
   color: #00831D

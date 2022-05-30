@@ -45,6 +45,8 @@ export const Footer = () => {
 
         <div className={styles.info}>
           <span onClick={() => router.push("/blog")}>Blog</span>
+          <span onClick={() => router.push("https://www.commercegate.com/")}>CommerceGate is our Payment Facilitator</span>
+          <span onClick={() => router.push("https://www.cgbilling.com/secure")}>CommerceGate billing support</span>
         </div>
       </div>
     </div>

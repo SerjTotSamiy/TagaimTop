@@ -378,7 +378,7 @@ const BuyInstagramLikes = ({ text }) => {
                   <BuyLikes
                     key={item?.count}
                     likes={item?.count}
-                    price={item?.price}
+                    price={(item?.price * 0.8).toFixed(2)}
                     bgArray={bgArray}
                     index={index}
                     banner="/buylikesbanner2.png"

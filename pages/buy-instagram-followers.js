@@ -136,10 +136,10 @@ const BuyInstagramFollowers = ({ text }) => {
               windowInnerWidth < 690
                 ? 1
                 : windowInnerWidth < 1000
-                ? 2
-                : windowInnerWidth < 1300
-                ? 3
-                : 4
+                  ? 2
+                  : windowInnerWidth < 1300
+                    ? 3
+                    : 4
             }
           >
             {price?.Followers?.plans.map((item, index) => (
@@ -151,7 +151,7 @@ const BuyInstagramFollowers = ({ text }) => {
                 id={"FOLLO"}
                 index={index}
                 onClick={() => {
-                  setPriceValue((prev) => item?.price);
+                  setPriceValue((prev) => (item?.price * 0.8).toFixed(2));
                   setCounts((prev) => item?.count);
                   setUrl("buy-instagram-followers");
                   router.push({
@@ -159,7 +159,7 @@ const BuyInstagramFollowers = ({ text }) => {
                     query: {
                       service: "Followers",
                       counts: item?.count,
-                      priceValue: item?.price,
+                      priceValue: (item?.price * 0.8).toFixed(2),
                     },
                   });
 

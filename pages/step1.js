@@ -132,10 +132,9 @@ const Step1 = () => {
         }
       }
       const res = axios.post(
-        `${
-          query.priceValue === "0.00"
-            ? "/create_test_order_v2.php"
-            : "/create_order_v2.php"
+        `${query.priceValue === "0.00"
+          ? "/create_test_order_v2.php"
+          : "/create_order_v2.php"
         }`,
         data
       );
@@ -299,14 +298,14 @@ const Step1 = () => {
                         className={loginStyles.tarifP}
                         onClick={() => {
                           setCounts(tarif.count);
-                          setPriceValue(tarif.price);
+                          setPriceValue((tarif.price * 0.8).toFixed(2));
                           setIsExpanded(false);
                         }}
                       >
                         <p>
                           {tarif.count} Instagram {query.service}
                         </p>
-                        <p>{tarif?.price}$</p>
+                        <p>{(tarif?.price * 0.8).toFixed(2)}$</p>
                       </p>
                     ))}
                   </div>

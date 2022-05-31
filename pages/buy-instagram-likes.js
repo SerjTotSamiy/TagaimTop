@@ -173,10 +173,10 @@ const BuyInstagramLikes = ({ text }) => {
                 windowInnerWidth < 690
                   ? 1
                   : windowInnerWidth < 1000
-                  ? 2
-                  : windowInnerWidth < 1300
-                  ? 3
-                  : 4
+                    ? 2
+                    : windowInnerWidth < 1300
+                      ? 3
+                      : 4
               }
             >
               {price?.Likes?.plans.map((item, index) => (
@@ -368,10 +368,10 @@ const BuyInstagramLikes = ({ text }) => {
                   windowInnerWidth < 690
                     ? 1
                     : windowInnerWidth < 1000
-                    ? 2
-                    : windowInnerWidth < 1300
-                    ? 3
-                    : 4
+                      ? 2
+                      : windowInnerWidth < 1300
+                        ? 3
+                        : 4
                 }
               >
                 {price?.Likes?.plans.map((item, index) => (
@@ -385,7 +385,7 @@ const BuyInstagramLikes = ({ text }) => {
                     text="Instagram Auto-Likes"
                     id={"AUTOLIKES"}
                     onClick={() => {
-                      setPriceValue((prev) => item?.price);
+                      setPriceValue((prev) => (item?.price * 0.8).toFixed(2));
                       setCounts((prev) => item?.count);
                       setBuyType((prev) => "Likes");
                       setUrl("buy-instagram-likes");
@@ -394,7 +394,7 @@ const BuyInstagramLikes = ({ text }) => {
                         query: {
                           service: "Likes",
                           counts: item?.count,
-                          priceValue: item?.price,
+                          priceValue: (item?.price * 0.8).toFixed(2),
                         },
                       });
                     }}
@@ -414,10 +414,10 @@ const BuyInstagramLikes = ({ text }) => {
                   windowInnerWidth < 690
                     ? 1
                     : windowInnerWidth < 1000
-                    ? 2
-                    : windowInnerWidth < 1300
-                    ? 3
-                    : 4
+                      ? 2
+                      : windowInnerWidth < 1300
+                        ? 3
+                        : 4
                 }
               >
                 {price["Auto-Likes"]?.plans.map((item, index) => (

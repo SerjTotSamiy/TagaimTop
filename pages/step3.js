@@ -34,6 +34,7 @@ const Step3 = (props) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [activePost, setActivePost] = useState([]);
   const [isSkeleton, setIsSkeleton] = useState(true);
+  const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
     const delay = setTimeout(() => {
@@ -85,10 +86,9 @@ const Step3 = (props) => {
       }
 
       const res = axios.post(
-        `${
-          query.priceValue === "0.00"
-            ? "/create_test_order_v2.php"
-            : "/create_order_v2.php"
+        `${query.priceValue === "0.00"
+          ? "/create_test_order_v2.php"
+          : "/create_order_v2.php"
         }`,
         data
       );
@@ -200,9 +200,8 @@ const Step3 = (props) => {
                 return (
                   <div
                     key={index}
-                    className={`${styles.post} ${
-                      activePost.includes(post) ? styles.postChosen : ""
-                    }`}
+                    className={`${styles.post} ${activePost.includes(post) ? styles.postChosen : ""
+                      }`}
                     style={{
                       background: `url(${post.img})`,
                       width: 100,
@@ -214,8 +213,8 @@ const Step3 = (props) => {
                       activePost.includes(post)
                         ? deleteActivePost(post)
                         : activePost.length <= 9
-                        ? setActivePost((prev) => [...prev, post])
-                        : null
+                          ? setActivePost((prev) => [...prev, post])
+                          : null
                     }
                   >
                     {activePost.includes(post) && (
@@ -279,9 +278,9 @@ const Step3 = (props) => {
                 text={userInfo?.plan?.types?.t1?.name}
                 style={
                   style[
-                    userInfo?.plan?.types?.t1.name === type.name
-                      ? "fill"
-                      : "outline"
+                  userInfo?.plan?.types?.t1.name === type.name
+                    ? "fill"
+                    : "outline"
                   ]
                 }
                 type={
@@ -298,9 +297,9 @@ const Step3 = (props) => {
                 disabled={userInfo?.plan?.types?.t2?.name === "Custom"}
                 style={
                   style[
-                    userInfo?.plan?.types?.t2.name === type.name
-                      ? "fill"
-                      : "outline"
+                  userInfo?.plan?.types?.t2.name === type.name
+                    ? "fill"
+                    : "outline"
                   ]
                 }
                 type={
@@ -314,92 +313,125 @@ const Step3 = (props) => {
               />
             </div>
             <div className={styles.account_item_block}>
-              <div
-                className={styles.account_item}
-                onClick={() =>
-                  setChoose({ ...choose, impressions: !choose["impressions"] })
-                }
-              >
-                <span style={{ display: "flex", alignItems: "center" }}>
-                  <div className={styles.account_check}>
-                    {choose["impressions"] && (
-                      <Icon
-                        type="check"
-                        width="24px"
-                        height="24px"
-                        color="green"
-                      />
-                    )}
-                  </div>
-                  <p>+ 500 Impressions</p>
-                </span>
-                <p style={{ color: "red" }}>+ $5.4</p>
+              <>
+                <div
+                  className={styles.account_item}
+                  onClick={() =>
+                    setChoose({ ...choose, impressions: !choose["impressions"] })
+                  }
+                >
+                  <span style={{ display: "flex", alignItems: "center" }}>
+                    <div className={styles.account_check}>
+                      {choose["impressions"] && (
+                        <Icon
+                          type="check"
+                          width="24px"
+                          height="24px"
+                          color="green"
+                        />
+                      )}
+                    </div>
+                    <p>+ 500 Impressions</p>
+                  </span>
+                  <p style={{ color: "red" }}>+ $5.4</p>
+
+                </div>
                 <img
                   src="/info.svg"
                   alt=""
-                  style={{ width: "22px", height: "22px" }}
+                  style={{
+                    width: "22px", height: "22px",
+                    position: "relative", top: "-35px", right: "40px"
+                  }}
+                  onClick={() => {
+                    setShowModal(true)
+                  }}
                 />
-              </div>
-              <div
-                className={styles.account_item}
-                onClick={() =>
-                  setChoose({ ...choose, reach: !choose["reach"] })
-                }
-              >
-                <span style={{ display: "flex", alignItems: "center" }}>
-                  <div className={styles.account_check}>
-                    {choose["reach"] && (
-                      <Icon
-                        type="check"
-                        width="24px"
-                        height="24px"
-                        color="green"
-                      />
-                    )}
-                  </div>
-                  <p>+ 500 Reach</p>
-                </span>
-                <p style={{ color: "red" }}>+ $5.4</p>
+              </>
+
+
+              <>
+                <div
+                  className={styles.account_item}
+                  onClick={() =>
+                    setChoose({ ...choose, reach: !choose["reach"] })
+                  }
+                >
+                  <span style={{ display: "flex", alignItems: "center" }}>
+                    <div className={styles.account_check}>
+                      {choose["reach"] && (
+                        <Icon
+                          type="check"
+                          width="24px"
+                          height="24px"
+                          color="green"
+                        />
+                      )}
+                    </div>
+                    <p>+ 500 Reach</p>
+                  </span>
+                  <p style={{ color: "red" }}>+ $5.4</p>
+
+                </div>
                 <img
                   src="/info.svg"
                   alt=""
-                  style={{ width: "22px", height: "22px" }}
+                  style={{
+                    width: "22px", height: "22px",
+                    position: "relative", top: "-35px", right: "40px"
+                  }}
+                  onClick={() => setShowModal(true)}
                 />
-              </div>
-              <div
-                className={styles.account_item}
-                onClick={() =>
-                  setChoose({ ...choose, saves: !choose["saves"] })
-                }
-              >
-                <span style={{ display: "flex", alignItems: "center" }}>
-                  <div className={styles.account_check}>
-                    {choose["saves"] && (
-                      <Icon
-                        type="check"
-                        width="24px"
-                        height="24px"
-                        color="green"
-                      />
-                    )}
-                  </div>
-                  <p>+ 100 Saves</p>
-                </span>
-                <p style={{ color: "red" }}>+ $5.4</p>
+              </>
+              <>
+                <div
+                  className={styles.account_item}
+                  onClick={() =>
+                    setChoose({ ...choose, saves: !choose["saves"] })
+                  }
+                >
+                  <span style={{ display: "flex", alignItems: "center" }}>
+                    <div className={styles.account_check}>
+                      {choose["saves"] && (
+                        <Icon
+                          type="check"
+                          width="24px"
+                          height="24px"
+                          color="green"
+                        />
+                      )}
+                    </div>
+                    <p>+ 100 Saves</p>
+                  </span>
+                  <p style={{ color: "red" }}>+ $5.4</p>
+
+                </div>
                 <img
                   src="/info.svg"
                   alt=""
-                  style={{ width: "22px", height: "22px" }}
+                  style={{
+                    width: "22px", height: "22px",
+                    position: "relative", top: "-35px", right: "40px"
+                  }}
+                  onClick={() => setShowModal(true)}
                 />
-              </div>
+              </>
+              <Modal open={showModal} onClose={() => setShowModal(false)}>
+                <div className={styles.small_modal}>
+                  <p>The number of times your content,
+                    whether a post or a story, was shown to users.
+                    Impressions help you to promote your
+                    post and improve stat.</p>
+                  <button onClick={() => setShowModal(false)}>Thank You</button>
+                </div>
+              </Modal>
             </div>
             <p style={{ color: "red", textAlign: "center" }}>{errorMessage}</p>
             <div style={{ display: "flex", gap: 20 }}>
               <ButtonComponent
                 id="PAY"
-                text={`Choose payment method for ${allInfo?.sym_b}${
-                  type.price
-                } ${!allInfo?.sym_b ? allInfo?.sym_a : ""}`}
+                text={`Choose payment method for ${allInfo?.sym_b}${type.price
+                  } ${!allInfo?.sym_b ? allInfo?.sym_a : ""}`}
                 type="fill"
                 onClick={() => {
                   sendOrder();

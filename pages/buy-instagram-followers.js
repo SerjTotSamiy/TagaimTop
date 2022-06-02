@@ -31,8 +31,9 @@ const BuyInstagramFollowers = ({ text }) => {
       data.append("system", "Instagram");
       data.append("service", "Followers");
       const res = await axios.post("/review_list.php", data);
+      const filter = res.data.data.filter(elem => elem.text !== '')
       if (res.status === 200) {
-        setComment((prev) => res.data.data);
+        setComment((prev) => filter);
       }
     } catch (e) {
       console.log(e);
@@ -136,10 +137,10 @@ const BuyInstagramFollowers = ({ text }) => {
               windowInnerWidth < 690
                 ? 1
                 : windowInnerWidth < 1000
-                ? 2
-                : windowInnerWidth < 1300
-                ? 3
-                : 4
+                  ? 2
+                  : windowInnerWidth < 1300
+                    ? 3
+                    : 4
             }
           >
             {price?.Followers?.plans.map((item, index) => (
@@ -185,8 +186,8 @@ const BuyInstagramFollowers = ({ text }) => {
         <div className={`container ${styles1.review_comment_row}`}>
           <div className={styles1.comments_container}>
             {comment?.map(
-              (item, index) =>
-                index < readMore && (
+              (item, index) => {
+                return index < readMore && (
                   <Comment
                     key={item.name}
                     name={item.name}
@@ -194,6 +195,8 @@ const BuyInstagramFollowers = ({ text }) => {
                     text={item.text}
                   />
                 )
+              }
+
             )}
 
             <p style={{ marginTop: 20 }}>

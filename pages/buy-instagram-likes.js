@@ -189,6 +189,7 @@ const BuyInstagramLikes = ({ text }) => {
                   banner="/buylikesbanner2.png"
                   text="Instagram Likes"
                   id={"LIKES"}
+                  icon="/like0.svg"
                   onClick={() => {
                     setPriceValue((prev) => item?.price);
                     setCounts((prev) => item?.count);

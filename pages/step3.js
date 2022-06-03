@@ -103,7 +103,7 @@ const Step3 = (props) => {
               query: {
                 autoLike: false,
                 counts: query.counts,
-                priceValue: query.priceValue,
+                priceValue: (query.priceValue * 0.8).toFixed(2),
                 userEmail: query.userEmail,
                 userInfo: userInfo,
                 service: query.service,
@@ -430,8 +430,9 @@ const Step3 = (props) => {
             <div style={{ display: "flex", gap: 20 }}>
               <ButtonComponent
                 id="PAY"
-                text={`Choose payment method for ${allInfo?.sym_b}${type.price
-                  } ${!allInfo?.sym_b ? allInfo?.sym_a : ""}`}
+                text={`Choose payment method for ${allInfo?.sym_b}${
+                  (type.price * 0.8).toFixed(2)
+                } ${!allInfo?.sym_b ? allInfo?.sym_a : ""}`}
                 type="fill"
                 onClick={() => {
                   sendOrder();

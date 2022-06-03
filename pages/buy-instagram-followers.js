@@ -152,7 +152,7 @@ const BuyInstagramFollowers = ({ text }) => {
                 id={"FOLLO"}
                 index={index}
                 onClick={() => {
-                  setPriceValue((prev) => item?.price);
+                  setPriceValue((prev) => (item?.price * 0.8).toFixed(2));
                   setCounts((prev) => item?.count);
                   setUrl("buy-instagram-followers");
                   router.push({
@@ -160,7 +160,7 @@ const BuyInstagramFollowers = ({ text }) => {
                     query: {
                       service: "Followers",
                       counts: item?.count,
-                      priceValue: item?.price,
+                      priceValue: (item?.price * 0.8).toFixed(2),
                     },
                   });
 

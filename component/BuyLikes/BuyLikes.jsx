@@ -54,7 +54,7 @@ const BuyLikes = ({
         >
           <p className={styles.buyLikes_item_price}>
             {allInfo?.sym_b}
-            {price}
+            {(price * 0.8).toFixed(2)}
             {!allInfo?.sym_b ? allInfo?.sym_a : ""}
           </p>
         </div>

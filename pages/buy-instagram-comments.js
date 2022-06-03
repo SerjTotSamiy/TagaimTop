@@ -99,7 +99,7 @@ const BuyInstagramComments = ({ text }) => {
       )}
       <div className={styles.header_banner}>
         <p className={styles.header_title}>
-          Comments <img src="/like.svg" />
+          Comments <img src="/comment1.svg" />
         </p>
         <p className={styles.header_text}>
           At TagIamTop, you can buy Instagram likes quickly, safely and easily
@@ -150,6 +150,7 @@ const BuyInstagramComments = ({ text }) => {
                   }}
                   text="Instagram Comments"
                   id={"COMM"}
+                  icon="/comment0.svg"
                 />
               ))}
             </Carousel>

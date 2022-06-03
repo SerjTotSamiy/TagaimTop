@@ -97,7 +97,7 @@ const BuyInstagramFollowers = ({ text }) => {
       )}
       <div className={styles.header_banner}>
         <p className={styles.header_title}>
-          buy Instagram Followers <img src="/like.svg" alt="" />
+          Buy Instagram Followers <img src="/follower.svg" alt="" />
         </p>
         <p className={styles.header_text}>
           At TagIamTop, you can buy Instagram likes quickly, safely and easily
@@ -168,6 +168,7 @@ const BuyInstagramFollowers = ({ text }) => {
                 }}
                 first={true}
                 text="Instagram Followers"
+                icon="follower0.svg"
               />
             ))}
           </Carousel>

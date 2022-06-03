@@ -97,7 +97,7 @@ const BuyInstagramViews = ({ text }) => {
       )}
       <div className={styles.header_banner}>
         <p className={styles.header_title}>
-          Buy Instagram Views <img src="/like.svg" alt="" />
+          Buy Instagram Views <img src="/views.svg" alt="" />
         </p>
         <p className={styles.header_text}>
           At TagIamTop, you can buy Instagram likes quickly, safely and easily
@@ -152,6 +152,7 @@ const BuyInstagramViews = ({ text }) => {
                 }}
                 text="Instagram Views"
                 id={"VIEWS"}
+                icon="/views0.svg"
               />
             ))}
           </Carousel>

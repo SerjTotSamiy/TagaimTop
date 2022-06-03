@@ -16,6 +16,7 @@ const BuyLikes = ({
   bgArray,
   index,
   id,
+  icon
 }) => {
   const bg = {
     0: "/pricebg1.webp",
@@ -42,7 +43,7 @@ const BuyLikes = ({
       <div className={styles.buyLikes_item}>
         <div style={{ textAlign: "center", marginBottom: 20 }}>
           <p className={styles.buyLikes_likes}>
-            <img src="/like0.svg" alt="" />
+            <img src={icon} alt="" />
             {likes}
           </p>
           <p className={styles.buyLikes_text}>{text}</p>

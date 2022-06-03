@@ -31,8 +31,9 @@ const BuyInstagramFollowers = ({ text }) => {
       data.append("system", "Instagram");
       data.append("service", "Followers");
       const res = await axios.post("/review_list.php", data);
+      const filter = res.data.data.filter(elem => elem.text !== '')
       if (res.status === 200) {
-        setComment((prev) => res.data.data);
+        setComment((prev) => filter);
       }
     } catch (e) {
       console.log(e);
@@ -96,7 +97,7 @@ const BuyInstagramFollowers = ({ text }) => {
       )}
       <div className={styles.header_banner}>
         <p className={styles.header_title}>
-          buy Instagram Followers <img src="/like.svg" alt="" />
+          Buy Instagram Followers <img src="/follower.svg" alt="" />
         </p>
         <p className={styles.header_text}>
           At TagIamTop, you can buy Instagram likes quickly, safely and easily
@@ -167,6 +168,7 @@ const BuyInstagramFollowers = ({ text }) => {
                 }}
                 first={true}
                 text="Instagram Followers"
+                icon="follower0.svg"
               />
             ))}
           </Carousel>
@@ -185,8 +187,8 @@ const BuyInstagramFollowers = ({ text }) => {
         <div className={`container ${styles1.review_comment_row}`}>
           <div className={styles1.comments_container}>
             {comment?.map(
-              (item, index) =>
-                index < readMore && (
+              (item, index) => {
+                return index < readMore && (
                   <Comment
                     key={item.name}
                     name={item.name}
@@ -194,6 +196,8 @@ const BuyInstagramFollowers = ({ text }) => {
                     text={item.text}
                   />
                 )
+              }
+
             )}
 
             <p style={{ marginTop: 20 }}>

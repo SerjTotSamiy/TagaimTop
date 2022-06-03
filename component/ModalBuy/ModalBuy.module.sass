@@ -86,6 +86,9 @@
     width: 100px
     height: 100px
     object-fit: contain
+    // position: relative
+    // top: -45px
+    // right: 0
   p
     white-space: nowrap
 .account_check
@@ -297,3 +300,36 @@
   background: rgba(61, 41, 119, 1)
   /* color of the scroll thumb */
   border-radius: 20px
+
+.small_modal
+  position: absolute
+  top: 50%
+  left: 50%
+  border-radius: 25px
+  width: 100%
+  max-width: 390px
+  box-shadow: 0 0 20px rgb(196 196 196 / 50%)
+  padding: 65px 50px 35px
+  background-color: #fff
+  z-index: 2
+  transition: all .4s ease-out
+  transform: translate(-50%,-50%)
+  p
+    font-size: 16px
+  >*
+    margin-bottom: 10px
+  button
+    display: inline-block
+    text-align: center
+    background-color: rgb(61, 41, 119)
+    padding: 12px 20px
+    border: none
+    outline: 0
+    border-radius: 15px
+    color: #fff
+    font-size: 14px
+    font-family: roboto,sans-serif
+    font-weight: 400
+    cursor: pointer
+    transition: all .2s ease-out
+    line-height: 1

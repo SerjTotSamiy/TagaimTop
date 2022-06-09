@@ -64,6 +64,7 @@ const BuyInstagramLikes = ({ text }) => {
         setComment((prev) => res.data.data);
       }
     } catch (e) {
+      console.log('hello, we r here, yep!')
       console.log(e);
     }
   };

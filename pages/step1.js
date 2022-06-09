@@ -54,14 +54,14 @@ const Step1 = () => {
     setPriceValue(query.priceValue);
     setCounts(query.counts);
   }, []);
-  // useEffect(() => {
-  //   const currentUser = JSON.parse(localStorage.getItem("users"))
-  //   if (currentUser) {
-  //     setUser(currentUser)
-  //     console.log(currentUser)
-  //   }
-  //
-  // }, [])
+  useEffect(() => {
+    const currentUser = JSON.parse(localStorage.getItem("users"))
+    if (currentUser) {
+      setUser(currentUser)
+      console.log(currentUser)
+    }
+
+  }, [])
 
   useEffect(() => {
     if (!!errorMessage && !!userName && !!userEmail) {
@@ -400,7 +400,7 @@ const Step1 = () => {
               type="fill"
               onClick={() => {
                 // query.service === "Followers" ? sendOrder() : getPosts()
-                // localStorage.users = JSON.stringify({ name: userName, email: userEmail })
+                localStorage.users = JSON.stringify({ name: userName, email: userEmail })
                 console.log(localStorage)
               }
               }

@@ -48,19 +48,19 @@ const Step1 = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isSkeleton, setIsSkeleton] = useState(true);
-  // const [user, setUser] = useState([])
+  const [user, setUser] = useState([])
 
   useEffect(() => {
     setPriceValue(query.priceValue);
     setCounts(query.counts);
   }, []);
   // useEffect(() => {
-    // const currentUser = JSON.parse(localStorage.getItem("users"))
-    // if (currentUser) {
-    //   setUser(currentUser)
-    //   console.log(currentUser)
-    // }
-
+  //   const currentUser = JSON.parse(localStorage.getItem("users"))
+  //   if (currentUser) {
+  //     setUser(currentUser)
+  //     console.log(currentUser)
+  //   }
+  //
   // }, [])
 
   useEffect(() => {

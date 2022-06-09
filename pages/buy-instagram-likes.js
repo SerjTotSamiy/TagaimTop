@@ -122,7 +122,7 @@ const BuyInstagramLikes = ({ text }) => {
           rel="canonical"
           href="https://tagiamtop.com/buy-instagram-likes"
         />
-        <script id="__NEXT_DATA__" type="application/json" />
+        {/*<script id="__NEXT_DATA__" type="application/json" />*/}
       </NextHead>
       <Layer firstPage={false}>
         <div className={styles.header_banner}>

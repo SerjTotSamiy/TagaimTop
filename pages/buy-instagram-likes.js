@@ -78,15 +78,15 @@ const BuyInstagramLikes = ({ text }) => {
   };
   const [open, setOpen] = useState(false);
 
-  // useEffect(() => {
-  //   if (window) setWindowInnerWidth(window.innerWidth);
-  //   getComment();
-  //   window.addEventListener("resize", () =>
-  //     setWindowInnerWidth(window.innerWidth)
-  //   );
-  // }, []);
-  // let ref1 = useRef();
-  // let ref2 = useRef();
+  useEffect(() => {
+    if (window) setWindowInnerWidth(window.innerWidth);
+    getComment();
+    window.addEventListener("resize", () =>
+      setWindowInnerWidth(window.innerWidth)
+    );
+  }, []);
+  let ref1 = useRef();
+  let ref2 = useRef();
 
   return (
     <>
@@ -162,334 +162,334 @@ const BuyInstagramLikes = ({ text }) => {
           />
         )}
 
-        {/*<div className={styles.header_background}>*/}
-        {/*  <PageTitle title={"Buy Instagram likes and auto-likes"} />*/}
+        <div className={styles.header_background}>
+          <PageTitle title={"Buy Instagram likes and auto-likes"} />
 
-        {/*  <p className={styles.buyLikes_title}>Buy Likes</p>*/}
-        {/*  <div className={styles.buyLikes_item_container} ref={ref1}>*/}
-        {/*    <Carousel*/}
-        {/*      wrapAround={true}*/}
-        {/*      scrollMode="remainder"*/}
-        {/*      slidesToShow={*/}
-        {/*        windowInnerWidth < 690*/}
-        {/*          ? 1*/}
-        {/*          : windowInnerWidth < 1000*/}
-        {/*            ? 2*/}
-        {/*            : windowInnerWidth < 1300*/}
-        {/*              ? 3*/}
-        {/*              : 4*/}
-        {/*      }*/}
-        {/*    >*/}
-        {/*      {price?.Likes?.plans.map((item, index) => (*/}
-        {/*        <BuyLikes*/}
-        {/*          key={item?.count}*/}
-        {/*          likes={item?.count}*/}
-        {/*          price={item?.price}*/}
-        {/*          bgArray={bgArray}*/}
-        {/*          index={index}*/}
-        {/*          banner="/buylikesbanner2.png"*/}
-        {/*          text="Instagram Likes"*/}
-        {/*          id={"LIKES"}*/}
-        {/*          icon="/like0.svg"*/}
-        {/*          onClick={() => {*/}
-        {/*            setPriceValue((prev) => item?.price);*/}
-        {/*            setCounts((prev) => item?.count);*/}
-        {/*            setBuyType((prev) => "Likes");*/}
-        {/*            setUrl("buy-instagram-likes");*/}
-        {/*            router.push({*/}
-        {/*              pathname: `/step1`,*/}
-        {/*              query: {*/}
-        {/*                service: "Likes",*/}
-        {/*                counts: item?.count,*/}
-        {/*                priceValue: item?.price,*/}
-        {/*              },*/}
-        {/*            });*/}
-        {/*          }}*/}
-        {/*        />*/}
-        {/*      ))}*/}
-        {/*    </Carousel>*/}
-        {/*  </div>*/}
-        {/*  <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="600">*/}
-        {/*    <InfoBlock*/}
-        {/*      text={*/}
-        {/*        <p>*/}
-        {/*          <p className={styles1.info_text} style={{ float: "left" }}>*/}
-        {/*            <img*/}
-        {/*              src="/buylikesinfo1.webp"*/}
-        {/*              alt="buy Instagram likes by crypto"*/}
-        {/*              style={{*/}
-        {/*                float: "left",*/}
-        {/*                marginRight: 80,*/}
-        {/*                marginBottom: 30,*/}
-        {/*              }}*/}
-        {/*            />*/}
-        {/*            <p className={styles1.info_title}>{text[0].title}</p>*/}
-        {/*            {text[0].content}{" "}*/}
-        {/*          </p>*/}
-        {/*        </p>*/}
-        {/*      }*/}
-        {/*      fade={true}*/}
-        {/*    />*/}
-        {/*  </div>*/}
-        {/*  <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="600">*/}
-        {/*    <InfoBlock*/}
-        {/*      text={*/}
-        {/*        <p>*/}
-        {/*          <p className={styles1.info_text}>*/}
-        {/*            <img*/}
-        {/*              src="/buylikesinfo2.webp"*/}
-        {/*              alt="cheap Instagram likes"*/}
-        {/*              style={{*/}
-        {/*                float: "right",*/}
-        {/*                marginLeft: 80,*/}
-        {/*                marginBottom: 30,*/}
-        {/*              }}*/}
-        {/*            />*/}
-        {/*            <p className={styles1.info_title}>{text[1].title}</p>*/}
-        {/*            {text[1].content}*/}
-        {/*          </p>*/}
-        {/*        </p>*/}
-        {/*      }*/}
-        {/*      reverse={true}*/}
-        {/*    />*/}
-        {/*  </div>*/}
-        {/*</div>*/}
-        {/*<p className={styles.buyLikes_title}>Buy Auto-Likes</p>*/}
-        {/*<div className={styles.autoLike_buttons}>*/}
-        {/*  <ButtonComponent*/}
-        {/*    text="Instant"*/}
-        {/*    style={style[type["2"]]}*/}
-        {/*    type={type["2"]}*/}
-        {/*    onClick={() => {*/}
-        {/*      setChange(!change);*/}
-        {/*      setType({ 1: "outline", 2: "fill" });*/}
-        {/*      ref1?.current?.scrollIntoView();*/}
-        {/*    }}*/}
-        {/*  />*/}
-        {/*  <ButtonComponent*/}
-        {/*    text="Gradual"*/}
-        {/*    style={style[type["1"]]}*/}
-        {/*    type={type["1"]}*/}
-        {/*    onClick={() => {*/}
-        {/*      setChange(!change);*/}
-        {/*      setType({ 1: "fill", 2: "outline" });*/}
-        {/*      ref2?.current?.scrollIntoView();*/}
-        {/*    }}*/}
-        {/*  />*/}
-        {/*</div>*/}
-        {/*<div className={styles.autoLike_banner}>*/}
-        {/*  <img*/}
-        {/*    src="/buylikespurchasebanner.webp"*/}
-        {/*    alt="buy Instagram auto likes"*/}
-        {/*  />*/}
-        {/*  <p>*/}
-        {/*    Want to make a purchase?*/}
-        {/*    <br /> click here!*/}
-        {/*  </p>*/}
-        {/*</div>*/}
+          <p className={styles.buyLikes_title}>Buy Likes</p>
+          <div className={styles.buyLikes_item_container} ref={ref1}>
+            <Carousel
+              wrapAround={true}
+              scrollMode="remainder"
+              slidesToShow={
+                windowInnerWidth < 690
+                  ? 1
+                  : windowInnerWidth < 1000
+                    ? 2
+                    : windowInnerWidth < 1300
+                      ? 3
+                      : 4
+              }
+            >
+              {price?.Likes?.plans.map((item, index) => (
+                <BuyLikes
+                  key={item?.count}
+                  likes={item?.count}
+                  price={item?.price}
+                  bgArray={bgArray}
+                  index={index}
+                  banner="/buylikesbanner2.png"
+                  text="Instagram Likes"
+                  id={"LIKES"}
+                  icon="/like0.svg"
+                  onClick={() => {
+                    setPriceValue((prev) => item?.price);
+                    setCounts((prev) => item?.count);
+                    setBuyType((prev) => "Likes");
+                    setUrl("buy-instagram-likes");
+                    router.push({
+                      pathname: `/step1`,
+                      query: {
+                        service: "Likes",
+                        counts: item?.count,
+                        priceValue: item?.price,
+                      },
+                    });
+                  }}
+                />
+              ))}
+            </Carousel>
+          </div>
+          <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="600">
+            <InfoBlock
+              text={
+                <p>
+                  <p className={styles1.info_text} style={{ float: "left" }}>
+                    <img
+                      src="/buylikesinfo1.webp"
+                      alt="buy Instagram likes by crypto"
+                      style={{
+                        float: "left",
+                        marginRight: 80,
+                        marginBottom: 30,
+                      }}
+                    />
+                    <p className={styles1.info_title}>{text[0].title}</p>
+                    {text[0].content}{" "}
+                  </p>
+                </p>
+              }
+              fade={true}
+            />
+          </div>
+          <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="600">
+            <InfoBlock
+              text={
+                <p>
+                  <p className={styles1.info_text}>
+                    <img
+                      src="/buylikesinfo2.webp"
+                      alt="cheap Instagram likes"
+                      style={{
+                        float: "right",
+                        marginLeft: 80,
+                        marginBottom: 30,
+                      }}
+                    />
+                    <p className={styles1.info_title}>{text[1].title}</p>
+                    {text[1].content}
+                  </p>
+                </p>
+              }
+              reverse={true}
+            />
+          </div>
+        </div>
+        <p className={styles.buyLikes_title}>Buy Auto-Likes</p>
+        <div className={styles.autoLike_buttons}>
+          <ButtonComponent
+            text="Instant"
+            style={style[type["2"]]}
+            type={type["2"]}
+            onClick={() => {
+              setChange(!change);
+              setType({ 1: "outline", 2: "fill" });
+              ref1?.current?.scrollIntoView();
+            }}
+          />
+          <ButtonComponent
+            text="Gradual"
+            style={style[type["1"]]}
+            type={type["1"]}
+            onClick={() => {
+              setChange(!change);
+              setType({ 1: "fill", 2: "outline" });
+              ref2?.current?.scrollIntoView();
+            }}
+          />
+        </div>
+        <div className={styles.autoLike_banner}>
+          <img
+            src="/buylikespurchasebanner.webp"
+            alt="buy Instagram auto likes"
+          />
+          <p>
+            Want to make a purchase?
+            <br /> click here!
+          </p>
+        </div>
 
-        {/*<div style={{ background: "url('/bacgraund-works.jpg')" }}>*/}
-        {/*  <div className={"container"}>*/}
-        {/*    <div*/}
-        {/*      data-aos="fade-up"*/}
-        {/*      data-aos-duration="500"*/}
-        {/*      data-aos-offset="1400"*/}
-        {/*    >*/}
-        {/*      <InfoBlock*/}
-        {/*        text={*/}
-        {/*          <p>*/}
-        {/*            <p*/}
-        {/*              className={styles1.info_title}*/}
-        {/*              style={{ textAlign: "right" }}*/}
-        {/*            >*/}
-        {/*              {text[2].title}*/}
-        {/*            </p>*/}
-        {/*            <p className={styles1.info_text}>*/}
-        {/*              <img*/}
-        {/*                src="/buylikesinfo3.webp"*/}
-        {/*                alt="real Instagram likes"*/}
-        {/*                style={{*/}
-        {/*                  float: "left",*/}
-        {/*                  marginRight: 100,*/}
-        {/*                  marginBottom: 30,*/}
-        {/*                }}*/}
-        {/*              />*/}
-        {/*              {text[2].content}{" "}*/}
-        {/*            </p>*/}
-        {/*          </p>*/}
-        {/*        }*/}
-        {/*        reverse={false}*/}
-        {/*      />*/}
-        {/*    </div>*/}
-        {/*    <div*/}
-        {/*      data-aos="fade-up"*/}
-        {/*      data-aos-duration="500"*/}
-        {/*      data-aos-offset="1600"*/}
-        {/*    >*/}
-        {/*      <InfoBlock*/}
-        {/*        text={*/}
-        {/*          <p>*/}
-        {/*            <p className={styles1.info_title}>{text[3].title}</p>*/}
-        {/*            <p className={styles1.info_text}>*/}
-        {/*              <img*/}
-        {/*                src="/buylikesinfo4.webp"*/}
-        {/*                alt="instant Instagram likes"*/}
-        {/*                style={{*/}
-        {/*                  float: "right",*/}
-        {/*                  marginLeft: 100,*/}
-        {/*                  marginBottom: 30,*/}
-        {/*                }}*/}
-        {/*              />*/}
-        {/*              {text[3].content}*/}
-        {/*            </p>*/}
-        {/*            <p className={styles1.info_title} style={{ marginTop: 30 }}>*/}
-        {/*              {text[3].title2}*/}
-        {/*            </p>*/}
-        {/*            <p className={styles1.info_text}>*/}
-        {/*              <li>{text[3].li1}</li>*/}
-        {/*              <p style={{ marginBottom: 10 }}>{text[3].content2}</p>*/}
-        {/*              <li>{text[3].li2}</li>*/}
-        {/*              <p>{text[3].content3}</p>*/}
-        {/*            </p>*/}
-        {/*          </p>*/}
-        {/*        }*/}
-        {/*        reverse={true}*/}
-        {/*      />*/}
-        {/*    </div>*/}
-        {/*  </div>*/}
-        {/*</div>*/}
+        <div style={{ background: "url('/bacgraund-works.jpg')" }}>
+          <div className={"container"}>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="500"
+              data-aos-offset="1400"
+            >
+              <InfoBlock
+                text={
+                  <p>
+                    <p
+                      className={styles1.info_title}
+                      style={{ textAlign: "right" }}
+                    >
+                      {text[2].title}
+                    </p>
+                    <p className={styles1.info_text}>
+                      <img
+                        src="/buylikesinfo3.webp"
+                        alt="real Instagram likes"
+                        style={{
+                          float: "left",
+                          marginRight: 100,
+                          marginBottom: 30,
+                        }}
+                      />
+                      {text[2].content}{" "}
+                    </p>
+                  </p>
+                }
+                reverse={false}
+              />
+            </div>
+            <div
+              data-aos="fade-up"
+              data-aos-duration="500"
+              data-aos-offset="1600"
+            >
+              <InfoBlock
+                text={
+                  <p>
+                    <p className={styles1.info_title}>{text[3].title}</p>
+                    <p className={styles1.info_text}>
+                      <img
+                        src="/buylikesinfo4.webp"
+                        alt="instant Instagram likes"
+                        style={{
+                          float: "right",
+                          marginLeft: 100,
+                          marginBottom: 30,
+                        }}
+                      />
+                      {text[3].content}
+                    </p>
+                    <p className={styles1.info_title} style={{ marginTop: 30 }}>
+                      {text[3].title2}
+                    </p>
+                    <p className={styles1.info_text}>
+                      <li>{text[3].li1}</li>
+                      <p style={{ marginBottom: 10 }}>{text[3].content2}</p>
+                      <li>{text[3].li2}</li>
+                      <p>{text[3].content3}</p>
+                    </p>
+                  </p>
+                }
+                reverse={true}
+              />
+            </div>
+          </div>
+        </div>
 
-        {/*{change ? (*/}
-        {/*  <>*/}
-        {/*    <p className={styles.buyLikes_title}>Instant</p>*/}
-        {/*    <div className={styles.buyLikes_item_container} ref={ref2}>*/}
-        {/*      <Carousel*/}
-        {/*        wrapAround={true}*/}
-        {/*        scrollMode="remainder"*/}
-        {/*        slidesToShow={*/}
-        {/*          windowInnerWidth < 690*/}
-        {/*            ? 1*/}
-        {/*            : windowInnerWidth < 1000*/}
-        {/*              ? 2*/}
-        {/*              : windowInnerWidth < 1300*/}
-        {/*                ? 3*/}
-        {/*                : 4*/}
-        {/*        }*/}
-        {/*      >*/}
-        {/*        {price?.Likes?.plans.map((item, index) => (*/}
-        {/*          <BuyLikes*/}
-        {/*            key={item?.count}*/}
-        {/*            likes={item?.count}*/}
-        {/*            price={(item?.price * 0.8).toFixed(2)}*/}
-        {/*            bgArray={bgArray}*/}
-        {/*            index={index}*/}
-        {/*            banner="/buylikesbanner2.png"*/}
-        {/*            text="Instagram Auto-Likes"*/}
-        {/*            id={"AUTOLIKES"}*/}
-        {/*            onClick={() => {*/}
-        {/*              setPriceValue((prev) => (item?.price * 0.8).toFixed(2));*/}
-        {/*              setCounts((prev) => item?.count);*/}
-        {/*              setBuyType((prev) => "Likes");*/}
-        {/*              setUrl("buy-instagram-likes");*/}
-        {/*              router.push({*/}
-        {/*                pathname: `/step1`,*/}
-        {/*                query: {*/}
-        {/*                  service: "Likes",*/}
-        {/*                  counts: item?.count,*/}
-        {/*                  priceValue: (item?.price * 0.8).toFixed(2),*/}
-        {/*                },*/}
-        {/*              });*/}
-        {/*            }}*/}
-        {/*          />*/}
-        {/*        ))}*/}
-        {/*      </Carousel>*/}
-        {/*    </div>*/}
-        {/*  </>*/}
-        {/*) : (*/}
-        {/*  <div>*/}
-        {/*    <p className={styles.buyLikes_title}>Gradual</p>*/}
-        {/*    <div className={styles.buyLikes_item_container}>*/}
-        {/*      <Carousel*/}
-        {/*        wrapAround={true}*/}
-        {/*        scrollMode="remainder"*/}
-        {/*        slidesToShow={*/}
-        {/*          windowInnerWidth < 690*/}
-        {/*            ? 1*/}
-        {/*            : windowInnerWidth < 1000*/}
-        {/*              ? 2*/}
-        {/*              : windowInnerWidth < 1300*/}
-        {/*                ? 3*/}
-        {/*                : 4*/}
-        {/*        }*/}
-        {/*      >*/}
-        {/*        {price["Auto-Likes"]?.plans.map((item, index) => (*/}
-        {/*          <BuyLikes*/}
-        {/*            key={item?.count}*/}
-        {/*            likes={item?.count}*/}
-        {/*            price={item?.price}*/}
-        {/*            bgArray={bgArray}*/}
-        {/*            index={index}*/}
-        {/*            banner="/buylikesbanner2.png"*/}
-        {/*            text="Instagram Auto-Likes"*/}
-        {/*            onClick={() => {*/}
-        {/*              setPriceValue((prev) => item?.price);*/}
-        {/*              setCounts((prev) => item?.count);*/}
-        {/*              setBuyType((prev) => "Likes");*/}
-        {/*              setUrl("buy-instagram-likes");*/}
-        {/*              router.push({*/}
-        {/*                pathname: `/step1`,*/}
-        {/*                query: {*/}
-        {/*                  service: "Likes",*/}
-        {/*                  counts: item?.count,*/}
-        {/*                  priceValue: item?.price,*/}
-        {/*                },*/}
-        {/*              });*/}
-        {/*            }}*/}
-        {/*          />*/}
-        {/*        ))}*/}
-        {/*      </Carousel>*/}
-        {/*    </div>*/}
-        {/*  </div>*/}
-        {/*)}*/}
-        {/*<div className={styles1.review_comment_container}>*/}
-        {/*  <div className={styles1.review_comment}>*/}
-        {/*    <p className={styles.buyLikes_title}>Comments about likes</p>*/}
+        {change ? (
+          <>
+            <p className={styles.buyLikes_title}>Instant</p>
+            <div className={styles.buyLikes_item_container} ref={ref2}>
+              <Carousel
+                wrapAround={true}
+                scrollMode="remainder"
+                slidesToShow={
+                  windowInnerWidth < 690
+                    ? 1
+                    : windowInnerWidth < 1000
+                      ? 2
+                      : windowInnerWidth < 1300
+                        ? 3
+                        : 4
+                }
+              >
+                {price?.Likes?.plans.map((item, index) => (
+                  <BuyLikes
+                    key={item?.count}
+                    likes={item?.count}
+                    price={(item?.price * 0.8).toFixed(2)}
+                    bgArray={bgArray}
+                    index={index}
+                    banner="/buylikesbanner2.png"
+                    text="Instagram Auto-Likes"
+                    id={"AUTOLIKES"}
+                    onClick={() => {
+                      setPriceValue((prev) => (item?.price * 0.8).toFixed(2));
+                      setCounts((prev) => item?.count);
+                      setBuyType((prev) => "Likes");
+                      setUrl("buy-instagram-likes");
+                      router.push({
+                        pathname: `/step1`,
+                        query: {
+                          service: "Likes",
+                          counts: item?.count,
+                          priceValue: (item?.price * 0.8).toFixed(2),
+                        },
+                      });
+                    }}
+                  />
+                ))}
+              </Carousel>
+            </div>
+          </>
+        ) : (
+          <div>
+            <p className={styles.buyLikes_title}>Gradual</p>
+            <div className={styles.buyLikes_item_container}>
+              <Carousel
+                wrapAround={true}
+                scrollMode="remainder"
+                slidesToShow={
+                  windowInnerWidth < 690
+                    ? 1
+                    : windowInnerWidth < 1000
+                      ? 2
+                      : windowInnerWidth < 1300
+                        ? 3
+                        : 4
+                }
+              >
+                {price["Auto-Likes"]?.plans.map((item, index) => (
+                  <BuyLikes
+                    key={item?.count}
+                    likes={item?.count}
+                    price={item?.price}
+                    bgArray={bgArray}
+                    index={index}
+                    banner="/buylikesbanner2.png"
+                    text="Instagram Auto-Likes"
+                    onClick={() => {
+                      setPriceValue((prev) => item?.price);
+                      setCounts((prev) => item?.count);
+                      setBuyType((prev) => "Likes");
+                      setUrl("buy-instagram-likes");
+                      router.push({
+                        pathname: `/step1`,
+                        query: {
+                          service: "Likes",
+                          counts: item?.count,
+                          priceValue: item?.price,
+                        },
+                      });
+                    }}
+                  />
+                ))}
+              </Carousel>
+            </div>
+          </div>
+        )}
+        <div className={styles1.review_comment_container}>
+          <div className={styles1.review_comment}>
+            <p className={styles.buyLikes_title}>Comments about likes</p>
 
-        {/*    <p className={styles1.info_text}>*/}
-        {/*      Here at Buzzoid, we pride ourselves on exceptional service and*/}
-        {/*      affordable prices. Don’t just take our word for it – check out*/}
-        {/*      what customers say about our Instagram likes below*/}
-        {/*    </p>*/}
+            <p className={styles1.info_text}>
+              Here at Buzzoid, we pride ourselves on exceptional service and
+              affordable prices. Don’t just take our word for it – check out
+              what customers say about our Instagram likes below
+            </p>
 
-        {/*    <div className={styles1.review_comment_row}>*/}
-        {/*      <Review service={"Likes"} />*/}
-        {/*      <div className={styles1.comments_container}>*/}
-        {/*        {comment?.map(*/}
-        {/*          (item, index) =>*/}
-        {/*            index < readMore && (*/}
-        {/*              <Comment*/}
-        {/*                key={item.name}*/}
-        {/*                bg="#E4E0FE"*/}
-        {/*                border="2px dashed #D8BFD8"*/}
-        {/*                name={item.name}*/}
-        {/*                star={item.star}*/}
-        {/*                text={item.text}*/}
-        {/*              />*/}
-        {/*            )*/}
-        {/*        )}*/}
+            <div className={styles1.review_comment_row}>
+              <Review service={"Likes"} />
+              <div className={styles1.comments_container}>
+                {comment?.map(
+                  (item, index) =>
+                    index < readMore && (
+                      <Comment
+                        key={item.name}
+                        bg="#E4E0FE"
+                        border="2px dashed #D8BFD8"
+                        name={item.name}
+                        star={item.star}
+                        text={item.text}
+                      />
+                    )
+                )}
 
-        {/*        <p style={{ marginTop: 20 }}>*/}
-        {/*          <a*/}
-        {/*            style={{ color: "#8C66FA", cursor: "pointer" }}*/}
-        {/*            onClick={() => comment && setReadMore(comment.length)}*/}
-        {/*          >*/}
-        {/*            Read More Reviews*/}
-        {/*          </a>*/}
-        {/*        </p>*/}
-        {/*      </div>*/}
-        {/*    </div>*/}
-        {/*  </div>*/}
-        {/*</div>*/}
+                <p style={{ marginTop: 20 }}>
+                  <a
+                    style={{ color: "#8C66FA", cursor: "pointer" }}
+                    onClick={() => comment && setReadMore(comment.length)}
+                  >
+                    Read More Reviews
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </Layer>
     </>
   );

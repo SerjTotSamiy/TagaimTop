@@ -58,6 +58,7 @@ const Step1 = () => {
     const currentUser = JSON.parse(localStorage.getItem("users"))
     if (currentUser) {
       setUser(currentUser)
+      setUserName(currentUser)
       console.log(currentUser)
     }
 

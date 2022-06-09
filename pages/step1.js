@@ -54,14 +54,14 @@ const Step1 = () => {
     setPriceValue(query.priceValue);
     setCounts(query.counts);
   }, []);
-  useEffect(() => {
+  // useEffect(() => {
     // const currentUser = JSON.parse(localStorage.getItem("users"))
-    if (currentUser) {
-      setUser(currentUser)
-      console.log(currentUser)
-    }
+    // if (currentUser) {
+    //   setUser(currentUser)
+    //   console.log(currentUser)
+    // }
 
-  }, [])
+  // }, [])
 
   useEffect(() => {
     if (!!errorMessage && !!userName && !!userEmail) {

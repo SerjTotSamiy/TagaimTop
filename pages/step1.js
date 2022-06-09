@@ -48,11 +48,20 @@ const Step1 = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isSkeleton, setIsSkeleton] = useState(true);
+  const [user, setUser] = useState([])
 
   useEffect(() => {
     setPriceValue(query.priceValue);
     setCounts(query.counts);
   }, []);
+  useEffect(() => {
+    const currentUser = JSON.parse(localStorage.getItem("users"))
+    if (currentUser) {
+      setUser(currentUser)
+      console.log(currentUser)
+    }
+
+  }, [])
 
   useEffect(() => {
     if (!!errorMessage && !!userName && !!userEmail) {
@@ -349,7 +358,8 @@ const Step1 = () => {
                   required={true}
                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                   placeholder="Email"
-                  value={userEmail}
+                  defaultValue={user.email}
+                  // value={userEmail !== "" ? userEmail : user.email}
                   onChange={(e) => setUserEmail((prev) => e.target.value)}
                 />
                 <img src="/mail.svg" alt="" />
@@ -388,8 +398,11 @@ const Step1 = () => {
             <ButtonComponent
               text={isLoading ? "loading" : "Start"}
               type="fill"
-              onClick={() =>
-                query.service === "Followers" ? sendOrder() : getPosts()
+              onClick={() => {
+                // query.service === "Followers" ? sendOrder() : getPosts()
+                localStorage.users = JSON.stringify({ name: userName, email: userEmail })
+                console.log(localStorage)
+              }
               }
               style={{ padding: "20px 60px 20px 60px" }}
             />

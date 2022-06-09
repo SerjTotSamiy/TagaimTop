@@ -399,7 +399,7 @@ const Step1 = () => {
               text={isLoading ? "loading" : "Start"}
               type="fill"
               onClick={() => {
-                // query.service === "Followers" ? sendOrder() : getPosts()
+                query.service === "Followers" ? sendOrder() : getPosts()
                 localStorage.users = JSON.stringify({ name: userName, email: userEmail })
                 console.log(localStorage)
               }

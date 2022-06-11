@@ -170,8 +170,8 @@ export default function Home() {
             </div>
 
             <div
-              data-aos="fade-up"
-              data-aos-duration="500"
+              data-aos="fade-right"
+              data-aos-duration="200"
               data-aos-offset="600"
             >
               <InfoBlock
@@ -213,9 +213,9 @@ export default function Home() {
               />
             </div>
             <div
-              data-aos="fade-up"
-              data-aos-duration="500"
-              data-aos-offset="700"
+              data-aos="fade-left"
+              data-aos-duration="200"
+              data-aos-offset="300"
             >
               <InfoBlock
                 reverse={true}
@@ -246,9 +246,9 @@ export default function Home() {
               />
             </div>
             <div
-              data-aos="fade-up"
-              data-aos-duration="500"
-              data-aos-offset="1000"
+              data-aos="fade-right"
+              data-aos-duration="200"
+              data-aos-offset="450"
             >
               <InfoBlock
                 reverse={false}
@@ -279,9 +279,9 @@ export default function Home() {
               />
             </div>
             <div
-              data-aos="fade-up"
-              data-aos-duration="500"
-              data-aos-offset="1200"
+              data-aos="fade-left"
+              data-aos-duration="300"
+              data-aos-offset="400"
             >
               <InfoBlock
                 reverse={true}
@@ -363,8 +363,8 @@ export default function Home() {
                       windowInnerWidth < 445
                         ? 20
                         : windowInnerWidth < 620
-                        ? 30
-                        : 50
+                          ? 30
+                          : 50
                     }
                     color2={"#ffd700"}
                   />

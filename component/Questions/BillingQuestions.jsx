@@ -25,7 +25,7 @@ const BillingQuestions = ({ title, bg }) => {
             Frequently Asked Questions
           </p>
           <p className={styles.question_data_text}>
-            Have a different question about how Likes.io works or the pricing
+            Have a different question about how tagiamtop.com works or the pricing
             plans available? Get in touch with one of our specialists.
           </p>
         </>

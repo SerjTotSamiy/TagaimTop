@@ -113,7 +113,7 @@ const Step4 = () => {
                                     className={styles.payment_block}
                                     onClick={() => {
                                         console.log(item?.url_to_pay)
-                                        // if (item?.url_to_pay) router.push(item?.url_to_pay);
+                                        if (item?.url_to_pay) router.push(item?.url_to_pay);
                                     }}
                                 >
                                     <img

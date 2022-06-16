@@ -517,7 +517,7 @@ export async function getStaticProps({params}) {
                         "Likes are also a way to encourage interaction. When someone likes a post, it’s common for\n" +
                         "the owner of the account to check out the profile of whoever gave the like, and it’s the\n" +
                         "perfect opportunity to gain a new follower.\n" +
-                        "With Likes.io, we target specific accounts to ensure that your account only likes posts that\n" +
+                        "With tagiamtop.com, we target specific accounts to ensure that your account only likes posts that\n" +
                         "connect directly to your desired market and demographic.",
                 },
                 {
@@ -532,7 +532,7 @@ export async function getStaticProps({params}) {
                         "The social media world is confusing and complicated, and doing everything right can be a\n" +
                         "real challenge. With our automated and long-standing systems, we take much of the burden of\n" +
                         "Instagram use away from you.\n" +
-                        "You can see great growth results within a few days of signing up to Likes.io and watch your\n" +
+                        "You can see great growth results within a few days of signing up to tagiamtop.com and watch your\n" +
                         "account go from strength to strength as we deliver powerful results. When you buy a real\n" +
                         "Instagram like from us, you can feel confident it will count.\n" +
                         "You can track your campaign, see your spending and progress.",

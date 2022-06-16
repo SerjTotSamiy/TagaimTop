@@ -326,7 +326,7 @@ export default function Home() {
                                     Frequently Asked Questions
                                 </p>
                                 <span className={styles.questions_text}>
-                  Have a different question about how Likes.io works or the
+                  Have a different question about how tagiamtop.com works or the
                   pricing plans available? Get in touch with one of our
                   specialists.
                 </span>
@@ -370,7 +370,7 @@ export default function Home() {
                   />
                 </span>
                                 <p className={styles.info_text}>
-                                    Here at Likes.io, we pride ourselves on exceptional service
+                                    Here at tagiamtop.com, we pride ourselves on exceptional service
                                     and affordable prices. Don’t just take our word for it – check
                                     out our customer reviews below
                                 </p>

@@ -167,7 +167,7 @@ const Step4 = () => {
                             filter: `${isSkeleton ? "blur(8px)" : "blur(0px)"}`,
                         }}
                     >
-                        By pershing you agree with{" "}
+                        By purchasing you agree with{" "}
                         <Link href="/pages/terms">
                             <a style={{textDecoration: "underline"}}> rules</a>
                         </Link>

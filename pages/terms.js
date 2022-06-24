@@ -43,7 +43,7 @@ const Terms = () => {
         <img className={styles.header_arrow} src="/arrow-detail.svg" alt="" />
       </div>
 
-      <PageTitle title={"Terms of Service"} />
+      <PageTitle title={"Terms and conditions: Rules, refund, and privacy"} />
 
       <div className={privacyStyles.privacy_container}>
         <div className={privacyStyles.terms_block}>
@@ -62,176 +62,137 @@ const Terms = () => {
           </p>
         </div>
         <TextComponent
-          title="Third-party Affiliation"
+          title="1. Definition"
           text={
             <p className={styles1.info_text} style={{ lineHeight: 3 }}>
-              <li>
-                Likes.io does not have any professional connection, through
-                sponsorship or affiliation, to Instagram, Facebook, and any
-                other Instagram third-party partners.
-              </li>
-              <li>
-                {" "}
-                The services do not aim to harm the INSTAGRAM brand in any way.
-              </li>
-
-              <li>
-                The Likes.io operation is independent and separate from
-                Instagram.
-              </li>
-              <li>
-                Likes.io does not take advantage of Instagram’s success and
-                reputation.
-              </li>
-              <li>
-                {" "}
-                There is no similarity between and Instagram trademarks. Both of
-                the domain names, logos, and brands have different ownerships.
-              </li>
+              <b>Tagiamtop</b> - service at the address tagiamtop.com operated by Qloyd OчU registration code 16257994.
+              <b>Address</b>: Harju maakond, Tallinn, Kesklinna linnaosa, Roseni tn 13, 10111, Estonia, in accordance
+              with laws of Estonia. <br/><b>Warranty</b> - The option of financial compensation for damaged or missing products.
+              <br/>By <b>service</b>, we mean a website. <b>Buyer</b> - a physical or corporate person who requires our services.
+              <br/><b>Ordering</b> - Providing appropriate data and payment. <br/><b>The usage data</b> is information automatically
+              accumulated by the Service's infrastructure (e.g. the duration of a page visit). <br/><b>You</b> mean the person
+              gaining access or making use of the Services and/or the company that the individual is accessing
+              or using the Services on behalf of, as applicable.
             </p>
           }
         />
 
         <TextComponent
-          title="In addition to this:"
+          title="2. General rules"
           text={
             <p className={styles1.info_text} style={{ lineHeight: 3 }}>
-              <li>
-                You are responsible for complying with Instagram’s Terms and
-                Conditions. You purchase the services at your own risk.
-              </li>
-              <li>
-                We absolve from the responsibility if your account gets banned
-                or suspended whilst using our services. You are the only one
-                accountable for your actions.
-              </li>
-              <li>
-                To enjoy our services, you will need to provide your Instagram
-                login information. Your username and password are not stored,
-                traded, used in a bad faith, or shared with third-party
-                companies.
-              </li>
-              <li>
-                Be aware that using our system for the management of your
-                Instagram account, might be the cause of losing your account as
-                there is no official agreement between Instagram.
-              </li>
-              <li>
-                Be aware that using our system for the management of your
-                Instagram account, might be the cause of losing your account as
-                there is no official agreement between Instagram.
-              </li>
+              <li>You must notify our team in case of any kind of technical error.
+                Free Instagram Followers can only be allowed once to try out our services.</li>
+              <li>Once you have uploaded the profile photo, submitted the accurate information,
+                your profile is unlocked for everyone, you can proceed with the order.</li>
+              <li>If a user declares a dispute with Paypal, his/her account will be blacklisted,
+                as well as suspended.</li>
+              <li>There will be an announcement if there are some changes to our terms.</li>
             </p>
           }
         />
         <TextComponent
-          title="Subscription Conditions"
+          title="3. Using private data sources"
           text={
             <p className={styles1.info_text} style={{ lineHeight: 3 }}>
-              <li>
-                It is advisable to use the free 3-day trial period of Likes.io,
-                before purchasing any of our plans and services.
-              </li>
-              <li>
-                Upon the confirmation of the purchase, you state that you are
-                fully aware of the purchased services and that you will not open
-                a fraudulent dispute via your preferred payment systems, such as
-                PayPal.
-              </li>
-              <li>
-                To complete the payment, you need to provide us with a valid
-                credit or debit card.
-              </li>
-              <li>
-                The amount for each plan is billed monthly in advance. The date
-                is determined by the initial subscription date, and the amount
-                is non-refundable.
-              </li>
-              <li>
-                Your subscription will not be renewed at the end of the period.
-                When the paid period has come to an end, your subscription will
-                automatically cease to be in effect.
-              </li>
+              <b>Attention</b>: We may disclose certain information in connection with the Service to these third-party vendors.
+              <br/><b>Interest</b>: With this new feature, we will continue to give you the same great features and benefits of the Service.
+              <br/><b>Desire</b>: We will continue to work with these third party vendors for your protection.
+              <br/><b>Action</b>: We will never share any of your personal information other than what is strictly required for the service,
+              and all third-party vendors must adhere to our strict privacy policies.
             </p>
           }
         />
         <TextComponent
-          title="Website Observation"
+          title="4. Refund"
           text={
             <p className={styles1.info_text} style={{ lineHeight: 3 }}>
-              <ol>
-                <li>
-                  Terms & Conditions: [Terms-of-service applicable to the
-                  customers using this website has to be included under this
-                  field]
+              <ul>
+                <li>Any order that cannot be fulfilled because we have been unable to contact you
+                  or because of an inaccurate profile, we will refund your payment.
                 </li>
-                <li>
-                  Privacy Policy: Inclusion is mandatory and should have the
-                  below-mentioned points. - “All credit/debit cards details and
-                  personally identifiable information will NOT be stored, sold,
-                  shared, rented or leased to any third parties”. - “The Website
-                  Policies and Terms & Conditions may be changed or updated
-                  occasionally to meet the requirements and standards. Therefore
-                  the Customers’ are encouraged to frequently visit these
-                  sections in order to be updated about the changes on the
-                  website. Modifications will be effective on the day they are
-                  posted”.
-                </li>
-                <li>
-                  Items/Products/Services Pricing: Inclusion is mandatory.
-                  [Products/Services Pricing and complete description of the
-                  goods or services offered need to be available and accessible
-                  while the website is being reviewed by the Acquiring RISK &
-                  Fraud team.].
-                </li>
-                <li>
-                  Method of Payment, Card Types accepted and Currency: Inclusion
-                  is mandatory and should have the below mentioned point. - “We
-                  accept payments online using Visa and MasterCard credit/debit
-                  card in AED (or any other agreed currency)”. The logo of the
-                  accepted cards are to be mentioned on their Homepage and on
-                  their Payment check out page.
-                </li>
-                <li>
-                  Delivery & Shipping Policy: Inclusion is mandatory and should
-                  have the below mentioned point - Recommended statement is
-                  “(Website) will NOT deal or provide any services or products
-                  to any of OFAC (Office of Foreign Assets Control) sanctions
-                  countries in accordance with the law of UAE”.
-                </li>
-                <li>
-                  Refund/Return Policy: To be included if refunds are offered to
-                  the customer. If not it has to be clearly stated on their
-                  website that the refunds will not be provided. - Recommended
-                  statement is “Refunds will be done only through the Original
-                  Mode of Payment”.
-                </li>
-                <li>Address & Contact Details: Inclusion is mandatory.</li>
-                <li>Country of merchant domicile: To be mentioned as UAE.</li>
-                <li>
-                  Governing Law and Jurisdiction: Inclusion is mandatory and
-                  should have any one of the below mentioned points. - “Any
-                  dispute or claim arising out of or in connection with this
-                  website shall be governed and construed in accordance with the
-                  laws of UAE”.
-                </li>
-              </ol>
+                <li>If you provide inaccurate information that caused the situation that the purchase
+                  was delivered to the wrong person, we will not issue a refund.</li>
+                <li>You might be eligible for a full refund for products paid for the day before
+                  shipment if you did not get it promptly.</li>
+                <li>You can ask for a refund once within one day of the date of purchase,
+                  as long as it's within the warranty period.</li>
+                <li>We don't provide refunds if you order from more than one service unless
+                  it's a product that we can give to another customer.</li>
+                <li>Warranty, as well as available data, can be found in the item description.</li>
+              </ul>
             </p>
           }
         />
 
         <TextComponent
-          title="Refund Policy"
+          title="5. Terms of delivery"
           text={
             <p className={styles1.info_text} style={{ lineHeight: 3 }}>
-              You are not eligible to ask for a refund when the order of our
-              digital products is confirmed. Once our products are sent and
-              delivered, you cannot return them and get a refund. If you
-              encounter any issues in receiving or downloading any of our
-              digital products, please refer to our customer support. Any
-              inquiries about our Refund Policy should be sent via email
+              <ul>
+                <li>As soon as the transaction is successful, the service will start processing.</li>
+                <li>Your service will not begin if payment has been delayed or canceled.</li>
+                <li>If the service specifies a 24-hour turnaround time, the process starts as soon
+                  as payment has gone through. You will receive an order to the mail you specify and then make payment.</li>
+                <li>Please contact us using the form or email at contact@maketop.io if you have not received the service.</li>
+              </ul>
             </p>
           }
+        />
+
+        <TextComponent
+            title="6. Responsibility"
+            text={
+              <p className={styles1.info_text} style={{ lineHeight: 3 }}>
+                <ul>
+                  <li>It is possible to have your order processed once your account is authenticated
+                    to the public, and you upload a profile photo.</li>
+                  <li>The service may not look or work quite as expected when we try to use it.
+                    This is because each person needs a different level of service.</li>
+                  <li>The customer's responsibility is to make sure that the necessary steps are taken after receiving the order.</li>
+                  <li>We cannot ensure an accurate performance description if order quantity is greater than the maximum limit.</li>
+                  <li>Mailing address of the cardholder: Harju maakond, Tallinn, Kesklinna linnaosa, Roseni tn 13, 10111, Estonia.</li>
+                </ul>
+              </p>
+            }
+        />
+
+        <TextComponent
+            title="7. Privacy policy"
+            text={
+              <p className={styles1.info_text} style={{ lineHeight: 3 }}>
+                <ul>
+                  <li>We guarantee that the email address will never be shared with third parties.</li>
+                  <li>We reserve the right to email you notifications. These will only be sent
+                    to the address provided when creating a ticket or order.</li>
+                  <li>All your data is strictly secured, guaranteeing that no third parties
+                    will ever know who you are. Your anonymity is fully insured at all times without fail.</li>
+                  <li>To protect the users' private data, we only allow direct account access to active customers
+                    who have already confirmed phone/email ownership and hold encryption keys securely.
+                    Your information will never be given to a third party.</li>
+                  <li>Third parties can't tap payments due to the encryption you're using.</li>
+                  <li>In rare cases where your card fails or doesn't work, we'll let you know
+                    as soon as possible by e-mail and on our website so that you don't lose your money.</li>
+                  <li>We use encryption and SSL to protect your privacy. Your card data is not stored or transmitted,
+                    and the only exception is through our payment gateways. We don't keep any of your details,
+                    such as card information.</li>
+                </ul>
+              </p>
+            }
+        />
+
+        <TextComponent
+            title="Changes to this Privacy Policy"
+            text={
+              <p className={styles1.info_text} style={{ lineHeight: 3 }}>
+                You can always check here for the latest version of our Privacy Policy.
+                We will notify you by email before any changes to this Privacy Policy.
+                Additionally, we will post a notice on our Service and update the "Last Updated"
+                date in this Privacy Policy before the change occurs.
+                We ask that you check this Privacy Policy from time to time for changes.
+                Changes will happen as soon as the new updates are added to this page.
+              </p>
+            }
         />
       </div>
     </Layer>

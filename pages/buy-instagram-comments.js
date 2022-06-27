@@ -52,7 +52,7 @@ const BuyInstagramComments = ({text}) => {
     return (
         <Layer firstPage={false}>
             <Head>
-                <title>TagIamTop</title>
+                <title>Buy Instagram Comments - Social Media Services Store</title>
 
                 <meta
                     name="url"

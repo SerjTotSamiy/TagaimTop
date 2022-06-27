@@ -20,6 +20,7 @@ export default function Home() {
     const [readMore, setReadMore] = useState(3);
     const [comment, setComment] = useState([]);
     const axios = useAxios();
+    const date = new Date()
     const getComment = async () => {
         try {
             const data = new FormData();
@@ -41,7 +42,7 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>TagIamTop</title>
+                <title>Buy Instagram Likes, Followers, Views in {date.getFullYear()} - Tag I am Top</title>
 
                 <meta name="url" property="og:url" content="https://tagiamtop.com"/>
                 <meta
@@ -90,15 +91,14 @@ export default function Home() {
                                 <div className={`${styles.content}`}>
                                     <h1>
                                         <Typewriter
-                                            string="Grow your online presence with Instagram Followers, Likes and Views"
+                                            string="Use Instagram to the fullest with Followers, Likes, Views and Comments"
                                             delay={80}
                                             stopBlinkinOnComplete
                                             cursor=""
                                         />
                                     </h1>
                                     <h2>
-                                        Real followers, real engagement, real growth. All with
-                                        TagIamTop
+                                        Get organic growth on Instagram with our service
                                     </h2>
                                     <div>
                                         <ButtonComponent
@@ -130,37 +130,35 @@ export default function Home() {
                                         <div className={styles.work_title}>
                                             <p>How It Works?</p>
                                             <span>
-                        Make your account stand out through a combination of
-                        automated likes and story views, and through buying
-                        followers.
+                        Make Instagram users pay attention to your account using our services: IG Likes, Followers, Comments
                       </span>
                                         </div>
 
                                         <div className={styles.work_info}>
                                             <div className={styles.info_box}>
                                                 <img src="/comp.svg" alt=""/>
-                                                <p>Grow organically</p>
+                                                <p>Clean-cut</p>
                                                 <span>
-                          Real likes and story views will help you increase your
-                          reach and engagement.
+                          Faster way to get organic signals on Instagram for personal or business accounts
+alt для картинки: Clean-cut with TagIamTop
+
                         </span>
                                             </div>
 
                                             <div className={styles.info_box}>
                                                 <img src="/char.svg" alt=""/>
-                                                <p>Smart Targeting</p>
+                                                <p>Prosperous</p>
                                                 <span>
-                          Focus on your target audience based on their
-                          interests, location and hashtags.
+                          Getting statistics with large coverage and attracting the target audience
+alt для картинки: Prosperous with TagIamTop
                         </span>
                                             </div>
 
                                             <div className={styles.info_box}>
                                                 <img src="/security.svg" alt=""/>
-                                                <p>Security first</p>
+                                                <p>Security</p>
                                                 <span>
-                          You'll never have to worry about your account being
-                          put at risk, we protect your reputation.
+                          Anonymity and security without giving us passwords and personal information
                         </span>
                                             </div>
                                         </div>
@@ -182,14 +180,13 @@ export default function Home() {
                                             Instagram Likes and Auto-likes
                                         </p>
                                         <p className={styles.info_text}>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                                            natoque penatibus et magnis dis parturient montes,
-                                            nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                                            pellentesque eu, pretium quis, sem. Nulla consequat massa
-                                            quis enim. Donec pede justo, fringilla vel, aliquet nec,
-                                            vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet
-                                            a, venenatis vitae, justo.
+                                            Social media now rules the world. Instagram, one of the youngest Social
+                                            Media Platforms, leads the pack. Getting the attention of billions of users
+                                            worldwide, influencers and online businessmen draw their strength from it.
+                                            If you decided to be highly visible on the Internet, buy Instagram algorithm
+                                            points such as followers, likes, views, and comments. Why is it important?
+                                            Relying on organic traffic to grow your online visibility can take years and
+                                            herculean efforts.
                                         </p>
                                     </div>
                                 }
@@ -221,16 +218,18 @@ export default function Home() {
                                 reverse={true}
                                 text={
                                     <div>
-                                        <p className={styles.info_title}>Instagram Followers</p>
+                                        <p className={styles.info_title}>Why not buy followers and comments from
+                                            us? </p>
                                         <p className={styles.info_text}>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                                            natoque penatibus et magnis dis parturient montes,
-                                            nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                                            pellentesque eu, pretium quis, sem. Nulla consequat massa
-                                            quis enim. Donec pede justo, fringilla vel, aliquet nec,
-                                            vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet
-                                            a, venenatis vitae, justo.{" "}
+                                            All our services are guaranteed real and organic. Your IG profile will have
+                                            high engagement with real people talking and sharing views, and ideas about
+                                            your products and services. With Instagram target, you can find the relevant
+                                            audience. The hashtags they are using to reveal their interests, needs,
+                                            wants, and even demographics. Nothing is wasted on people that have no
+                                            reason to be converted into potential clients. The important way to set our
+                                            company apart from the competition is your account is sacrosanct to us.
+                                            Third parties will never have access to your personal details. With us, you
+                                            will always be protected.{" "}
                                         </p>
                                     </div>
                                 }
@@ -254,16 +253,13 @@ export default function Home() {
                                 reverse={false}
                                 text={
                                     <div>
-                                        <p className={styles.info_title}>Instagram Comments</p>
+                                        <p className={styles.info_title}>How can many comments and views help enhance
+                                            your online presence? </p>
                                         <p className={styles.info_text}>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                                            natoque penatibus et magnis dis parturient montes,
-                                            nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                                            pellentesque eu, pretium quis, sem. Nulla consequat massa
-                                            quis enim. Donec pede justo, fringilla vel, aliquet nec,
-                                            vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet
-                                            a, venenatis vitae, justo.{" "}
+                                            Getting many Instagram signals for your posts shows that your content is
+                                            attractive and relevant and new users have to visit your page. The more
+                                            comments for posts or views for videos you have, the stronger your online
+                                            presence becomes.{" "}
                                         </p>
                                     </div>
                                 }
@@ -287,16 +283,17 @@ export default function Home() {
                                 reverse={true}
                                 text={
                                     <div>
-                                        <p className={styles.info_title}>Instagram View</p>
+                                        <p className={styles.info_title}>Is having many views beneficial?</p>
                                         <p className={styles.info_text}>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                                            natoque penatibus et magnis dis parturient montes,
-                                            nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                                            pellentesque eu, pretium quis, sem. Nulla consequat massa
-                                            quis enim. Donec pede justo, fringilla vel, aliquet nec,
-                                            vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet
-                                            a, venenatis vitae, justo.{" "}
+                                            A lot of products and services are promoted on Social Media to find new
+                                            clients. Having many views means selling to a target potential customers. It
+                                            has been proven an effective marketing strategy. Many followers can help you
+                                            earn an income. Some companies would like to work with you to promote their
+                                            causes, products, and services to many views. You can earn a steady income
+                                            from these activities. Lastly, you become someone people will look up to.
+                                            Instagrammers with millions of followers advertise various goods and
+                                            services without a problem. People emulate tham ways, buy what they buy, and
+                                            use what thay use.{" "}
                                         </p>
                                     </div>
                                 }
@@ -323,12 +320,10 @@ export default function Home() {
                                     className={styles.questions_title}
                                     style={{marginTop: 100}}
                                 >
-                                    Frequently Asked Questions
+                                    FAQ
                                 </p>
                                 <span className={styles.questions_text}>
-                  Have a different question about how tagiamtop.com works or the
-                  pricing plans available? Get in touch with one of our
-                  specialists.
+                  If you have visited our site to find the answer to some of queries regarding the process of buying Instagram signals ex. likes or followers, feel free to ask our expert support team.
                 </span>
 
                                 <FrequentQuestions/>
@@ -336,12 +331,13 @@ export default function Home() {
                         </div>
 
                         <div className={styles.getStartedBanner}>
-                            <img src="/buy_banner.webp" alt=""/>
+                            <img src="/buy_banner.webp"
+                                 alt="Buy Instagram Followers, Likes, Views, Comments with Tagiamtop"/>
                             <div>
                                 <p className={styles.banner_title}>Get Started</p>
                                 <p className={styles.banner_text}>
-                                    Simply enter your username, select your photos and see the
-                                    likes come in. No registration or password required!
+                                    Start right now by choosing activities on Instagram without a password. We have
+                                    trial version
                                 </p>
                                 <ButtonComponent
                                     text="Buy Started"
@@ -370,9 +366,7 @@ export default function Home() {
                   />
                 </span>
                                 <p className={styles.info_text}>
-                                    Here at tagiamtop.com, we pride ourselves on exceptional service
-                                    and affordable prices. Don’t just take our word for it – check
-                                    out our customer reviews below
+                                    Every review is an indicator of customer satisfaction. We are tracking your feedback
                                 </p>
 
                                 <div className={styles.review_comment_row}>

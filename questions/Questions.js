@@ -159,54 +159,58 @@ export const billingQuestions = [
 
 export const frequentQuestions = [
     {
-        question: "How does tagiamtop.com work?",
+        question: "How important is my being high visibility online?",
         answer:
-            "If you want to grow your Instagram account, you’ll need a steady flow of engagement, likes and views for your posts. If you can get people excited about your content, then many more people are likely to express interest. This is called the social proof scenario. One of the best ways to do that is by liking and commenting on other profiles and posts. If you buy 100 Instagram likes, that means 100 opportunities for people to discover your account and engage with you.\n" +
-            "These users will receive a notification that you liked their post, and often will check out your profile and posts too. If they like what they see and they have similar tastes, they might follow you back. We help brands increase their ability to engage and grow their accounts in an easy and simple-to-manage way. If you want to buy Instagram likes that are cheap and safe, tagiamtop.com is the way forward for you.\n" +
-            "Our basic package includes automated likes sent out to targeted accounts and automated Story views as well as detailed reporting information. This helps you make good content decisions for future campaigns. Our premium model offers the added ability to send direct messages to accounts, keep track of comments and scheduling posts for you. This means you can set up a month of Instagram posts, likes and Story views and then forget about it until next time.",
+            "Almost everything happens online. Let internet users find you or your IG business account by gaining lots of new subscribers, followers and activity with your profile. Instagram has billions of users worldwide. If lots of people to use posts and videos on your profile, you will find your business highly searchable three days after you have bought followers, viewers, and likes. These IG accounts are real and active. As the result, it will do good things to your online presence. ",
         index: 0,
     },
     {
-        question: "How do you find potential likes?",
+        question: "How can I purchase likes, followers, and views from Instagram?",
         isOpen: false,
         answer:
-            "The best likes are accounts that will like your content and find it useful or interesting. One of the best ways to grow your account is by engaging with likes of accounts similar to yours, whether they are your competition, industry influencers or in closely linked fields.\n" +
-            "All you have to do is give us a few accounts that have likes you think will like your content, then we target those specific demographics. Select the location and demographic of your desired likes and the hashtags they search for regularly, and we will do everything else to make sure you get your likes and engagement from the right place.\n" +
-            "Of course, you can manually find new potential likes by searching for a location or hashtag and then seeing which accounts are suitable and relevant. This method is simple but slow, making it difficult to achieve long-term growth.",
+            "Building an Instagram profile and growing it can take time. It might take months for you to get noticed online. You can post a lot of photos, stories, video and other creatives but but not getting organic traffic reach. It's really hard to get level to be seen on Instagram. We offer various packages of likes, auto-likes, comments, views, and followers that can enhance your engagement, get people interested in following you or seeing your ads. How? The only thing you should do is to select relevant hashtags that can catch the attention and interest of all target Instagram subscriber. We do the rest. We make sure that there will develop your profile and encourage others to interact with your posts.",
         index: 1,
     },
     {
-        question: "How long does it take to see results?",
+        question: "Can you help me with some issues with my Instagram account? ",
         answer:
-            "Our priority is real organic growth, with real followers and valuable engagement. Long-term results are more important to us than quick wins. You can monitor the progress of your campaign to see how it’s going, but we can’t guarantee how long it will take to reach your target. When you buy Instagram likes the cheap and easy way with tagiamtop.com, we can help you keep growth on track with the strategic increase I likes and Story views that keep your account authentic.\n" +
-            "We care about providing high-quality social media growth, and with great posts from you, you can see results after just a few days.",
+            "As we put into use the likes, comments, and followers we provided you, you might get swamped with numerous activities on your account. You will be inundated with notifications every time you get a view or like. We are always here to help you to get a lot of likes or followers. Rest assured that our expert support team will work with you to accomplish your goals. Our platform is making things convenient and fruitful for you. Together, let us watch your online presence grow.",
         index: 2,
     },
     {
-        question: "Is it safe to use TagIamTop?",
+        question: "What is your reason for selling Instagram likes or followers?",
         isOpen: false,
-        answer:
-            "We’ve created the safest and most stable growth platform possible, but automation does have some risks. Any type of third-party use on Instagram can risk blocks and bans, but it’s not common at all. We’ve never had an account get banned.\n" +
-            "We avoid using overly intrusive or spamming methods, and instead look to engage real accounts, and encourage them to engage with your posts. We are also experts at staying on top of every Instagram update and requirement, so we can minimize risk as much as possible.",
+        answer: <div>
+            <p>We have several reasons for selling Instagram activity. People like you need them to</p>
+            <ul>
+                <li>Grow their online presence.</li>
+                <li>Build their customer base if they are running a business</li>
+                <li>Show their popularity on social media and become an influencer.</li>
+            </ul>
+            <p> As soon as users have started to view your photos and to put likes their friends can notice it and pay
+                attention to your profile. The same is true with influencers. People will buy whatever you endorse. We
+                enhance your online visibility by making sure that a big number of IG users will draw attention to you
+                on the World Wide Web.
+            </p>
+        </div>
+
+
+        ,
         index: 3,
     },
     {
-        question: "Why should I consider buying Instagram likes?",
+        question: "Can be buying Instagram likes, views, and followers benefit me even if my account is private? ",
         isOpen: false,
         answer:
-            "On every social media platform, people like following accounts that are popular. Just as how people like eating at restaurants with lots of customers, they want to be part of something tested - this idea is known as ‘social proof’.\n" +
-            "Buying likes on Instagram is a great way to boost the ‘social proof’ of your posts, as the more likes you send, the more likely you are to get return engagement. By using tagiamtop.com to buy likes for other posts, you can increase the visibility of your account and grow your followers organically.\n" +
-            "Manually finding and scrolling through hundreds of relevant accounts will take up a lot of your time. Instead of concentrating on your core business objectives, you’ll be flicking through Instagram trying to find good accounts to like and engage with. tagiamtop.com removes this time burden and provides a much easier way to use Instagram.\n" +
-            "Our services can grow your popularity and enhance your reputation, giving you and your brand the platform you need to meet business goals. Buying Instagram likes with tagiamtop.com leads to a stronger audience and a more engaged community.",
+            "Both private and public Instagram accounts will benefit from a boost from us. Yet, private accounts will have limited exposure while public ones can be seen by everyone using the platform. " +
+            "Apparently, creating a public IG account will help you succeed in your online business endeavors. ",
         index: 4,
     },
     {
-        question: "Is the process of buying likes simple?",
+        question: "I have made an order for Instagram likes, views, and followers. When can I see the result? ",
         isOpen: false,
         answer:
-            "Yes, it’s fast and easy. Just give us your account name, explain your growth goals, and we’ll do the rest.\n" +
-            "Once we have the demographics, locations, interests and hashtags of the people you’d like to follow your account, we can do the rest. Just monitor your growth campaign on our platform and see how quickly your social presence can develop.\n" +
-            "If you want to share your brand with the world, paid Instagram engagement is a great way to get started, as it is timely and strategic. You’ll see your followers and your engagement steadily begin to rise, which starts to attract the interest of other users.",
+            "We work on boosting the online attention on your Instagram the moment we get your order. We aim for likes and other IG engagement from real consumers. Your posts must encourage your followers to comment or react to them. When your active followers increases through the exposure we make, you can see positive results after a few days and track the improvement.",
         index: 5,
     },
 ];

@@ -65,7 +65,7 @@ const Terms = () => {
           title="1. Definition"
           text={
             <p className={styles1.info_text} style={{ lineHeight: 3 }}>
-              <b>Tagiamtop</b> - service at the address tagiamtop.com operated by Qloyd OчU registration code 16257994.
+              <b>Tagiamtop</b> - service at the address tagiamtop.com operated by Qloyd OU registration code 16257994.
               <b>Address</b>: Harju maakond, Tallinn, Kesklinna linnaosa, Roseni tn 13, 10111, Estonia, in accordance
               with laws of Estonia. <br/><b>Warranty</b> - The option of financial compensation for damaged or missing products.
               <br/>By <b>service</b>, we mean a website. <b>Buyer</b> - a physical or corporate person who requires our services.
@@ -134,7 +134,7 @@ const Terms = () => {
                 <li>Your service will not begin if payment has been delayed or canceled.</li>
                 <li>If the service specifies a 24-hour turnaround time, the process starts as soon
                   as payment has gone through. You will receive an order to the mail you specify and then make payment.</li>
-                <li>Please contact us using the form or email at contact@maketop.io if you have not received the service.</li>
+                <li>Please contact us using the form or email at contact@tagiamtop.com if you have not received the service.</li>
               </ul>
             </p>
           }

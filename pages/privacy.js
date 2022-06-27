@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
+import Link from 'next/link';
 import { Layer } from "../component/Layer/Layer";
 import styles from "../styles/BuyInstagramLikes.module.sass";
 import styles1 from "../styles/Home.module.sass";
@@ -45,11 +46,11 @@ const Privacy = () => {
             <div className={privacyStyles.privacy_container}>
                 <div className={privacyStyles.terms_block}>
                     <p className={styles1.info_text}>
-                        By reading this document you submit an agreement between <a href="https://tagiamtop.com/" target="_blank">
-                        https://tagiamtop.com/</a> further called tagiamtop or We and you (further called Customer)
-                        on the rules and conditions listed in this Privacy Policy. If you have some doubts whether
-                        to agree with any statement or word written in this text, please, leave this website
-                        and do not make any purchase on it.
+                        By reading this document you submit an agreement between <Link href="/">
+                        <a target="_blank">https://tagiamtop.com/</a></Link> further called tagiamtop or We and you
+                        (further called Customer) on the rules and conditions listed in this Privacy Policy.
+                        If you have some doubts whether to agree with any statement or word written in this text,
+                        please, leave this website and do not make any purchase on it.
                         <br />
                         This document was developed to enclose the main principles of the user’s data use by tagiamtop.com.
                     </p>
@@ -60,9 +61,9 @@ const Privacy = () => {
                         <p className={styles1.info_text} style={{ lineHeight: 3 }}>
                             Likeware collects personal information from the Customer to make the process of purchase
                             convenient and simple. We do not provide third parties with the information indicated
-                            on the website{" "}<a href="https://tagiamtop.com/" target="_blank">
-                            https://tagiamtop.com/</a>  by the Customer including email and contact
-                            information listed in the order the Customer places on the website.
+                            on the website{" "}<Link href="/"><a target="_blank">https://tagiamtop.com/</a></Link>{" "}
+                            by the Customer including email and contact information listed in the order
+                            the Customer places on the website.
                             <br />
                             The website collects the following data from the Customer:
                             <li>Email address for notifications and account access</li>
@@ -125,8 +126,8 @@ const Privacy = () => {
                             These data are not associated with any other data used by Google.
                             <br />
                             You can customize cookies or refuse to provide them to Google Analytics using the following link:
-                            {" "}<a href="https://tools.google.com/dlpage/gaoptout?hl=en-GB" target="_blank">
-                                https://tools.google.com/dlpage/gaoptout?hl=en-GB</a>
+                            {" "}<Link href="https://tools.google.com/dlpage/gaoptout?hl=en-GB"><a target="_blank">
+                                https://tools.google.com/dlpage/gaoptout?hl=en-GB</a></Link>
                         </p>
                     }
                 />
@@ -157,7 +158,7 @@ const Privacy = () => {
                         <p className={styles1.info_text} style={{ lineHeight: 3 }}>
                             Tagiamtop  will be glad to answer them. Please, provide
                             us with feedback via email:
-                            {" "}<a href="mailto:contact@tagiamtop.com">contact@tagiamtop.com</a>
+                            {" "}<Link href="mailto:contact@tagiamtop.com">contact@tagiamtop.com</Link>
                         </p>
                     }
                 />

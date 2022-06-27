@@ -45,10 +45,11 @@ const Privacy = () => {
             <div className={privacyStyles.privacy_container}>
                 <div className={privacyStyles.terms_block}>
                     <p className={styles1.info_text}>
-                        By reading this document you submit an agreement between https://tagiamtop.com/ further
-                        called tagiamtop or We and you (further called Customer) on the rules and conditions
-                        listed in this Privacy Policy. If you have some doubts whether to agree with any statement
-                        or word written in this text, please, leave this website and do not make any purchase on it.
+                        By reading this document you submit an agreement between <a href="https://tagiamtop.com/" target="_blank">
+                        https://tagiamtop.com/</a> further called tagiamtop or We and you (further called Customer)
+                        on the rules and conditions listed in this Privacy Policy. If you have some doubts whether
+                        to agree with any statement or word written in this text, please, leave this website
+                        and do not make any purchase on it.
                         <br />
                         This document was developed to enclose the main principles of the user’s data use by tagiamtop.com.
                     </p>
@@ -59,7 +60,8 @@ const Privacy = () => {
                         <p className={styles1.info_text} style={{ lineHeight: 3 }}>
                             Likeware collects personal information from the Customer to make the process of purchase
                             convenient and simple. We do not provide third parties with the information indicated
-                            on the website https://tagiamtop.com/  by the Customer including email and contact
+                            on the website{" "}<a href="https://tagiamtop.com/" target="_blank">
+                            https://tagiamtop.com/</a>  by the Customer including email and contact
                             information listed in the order the Customer places on the website.
                             <br />
                             The website collects the following data from the Customer:
@@ -123,7 +125,8 @@ const Privacy = () => {
                             These data are not associated with any other data used by Google.
                             <br />
                             You can customize cookies or refuse to provide them to Google Analytics using the following link:
-                            https://tools.google.com/dlpage/gaoptout?hl=en-GB
+                            {" "}<a href="https://tools.google.com/dlpage/gaoptout?hl=en-GB" target="_blank">
+                                https://tools.google.com/dlpage/gaoptout?hl=en-GB</a>
                         </p>
                     }
                 />
@@ -154,7 +157,7 @@ const Privacy = () => {
                         <p className={styles1.info_text} style={{ lineHeight: 3 }}>
                             Tagiamtop  will be glad to answer them. Please, provide
                             us with feedback via email:
-                            contact@tagiamtop.com
+                            {" "}<a href="mailto:contact@tagiamtop.com">contact@tagiamtop.com</a>
                         </p>
                     }
                 />

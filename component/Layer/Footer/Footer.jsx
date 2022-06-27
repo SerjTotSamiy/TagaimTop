@@ -41,6 +41,7 @@ export const Footer = () => {
           <span onClick={() => router.push("/contact")}>Contact</span>
           <span onClick={() => router.push("/support")}>Support</span>
           <span onClick={() => router.push("/terms")}>Terms</span>
+          <span onClick={() => router.push("/privacy")}>Privacy Policy</span>
         </div>
 
         <div className={styles.info}>

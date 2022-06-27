@@ -32,8 +32,10 @@ const BuyInstagramFollowers = ({text}) => {
             data.append("service", "Followers");
             const res = await axios.post("/review_list.php", data);
             const filter = res.data.data.filter(elem => elem.text !== '')
+
             if (res.status === 200) {
                 setComment((prev) => filter);
+                console.log(res)
             }
         } catch (e) {
             console.log(e);
@@ -50,7 +52,8 @@ const BuyInstagramFollowers = ({text}) => {
     return (
         <Layer firstPage={false}>
             <Head>
-                <title>TagIamTop</title>
+                <title>
+                    Buy Instagram Followers - Social Media Services Store</title>
 
                 <meta
                     name="url"

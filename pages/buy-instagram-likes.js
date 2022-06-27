@@ -60,6 +60,7 @@ const BuyInstagramLikes = ({text}) => {
             data.append("system", "Instagram");
             data.append("service", "Likes");
             const res = await axios.post("/review_list.php", data);
+
             if (res.status === 200) {
                 setComment((prev) => res.data.data);
             }
@@ -92,7 +93,8 @@ const BuyInstagramLikes = ({text}) => {
         <>
             {" "}
             <NextHead>
-                <title>TagIamTop</title>
+                <title>
+                    Buy Instagram Likes - Social Media Services Store - TagIamTop</title>
 
                 <meta
                     name="url"

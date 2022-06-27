@@ -50,7 +50,7 @@ const BuyInstagramViews = ({text}) => {
     return (
         <Layer firstPage={false}>
             <Head>
-                <title>TagIamTop</title>
+                <title>Buy Instagram Views - Social Media Services Store - TagIamTop</title>
 
                 <meta
                     name="url"

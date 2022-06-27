@@ -27,9 +27,15 @@ function MyApp({Component, pageProps}) {
     };
     const getPrice = async () => {
         try {
-            const res = await axios.post("/get_plans.php");
+            const res = await axios.post("/get_plans.php", {}, {
+                headers: {
+                    "X-IDENTITY-SITE": 'tagiamtop.com',
+                }
+            });
             if (res.status === 200) {
                 setPrice((prev) => res?.data?.data?.Instagram);
+                console.log(price)
+                console.log(res)
             }
         } catch (e) {
             console.log(e);

@@ -432,9 +432,9 @@ const Step3 = (props) => {
                         <div style={{display: "flex", gap: 20}}>
                             <ButtonComponent
                                 id="PAY"
-                                text={`Choose payment method for-${allInfo?.sym_b}${
+                                text={`Choose payment method for-${allInfo?.sym_b !== null ? allInfo?.sym_b : ''}${
                                     type.price
-                                } ${!allInfo?.sym_b ? allInfo?.sym_a : ""}`}
+                                } ${!allInfo?.sym_b ? allInfo?.sym_a : " "}`}
                                 type="fill"
                                 onClick={() => {
                                     sendOrder();

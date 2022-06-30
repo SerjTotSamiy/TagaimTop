@@ -27,7 +27,7 @@ export const Header = ({firstPage}) => {
                     {firstPage ? (
                         <img src="/logo_white_top.svg" alt="Buy Instagram Followers at tagiamtop.com"/>
                     ) : (
-                        <img src="/logo.svg" alt=""/>
+                        <img src="/logo.svg" alt="Buy Instagram Likes at tagiamtop.com"/>
                     )}
                 </Link>
             </div>

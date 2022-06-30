@@ -46,21 +46,6 @@ const Terms = () => {
       <PageTitle title={"Terms and conditions: Rules, refund, and privacy"} />
 
       <div className={privacyStyles.privacy_container}>
-        <div className={privacyStyles.terms_block}>
-          <p className={styles1.info_text}>
-            By signing up and gaining access to our services, you agree with the
-            Terms and Conditions listed below. First of all, we would like to
-            thank you for choosing our services. The products you purchase on
-            our website are created by STORM FZE, under the brand. The company
-            is located at Fujairah POX. 4422, United Arab Emirates. By signing
-            up to our website, you agree to comply with our Terms and Conditions
-            and that you will be responsible for the compliance with any local
-            laws that are in effect in your region. You cannot continue
-            accessing and using this website if you fail to agree to any of the
-            terms and conditions listed below. Every asset on the website is
-            protected by copyright and trademark law.
-          </p>
-        </div>
         <TextComponent
           title="1. Definition"
           text={

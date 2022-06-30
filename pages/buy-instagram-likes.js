@@ -138,8 +138,7 @@ const BuyInstagramLikes = ({text}) => {
                         />
                     </p>
                     <p className={styles.header_text}>
-                        At TagIamTop, you can buy Instagram likes quickly, safely and easily
-                        with just a few clicks. See our deals below!
+                        The best site to buy Instagram likes. See our deals below!
                     </p>
 
                     <img
@@ -226,7 +225,12 @@ const BuyInstagramLikes = ({text}) => {
                                             }}
                                         />
                                         <p className={styles1.info_title}>{text[0].title}</p>
-                                        {text[0].content}{" "}
+                                        <p>{text[0].content}{" "}</p>
+                                        <p>{text[0].content1}{" "}</p>
+                                        <br/>
+                                        <p>{text[0].content2}{" "}</p>
+                                        <p>{text[0].content3}{" "}</p>
+                                        <p>{text[0].content4}{" "}</p>
                                     </p>
                                 </p>
                             }
@@ -248,7 +252,8 @@ const BuyInstagramLikes = ({text}) => {
                                             }}
                                         />
                                         <p className={styles1.info_title}>{text[1].title}</p>
-                                        {text[1].content}
+                                        <p>{text[1].content}</p>
+                                        <p>{text[1].content2}</p>
                                     </p>
                                 </p>
                             }
@@ -316,7 +321,9 @@ const BuyInstagramLikes = ({text}) => {
                                                     marginBottom: 30,
                                                 }}
                                             />
-                                            {text[2].content}{" "}
+                                            <p>{text[2].content}{" "}</p>
+                                            <p>{text[2].content2}{" "}</p>
+                                            <p>{text[2].content3}{" "}</p>
                                         </p>
                                     </p>
                                 }
@@ -348,10 +355,9 @@ const BuyInstagramLikes = ({text}) => {
                                             {text[3].title2}
                                         </p>
                                         <p className={styles1.info_text}>
-                                            <li>{text[3].li1}</li>
                                             <p style={{marginBottom: 10}}>{text[3].content2}</p>
-                                            <li>{text[3].li2}</li>
                                             <p>{text[3].content3}</p>
+                                            <p>{text[3].content4}</p>
                                         </p>
                                     </p>
                                 }
@@ -492,6 +498,51 @@ const BuyInstagramLikes = ({text}) => {
                         </div>
                     </div>
                 </div>
+                <div className={"container"}>
+                    <div
+                        /*   data-aos="fade-up"
+                           data-aos-duration="500"
+                           data-aos-offset="1600"*/
+                    >
+                        <InfoBlock
+                            text={
+                                <div>
+                                    <h2 className={styles1.info_title}>{text[4].title}</h2>
+                                    <p className={styles1.info_text}>
+                                        {text[4].content}
+                                    </p>
+                                    <p className={styles1.info_text}>{text[4].content2}</p>
+                                    <h3 className={styles1.info_title} style={{marginTop: 30, fontSize: '34px'}}>
+                                        {text[4].title2}
+                                    </h3>
+                                    <ul style={{listStyleType: "numeric"}}>
+                                        <li>{text[4].li1}</li>
+                                        <p className={styles1.info_text}>{text[4].content4}</p>
+                                        <li>{text[4].li2}</li>
+                                        <p className={styles1.info_text}>{text[4].content5}</p>
+                                    </ul>
+                                    <div>
+                                        <h2 className={styles1.info_title}>{text[4].title3}</h2>
+                                        <p className={styles1.info_text}>{text[4].content6}</p>
+                                        <p className={styles1.info_text}>{text[4].content7}</p>
+                                        <p className={styles1.info_text}>{text[4].content8}</p>
+                                        <p className={styles1.info_text}>{text[4].content9}</p>
+                                    </div>
+                                    <div>
+                                        <h2 className={styles1.info_title}>{text[4].title4}</h2>
+                                        <p className={styles1.info_text}>{text[4].content10}</p>
+                                    </div>
+
+                                    <div className={styles1.info_text}>
+                                        <p style={{marginBottom: 10}}>{text[3].content2}</p>
+                                        <p>{text[3].content4}</p>
+                                    </div>
+                                </div>
+                            }
+                            reverse={true}
+                        />
+                    </div>
+                </div>
             </Layer>
         </>
     );
@@ -506,90 +557,117 @@ export async function getStaticProps({params}) {
             },
             text: [
                 {
-                    title: "Why are Instagram likes valuable?",
+                    title: "Buy Instagram Likes From The World’s #1 Site",
                     content:
-                        "Alongside comments, likes are the principal currency spent on\n" +
-                        "Instagram. A like is an affirmation to the social media community that your post is useful,\n" +
-                        "interesting or fun, and might be enjoyed by someone else too.\n" +
-                        "Not only do likes indicate the quality of your post and brand in general, they also show\n" +
-                        "that many people think your account is worth following. The more likes your account\n" +
-                        "receives, the better the ‘social proof’ of your popularity and quality. More likes also mean\n" +
-                        "more exposure. Instagram uses an algorithm to choose which posts to show to larger audiences\n" +
-                        "and having a more popular post will encourage Instagram to organically boost your brand.\n" +
-                        "Likes are also a way to encourage interaction. When someone likes a post, it’s common for\n" +
-                        "the owner of the account to check out the profile of whoever gave the like, and it’s the\n" +
-                        "perfect opportunity to gain a new follower.\n" +
-                        "With tagiamtop.com, we target specific accounts to ensure that your account only likes posts that\n" +
-                        "connect directly to your desired market and demographic.",
+                        "If you are promoting brands or services for Social Media user aged below 40, then, Instagram is the best place to find clients for you. " +
+                        "You do not have to spend much on growing your account." +
+                        " You can buy Instgram likes to become more visible among other members and users of the Social Network.",
+                    content2: "What Is Instagram?",
+                    content3: "Instagram is a online platform that uses visuals rather than text for content. One can post photos of breathtaking people, places, objects, and sceneries, awesome videos and an eye-catching or a unique selfy. One cannot easily find words to describe them.",
+                    content4: "Pictures speak a thousand words and this is what Instagram does. It communicates to its audience not with words but with pictures and videos. The appeal lies in the awesomeness and wholesomeness of the content.",
                 },
                 {
-                    title: "Why should I choose TagIamTop?",
+                    title: "How to Gain Popularity in Instagram",
                     content:
-                        "With our long-term commitment to understanding and working with\n" +
-                        "Instagram, we bring expertise and high-quality service to every user.\n" +
-                        "We stick to the rules of Instagram, and never promise more than we can deliver while\n" +
-                        "consistently boosting your social media presence. That’s how we know our customers will\n" +
-                        "value our tools. When you buy 100 Instagram likes from us you’ll get 100 opportunities to\n" +
-                        "influence potential customers.\n" +
-                        "The social media world is confusing and complicated, and doing everything right can be a\n" +
-                        "real challenge. With our automated and long-standing systems, we take much of the burden of\n" +
-                        "Instagram use away from you.\n" +
-                        "You can see great growth results within a few days of signing up to tagiamtop.com and watch your\n" +
-                        "account go from strength to strength as we deliver powerful results. When you buy a real\n" +
-                        "Instagram like from us, you can feel confident it will count.\n" +
-                        "You can track your campaign, see your spending and progress.",
+                        "One way to become popular in Instagram is to earn likes from your " +
+                        "followers or people who are strangers for you and who is registered on this platform. " +
+                        "You should strive to get more likes, it will help other users to find you and your brand on the Internet." +
+                        " You can use hashtags or trending words or phrases with the number sign" +
+                        " before them. Hashtags show trending topics in yur Instagram." +
+                        " People who like similar topics may check your content and like it. " +
+                        "The likes can grow as other Instagram users whose interests align with yours" +
+                        " will view and like your post.",
+                    content2: "The social network algorithms calls thee likes organic and they can enhance your online visibility." +
+                        " But, the process is tedious." +
+                        " You must spend time posting interesting hashtags and attention-grabbing images" +
+                        " to get the amount of likes you need so that a big audience can see you and your brand online"
                 },
                 {
-                    title: "Buy Automatic Instagram Likes",
+                    title: "What Is An Instagram Like?",
                     content:
-                        " Buy Automatic Instagram Likes and watch how fast you become an\n" +
-                        "influencer in your business niche. Everyone, even the Instagram algorithm , takes notice of\n" +
-                        "your Instagram page. Each time you upload content on your page, the comments and likes\n" +
-                        "attract more attention to your post. You know how frustrating it is to create awesome posts\n" +
-                        "and get few likes. This is why you need Poprey to buy automatic Instagram likes. Our site is\n" +
-                        "safe and secured for purchasing all the likes and comments you need to grow your Instagram\n" +
-                        "page. You will thank us later when your posts go viral!\n" +
-                        "Just like many other Instagram pages in your niche, you bought a popular Instagram course on\n" +
-                        "how to increase your page&apos;s engagement. You followed the course to achieve your goals, but\n" +
-                        "it takes a lot more effort and time to become an influencer in your niche. Even popular\n" +
-                        "Instagram personalities like Beyonce Knowles, Kendall Jenner, or one of the Kardashians, to\n" +
-                        "mention just a few, need help sometimes.\n" +
-                        "With Poprey, it’s just a lot easier and with a lot less hassle! But the best part is the\n" +
-                        "time it takes – no time at all! We currently offer two types of Instagram like packages -\n" +
-                        "your choice depends on your needs.",
+                        " BFor IG entrepreneurs, likes represent your capital. Without them," +
+                        " your business cannot grow much. When you put a heart near an image or a comment," +
+                        " it indicates a like. Because others need likes," +
+                        " they will like your post, too and expect you to return the favor by liking their posts as well...",
+                    content2: "There is a way to make your brand standout and become in demand. You can buy Instagram likes and get a career " +
+                        "development like a successful social media marketer or influencer.",
+                    content3: "But, this process of improving your visibility online or your brand can take a long time." +
+                        " Getting 10 likes a day may not be enough. So, why not try another way, which could be more effective? " +
+                        "You can find one of these ways using the keyword \"buy Instagram likes",
                 },
                 {
-                    title: "Why Should You Buy Automatic Instagram Likes?",
-                    title2: "What are the benefits?",
+                    title: "Why Should You Buy Automatic Instagram Likes.",
+                    title2: "Viewers can like, share, save, or comment on the photos.",
                     content:
-                        "Ever wondered why you put so much effort into creating an\n" +
-                        "Instagram page to achieve your\n" +
-                        "business goals, yet you can't seem to pull it off like your competitors. You have a great\n" +
-                        "plan\n" +
-                        "to grow your Instagram community to leverage their support for your page, but you simply\n" +
-                        "can't\n" +
-                        "get that high number of likes to begin with.\n" +
-                        "Yet your competitors are getting all the likes and partnering with top brands in your niche.\n" +
-                        "Just like most ventures in life, you can get to the top either the hard way or the smart\n" +
-                        "way.\n" +
-                        "Poprey Automatic Instagram Likes is the smart way to the top of your niche. Get all the\n" +
-                        "likes\n" +
-                        "and real views you need to grow your\n" +
-                        "page.",
-                    li1: "Saves Time",
-                    li2: "Real Accounts",
+                        "Instagram has become the leading hub for internet users from all over the world who aspire to" +
+                        " grow their business. This platform is much younger than other media platforms." +
+                        " Yet, it has captured billions of users worldwide." +
+                        " The app uses visuals such as images and videos to share with other users.",
                     content2:
-                        "Buying automatic Instagram likes on Poprey helps you save\n" +
-                        "precious\n" +
-                        "time. Competitors in your niche market are way ahead of you. But you can grow your\n" +
-                        "Instagram\n" +
-                        "page's engagement and surpass them. Buy IG auto likes today and get the rewards in no\n" +
-                        "time.",
+                        "Instead of using texts, Instagram uses hashtag to show what story the image tells. " +
+                        "Hashtags gives the audience an idea what the posts, photos, videos are all about." +
+                        " They make it easy to find brands, products, or services on line.",
                     content3:
-                        "The IG auto likes you will get are from real Instagram accounts. We ensure you get the\n" +
-                        "best\n" +
-                        "value for every penny you invest in buying genuine likes and comments for your business.\n" +
-                        "Plus, you have the opportunity to increase and upgrade each plan you subscribe to.",
+                        "A brand that is recognized in Instagram means it can reach billions of " +
+                        "users and target clients. " +
+                        "If you are endorsing a brand or trying to influence others having" +
+                        " an active Instagram profile can be your ticket to a successful career" +
+                        " as a businessman or as an influencer.",
+                    content4: "But, not all with Instagram accounts become winners overnight. It takes a lot of" +
+                        " time and effort to build an online presence that can attract lots of" +
+                        " potential customers. You will need hundreds to thousands of likes everyday" +
+                        " to get noticed. This is quite difficult to attain unless you buy IG likes.",
+                },
+                {
+                    title: "Why is Buying Likes",
+                    title2: "Here are some tips on how to buy Instagram likes the safest way.",
+                    title3: "Get Instagram Likes with TagIamTop",
+                    title4: "Here are the top reasons to buy IG likes from us: Instant delivery",
+                    content: 'You have been growing your Instagram account for years. ' +
+                        'Every time you check your likes, the count remains the same or increases a little.' +
+                        ' You are still too far from the votes needed to launch and sell a product or become an' +
+                        ' influencer or endorser',
+                    content2: 'The future for you is bleak. You still have a long way to go to reach your aim.' +
+                        ' Is there anything you can do to shorten the journey? ' +
+                        'When it comes to online visibility, there is a short cut for you. Why not buy IG likes?',
+                    content3: "Nowadays, you can see your IG account grow in just a few days." +
+                        " You can order likes from trusted websites to boost your online engagement and presence." +
+                        " You might have some second thoughts. " +
+                        "But why not give it a try? When done properly, the likes that you buy can look organic.",
+                    li1: "Choose the best and right website.",
+                    li2: 'Choose sellers of Instagram likes who know how to boost your IG account.' +
+                        ' These websites usually recommends dripping the likes for several days.' +
+                        ' Using them in bulk in a single day might make your account suspicious.',
+                    content4: "Many websites sell likes but only a few sell real likes from real people." +
+                        " Think about quality, not just quantity." +
+                        " Feeding your IG account with fake likes can do more harm than good.\n" +
+                        "Always read reviews of a website before buying likes from it." +
+                        " Many websites buy real likes from freelance platforms.\n",
+                    content5: 'If you have an average daily likes of 5 and you get more than a hundred the next day,' +
+                        ' it may look suspicious and others would think you are using fake likes. ' +
+                        'A gradual increase in likes will look more natural and believable.',
+                    content6: "Are you looking for Instagram likes with high quality and instant delivery?" +
+                        " Check our website and choose among the packages we offer. " +
+                        "We guarantee the following: Real likes Instant delivery ",
+                    content7: "Affordable price Choice between premium and high-quality likes Guaranteed safe",
+                    content8: "Our aim is to see our customers’ brands stand out among " +
+                        "others through active engagement in their Instagram accounts." +
+                        " When IG profile has a lot of likes, the more users will be" +
+                        " talking about him and his brand. " +
+                        "Other people’s curiosity will lead them to see what’s the hype is all about.",
+                    content9: "A like on your Instagram post may have a ripple effect." +
+                        " Every time someone likes your post, you get a notification." +
+                        " You can also share, comment, save, or like photos and images others shared.\n" +
+                        "All likes will appear organic as they come from different Instagram users." +
+                        " Buying 10 likes can bring more likes, triple or quadruple of the original number of likes.",
+                    content10: 'The moment you place your order and pay for it, you will get them instantly.' +
+                        ' You will see an increase in the activity in your account such as more people talking ' +
+                        'about you or following for you.' +
+                        ' Although we sell real likes from real people, we gradually drip' +
+                        ' likes to your account to make it appear natural.' +
+                        ' Rest assured that full delivery is achieved three days after ' +
+                        'your order. In a matter of a few days, your brand or profile' +
+                        ' will be the talk of internet users, especially on Instagram.',
                 },
             ],
         },

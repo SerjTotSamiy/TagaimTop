@@ -59,6 +59,7 @@ const Step1 = () => {
         if (currentUser) {
             setUser(currentUser)
             setUserEmail(currentUser.email)
+            setUserName(currentUser.name)
             console.log(currentUser)
         }
 
@@ -336,7 +337,8 @@ const Step1 = () => {
                                     placeholder="Username"
                                     minLength={3}
                                     maxLength={15}
-                                    value={userName}
+                                    defaultValue={user.name}
+                                    // value={userName}
                                     required={true}
                                     onChange={(e) => setUserName((prev) => e.target.value)}
                                 />

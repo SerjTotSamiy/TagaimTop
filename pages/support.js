@@ -94,7 +94,7 @@ const Support = () => {
                             src={button.billing ? "billingfocus.svg" : "billing.svg"}
                             alt=""
                         />
-                        <p>Billing Questions</p>
+                        <p>In General</p>
                     </p>
                 </div>
 

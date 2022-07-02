@@ -45,7 +45,7 @@ const Terms = () => {
 
       <PageTitle title={"Terms and conditions: Rules, refund, and privacy"} />
 
-      <div className={privacyStyles.privacy_container}>
+      <div className={privacyStyles.privacy_container}>{/*
         <div className={privacyStyles.terms_block}>
           <p className={styles1.info_text}>
             By signing up and gaining access to our services, you agree with the
@@ -60,7 +60,7 @@ const Terms = () => {
             terms and conditions listed below. Every asset on the website is
             protected by copyright and trademark law.
           </p>
-        </div>
+        </div>*/}
         <TextComponent
           title="1. Definition"
           text={

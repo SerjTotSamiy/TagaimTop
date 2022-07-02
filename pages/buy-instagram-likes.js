@@ -498,9 +498,9 @@ const BuyInstagramLikes = ({text}) => {
                 </div>
                 <div className={"container"}>
                     <div
-                        /*   data-aos="fade-up"
+                           data-aos="fade-up"
                            data-aos-duration="500"
-                           data-aos-offset="1600"*/
+                           data-aos-offset="1600"
                     >
                         <InfoBlock
                             text={

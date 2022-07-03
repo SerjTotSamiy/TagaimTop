@@ -20,6 +20,7 @@ function MyApp({Component, pageProps}) {
             const res = await axios.post("/user_info.php");
             if (res.status === 200) {
                 setAllInfo((prev) => res.data.data);
+                console.log(res.data.data)
             }
         } catch (e) {
             console.log(e);

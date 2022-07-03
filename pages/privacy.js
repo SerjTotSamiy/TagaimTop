@@ -44,7 +44,7 @@ const Privacy = () => {
             <PageTitle title={"Privacy Policy"} />
 
             <div className={privacyStyles.privacy_container}>
-                {/*<div className={privacyStyles.terms_block}>
+                <div className={privacyStyles.terms_block}>
                     <p className={styles1.info_text}>
                         By reading this document you submit an agreement between <Link href="/">
                         <a target="_blank">https://tagiamtop.com/</a></Link> further called tagiamtop or We and you
@@ -54,7 +54,7 @@ const Privacy = () => {
                         <br />
                         This document was developed to enclose the main principles of the user’s data use by tagiamtop.com.
                     </p>
-                </div>*/}
+                </div>
                 <TextComponent
                     title="1. Main operations with the Customer’s personal information that are held by tagiamtop"
                     text={

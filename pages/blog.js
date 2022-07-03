@@ -57,8 +57,7 @@ const Blog = () => {
                     Blog <img src="/buyfollowerfull.svg" width={50} height={40}/>
                 </p>
                 <p className={styles.header_text}>
-                    At TagIamTop, you can buy Instagram likes quickly, safely and easily
-                    with just a few clicks. See our deals below!
+                    You can get the last information and news about online marketing or Social networking service
                 </p>
 
                 <img className={styles.header_arrow} src="/arrow-detail.svg" alt=""/>
@@ -91,10 +90,10 @@ const Blog = () => {
             />
             <BlogItem
                 img="/blogphoto2.png"
-                text="Use Your Instagram Stories To Get More Followers - 7 Ways To Improve Your Stories"
+                text="How to Make a Collage on Instagram Story by iPhone 2022:"
                 onClick={() =>
                     router.push(
-                        `${router.pathname}/use-your-instagram-stories-to-get-more-followers`
+                        `${router.pathname}/how-to-make-collage-instagram-by-iphone`
                     )
                 }
             />

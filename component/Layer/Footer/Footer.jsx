@@ -49,14 +49,12 @@ export const Footer = () => {
                     <span
                         onClick={() => router.push("https://www.cgbilling.com/secure")}>CommerceGate billing support</span>
                     <span style={{display: "flex"}}>
-          <img src="/mastercard.svg" alt=""/>
-          <img src="/visa.svg" alt=""/>
-          <img src="/maestro.svg" alt=""/>
-          <img src="/americanExpress.svg" alt=""/>
-          <img src="/discover.svg" alt=""/>
-        </span>
+                        <img src="/mastercard.svg" alt=""/>
+                        <img src="/visa.svg" alt=""/>
+                        <img src="/maestro.svg" alt=""/>
+                        <img src="/americanExpress.svg" alt=""/>
+                        <img src="/discover.svg" alt=""/></span>
                 </div>
-
             </div>
         </div>
     );

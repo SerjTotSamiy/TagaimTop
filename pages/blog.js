@@ -90,7 +90,7 @@ const Blog = () => {
             />
             <BlogItem
                 img="/blogphoto2.png"
-                text="Use Your Instagram Stories To Get More Followers - 7 Ways To Improve Your Stories"
+                text="How to Make a Collage on Instagram Story by iPhone 2022:"
                 onClick={() =>
                     router.push(
                         `${router.pathname}/how-to-make-collage-instagram-by-iphone`

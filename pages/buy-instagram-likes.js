@@ -31,6 +31,7 @@ const BuyInstagramLikes = ({text}) => {
         2: "/pricebg3.webp",
         3: "/pricebg4.webp",
     });
+    console.log(price)
     const [windowInnerWidth, setWindowInnerWidth] = useState("");
     const [buyType, setBuyType] = useState("");
     const [counts, setCounts] = useState(0);
@@ -498,9 +499,9 @@ const BuyInstagramLikes = ({text}) => {
                 </div>
                 <div className={"container"}>
                     <div
-                           data-aos="fade-up"
-                           data-aos-duration="500"
-                           data-aos-offset="1600"
+                        data-aos="fade-up"
+                        data-aos-duration="500"
+                        data-aos-offset="1600"
                     >
                         <InfoBlock
                             text={

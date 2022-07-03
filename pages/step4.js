@@ -113,7 +113,7 @@ const Step4 = () => {
                                     className={styles.payment_block}
                                     onClick={() => {
 
-                                        if (item?.url_to_pay) router.push(item?.url_to_pay);
+                                        if (item?.url_to_pay) window.open(item?.url_to_pay, "blonk");
                                     }}
                                 >
                                     <img

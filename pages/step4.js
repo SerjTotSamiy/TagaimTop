@@ -138,9 +138,9 @@ const Step4 = () => {
                       <p
                           style={{color: item?.url_to_pay ? "#00831D" : "#666"}}
                       >
-                          {allInfo?.sym_b}
+                          {/*{allInfo?.sym_b}*/}
                           {item?.price_local === null ? item?.price_usd : item?.price_local}
-                          {!allInfo?.sym_b && item?.price_local ? allInfo?.sym_a : "$"}
+                          {!allInfo?.sym_b && item?.price_local ? allInfo?.sym_a :( allInfo?.sym_b || " $")}
 
                       </p>
                         {item?.tax !== 0 && (

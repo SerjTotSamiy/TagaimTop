@@ -35,7 +35,6 @@ function MyApp({Component, pageProps}) {
             });
             if (res.status === 200) {
                 setPrice((prev) => res?.data?.data?.Instagram);
-                console.log(price)
                 console.log(res)
             }
         } catch (e) {
@@ -59,6 +58,7 @@ function MyApp({Component, pageProps}) {
                     allInfo,
                     getAllInfo,
                     price,
+                    setPrice,
                     result,
                     setResult,
                     userInfo,

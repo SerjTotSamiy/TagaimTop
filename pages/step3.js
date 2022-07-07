@@ -302,8 +302,8 @@ const Step3 = (props) => {
                                 }
                                 onClick={() => {
                                     setType(userInfo?.plan?.types?.t1);
-                                   /* setExtras({...extras, e1: false, e2: false, e3: false})
-                                    console.log(extras)*/
+                                    /* setExtras({...extras, e1: false, e2: false, e3: false})
+                                     console.log(extras)*/
                                 }}
                             />
                             <ButtonComponent
@@ -382,8 +382,8 @@ const Step3 = (props) => {
                                         setExtras({...extras, e2: !extras["e2"]})
                                         setType({
                                             ...type,
-                                            price: extras['e2'] ? +type.price - +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.price :
-                                                +type.price + +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.price
+                                            price: extras['e2'] ? +type.price - +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.price :
+                                                +type.price + +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.price
                                         })
                                     }
 
@@ -425,8 +425,8 @@ const Step3 = (props) => {
                                         setExtras({...extras, e3: !extras["e3"]})
                                         setType({
                                             ...type,
-                                            price: extras['e3'] ? +type.price - +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.price :
-                                                +type.price + +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.price
+                                            price: extras['e3'] ? +type.price - +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.price :
+                                                +type.price + +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.price
                                         })
                                     }
 

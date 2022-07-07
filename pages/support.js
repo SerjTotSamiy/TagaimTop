@@ -79,7 +79,7 @@ const Support = () => {
                         <p>General Knowledge</p>
                     </p>
 
-                    <p
+                    <div
                         style={{
                             border: button.billing ? 0 : "2px dashed #C9C2FD",
                             backgroundColor: button.billing ? "#8C66FA" : "transparent",
@@ -95,7 +95,7 @@ const Support = () => {
                             alt=""
                         />
                         <p>In General</p>
-                    </p>
+                    </div>
                 </div>
 
                 {button.genKnowledge ? (

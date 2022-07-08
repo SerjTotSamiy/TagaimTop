@@ -327,7 +327,9 @@ const Step3 = (props) => {
                             />
                         </div>
                         <div className={styles.account_item_block}>
-                            <>
+
+
+                            < div style={{position: 'relative', width: '100%'}}>
                                 <div
                                     className={styles.account_item}
                                     onClick={() => {
@@ -365,16 +367,16 @@ const Step3 = (props) => {
                                     alt=""
                                     style={{
                                         width: "22px", height: "22px",
-                                        position: "relative", top: "-35px", right: "25px"
+                                        position: "absolute", top: "-30px", right: "0"
                                     }}
                                     onClick={() => {
                                         setShowModal(true)
                                     }}
                                 />
-                            </>
+                            </div>
 
 
-                            <>
+                            <div style={{position: 'relative', width: '100%'}}>
                                 <div
                                     className={styles.account_item}
                                     onClick={() => {
@@ -412,12 +414,14 @@ const Step3 = (props) => {
                                     alt=""
                                     style={{
                                         width: "22px", height: "22px",
-                                        position: "relative", top: "-35px", right: "25px"
+                                        position: "absolute", top: "-30px", right: "0"
                                     }}
                                     onClick={() => setShowModal(true)}
                                 />
-                            </>
-                            <>
+                            </div>
+
+
+                            <div style={{position: 'relative', width: '100%'}}>
                                 <div
                                     className={styles.account_item}
                                     onClick={() => {
@@ -454,11 +458,11 @@ const Step3 = (props) => {
                                     alt=""
                                     style={{
                                         width: "22px", height: "22px",
-                                        position: "relative", top: "-35px", right: "25px"
+                                        position: "absolute", top: "-30px", right: "0"
                                     }}
                                     onClick={() => setShowModal(true)}
                                 />
-                            </>
+                            </div>
                             {/*  {price[query.service]?.plans?.filter(elem => elem.count === query.counts).map(elem => {
                                 const extra = Object.values(elem.extra).map((el, ind) => {
                                     return <>

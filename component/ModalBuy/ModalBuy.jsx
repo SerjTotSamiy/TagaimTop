@@ -30,7 +30,7 @@ import {
     PulseLoader,
     RingLoader,
 } from "react-spinners";
-import Icon from "../Icon/Icon";
+import {Icon} from "../Icon/Icon";
 
 const ModalBuy = ({
                       open,

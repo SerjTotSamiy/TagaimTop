@@ -286,6 +286,25 @@ const Step3 = (props) => {
               <img src="/ellipsered.svg" alt=""/>
             </span>
                         <div className={styles.addAccount_buttons}>
+                        <ButtonComponent
+                                text={userInfo?.plan?.types?.t2?.name}
+                                disabled={userInfo?.plan?.types?.t2?.name === "Custom"}
+                                style={
+                                    style[
+                                        userInfo?.plan?.types?.t2.name === type.name
+                                            ? "fill"
+                                            : "outline"
+                                        ]
+                                }
+                                type={
+                                    userInfo?.plan?.types?.t2.name === type.name
+                                        ? "fill"
+                                        : "outline"
+                                }
+                                onClick={() => {
+                                    setType(userInfo?.plan?.types?.t2);
+                                }}
+                            />
                             <ButtonComponent
                                 text={userInfo?.plan?.types?.t1?.name}
                                 style={
@@ -304,25 +323,6 @@ const Step3 = (props) => {
                                     setType(userInfo?.plan?.types?.t1);
                                     /* setExtras({...extras, e1: false, e2: false, e3: false})
                                      console.log(extras)*/
-                                }}
-                            />
-                            <ButtonComponent
-                                text={userInfo?.plan?.types?.t2?.name}
-                                disabled={userInfo?.plan?.types?.t2?.name === "Custom"}
-                                style={
-                                    style[
-                                        userInfo?.plan?.types?.t2.name === type.name
-                                            ? "fill"
-                                            : "outline"
-                                        ]
-                                }
-                                type={
-                                    userInfo?.plan?.types?.t2.name === type.name
-                                        ? "fill"
-                                        : "outline"
-                                }
-                                onClick={() => {
-                                    setType(userInfo?.plan?.types?.t2);
                                 }}
                             />
                         </div>

@@ -50,7 +50,7 @@ const BuyInstagramViews = ({text}) => {
     return (
         <Layer firstPage={false}>
             <Head>
-                <title>TagIamTop</title>
+                <title>Buy Instagram Views - Social Media Services Store - TagIamTop</title>
 
                 <meta
                     name="url"
@@ -100,8 +100,10 @@ const BuyInstagramViews = ({text}) => {
                     Buy Instagram Views <img src="/views.svg" alt=""/>
                 </p>
                 <p className={styles.header_text}>
-                    At TagIamTop, you can buy Instagram likes quickly, safely and easily
-                    with just a few clicks. See our deals below!
+
+                    Gradual delivery and easy payment to buy Instagram views for your account. It's time to start
+                    collaborating with us
+
                 </p>
 
                 <img
@@ -166,9 +168,7 @@ const BuyInstagramViews = ({text}) => {
                 </p>
                 <p className={styles1.info_text} style={{textAlign: "center"}}>
                     {" "}
-                    Here at Buzzoid we pride ourselves in exceptional service and
-                    affordable prices. Don’t just take our word for it – check out what
-                    customers say about our Instagram followers below
+                    Every review is an indicator of customer satisfaction. We are tracking your feedback
                 </p>
                 <div className={`container ${styles1.review_comment_row}`}>
                     <div className={styles1.comments_container}>
@@ -198,7 +198,7 @@ const BuyInstagramViews = ({text}) => {
                 <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="400">
                     <InfoBlock
                         text={
-                            <p style={{marginBottom: 30, padding: 20}}>
+                            <div style={{marginBottom: 30, padding: 20}}>
                                 <p className={styles1.info_text}>
                                     <img
                                         src="/buyviewsinfo1.png"
@@ -206,9 +206,21 @@ const BuyInstagramViews = ({text}) => {
                                         style={{float: "left", marginRight: 80, marginBottom: 30}}
                                     />
                                     <p className={styles1.info_title}>{text[0].title}</p>
-                                    {text[0].content}
+                                    <p>Do you consider your Instagram views important? Many people believe that numerous
+                                        Instagram views is a way to dominate the world. But, are they really useful in
+                                        improving your online presence?</p>
+
+                                    <p>For people who want to become social media celebrities in the Instagram platform,
+                                        having many video and story views is a great advantage. When you have a strong
+                                        online presence, many users will see your brand or products.</p>
+                                    <p>Through their engagement, you will get many followers, likes, and views, which
+                                        will
+                                        qualify you as an influencer of product endorser. You will have the chance to
+                                        earn
+                                        for every endorsement you make.</p>
+
                                 </p>
-                            </p>
+                            </div>
                         }
                         reverse={false}
                         fade={true}
@@ -230,12 +242,13 @@ const BuyInstagramViews = ({text}) => {
                                         }}
                                     />
                                     {text[1].content}
-                                    <li>{text[1].li1}</li>
-                                    <li>{text[1].li2}</li>
-                                    <li>{text[1].li3}</li>
-                                    <li>{text[1].li4}</li>
                                     <br/>
                                     {text[1].content2}
+                                    <p>More engagements.</p>
+                                    <p>The bigger the number of people who view your video post, the more engagements it
+                                        gets such as comments, likes, and shares. Having many people actively
+                                        participate in conversations on your account, the better it will be for your
+                                        brand and business.</p>
                                 </p>
                             </p>
                         }
@@ -245,17 +258,255 @@ const BuyInstagramViews = ({text}) => {
                 <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="600">
                     <TextComponent
                         text={
-                            <p
+                            <div
                                 className={styles1.info_text}
                                 style={{lineHeight: 3, marginBottom: 20}}
                             >
-                                {text[2].content}
-                            </p>
+                                <h2>What Are Instagram Views?</h2>
+                                <p>Getting lots of views is a dream come true for people who want to earn an income from
+                                    their Instagram accounts. Views refer to the number of users and the length of time
+                                    they spend watching a video or an Instagarm Story that you posted.</p>
+                                <p>Yet, views and likes are also difficult to build organically. Besides, there rules as
+                                    to whether a view will be counted or not.</p>
+                                <p>There are several conditions when a view can be counted in your account.</p>
+                                <ul style={{listStyleType: "numeric"}}>
+                                    <li> A user must watch a video for three seconds for it to earn you credits. A user
+                                        can watch it twice and still be counted. You can also watch your videos for the
+                                        same length of time.
+                                    </li>
+                                    <p>You can replay it once for three seconds and get a view. However, playing the
+                                        same video again and again could be detected by Instagram, and doing it might
+                                        bring you trouble, such as getting your account banned.. </p>
+                                    <li>The videos must be watched on the Instagram app. Watching the same video on
+                                        other platforms aside from Instagram will not be counted.
+                                    </li>
+                                    <li>Hashtags play an important role in the video views you will get. People can use
+                                        hashtags to look for what they want or need. If they happen to type a hashtag
+                                        you used in your video, it will show up in the search results.
+                                    </li>
+                                    <li>To <span
+                                        style={{fontWeight: 'bold'}}>get more Instagram video views,</span> post the
+                                        videos between 8 and
+                                        9a m or 8 and 9
+                                        pm. Since many users are online during these times, many of them will view your
+                                        post.
+                                    </li>
+                                </ul>
+                                <h2>Where to Get Instagram Views</h2>
+                                <p>Views come from people who watch videos posted on your Instagram account, including
+                                    you.
+                                    Getting views may be hard especially if you have few likes and followers.</p>
+                                <p>But, just like Instagram likes and followers, you can also buy Instagram views to
+                                    enhance your online visibility. The process is almost the same. To ensure that you
+                                    buy real views from real people, order them from us. We are a reliable website when
+                                    it comes to helping users achieve internet prominence. </p>
+                                <h3>The process is easy.</h3>
+                                <ul style={{listStyleType: 'numeric'}}>
+                                    <li>Choose the type of views you want to order. It could be premium or high-quality.
+                                        Premium costs more but it has better returns,
+                                    </li>
+                                    <li>Indicate the number of views you want to order.</li>
+                                    <li>Wait for your order.</li>
+                                </ul>
+                                <h3>Why buy views from us? Here are some reasons:</h3>
+                                <ul style={{listStyleType: 'numeric'}}>
+                                    <li>Prompt delivery.
+                                    </li>
+                                    <li>Video views are included.</li>
+                                    <li>Fed instantly or gradually.</li>
+                                    <li>Views are real and from real people.</li>
+                                    <li>No need to log in.</li>
+                                    <li>Round-the-clock support.</li>
+                                    <li>Views can be divided into several images or videos.</li>
+                                </ul>
+                                <h3>Advantages of buying our Instagram views:</h3>
+                                <ul style={{listStyleType: "numeric"}}>
+                                    <li>The views that you buy are from real people. You can make it appear organic by
+                                        engaging other users.
+                                    </li>
+                                    <li>The views are targeted. They can focus on a location and the features of your
+                                        ideal users.
+                                    </li>
+                                    <li>Our service users enjoy high-quality security. You do not have to log in using
+                                        your password so we do not expose you to a possible security breach.
+                                    </li>
+                                </ul>
+                                <h2>Frequently Asked Questions</h2>
+                                <p>If you have unanswered questions, you can reach out to our knowledgeable customer
+                                    service representatives.</p>
+                                <h3>1. Do Instagram views increase my internet visibility?</h3>
+                                <p>The digital age has made social media an important partner in achieving successful
+                                    brands and businesses. Today, Instagram leads the pack among the popular platform,
+                                    with more than a billion users.</p>
+                                <p>Instagram has become an engagement hub for internet users. Engagement includes liking
+                                    content, commenting on it, sharing, and viewing videos and images. The more likes,
+                                    followers, comments, and views you have, the easier other platform users will find
+                                    you.</p>
+                                <p>Every time someone watches a video or image on your Instagram for three seconds, you
+                                    can get a view. The posts that are mostly viewed are shared by Instagram with other
+                                    users through their feeds.
+                                    These views can prop up your online popularity which may bring more business
+                                    opportunities.
+                                </p>
+                                <h3>2. How can buying Instagram views help me?</h3>
+                                <p>The more Instagram users view your posts, the more chances you have of being viewed
+                                    by other users. It is human instinct to investigate when something exciting happens.
+                                    Getting many views, comments, shares, and likes will motivate others to see why you
+                                    are so popular.</p>
+                                <p>They will visit your Instagram account to see what causes the excitement. They must
+                                    view the videos others were watching and stay long enough for Instagram to count the
+                                    activity. Once you gain many viewers, your video and photos will be fed by Instagram
+                                    to other users, making them easy to find online.</p>
+                                <p>Buying Instagram views will be a good starting point to have a big number of views
+                                    that looks organic</p>
+                                <h3>3. Is it important that I buy Instagram views from your website only?</h3>
+                                <p>You can buy Instagram views from several websites. But, not all of them offer
+                                    high-quality views.
+                                    If you want to get real views, visit us to make your order. You can get your order
+                                    instantly. However, we will not feed your account with the views for a single time.
+                                    We will do it gradually to make it look natural.
+                                </p>
+                                <p>If you will have problems, we have our customer support team to help you resolve the
+                                    issue. They are available 24 hours a day, 7 days a week t assist you.</p>
+                                <p>When you use our service, you can focus on creating compelling content while we take
+                                    charge of all your Instagram activities.</p>
+                                <p>We observe stringent safety measures to make sure that you can maintain a good
+                                    reputation for your account. You will get real views from us. Increase engagement in
+                                    your account and the views will soon appear organic.</p>
+                                <h3>4. In what way do buying views help my brand or business?</h3>
+                                <p>Getting a big number of views will have an impact on your business or brand. Yet,
+                                    when you do not have enough views, it is quite difficult to level up your
+                                    business.</p>
+                                <p>Buying views can greatly help. A video with many views is usually fed by Instagram to
+                                    other users. Your account will enjoy a wider reach and more exposure. These people
+                                    can become sales leads and later, get converted into buying customers.</p>
+                                <h3>5. When do I receive the views I have bought?</h3>
+                                <p>We offer instant delivery of views that you buy. We avoid feeding all views at once.
+                                    Instead, we do it gradually within three days or more. The increase in views will
+                                    look natural. As other users interact with you and with each other, you can expect
+                                    to have more views. </p>
+                                <h3>6. Do I need to provide my login details to buy views?</h3>
+                                <p>We will not as you for your login details. You only need to provide your username and
+                                    email on Instagram. Rest assured that we will safeguard the safety of your account
+                                    and we will never compromise it.</p>
+                                <h2>Likes vs. Views</h2>
+                                <p>Many Instagram users wonder how likes and views are counted. Likes are represented by
+                                    a heart on Instagram. The number of likes is equal to the number of hearts. </p>
+                                <p>Views, on the other hand, are counted as long as you view the video in three seconds
+                                    or more. This means that even if you do not like the video but watched it, it is
+                                    counted as a view.</p>
+                                <p>Instagram views refer to viewing videos and Instagram stories. Looking at photos is
+                                    not counted as a view. Watching a video for less than three seconds will not be
+                                    counted, either.</p>
+                                <p>To ensure that you get views, create interesting videos and stories to attract
+                                    traffic to your Instagram account. After the automated feed of views that you have
+                                    bought from us, you can expect more views from other users who are attracted to your
+                                    videos and stories.</p>
+                                <p>Here are some questions regarding Instagram views and how they impact your visibility
+                                    online.</p>
+                                <h2>Table of Contents</h2>
+                                <p><a href="#h3-1">What is the average length of an Instagram story?</a></p>
+                                <p><a href="#h3-2">In what year did Instagram start having stories and why?</a></p>
+                                <p><a href="#h3-3">What is the process of adding links to my story?</a></p>
+                                <p><a href="#h3-4">In what way can I put highlights on my Instagram story?</a></p>
+                                <p><a href="#h3-5">Can I see who watched my Instagram story?</a></p>
+                                <p><a href="#h3-6">Is it possible to have a schedule for posting my Instagram Story?</a>
+                                </p>
+                                <p><a href="#h3-7">What is the perfect time to post my Instagram story?</a></p>
+                                <p><a href="#h3-8">What is the importance of video in social media?</a></p>
+                                <p><a href="#h3-9">Is there a specific number of views for influencers?</a></p>
+                                <p><a href="#h3-10">Why do Instagram views matter?</a></p>
+                                <h4 id="h3-1">What is the average length of an Instagram story?</h4>
+                                <p>The ideal length of an Instagram story is 15 seconds. Yet, you can also make it seven
+                                    seconds. If your story is long, you can divide it into several segments of 15
+                                    seconds each. Stories that are longer are still allowed but, you will need a tool to
+                                    do this automatically. </p>
+                                <h4 id="h3-2">In what year did Instagram start having stories and why?</h4>
+                                <p>Instagram launched Insta Stories and Live Stories in August and November of 2016,
+                                    respectively. With this feature, Instagram users do not have to spend time deleting
+                                    content that they do not want to keep because they automatically disappear after 24
+                                    hours. </p>
+                                <p>However, you can keep a copy in the form of a reel as proof of your popularity when
+                                    you buy IG views.</p>
+                                <h4 id="h3-3">What is the process of adding links to my story?</h4>
+                                <p>Here are simple steps in adding links to an Instagram Story.</p>
+                                <ul style={{listStyleType: "numeric"}}>
+                                    <li>Tap on the camera icon to take a video or photo or to visit the library.</li>
+                                    <li>Click the icon that looks like a chain lock. A pop-up window will appear. Place
+                                        the URL here. Tap on Done
+                                    </li>
+                                    <li> Have a call to action for the Instagram Story link.</li>
+                                </ul>
+                                <h4 id="h3-4">In what way can I put highlights to my Instagram story?</h4>
+                                <p>To create highlights for your Instagram story, do the following:</p>
+                                <ul style={{listStyleType: "numeric"}}>
+                                    <li>Go to your profile.</li>
+                                    <li>Tap Story Highlights.</li>
+                                    <li>Decide how many stories you will add to Highlights. Click Next.</li>
+                                    <li>Choose a profile picture and the number of stories</li>
+                                </ul>
+                                <h4 id="h3-5">Can I see who watched my Instagram story?</h4>
+                                <p>The people who viewed your story will be visible to you for up to 48 hours. You need
+                                    to open your story and swipe the screen. The username of those who watched your
+                                    video and their number will appear. Just open your story and swipe the screen.</p>
+                                <h4 id="h3-6">Is it possible to have a schedule for posting my Instagram Story?</h4>
+                                <p>A schedule for posting videos and stories on Instagram keeps your viewers updated.
+                                    They would know the time that they must watch out for your content. Following a
+                                    strict schedule is not easy.
+                                    Yet, there are scheduling tools that you can use without you spending too much time
+                                    and effort. These tools can post your content such as videos and stories following
+                                    the schedule you made. You will know who your competitors are, and how your account
+                                    is performing, and it can also generate amazing content.
+                                </p>
+                                <p>Have a big number of views. Order more from us. With the help of an efficient
+                                    scheduling tool, you will be surprised to find your business or brand sought by
+                                    thousands of people.</p>
+                                <h4 id="h3-7">What is the perfect time to post my Instagram story?</h4>
+                                <p>You should know that the right time to post is when many Instagram users are online.
+                                    Even if you bought your Instagram views, knowing the best time to show the world
+                                    your amazing content can make you an internet celebrity. </p>
+                                <p>Some Instagram users prefer to be online in the morning, mostly between 8 to 9, or in
+                                    the evening, at the same time. You can plan ahead of the posting of your content so
+                                    that it can be done even if you are at work. </p>
+                                <h4 id="h3-8">What is the importance of video in social media?</h4>
+                                <p>Videos are highly important in social media. They can easily capture the interest of
+                                    your viewers. They can see the actions of the people in the video, hear their words,
+                                    and react to what they see and do. You can place your call to action at the end of
+                                    the video. That is why you need interesting videos that can keep the attention of
+                                    your audience up to the end of the video so that they can see your call to
+                                    action.</p>
+                                <h4 id="h3-9">Is there a specific number of views for influencers?</h4>
+                                <p>Becoming an influencer is not easy. In social media, both quantity and quality count.
+                                    You have to reach a certain number of views before you can become one. You can have
+                                    a few hundreds of thousands of views if you want to achieve maximum exposure as an
+                                    influencer. </p>
+                                <p>It is easy to increase your views. You can order real views from us fed gradually to
+                                    your Instagram to make them look natural. After three days you will see an increase
+                                    in your number of viewers.</p>
+                                <h4 id="h3-10">Why do Instagram views matter?</h4>
+                                <p>Instagram views are proof of your online presence. The more views you get, the wider
+                                    the reach of your business and brand. Companies will hire you to promote their
+                                    products and services. You can become an influencer or an endorser and get paid for
+                                    every brand that you promote</p>
+                                <p>But, how can you get more views? First, create interesting content that will catch
+                                    the attention of the viewers. When you order views from us, we make sure that it
+                                    comes from people with similar interest as yours. </p>
+                                <p>Proper use of hashtags will helpful. Be sure that the hashtags are relevant to the
+                                    videos that you post. They must be current and trending. People tend to search for
+                                    the latest and most fashionable brands.
+                                    Be An Instagram Success Story; Buy Instagram Views from the World’s #1 Website
+                                </p>
+                                <p>Buying Instagram views can boost your online presence. We deliver views from real
+                                    people that appear organic. Post compelling videos and make other Instagram users
+                                    find you and watch your brand and business take the top spot and stay there for a
+                                    long time.</p>
+                            </div>
                         }
                         title={<p className={styles1.info_title}>{text[2].title}</p>}
                     />
+
                 </div>
-                <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="600">
+                {/*   <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="600">
                     <TextComponent
                         text={
                             <div className={styles1.textColumns}>
@@ -351,7 +602,7 @@ const BuyInstagramViews = ({text}) => {
                             <p className={styles1.info_title}>How to buy Instagram views</p>
                         }
                     />
-                </div>
+                </div>*/}
             </div>
         </Layer>
     );
@@ -382,22 +633,16 @@ export async function getStaticProps({params}) {
                         "to do is get more views on Instagram, the hottest app for sharing videos.",
                 },
                 {
-                    title: "Why Should You Buy Instagram Views?",
+                    title: "The Importance of Instagram Views",
                     content:
-                        " It's a good idea to buy Instagram views to increase the reach\n" +
-                        "                                and popularity of your video. A video with a high view count benefits you in so many ways,\n" +
-                        "                                either as an individual:",
-                    li1: "hoping to increase online popularity,",
-                    li2: "who wants to spread a meaningful message or",
-                    li3: "who wishes to become an influencer and get paid by advertising for brands",
-                    li4:
-                        "as a brand that wants to reach a wider audience and increase trust with the high view\n" +
-                        "                                    count or as a business that wants to explore new markets, introduce new products, or\n" +
-                        "                                    improve the popularity of an existing one.",
+                        " IInstagram views and likes can help you strengthen your online presence." +
+                        " There are several ways in which Instagram video views can do this:",
                     content2:
-                        "Buying Instagram views means your video becomes popular. By the design of Instagram's\n" +
-                        "                                algorithm 2021 - 2022, your popular video will be suggested to other users from where you\n" +
-                        "                                will get more organic views, likes and reach your target audience.",
+                        "The Instagram current algorithm favors those with lots of views. " +
+                        "The more Instagram views you get, the more chances for your " +
+                        "videos to appear on every user's feed, and the more people will" +
+                        " see your products or brands. Your post will gain prominence" +
+                        " and become more popular than other posts that were uploaded with yours at the same time.",
                 },
 
                 {

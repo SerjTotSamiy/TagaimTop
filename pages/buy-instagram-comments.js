@@ -52,7 +52,7 @@ const BuyInstagramComments = ({text}) => {
     return (
         <Layer firstPage={false}>
             <Head>
-                <title>TagIamTop</title>
+                <title>Buy Instagram Comments - Social Media Services Store</title>
 
                 <meta
                     name="url"
@@ -102,8 +102,7 @@ const BuyInstagramComments = ({text}) => {
                     Comments <img src="/comment1.svg"/>
                 </p>
                 <p className={styles.header_text}>
-                    At TagIamTop, you can buy Instagram likes quickly, safely and easily
-                    with just a few clicks. See our deals below!
+                    Random or Custom packages to buy Instagram comments. Let's start collaborating with us
                 </p>
 
                 <img className={styles.header_arrow} src="/Arrow-detail.svg" alt=""/>
@@ -162,9 +161,7 @@ const BuyInstagramComments = ({text}) => {
                     </p>
                     <p className={styles1.info_text} style={{textAlign: "center"}}>
                         {" "}
-                        Here at Buzzoid we pride ourselves in exceptional service and
-                        affordable prices. Don’t just take our word for it – check out what
-                        customers say about our Instagram followers below
+                        Every review is an indicator of customer satisfaction. We are tracking your feedback
                     </p>
 
                     <div className={`container ${styles1.review_comment_row}`}>
@@ -204,12 +201,15 @@ const BuyInstagramComments = ({text}) => {
                                 />
                                 <p className={styles1.info_title}>{text[0].title}</p>
                                 <p className={styles1.info_text}>
-                                    {text[0].content}
-                                    <li>{text[0].li1}</li>
-                                    <li>{text[0].li2}</li>
-                                    <li>{text[0].li3}</li>
-                                    <li>{text[0].li4}</li>
-                                    <li>{text[0].li5}</li>
+                                    {/*{text[0].content}*/}
+                                    People seeking Instagram popularity buy IG comments. Comments weigh more than
+                                    likes or views because they require effort. You do not just tap the video or
+                                    photo buy you have to say something, which requires you to think. Comments must
+                                    be relevant to the content you are talking about.
+                                    Buying IG comments is important if your account still has very few of them. An
+                                    account with many likes and comments will bring you the kind of online presence
+                                    that will qualify you as an influencer or endorser. You get paid for every
+                                    product or business that you promote in your Instagram.
                                 </p>
                                 <p className={styles1.info_title}>{text[0].title2}</p>
                                 <p className={styles1.info_text}>
@@ -231,8 +231,18 @@ const BuyInstagramComments = ({text}) => {
                                         alt="buy real Instagram comments"
                                         style={{float: "right", marginLeft: 80, marginBottom: 30}}
                                     />
-                                    <p className={styles1.info_title}>{text[1].title}</p>
-                                    {text[1].content}
+                                    <p className={styles1.info_title}>Why Buy Instagram Comments from Us</p>
+                                    <p>Some Instagram users are hesitant to buy Instagram comments because Instagram
+                                        might not like it. Yet, with several websites selling IG comments now, buying
+                                        high quality ones will push your account up and bring you lots of benefits. </p>
+                                    <p>Building your name on the internet is a long and difficult process. If you have a
+                                        shorter way to achieve your goal and have social proof, why not buy high-quality
+                                        ones from a website like ours? We will never put your reputation at stake. You
+                                        will get comments of the highest quality from us.
+                                        How? Our website makes sure that you get real comments from real people. They
+                                        have a high engagement so they are sure to make you get noticed. Here are some
+                                        features of the comments that you can receive from us:
+                                    </p>
                                 </p>
                                 <p className={styles1.info_title} style={{marginTop: 30}}>
                                     {text[1].title2}
@@ -247,12 +257,176 @@ const BuyInstagramComments = ({text}) => {
                     <TextComponent
                         title={<p className={styles1.info_title}>{text[2].title}</p>}
                         text={
-                            <p
+                            <div
                                 className={styles1.info_text}
                                 style={{lineHeight: 3, marginBottom: 20}}
                             >
-                                {text[2].content}
-                            </p>
+                                <p>
+                                    We get rid of comments from bots before we sell our packages. Instagram hates bots
+                                    and
+                                    so do we. The comments we sell come from real people and have high engagement. They
+                                    can
+                                    be useful in gaining more likes and followers because these comments talk sense.
+                                    They
+                                    are relevant to content being commented.
+                                </p>
+
+                                {/*     {text[2].content}*/}
+                                <p>We use SSL or Secure Sockets Layer for your orders and payment. No one can assess
+                                    these data aside from you. We always keep our clients’ personal information and we
+                                    do not reveal the names of our buyers.</p>
+                                <p>The sales process takes a very short time and there is no possibility of others
+                                    knowing about it. This is how we get more return customers. They know that they are
+                                    always safe with us.</p>
+                                <p>The comments you buy from us come from accounts that has the best reputation. All
+                                    comments are of premium quality. You will recognize one because they gain a blue
+                                    tick from Instagram. Because of their high quality, they usually attract other users
+                                    to engage. </p>
+                                <p>When people start talking about your content, others will notice you, contribute to
+                                    the conversation, and make you more popular online. </p>
+                                <p>We offer several options to our customers. You can choose between premium or
+                                    high-quality comments. <span
+                                        style={{fontWeight: 'bold'}}>Premium comments</span> cost more but we guarantee
+                                    that they bring
+                                    better results. But, if you are on a budget, you may prefer our high quality
+                                    comments, which cost less.</p>
+                                <p>You can buy the number of comments that you want, from 10 to 500 comments. You can
+                                    decide to have all comments at once appear on your Instagram or in a gradual
+                                    manner. </p>
+                                <p>There are packages that will suit your budget.</p>
+                                <h2>Frequently Asked Questions</h2>
+                                <p>If there are questions that we have not covered, you can ask out specialist and get
+                                    answers fast.</p>
+                                <h3>1. Are the comments relevant to the content?</h3>
+                                <p>We only choose comments that are related to the photo or video that is supposed to be
+                                    commented on. They tackle trending issues. These comments can draw many onlookers
+                                    who will eventually join the conversation and encourage engagement. </p>
+                                <h3>2. How fast and simple is it to but Instagram comments?</h3>
+                                <p>There is nothing complicated on the process of buying Instagram comments. You can
+                                    visit our website, choose the package you want, and place an order. It is
+                                    hassle-free and the comments you paid for are delivered instantly.</p>
+                                <h3>3. Must the comments relate to the post or video?</h3>
+                                <p>All comments must be related to the videos commented on. No matter how many comments
+                                    were made if they are off the video or image at hand, they will be useless.
+                                    Instagram has its rules and it always sticks to it.</p>
+                                <p>Gibberish comments, rude remarks, statements that are out of topic will not
+                                    contribute to your standing in social media.</p>
+                                <h3>4. Is there no issue in buying Instagram comments from your website?</h3>
+                                <p>Safety and security are our topmost concerns and buying Instagram comments from us
+                                    should not be an issue. We do not divulge your details and our SSL prevents any
+                                    third party from bothering our clients.</p>
+                                <h3>5. Do you have a good support team?</h3>
+                                <p>Our expert support team is always ready to help you any time of day or night. This
+                                    means that you can buy comments wherever you are anytime. If you are ordering
+                                    Instagram comments for the first time, feel free to seek help from our support team.
+                                    They are always ready and capable to help you.</p>
+                                <h3>6. Do you have a refund policy?</h3>
+                                <p>Yes. Clients who do not receive their orders will immediately get a refund. We do not
+                                    want you to lose your investment. This is alo one reason why our clients trust us
+                                    and always place a repeat order.</p>
+                                <h3>7. How will I know that my order is on the way?</h3>
+                                <p>As soon as you have placed your order, you will be informed if the order has been
+                                    completed. You can then start to monitor your Instagram account so that you will see
+                                    if there is an increase in the comments in your account. We want you to get the
+                                    comments that you ordered at the soonest time possible.</p>
+                                <h3>8. Is it possible to buy comments for several posts?</h3>
+                                <p>Yes, it is possible as long as you specify this in your order. You also have to buy a
+                                    plan with a big number of comments if you want to buy from us. Providing comments
+                                    for multiple posts can make the engagement go up in a short time. People will turn
+                                    their eyes on your account as they wonder how you achieved such popularity.</p>
+                                <h3>9. Is buying comments also a way to get more followers?</h3>
+                                <p>Usually, the comments that you buy can bring you more followers if you keep your
+                                    posts current and interesting. So, it is up to you to exert more efforts and use
+                                    creativity to make people interested in your Instagram posts. When you buy random
+                                    comments, there are real people behind each. If you can capture their interest, they
+                                    can turn into organic followers.</p>
+                                <h3>10. Will Instagram ban me for buying comments?</h3>
+                                <p>You only have to worry if you are using bots because Instagram is against it. But if
+                                    you buy comments from us, we assure you that those comments come from real people.
+                                    All the comments that buy from us relate to the post so you do not have to worry
+                                    about getting banned.</p>
+                                <h2>How to Make People Give Comments</h2>
+                                <p>While getting like is quite easy, seeing comments on one’s page can be a challenge.
+                                    Likes can be indicated by a double click. A comment has to be well-thought of and
+                                    relevant. </p>
+                                <p>So, how can you encourage followers and visitors to make comments? Here are some
+                                    tips:</p>
+                                <h3>1. Post something that is appealing to the emotion.</h3>
+                                <p>People tend to react fast to an emotional post. Aside from the emojis, you can get
+                                    written comments as well. Short rejoinders will serve you well. They are like tennis
+                                    balls flying over the net back and forth</p>
+                                <h3>2. Rely to comments.</h3>
+                                <p>Do not be lazy. Spend time replying to comments no matter how short. It shows that
+                                    you care about your followers’ or visitors’ comments, which makes them feel
+                                    valued.</p>
+                                <h3>3. Post at the right time.</h3>
+                                <p>When you post something when everyone is asleep or busy, you cannot expect comments.
+                                    Choose a time when people are awake and alert. You can expect them to make comments
+                                    and reply to yours.</p>
+                                <h3>4. Never overlook a comment.</h3>
+                                <p>When a person makes comments, it means he expects a reply. Always pay back the favor.
+                                    Replying to comments is one way of sustaining engagement. That person will be happy
+                                    to interact on your page. </p>
+                                <p>You will be amazed as the number of comments increase. Others who are on your page
+                                    may add their own pitches or reactions, resulting in a continuous exchanges.</p>
+                                <h3>5. Request your audience to give you a like or make a comment.</h3>
+                                <p>Followers tend to listen to what you say. At the end of a video post, ask them to
+                                    give you a like or to say something. Most of them will do as requested. Never miss a
+                                    chance to highlight your call for action.</p>
+                                <h3>6. Feature a Q & A with giveaways to participants who give the correct answer.</h3>
+                                <p>People love to compete and win. A contest once a month will help in getting comments,
+                                    replies, and reactions. Your audience will love the excitement and fun. Doing this
+                                    once in a while will keep them from getting bored. They will have something to look
+                                    forward to each month.</p>
+                                <h3>7. Ask them for suggestions on how to improve your content.</h3>
+                                <p> People want to be heard. Asking someone for suggestion will always elicit positive
+                                    result. How about asking your audience how you can improve your content? This could
+                                    lead to a lively discussion.
+                                    You might receive myriad of suggestions that other might agree or disagree with.
+                                    Each side will be defending his stand, either by using an emoji or a short written
+                                    comment. All of these will be good for your online popularity and the brands or
+                                    businesses that you are promoting.
+                                </p>
+                                <h3>8. Recognize best comment.</h3>
+                                <p>Making comments in an Instagram post requires effort. Why not reward it by pinning
+                                    the comment? Other users will see the pinned comment and will be curious as to why
+                                    it is the best. They will find time to read it or comment on it. Pinning best
+                                    comments will also inspire your followers and other Instagram users. They will
+                                    aspire for the same recognition by giving their best and wittiest rejoinder.</p>
+                                <p>Either way, you get yourself a valuable source of organic and high-quality
+                                    comments.</p>
+                                <h3>9. Hold contests with prizes</h3>
+                                <p>Contests always draw crowd. A few dollars for give prizes can bring many future
+                                    returns. Give awards for the best video of the week, most liked photo of the week,
+                                    or most-commented content. Make this a regular event. </p>
+                                <p>Other Instagram users can become your followers and viewers as they join in the
+                                    excitement and fun of these contests. People who want to earn a prize for the most
+                                    commented post will invite their friends and acquaintances to give a comment and be
+                                    counted.</p>
+                                <h3>10. Keep a good likes-comments ratio.</h3>
+                                <p>When you have many likes and too few comments, Instagram might be doubtful because of
+                                    the discrepancy. If you bought your likes, this thing could happen. What is the
+                                    ideal number of comments in relation to likes?</p>
+                                <p>Each 100 likes should have 10 to 20 comments. So, how could you maintain this
+                                    standard?</p>
+                                <p>Buy Instagram comments from us and we make sure to have that ratio. Our social media
+                                    experts can match comments with the posts liked by your followers. If a video
+                                    garnered 100 likes, w will make sure to prorate 10 to 20 comments that are related
+                                    to the posts to make them appear natural.</p>
+                                <p><span style={{fontWeight: 'bold'}}>Buy Instagram comments</span> from us and stop
+                                    worrying about getting banned
+                                    from Instagram.
+                                    The comments you get from us are of the highest-quality. They are made by real
+                                    people.</p>
+                                <p>We do not deal with bots and would never use them to generate comments. When it comes
+                                    to Instagram analytics, we always observe them because we value our clients. Our aim
+                                    in selling high-quality comments is to make money. We want to help you make money
+                                    from your social media accounts.</p>
+                                <p>Buy Instgram comments from us. Withu s as your partner, nothing could go wrong. Let
+                                    us walk hand-in-hand towards the fulfillment of our goals: a satisfied, happy, and
+                                    successful social media entrepreneur. </p>
+                            </div>
+
                         }
                     />
                 </div>
@@ -267,7 +441,7 @@ const BuyInstagramComments = ({text}) => {
                     />
                 </div>
 
-                <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="700">
+                {/*      <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="700">
                     <InfoBlock
                         text={
                             <p style={{marginLeft: 60, marginBottom: 30}}>
@@ -299,7 +473,7 @@ const BuyInstagramComments = ({text}) => {
                         img="/commentsinfo3.png"
                         alt={"Instagram comments"}
                     />
-                </div>
+                </div>*/}
             </div>
         </Layer>
     );

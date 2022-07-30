@@ -35,7 +35,7 @@ const Privacy = () => {
                 <link rel="canonical" href="https://likes.io/terms" />
             </Head>
             <div className={styles.header_banner}>
-                <p className={styles.header_title}>Terms of Service</p>
+                <p className={styles.header_title}>Privacy Policy</p>
                 <p className={styles.header_text}>Last Updated : June 27, 2022</p>
 
                 <img className={styles.header_arrow} src="/arrow-detail.svg" alt="" />
@@ -58,7 +58,7 @@ const Privacy = () => {
                 <TextComponent
                     title="1. Main operations with the Customer’s personal information that are held by tagiamtop"
                     text={
-                        <p className={styles1.info_text} style={{ lineHeight: 3 }}>
+                        <p className={styles1.info_text} style={{ lineHeight: 1.5 }}>
                             Likeware collects personal information from the Customer to make the process of purchase
                             convenient and simple. We do not provide third parties with the information indicated
                             on the website{" "}<Link href="https://tagiamtop.com/" target="_blank">
@@ -77,7 +77,7 @@ const Privacy = () => {
                 <TextComponent
                     title="2. Main principles Tagiamtop adheres to when operating with the Customer’s data"
                     text={
-                        <p className={styles1.info_text} style={{ lineHeight: 3 }}>
+                        <p className={styles1.info_text} style={{ lineHeight: 1.5 }}>
                             <li>We provide notifications mailing to the Customer’s email indicated when
                                 registering on the website or submitting an order.</li>
                             <li>We collect personal information to tailor our services to the Customer’s needs.</li>
@@ -100,7 +100,7 @@ const Privacy = () => {
                 <TextComponent
                     title="3. What purposes do We follow by collecting personal data and user information?"
                     text={
-                        <p className={styles1.info_text} style={{ lineHeight: 3 }}>
+                        <p className={styles1.info_text} style={{ lineHeight: 1.5 }}>
                             <li>
                                 To collect the Customer’s information for further promotions
                                 and notifications about the services and products Tagiamtop offers.
@@ -117,7 +117,7 @@ const Privacy = () => {
                 <TextComponent
                     title="4. Google Analytics’ use of the Customer’s data"
                     text={
-                        <p className={styles1.info_text} style={{ lineHeight: 3 }}>
+                        <p className={styles1.info_text} style={{ lineHeight: 1.5 }}>
                             Our website uses Google Analytics services provided by Google,
                             Inc. These services use a special type of user’s data – so-called
                             ‘cookies’ that are text-format pieces of data located on the Customer’s
@@ -135,7 +135,7 @@ const Privacy = () => {
                 <TextComponent
                     title="5. Technologies that we use for the Customer’s data protection"
                     text={
-                        <p className={styles1.info_text} style={{ lineHeight: 3 }}>
+                        <p className={styles1.info_text} style={{ lineHeight: 1.5 }}>
                             Tagiamtop guarantees the safety and confidentiality
                             of the personal data of the Customer by implementing
                             double encryption technology on the website.
@@ -155,7 +155,7 @@ const Privacy = () => {
                 <TextComponent
                     title="6. Do you have any questions about this Privacy Policy document?"
                     text={
-                        <p className={styles1.info_text} style={{ lineHeight: 3 }}>
+                        <p className={styles1.info_text} style={{ lineHeight: 1.5 }}>
                             Tagiamtop  will be glad to answer them. Please, provide
                             us with feedback via email:
                             {" "}<Link href="mailto:contact@tagiamtop.com">contact@tagiamtop.com</Link>

@@ -20,6 +20,7 @@ function MyApp({Component, pageProps}) {
             const res = await axios.post("/user_info.php");
             if (res.status === 200) {
                 setAllInfo((prev) => res.data.data);
+                console.log(res.data.data)
             }
         } catch (e) {
             console.log(e);
@@ -27,9 +28,14 @@ function MyApp({Component, pageProps}) {
     };
     const getPrice = async () => {
         try {
-            const res = await axios.post("/get_plans.php");
+            const res = await axios.post("/get_plans.php", {}, {
+                headers: {
+                    "X-IDENTITY-SITE": 'tagiamtop.com',
+                }
+            });
             if (res.status === 200) {
                 setPrice((prev) => res?.data?.data?.Instagram);
+                console.log(res)
             }
         } catch (e) {
             console.log(e);
@@ -52,6 +58,7 @@ function MyApp({Component, pageProps}) {
                     allInfo,
                     getAllInfo,
                     price,
+                    setPrice,
                     result,
                     setResult,
                     userInfo,

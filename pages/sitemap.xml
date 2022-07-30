@@ -1,7 +1,59 @@
-<?xml version="1.0" encoding="UTF-8"?>
-      <urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
-      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-      xmlns:xhtml="http://www.w3.org/1999/xhtml">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+        <!--	created with www.mysitemapgenerator.com	-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://tagiamtop.com</loc>
+        <lastmod>2022-05-23T16:39:25+00:00</lastmod>
+        <xhtml:link rel='alternate' hreflang='en-US' href='https://tagiamtop.com'/>
+    </url>
+    <url>
+        <loc>https://tagiamtop.com/buy-instagram-likes</loc>
+        <lastmod>2022-05-24T00:24:05+00:00</lastmod>
+        <xhtml:link rel='alternate' hreflang='en-US' href='https://tagiamtop.com/buy-instagram-likes'/>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://tagiamtop.com/buy-instagram-followers</loc>
+        <xhtml:link rel='alternate' hreflang='en-US' href='https://tagiamtop.com/buy-instagram-followers'/>
+        <lastmod>2022-05-24T00:24:05+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://tagiamtop.com/buy-instagram-views</loc>
+        <lastmod>2022-05-24T00:24:05+00:00</lastmod>
+        <xhtml:link rel='alternate' hreflang='en-US' href='https://tagiamtop.com/buy-instagram-views'/>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://tagiamtop.com/buy-instagram-comments</loc>
+        <lastmod>2022-05-24T00:24:05+00:00</lastmod>
+        <xhtml:link rel='alternate' hreflang='en-US' href='https://tagiamtop.com/buy-instagram-comments'/>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://tagiamtop.com/contact</loc>
+        <lastmod>2022-04-19T17:07:45+01:00</lastmod>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://tagiamtop.com/support</loc>
+        <lastmod>2022-04-19T17:17:49+01:00</lastmod>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://tagiamtop.com/terms</loc>
+        <lastmod>2022-04-20T17:59:49+01:00</lastmod>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://tagiamtop.com/blog</loc>
+        <lastmod>2022-04-19T17:18:49+01:00</lastmod>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://tagiamtop.com/buy-basket-now</loc>
+        <lastmod>2022-04-19T17:02:37+01:00</lastmod>
+        <priority>0.5</priority>
+    </url>
+</urlset>
       

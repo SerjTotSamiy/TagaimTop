@@ -20,6 +20,7 @@ const Step3 = (props) => {
         setUrl,
         type,
         setType,
+        price,
     } = useContext(MeContext);
     const [choose, setChoose] = useState({
         impressions: false,
@@ -35,6 +36,12 @@ const Step3 = (props) => {
     const [activePost, setActivePost] = useState([]);
     const [isSkeleton, setIsSkeleton] = useState(true);
     const [showModal, setShowModal] = useState(false)
+    const [extras, setExtras] = useState({
+        e1: false,
+        e2: false,
+        e3: false
+    });
+
 
     useEffect(() => {
         const delay = setTimeout(() => {
@@ -74,6 +81,9 @@ const Step3 = (props) => {
                 "type",
                 type.name === userInfo?.plan?.types?.t1?.name ? "t1" : "t2"
             );
+            data.append("extra[e1]", +extras.e1)
+            data.append("extra[e2]", +extras.e2)
+            data.append("extra[e3]", +extras.e3)
             data.append("count", query.counts);
             data.append("username", query.userName);
             if (query.service !== "Followers") {
@@ -292,6 +302,8 @@ const Step3 = (props) => {
                                 }
                                 onClick={() => {
                                     setType(userInfo?.plan?.types?.t1);
+                                    /* setExtras({...extras, e1: false, e2: false, e3: false})
+                                     console.log(extras)*/
                                 }}
                             />
                             <ButtonComponent
@@ -315,13 +327,154 @@ const Step3 = (props) => {
                             />
                         </div>
                         <div className={styles.account_item_block}>
-                            <>
+
+
+                            < div style={{position: 'relative', width: '100%'}}>
                                 <div
                                     className={styles.account_item}
-                                    onClick={() =>
+                                    onClick={() => {
                                         setChoose({...choose, impressions: !choose["impressions"]})
+                                        setExtras({...extras, e1: !extras["e1"]})
+                                        setType({
+                                            ...type,
+                                            price: extras['e1'] ? +type.price - +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.price :
+                                                +type.price + +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.price
+                                        })
+
+                                    }
                                     }
                                 >
+                                    <span style={{display: "flex", alignItems: "center"}}>
+                                    <div className={styles.account_check}>
+                                {choose["impressions"] && (
+                                    <Icon
+                                        type="check"
+                                        width="24px"
+                                        height="24px"
+                                        color="green"
+                                    />
+                                )}
+                                    </div>
+                                    <p>+ {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.count} {" "}
+                                        {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.name}</p>
+                                    </span>
+                                    <p style={{color: "red"}}>+
+                                        $ {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.price}</p>
+
+                                </div>
+                                <img
+                                    src="/info.svg"
+                                    alt=""
+                                    style={{
+                                        width: "22px", height: "22px",
+                                        position: "absolute", top: "-30px", right: "0"
+                                    }}
+                                    onClick={() => {
+                                        setShowModal(true)
+                                    }}
+                                />
+                            </div>
+
+
+                            <div style={{position: 'relative', width: '100%'}}>
+                                <div
+                                    className={styles.account_item}
+                                    onClick={() => {
+                                        setChoose({...choose, reach: !choose["reach"]});
+                                        setExtras({...extras, e2: !extras["e2"]})
+                                        setType({
+                                            ...type,
+                                            price: extras['e2'] ? +type.price - +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.price :
+                                                +type.price + +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.price
+                                        })
+                                    }
+
+                                    }
+                                >
+                                    <span style={{display: "flex", alignItems: "center"}}>
+                                    <div className={styles.account_check}>
+                                {choose["reach"] && (
+                                    <Icon
+                                        type="check"
+                                        width="24px"
+                                        height="24px"
+                                        color="green"
+                                    />
+                                )}
+                                    </div>
+                                    <p>+ {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.count} {" "}
+                                        {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.name}</p>
+                                    </span>
+                                    <p style={{color: "red"}}>+
+                                        $ {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.price}</p>
+
+                                </div>
+                                <img
+                                    src="/info.svg"
+                                    alt=""
+                                    style={{
+                                        width: "22px", height: "22px",
+                                        position: "absolute", top: "-30px", right: "0"
+                                    }}
+                                    onClick={() => setShowModal(true)}
+                                />
+                            </div>
+
+
+                            <div style={{position: 'relative', width: '100%'}}>
+                                <div
+                                    className={styles.account_item}
+                                    onClick={() => {
+                                        setChoose({...choose, saves: !choose["saves"]})
+                                        setExtras({...extras, e3: !extras["e3"]})
+                                        setType({
+                                            ...type,
+                                            price: extras['e3'] ? +type.price - +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.price :
+                                                +type.price + +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.price
+                                        })
+                                    }
+
+                                    }
+                                >
+                                    <span style={{display: "flex", alignItems: "center"}}>
+                                    <div className={styles.account_check}>
+                                {choose["saves"] && (
+                                    <Icon
+                                        type="check"
+                                        width="24px"
+                                        height="24px"
+                                        color="green"
+                                    />
+                                )}
+                                    </div>
+                                    <p>+ {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.count} {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.name}</p>
+                                    </span>
+                                    <p style={{color: "red"}}>+
+                                        $ {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.price}</p>
+
+                                </div>
+                                <img
+                                    src="/info.svg"
+                                    alt=""
+                                    style={{
+                                        width: "22px", height: "22px",
+                                        position: "absolute", top: "-30px", right: "0"
+                                    }}
+                                    onClick={() => setShowModal(true)}
+                                />
+                            </div>
+                            {/*  {price[query.service]?.plans?.filter(elem => elem.count === query.counts).map(elem => {
+                                const extra = Object.values(elem.extra).map((el, ind) => {
+                                    return <>
+                                        <div
+                                            className={styles.account_item}
+                                            onClick={() => {
+                                                setChoose({...choose, impressions: !choose["impressions"]})
+                                                console.log(choose)
+                                                //    пофиксить что бы выбирался каждый инпут)
+                                            }
+                                            }
+                                        >
                   <span style={{display: "flex", alignItems: "center"}}>
                     <div className={styles.account_check}>
                       {choose["impressions"] && (
@@ -333,91 +486,27 @@ const Step3 = (props) => {
                           />
                       )}
                     </div>
-                    <p>+ 500 Impressions</p>
+                    <p>+ {el.count} {el.name}</p>
                   </span>
-                                    <p style={{color: "red"}}>+ $5.4</p>
+                                            <p style={{color: "red"}}>+ $ {el.price}</p>
 
-                                </div>
-                                <img
-                                    src="/info.svg"
-                                    alt=""
-                                    style={{
-                                        width: "22px", height: "22px",
-                                        position: "relative", top: "-35px", right: "25px"
-                                    }}
-                                    onClick={() => {
-                                        setShowModal(true)
-                                    }}
-                                />
-                            </>
-
-
-                            <>
-                                <div
-                                    className={styles.account_item}
-                                    onClick={() =>
-                                        setChoose({...choose, reach: !choose["reach"]})
-                                    }
-                                >
-                  <span style={{display: "flex", alignItems: "center"}}>
-                    <div className={styles.account_check}>
-                      {choose["reach"] && (
-                          <Icon
-                              type="check"
-                              width="24px"
-                              height="24px"
-                              color="green"
-                          />
-                      )}
-                    </div>
-                    <p>+ 500 Reach</p>
-                  </span>
-                                    <p style={{color: "red"}}>+ $5.4</p>
-
-                                </div>
-                                <img
-                                    src="/info.svg"
-                                    alt=""
-                                    style={{
-                                        width: "22px", height: "22px",
-                                        position: "relative", top: "-35px", right: "25px"
-                                    }}
-                                    onClick={() => setShowModal(true)}
-                                />
-                            </>
-                            <>
-                                <div
-                                    className={styles.account_item}
-                                    onClick={() =>
-                                        setChoose({...choose, saves: !choose["saves"]})
-                                    }
-                                >
-                  <span style={{display: "flex", alignItems: "center"}}>
-                    <div className={styles.account_check}>
-                      {choose["saves"] && (
-                          <Icon
-                              type="check"
-                              width="24px"
-                              height="24px"
-                              color="green"
-                          />
-                      )}
-                    </div>
-                    <p>+ 100 Saves</p>
-                  </span>
-                                    <p style={{color: "red"}}>+ $5.4</p>
-
-                                </div>
-                                <img
-                                    src="/info.svg"
-                                    alt=""
-                                    style={{
-                                        width: "22px", height: "22px",
-                                        position: "relative", top: "-35px", right: "25px"
-                                    }}
-                                    onClick={() => setShowModal(true)}
-                                />
-                            </>
+                                        </div>
+                                        <img
+                                            src="/info.svg"
+                                            alt=""
+                                            style={{
+                                                width: "22px", height: "22px",
+                                                position: "relative", top: "-35px", right: "25px"
+                                            }}
+                                            onClick={() => {
+                                                setShowModal(true)
+                                            }}
+                                        />
+                                    </>
+                                });
+                                return extra
+                            })}
+*/}
                             <Modal open={showModal} onClose={() => setShowModal(false)}>
                                 <div className={styles.small_modal}>
                                     <p>The number of times your content,
@@ -432,9 +521,9 @@ const Step3 = (props) => {
                         <div style={{display: "flex", gap: 20}}>
                             <ButtonComponent
                                 id="PAY"
-                                text={`Choose payment method for-${allInfo?.sym_b}${
-                                    type.price
-                                } ${!allInfo?.sym_b ? allInfo?.sym_a : ""}`}
+                                text={`Choose payment method for ${allInfo?.sym_b !== null ? allInfo?.sym_b : ''}${
+                                    Number(type.price).toFixed(2)
+                                } ${!allInfo?.sym_b ? allInfo?.sym_a : " "}`}
                                 type="fill"
                                 onClick={() => {
                                     sendOrder();

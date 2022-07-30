@@ -112,8 +112,8 @@ const Step4 = () => {
                                     key={item?.url_to_pay}
                                     className={styles.payment_block}
                                     onClick={() => {
-                                        console.log(item?.url_to_pay)
-                                        if (item?.url_to_pay) router.push(item?.url_to_pay);
+
+                                        if (item?.url_to_pay) window.open(item?.url_to_pay, "blonk");
                                     }}
                                 >
                                     <img
@@ -138,9 +138,10 @@ const Step4 = () => {
                       <p
                           style={{color: item?.url_to_pay ? "#00831D" : "#666"}}
                       >
-                        + {allInfo?.sym_b}
-                          {item?.price_local}
-                          {!allInfo?.sym_b ? allInfo?.sym_a : ""}
+                          {/*{allInfo?.sym_b}*/}
+                          {item?.price_local === null ? item?.price_usd : item?.price_local}
+                          {!allInfo?.sym_b && item?.price_local ? allInfo?.sym_a :( allInfo?.sym_b || " $")}
+
                       </p>
                         {item?.tax !== 0 && (
                             <p style={{color: "#C4C4C4"}}>+ {item?.tax}% Vat</p>

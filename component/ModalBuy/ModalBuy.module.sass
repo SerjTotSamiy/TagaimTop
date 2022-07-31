@@ -125,8 +125,9 @@
   display: flex
   flex-direction: row
   gap: 20px
-  @media (max-width: 800px)
+  @media (max-width: 1050px)
     flex-direction: column
+    gap: 36px
 .addAccount_buttons
   width: 100%
   height: 100px
@@ -149,9 +150,11 @@
   width: 100%
   display: flex
   align-items: center
+  justify-content: center
   flex-wrap: wrap
   gap: 20px
   min-height: 200px
+  max-height: 250px
   // max-height: 120px
   height: 100%
   overflow-y: scroll
@@ -165,8 +168,12 @@
   width: 100%
   display: flex
   align-items: center
-  justify-content: space-between
+  //justify-content: space-between
   cursor: pointer
+  p
+    margin-left: auto
+  span
+    margin-left: 20px
 .postList
   display: flex
   width: 100%

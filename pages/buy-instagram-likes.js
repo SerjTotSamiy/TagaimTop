@@ -20,7 +20,7 @@ import Image from "next/image";
 
 const BuyInstagramLikes = ({text}) => {
     const router = useRouter();
-    const {price, allInfo, setUrl} = useContext(MeContext);
+    const {price, allInfo, setUrl, modalData, setModalData} = useContext(MeContext);
     const axios = useAxios();
     const [readMore, setReadMore] = useState(3);
     const [type, setType] = useState({1: "fill", 2: "outline"});
@@ -31,7 +31,6 @@ const BuyInstagramLikes = ({text}) => {
         2: "/pricebg3.webp",
         3: "/pricebg4.webp",
     });
-    console.log(price)
     const [windowInnerWidth, setWindowInnerWidth] = useState("");
     const [buyType, setBuyType] = useState("");
     const [counts, setCounts] = useState(0);
@@ -66,7 +65,6 @@ const BuyInstagramLikes = ({text}) => {
                 setComment((prev) => res.data.data);
             }
         } catch (e) {
-            console.log('hello, we r here, yep!')
             console.log(e);
         }
     };
@@ -198,6 +196,12 @@ const BuyInstagramLikes = ({text}) => {
                                         setCounts((prev) => item?.count);
                                         setBuyType((prev) => "Likes");
                                         setUrl("buy-instagram-likes");
+                                        setModalData((prev) => ({
+                                            ...prev,
+                                            service: "Likes",
+                                            counts: item?.count,
+                                            priceValue: item?.price
+                                        }))
                                         router.push({
                                             pathname: `/step1`,
                                             query: {
@@ -400,6 +404,12 @@ const BuyInstagramLikes = ({text}) => {
                                             setCounts((prev) => item?.count);
                                             setBuyType((prev) => "Likes");
                                             setUrl("buy-instagram-likes");
+                                            setModalData((prev) => ({
+                                                ...prev,
+                                                service: "Likes",
+                                                counts: item?.count,
+                                                priceValue: item?.price
+                                            }));
                                             router.push({
                                                 pathname: `/step1`,
                                                 query: {
@@ -445,6 +455,12 @@ const BuyInstagramLikes = ({text}) => {
                                             setCounts((prev) => item?.count);
                                             setBuyType((prev) => "Likes");
                                             setUrl("buy-instagram-likes");
+                                            setModalData((prev) => ({
+                                                ...prev,
+                                                service: "Likes",
+                                                counts: item?.count,
+                                                priceValue: item?.price
+                                            }))
                                             router.push({
                                                 pathname: `/step1`,
                                                 query: {

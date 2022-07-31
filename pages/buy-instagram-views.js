@@ -18,7 +18,7 @@ import ModalBuy from "../component/ModalBuy/ModalBuy";
 const BuyInstagramViews = ({text}) => {
     const axios = useAxios();
     const router = useRouter();
-    const {price, setUrl} = useContext(MeContext);
+    const {price, setUrl, setModalData} = useContext(MeContext);
     const [windowInnerWidth, setWindowInnerWidth] = useState("");
     const [comment, setComment] = useState([]);
     const [open, setOpen] = useState(false);
@@ -142,6 +142,12 @@ const BuyInstagramViews = ({text}) => {
                                     setPriceValue((prev) => item?.price);
                                     setCounts((prev) => item?.count);
                                     setUrl("buy-instagram-views");
+                                    setModalData((prev) => ({
+                                        ...prev,
+                                        service: "Views",
+                                        counts: item?.count,
+                                        priceValue: item?.price
+                                    }));
                                     router.push({
                                         pathname: `/step1`,
                                         query: {

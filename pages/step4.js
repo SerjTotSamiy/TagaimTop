@@ -20,8 +20,6 @@ const Step4 = () => {
         const delay = setTimeout(() => {
             setIsSkeleton(false);
         }, 1200);
-        console.log('modalData is', modalData);
-        console.log('result is', result);
         return () => clearTimeout(delay);
     }, []);
 

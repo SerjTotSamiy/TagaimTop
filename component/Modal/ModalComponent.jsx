@@ -24,7 +24,6 @@ export const ModalComponent = ({ children, open, setOpen }) => {
     <Modal
       isOpen={open}
       onRequestClose={() => {
-        console.log('close')
         setOpen((prev) => false)
       }}
       style={customStyles}

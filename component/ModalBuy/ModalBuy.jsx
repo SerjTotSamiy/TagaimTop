@@ -100,12 +100,9 @@ const ModalBuy = ({
                     } else {
                         setPageActive(4);
                     }
-
-                    console.log(e?.data);
                 }
                 setErrorMessage(e?.data?.text);
             });
-            console.log(res);
         } catch (e) {
             console.log(e);
         } finally {

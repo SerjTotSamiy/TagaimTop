@@ -35,7 +35,6 @@ const BuyInstagramFollowers = ({text}) => {
 
             if (res.status === 200) {
                 setComment((prev) => filter);
-                console.log(res)
             }
         } catch (e) {
             console.log(e);

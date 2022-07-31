@@ -81,10 +81,12 @@ const Step3 = (props) => {
 
     const sendOrder = async () => {
         try {
+            setIsLoading(true);
+            setIsSkeleton(true);
             const data = new FormData();
-            data.append("email", query.userEmail);
+            data.append("email", modalData.userEmail);
             data.append("system", "Instagram");
-            data.append("service", query.service);
+            data.append("service", modalData.service);
             data.append(
                 "type",
                 type.name === userInfo?.plan?.types?.t1?.name ? "t1" : "t2"
@@ -135,9 +137,11 @@ const Step3 = (props) => {
                             },
                         });
                     }
+                } else {
+                    setErrorMessage(e?.data?.text);
+                    setIsLoading(false);
+                    setIsSkeleton(false);
                 }
-
-                setErrorMessage(e?.data?.text);
             });
         } catch (e) {
             console.log(e);
@@ -178,16 +182,19 @@ const Step3 = (props) => {
                     >
                         <p
                             className={styles.backButton}
-                            onClick={() => router.push({
-                                pathname: `/step2`,
-                                query: {
-                                    service: modalData.service,
-                                    counts: modalData.counts,
-                                    priceValue: modalData.priceValue,
-                                    userName: modalData.userName,
-                                    userEmail: modalData.userEmail
-                                },
-                            })}
+                            onClick={() => {
+                                router.push({
+                                    pathname: modalData.service !== "Followers" ? `/step2` : `/step1`,
+                                    query: {
+                                        service: modalData.service,
+                                        counts: modalData.counts,
+                                        priceValue: modalData.priceValue,
+                                        userName: modalData.userName,
+                                        userEmail: modalData.userEmail
+                                    },
+                                });
+                            }
+                            }
                         >
                             {" "}
                             {"< Back"}{" "}
@@ -232,79 +239,82 @@ const Step3 = (props) => {
                 </p>
               </span>
                         )}
-                        <div className={styles.addAccount_block}>
-                            {userInfo?.posts?.map((post, index) => {
-                                if (index < picturesCount) return (
-                                    <div
-                                        key={index}
-                                        className={`${styles.post} ${activePost.includes(post) ? styles.postChosen : ""
-                                        }`}
-                                        style={{
-                                            background: `url(${post.img})`,
-                                            width: 100,
-                                            height: 100,
-                                            backgroundSize: "cover",
-                                            borderRadius: 5,
-                                        }}
-                                        onClick={() =>
-                                            activePost.includes(post)
-                                                ? deleteActivePost(post)
-                                                : activePost.length <= 9
-                                                ? setActivePost((prev) => [...prev, post])
-                                                : null
-                                        }
-                                    >
-                                        {activePost.includes(post) && (
-                                            <div
-                                                style={{
-                                                    background: "rgba(105, 114, 100, 0.3)",
-                                                    width: "100%",
-                                                    height: "100%",
-                                                    position: "relative",
-                                                    borderRadius: 5,
-                                                    opacity: 10,
-                                                }}
-                                            >
-                                                <img
-                                                    src="/check.svg"
-                                                    className={styles.postCheck}
-                                                    alt=""
-                                                />
-                                                <p className={styles.postChosenHeart}>
-                                                    {query.service === "Likes" ? (
-                                                        <img src="/heart.svg" alt=""/>
-                                                    ) : query.service === "Followers" ? (
-                                                        <img
-                                                            src="/repost.svg"
-                                                            width={30}
-                                                            height={30}
-                                                            alt=""
-                                                        />
-                                                    ) : query.service === "Views" ? (
-                                                        <img
-                                                            src="/view.svg"
-                                                            width={30}
-                                                            height={30}
-                                                            alt=""
-                                                        />
-                                                    ) : (
-                                                        query.service === "Comments" && (
+                        { modalData.service !== "Followers"
+                            && <div className={styles.addAccount_block}>
+                                {userInfo?.posts?.map((post, index) => {
+                                    if (index < picturesCount) return (
+                                        <div
+                                            key={index}
+                                            className={`${styles.post} ${activePost.includes(post) ? styles.postChosen : ""
+                                            }`}
+                                            style={{
+                                                background: `url(${post.img})`,
+                                                width: 100,
+                                                height: 100,
+                                                backgroundSize: "cover",
+                                                borderRadius: 5,
+                                            }}
+                                            onClick={() =>
+                                                activePost.includes(post)
+                                                    ? deleteActivePost(post)
+                                                    : activePost.length <= 9
+                                                        ? setActivePost((prev) => [...prev, post])
+                                                        : null
+                                            }
+                                        >
+                                            {activePost.includes(post) && (
+                                                <div
+                                                    style={{
+                                                        background: "rgba(105, 114, 100, 0.3)",
+                                                        width: "100%",
+                                                        height: "100%",
+                                                        position: "relative",
+                                                        borderRadius: 5,
+                                                        opacity: 10,
+                                                    }}
+                                                >
+                                                    <img
+                                                        src="/check.svg"
+                                                        className={styles.postCheck}
+                                                        alt=""
+                                                    />
+                                                    <p className={styles.postChosenHeart}>
+                                                        {query.service === "Likes" ? (
+                                                            <img src="/heart.svg" alt=""/>
+                                                        ) : query.service === "Followers" ? (
                                                             <img
-                                                                src="/modalcomment.svg"
+                                                                src="/repost.svg"
                                                                 width={30}
                                                                 height={30}
                                                                 alt=""
                                                             />
-                                                        )
-                                                    )}
-                                                    {Math.round(query.counts / activePost.length)}
-                                                </p>
-                                            </div>
-                                        )}
-                                    </div>
-                                );
-                            })}
-                        </div>
+                                                        ) : query.service === "Views" ? (
+                                                            <img
+                                                                src="/view.svg"
+                                                                width={30}
+                                                                height={30}
+                                                                alt=""
+                                                            />
+                                                        ) : (
+                                                            query.service === "Comments" && (
+                                                                <img
+                                                                    src="/modalcomment.svg"
+                                                                    width={30}
+                                                                    height={30}
+                                                                    alt=""
+                                                                />
+                                                            )
+                                                        )}
+                                                        {Math.round(query.counts / activePost.length)}
+                                                    </p>
+                                                </div>
+                                            )}
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        }
+
                         {userInfo?.posts?.length > 12 && picturesCount < 59 &&
                             <span style={{display: "flex", gap: 10, cursor: "pointer"}} onClick={onAddImageHandler}>
                               <img src="/ellipsered.svg" alt=""/>
@@ -313,7 +323,7 @@ const Step3 = (props) => {
                             </span>
                         }
                         {
-                            activePost.length > 0 &&
+                            activePost.length > 0 || modalData.service === "Followers" &&
                                 <>
                                     <div className={styles.addAccount_buttons} style={{
                                         flexDirection: (modalData.service === "Likes" || modalData.service === "Views") ? "row-reverse" : "row"
@@ -358,24 +368,26 @@ const Step3 = (props) => {
                                             }}
                                         />
                                     </div>
-                                    <div className={styles.account_item_block}>
+                                    {
+                                        modalData.service !== "Followers"
+                                            && <div className={styles.account_item_block}>
 
 
-                                        <div style={{position: 'relative', width: '100%'}}>
-                                            <div
-                                                className={styles.account_item}
-                                                onClick={() => {
-                                                    setChoose({...choose, impressions: !choose["impressions"]})
-                                                    setExtras({...extras, e1: !extras["e1"]})
-                                                    setType({
-                                                        ...type,
-                                                        price: extras['e1'] ? +type.price - +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.price :
-                                                            +type.price + +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.price
-                                                    })
+                                            <div style={{position: 'relative', width: '100%'}}>
+                                                <div
+                                                    className={styles.account_item}
+                                                    onClick={() => {
+                                                        setChoose({...choose, impressions: !choose["impressions"]})
+                                                        setExtras({...extras, e1: !extras["e1"]})
+                                                        setType({
+                                                            ...type,
+                                                            price: extras['e1'] ? +type.price - +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.price :
+                                                                +type.price + +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.price
+                                                        })
 
-                                                }
-                                                }
-                                            >
+                                                    }
+                                                    }
+                                                >
                                     <span style={{display: "flex", alignItems: "center"}}>
                                     <div className={styles.account_check}>
                                 {choose["impressions"] && (
@@ -393,36 +405,36 @@ const Step3 = (props) => {
                                                 <p style={{color: "red"}}>+
                                                     $ {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.price}</p>
 
+                                                </div>
+                                                <img
+                                                    src="/info.svg"
+                                                    alt=""
+                                                    style={{
+                                                        width: "22px", height: "22px",
+                                                        position: "absolute", top: "-30px", right: "0"
+                                                    }}
+                                                    onClick={() => {
+                                                        setShowModal(true)
+                                                    }}
+                                                />
                                             </div>
-                                            <img
-                                                src="/info.svg"
-                                                alt=""
-                                                style={{
-                                                    width: "22px", height: "22px",
-                                                    position: "absolute", top: "-30px", right: "0"
-                                                }}
-                                                onClick={() => {
-                                                    setShowModal(true)
-                                                }}
-                                            />
-                                        </div>
 
 
-                                        <div style={{position: 'relative', width: '100%'}}>
-                                            <div
-                                                className={styles.account_item}
-                                                onClick={() => {
-                                                    setChoose({...choose, reach: !choose["reach"]});
-                                                    setExtras({...extras, e2: !extras["e2"]})
-                                                    setType({
-                                                        ...type,
-                                                        price: extras['e2'] ? +type.price - +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.price :
-                                                            +type.price + +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.price
-                                                    })
-                                                }
+                                            <div style={{position: 'relative', width: '100%'}}>
+                                                <div
+                                                    className={styles.account_item}
+                                                    onClick={() => {
+                                                        setChoose({...choose, reach: !choose["reach"]});
+                                                        setExtras({...extras, e2: !extras["e2"]})
+                                                        setType({
+                                                            ...type,
+                                                            price: extras['e2'] ? +type.price - +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.price :
+                                                                +type.price + +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.price
+                                                        })
+                                                    }
 
-                                                }
-                                            >
+                                                    }
+                                                >
                                     <span style={{display: "flex", alignItems: "center"}}>
                                     <div className={styles.account_check}>
                                 {choose["reach"] && (
@@ -440,34 +452,34 @@ const Step3 = (props) => {
                                                 <p style={{color: "red"}}>+
                                                     $ {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.price}</p>
 
+                                                </div>
+                                                <img
+                                                    src="/info.svg"
+                                                    alt=""
+                                                    style={{
+                                                        width: "22px", height: "22px",
+                                                        position: "absolute", top: "-30px", right: "0"
+                                                    }}
+                                                    onClick={() => setShowModal(true)}
+                                                />
                                             </div>
-                                            <img
-                                                src="/info.svg"
-                                                alt=""
-                                                style={{
-                                                    width: "22px", height: "22px",
-                                                    position: "absolute", top: "-30px", right: "0"
-                                                }}
-                                                onClick={() => setShowModal(true)}
-                                            />
-                                        </div>
 
 
-                                        <div style={{position: 'relative', width: '100%'}}>
-                                            <div
-                                                className={styles.account_item}
-                                                onClick={() => {
-                                                    setChoose({...choose, saves: !choose["saves"]})
-                                                    setExtras({...extras, e3: !extras["e3"]})
-                                                    setType({
-                                                        ...type,
-                                                        price: extras['e3'] ? +type.price - +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.price :
-                                                            +type.price + +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.price
-                                                    })
-                                                }
+                                            <div style={{position: 'relative', width: '100%'}}>
+                                                <div
+                                                    className={styles.account_item}
+                                                    onClick={() => {
+                                                        setChoose({...choose, saves: !choose["saves"]})
+                                                        setExtras({...extras, e3: !extras["e3"]})
+                                                        setType({
+                                                            ...type,
+                                                            price: extras['e3'] ? +type.price - +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.price :
+                                                                +type.price + +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.price
+                                                        })
+                                                    }
 
-                                                }
-                                            >
+                                                    }
+                                                >
                                     <span style={{display: "flex", alignItems: "center"}}>
                                     <div className={styles.account_check}>
                                 {choose["saves"] && (
@@ -484,27 +496,29 @@ const Step3 = (props) => {
                                                 <p style={{color: "red"}}>+
                                                     $ {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.price}</p>
 
+                                                </div>
+                                                <img
+                                                    src="/info.svg"
+                                                    alt=""
+                                                    style={{
+                                                        width: "22px", height: "22px",
+                                                        position: "absolute", top: "-30px", right: "0"
+                                                    }}
+                                                    onClick={() => setShowModal(true)}
+                                                />
                                             </div>
-                                            <img
-                                                src="/info.svg"
-                                                alt=""
-                                                style={{
-                                                    width: "22px", height: "22px",
-                                                    position: "absolute", top: "-30px", right: "0"
-                                                }}
-                                                onClick={() => setShowModal(true)}
-                                            />
+                                            <Modal open={showModal} onClose={() => setShowModal(false)}>
+                                                <div className={styles.small_modal}>
+                                                    <p>The number of times your content,
+                                                        whether a post or a story, was shown to users.
+                                                        Impressions help you to promote your
+                                                        post and improve stat.</p>
+                                                    <button onClick={() => setShowModal(false)}>Thank You</button>
+                                                </div>
+                                            </Modal>
                                         </div>
-                                        <Modal open={showModal} onClose={() => setShowModal(false)}>
-                                            <div className={styles.small_modal}>
-                                                <p>The number of times your content,
-                                                    whether a post or a story, was shown to users.
-                                                    Impressions help you to promote your
-                                                    post and improve stat.</p>
-                                                <button onClick={() => setShowModal(false)}>Thank You</button>
-                                            </div>
-                                        </Modal>
-                                    </div>
+                                    }
+
                                     <p style={{color: "red", textAlign: "center"}}>{errorMessage}</p>
                                     <div style={{display: "flex", gap: 20, paddingBottom: "30px"}}>
                                         <ButtonComponent
@@ -513,11 +527,7 @@ const Step3 = (props) => {
                                                 Number(type.price).toFixed(2)
                                             } ${!allInfo?.sym_b ? allInfo?.sym_a : " "}`}
                                             type="fill"
-                                            onClick={() => {
-                                                setIsLoading(true);
-                                                setIsSkeleton(true);
-                                                sendOrder();
-                                            }}
+                                            onClick={sendOrder}
                                         />
                                     </div>
                                 </>

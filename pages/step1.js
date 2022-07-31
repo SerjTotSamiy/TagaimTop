@@ -55,7 +55,6 @@ const Step1 = () => {
     useEffect(() => {
         setPriceValue(modalData.priceValue);
         setCounts(modalData.counts);
-        console.log('modalData is', modalData)
     }, []);
     useEffect(() => {
         const currentUser = JSON.parse(localStorage.getItem("users"))
@@ -86,9 +85,9 @@ const Step1 = () => {
             return setError(true);
         }
         setErrorMessage("");
-        if (modalData.service === "Followers") {
-            await sendOrder();
-        }
+        // if (modalData.service === "Followers") {
+        //     await sendOrder();
+        // }
         try {
             setIsLoading(true);
             setIsSkeleton(true);
@@ -126,6 +125,30 @@ const Step1 = () => {
                         setIsLoading(false);
                         setIsSkeleton(false);
                     }
+                });
+            } else {
+                // console.log('counts is', counts);
+                const plan = price[modalData.service].plans.find(plan => plan.count === counts);
+                setUserInfo({
+                    ...userInfo,
+                    plan: plan
+                });
+                setModalData((prev) => ({
+                    ...prev,
+                    counts: counts,
+                    priceValue: priceValue,
+                    userName: userName,
+                    userEmail: userEmail
+                }));
+                router.push({
+                    pathname: `/step3`,
+                    query: {
+                        service: modalData.service,
+                        counts: counts,
+                        priceValue: priceValue,
+                        userName: userName,
+                        userEmail: userEmail,
+                    },
                 });
             }
         } catch (e) {
@@ -422,7 +445,19 @@ const Step1 = () => {
                             text={isLoading ? "loading" : "Start"}
                             type="fill"
                             onClick={() => {
-                                modalData.service === "Followers" ? sendOrder() : getPosts()
+                                // modalData.service === "Followers"
+                                    // ? router.push({
+                                    //     pathname: `/step3`,
+                                    //     query: {
+                                    //         service: modalData.service,
+                                    //         counts: counts,
+                                    //         priceValue: priceValue,
+                                    //         userName: userName,
+                                    //         userEmail: userEmail,
+                                    //     },
+                                    // })
+                                    // :
+                                getPosts()
                                 localStorage.users = JSON.stringify({name: userName, email: userEmail})
                             }
                             }

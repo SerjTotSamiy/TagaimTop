@@ -68,7 +68,7 @@ const Privacy = () => {
                             The website collects the following data from the Customer:
                             <li>Email address for notifications and account access</li>
                             <li>Personal information to submit an order on the website</li>
-                            <li>Payment data that is necessary to provide payments for purchased services from tagiamto</li>
+                            <li>Payment data that is necessary to provide payments for purchased services from tagiamtop</li>
                             <li>Cookies and user data collected by Google Analytics services</li>
                         </p>
                     }

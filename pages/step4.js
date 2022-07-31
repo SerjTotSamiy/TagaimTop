@@ -9,7 +9,7 @@ import {MeContext} from "./_app";
 import {ModalSceleton} from "./../component/Modal/ModalSceleton";
 
 const Step4 = () => {
-    const {allInfo, setResult, result, url, setUrl} = useContext(MeContext);
+    const {allInfo, setResult, result, url, setUrl, modalData} = useContext(MeContext);
     const router = useRouter();
     const {query} = useRouter();
     const axios = useAxios();
@@ -20,6 +20,8 @@ const Step4 = () => {
         const delay = setTimeout(() => {
             setIsSkeleton(false);
         }, 1200);
+        console.log('modalData is', modalData);
+        console.log('result is', result);
         return () => clearTimeout(delay);
     }, []);
 
@@ -37,6 +39,7 @@ const Step4 = () => {
                 open={true}
                 onClose={() => {
                     // setOpen(false)
+                    modalData.reset();
                     router.push({
                         pathname: url,
                     });
@@ -47,7 +50,17 @@ const Step4 = () => {
                     <p
                         className={styles.backButton}
                         style={{filter: `${isSkeleton ? "blur(8px)" : "blur(0px)"}`}}
-                        onClick={() => router.push("/step3")}
+                        onClick={() => router.push({
+                            pathname: `/step3`,
+                            query: {
+                                service: modalData.service,
+                                counts: modalData.counts,
+                                priceValue: modalData.priceValue,
+                                userName: modalData.userName,
+                                userEmail: modalData.userEmail,
+                                autoLike: modalData.autoLike
+                            },
+                        })}
                     >
                         {" "}
                         {"< Back"}{" "}
@@ -56,7 +69,10 @@ const Step4 = () => {
                         className={styles.close}
                         style={{filter: `${isSkeleton ? "blur(8px)" : "blur(0px)"}`}}
                         src="/closegrey.svg"
-                        onClick={() => router.push(url)}
+                        onClick={() => {
+                            modalData.reset();
+                            router.push(url);
+                        }}
                         alt=""
                     />
 
@@ -65,7 +81,7 @@ const Step4 = () => {
                         style={{filter: `${isSkeleton ? "blur(8px)" : "blur(0px)"}`}}
                     >
                         {allInfo?.sym_b}
-                        {query.priceValue}
+                        {result?.data?.price.toFixed(2)}
                         {!allInfo?.sym_b ? allInfo?.sym_a : ""}
                     </p>
 
@@ -117,7 +133,7 @@ const Step4 = () => {
                                     }}
                                 >
                                     <img
-                                        src={payType[item?.name]}
+                                        src={item?.logo}
                                         width={55}
                                         height={55}
                                         style={{
@@ -129,18 +145,13 @@ const Step4 = () => {
                                     />
                                     <span>
                     <p>{item?.name}</p>
-                    <p
-                        style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                        }}
-                    >
+                    <p>
                       <p
                           style={{color: item?.url_to_pay ? "#00831D" : "#666"}}
                       >
                           {/*{allInfo?.sym_b}*/}
                           {item?.price_local === null ? item?.price_usd : item?.price_local}
-                          {!allInfo?.sym_b && item?.price_local ? allInfo?.sym_a :( allInfo?.sym_b || " $")}
+                          {!allInfo?.sym_b && item?.price_local ? allInfo?.sym_a : (allInfo?.sym_b || " $")}
 
                       </p>
                         {item?.tax !== 0 && (

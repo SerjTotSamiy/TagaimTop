@@ -17,7 +17,7 @@ import ModalBuy from "../component/ModalBuy/ModalBuy";
 
 const BuyInstagramComments = ({text}) => {
     const router = useRouter();
-    const {price, setUrl} = useContext(MeContext);
+    const {price, setUrl, setModalData} = useContext(MeContext);
     const axios = useAxios();
 
     const [windowInnerWidth, setWindowInnerWidth] = useState("");
@@ -137,6 +137,12 @@ const BuyInstagramComments = ({text}) => {
                                         setPriceValue((prev) => item?.price);
                                         setCounts((prev) => item?.count);
                                         setUrl("buy-instagram-comments");
+                                        setModalData((prev) => ({
+                                            ...prev,
+                                            service: "Comments",
+                                            counts: item?.count,
+                                            priceValue: item?.price
+                                        }));
                                         router.push({
                                             pathname: `/step1`,
                                             query: {

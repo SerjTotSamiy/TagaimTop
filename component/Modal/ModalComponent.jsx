@@ -23,7 +23,10 @@ export const ModalComponent = ({ children, open, setOpen }) => {
   return (
     <Modal
       isOpen={open}
-      onRequestClose={() => setOpen((prev) => false)}
+      onRequestClose={() => {
+        console.log('close')
+        setOpen((prev) => false)
+      }}
       style={customStyles}
     >
       {children}

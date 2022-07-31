@@ -36,6 +36,8 @@ const Step1 = () => {
         setType,
         url,
         setUrl,
+        modalData,
+        setModalData,
     } = useContext(MeContext);
     const [userName, setUserName] = useState("");
     const [userEmail, setUserEmail] = useState("");
@@ -48,11 +50,12 @@ const Step1 = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [isExpanded, setIsExpanded] = useState(false);
     const [isSkeleton, setIsSkeleton] = useState(true);
-    const [user, setUser] = useState([])
+    const [user, setUser] = useState([]);
 
     useEffect(() => {
-        setPriceValue(query.priceValue);
-        setCounts(query.counts);
+        setPriceValue(modalData.priceValue);
+        setCounts(modalData.counts);
+        console.log('modalData is', modalData)
     }, []);
     useEffect(() => {
         const currentUser = JSON.parse(localStorage.getItem("users"))
@@ -60,7 +63,6 @@ const Step1 = () => {
             setUser(currentUser)
             setUserEmail(currentUser.email)
             setUserName(currentUser.name)
-            console.log(currentUser)
         }
 
     }, [])
@@ -84,57 +86,68 @@ const Step1 = () => {
             return setError(true);
         }
         setErrorMessage("");
-        if (query.service === "Followers") {
+        if (modalData.service === "Followers") {
             await sendOrder();
         }
         try {
             setIsLoading(true);
+            setIsSkeleton(true);
             const data = new FormData();
             data.append("system", "Instagram");
-            data.append("service", query.service);
+            data.append("service", modalData.service);
             data.append("count", counts);
             data.append("username", userName);
-            if (query.service !== "Followers") {
+            data.append("more", "1");
+            if (modalData.service !== "Followers") {
                 const res = axios.post(`/get_posts_v2.php`, data);
                 res.then((e) => {
                     if (e?.data?.result === "Ok") {
                         setUserInfo((prev) => e?.data?.data);
                         setType((prev) => e?.data?.data?.plan?.types?.t1);
+                        setModalData((prev) => ({
+                            ...prev,
+                            counts: counts,
+                            priceValue: priceValue,
+                            userName: userName,
+                            userEmail: userEmail
+                        }));
                         router.push({
                             pathname: `/step2`,
                             query: {
-                                service: query.service,
+                                service: modalData.service,
                                 counts: counts,
                                 priceValue: priceValue,
                                 userName: userName,
                                 userEmail: userEmail,
                             },
                         });
+                    } else {
+                        setErrorMessage(e?.data?.text);
+                        setIsLoading(false);
+                        setIsSkeleton(false);
                     }
-                    setErrorMessage(e?.data?.text);
                 });
             }
         } catch (e) {
             console.log(e);
-        } finally {
-            setIsLoading(false);
         }
     };
 
     const sendOrder = async () => {
-        setIsLoading(true);
         try {
+            setIsLoading(true);
+            setIsSkeleton(true);
             const data = new FormData();
             data.append("email", userEmail);
             data.append("system", "Instagram");
-            data.append("service", query.service);
+            data.append("service", modalData.service);
             data.append(
                 "type",
                 type.name === userInfo?.plan?.types?.t1?.name ? "t1" : "t2"
             );
             data.append("count", counts);
             data.append("username", userName);
-            if (query.service !== "Followers") {
+            if (modalData.service !== "Followers") {
                 for (let i = 0; i < activePost.length; i++) {
                     data.append(`url[${i}]`, activePost[i].link);
                 }
@@ -143,7 +156,7 @@ const Step1 = () => {
                 }
             }
             const res = axios.post(
-                `${query.priceValue === "0.00"
+                `${modalData.priceValue === "0.00"
                     ? "/create_test_order_v2.php"
                     : "/create_order_v2.php"
                 }`,
@@ -152,29 +165,30 @@ const Step1 = () => {
             res.then((e) => {
                 if (e?.data?.result === "Ok") {
                     setResult((prev) => e?.data);
-                    if (query.priceValue === "0.00") {
+                    if (modalData.priceValue === "0.00") {
                         router.push("/SuccessPurchase", "/success-purchase");
                     } else {
                         router.push({
                             pathname: "/step4",
                             query: {
                                 autoLike: false,
-                                counts: query.counts,
-                                priceValue: query.priceValue,
-                                userEmail: query.userEmail,
+                                counts: modalData.counts,
+                                priceValue: modalData.priceValue,
+                                userEmail: modalData.userEmail,
                                 userInfo: userInfo,
-                                service: query.service,
-                                userName: query.userName,
+                                service: modalData.service,
+                                userName: modalData.userName,
                             },
                         });
                     }
+                } else {
+                    setErrorMessage(e?.data?.text);
+                    setIsLoading(false);
+                    setIsSkeleton(false);
                 }
-                setErrorMessage(e?.data?.text);
             });
         } catch (e) {
             console.log(e);
-        } finally {
-            setIsLoading(false);
         }
     };
 
@@ -184,6 +198,7 @@ const Step1 = () => {
                 open={true}
                 onClose={() => {
                     setOpen(false);
+                    modalData.reset();
                     router.push({
                         pathname: url,
                     });
@@ -198,7 +213,7 @@ const Step1 = () => {
                         position: "relative",
                     }}
                 >
-                    {isSkeleton && <ModalSceleton/>}
+                    {isSkeleton && <ModalSceleton isLoading={isLoading}/>}
                     <div
                         style={{
                             filter: `${isSkeleton ? "blur(8px)" : "blur(0px)"}`,
@@ -214,10 +229,13 @@ const Step1 = () => {
                         <img
                             className={styles.close}
                             src="/closegrey.svg"
-                            onClick={() => router.push(url)}
+                            onClick={() => {
+                                modalData.reset();
+                                router.push(url);
+                            }}
                             alt=""
                         />
-                        {query.autoLike ? (
+                        {modalData.autoLike ? (
                             <p className={styles.modalBuy_title}>Only 3 Steps</p>
                         ) : (
                             <p className={styles.modalBuy_title}>
@@ -293,7 +311,7 @@ const Step1 = () => {
                         }}
                     >
                       <p>
-                        {counts} Instagram {query.service}
+                        {counts} Instagram {modalData.service}
                       </p>
                       <p>{priceValue}$</p>
                     </span>
@@ -303,7 +321,7 @@ const Step1 = () => {
                                 </AccordionSummary>
                                 <AccordionDetails>
                                     <div className={styles.tarifs_container}>
-                                        {price[query.service]?.plans.map((tarif) => (
+                                        {price[modalData.service]?.plans.map((tarif) => (
                                             <p
                                                 key={tarif.price}
                                                 className={loginStyles.tarifP}
@@ -314,7 +332,7 @@ const Step1 = () => {
                                                 }}
                                             >
                                                 <p>
-                                                    {tarif.count} Instagram {query.service}
+                                                    {tarif.count} Instagram {modalData.service}
                                                 </p>
                                                 <p>{tarif?.price}$</p>
                                             </p>
@@ -340,7 +358,9 @@ const Step1 = () => {
                                     defaultValue={user.name}
                                     // value={userName}
                                     required={true}
-                                    onChange={(e) => setUserName((prev) => e.target.value)}
+                                    onChange={(e) => setUserName((prev) => {
+                                        return e.target.value
+                                    })}
                                 />
                                 <img src="/login.svg" alt=""/>
                                 <div/>
@@ -402,9 +422,8 @@ const Step1 = () => {
                             text={isLoading ? "loading" : "Start"}
                             type="fill"
                             onClick={() => {
-                                query.service === "Followers" ? sendOrder() : getPosts()
+                                modalData.service === "Followers" ? sendOrder() : getPosts()
                                 localStorage.users = JSON.stringify({name: userName, email: userEmail})
-                                console.log(localStorage)
                             }
                             }
                             style={{padding: "20px 60px 20px 60px"}}

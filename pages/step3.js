@@ -21,6 +21,8 @@ const Step3 = (props) => {
         type,
         setType,
         price,
+        modalData,
+        setModalData
     } = useContext(MeContext);
     const [choose, setChoose] = useState({
         impressions: false,
@@ -35,18 +37,22 @@ const Step3 = (props) => {
     const [errorMessage, setErrorMessage] = useState("");
     const [activePost, setActivePost] = useState([]);
     const [isSkeleton, setIsSkeleton] = useState(true);
-    const [showModal, setShowModal] = useState(false)
+    const [isLoading, setIsLoading] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [picturesCount, setPicturesCount] = useState(12);
     const [extras, setExtras] = useState({
         e1: false,
         e2: false,
         e3: false
     });
 
-
     useEffect(() => {
         const delay = setTimeout(() => {
             setIsSkeleton(false);
         }, 1200);
+        if (modalData.activePost.length) {
+            setActivePost(modalData.activePost);
+        }
         return () => clearTimeout(delay);
     }, []);
 
@@ -71,6 +77,8 @@ const Step3 = (props) => {
         setActivePost(newPost);
     };
 
+    const onAddImageHandler = () => setPicturesCount(picturesCount + 12);
+
     const sendOrder = async () => {
         try {
             const data = new FormData();
@@ -94,8 +102,6 @@ const Step3 = (props) => {
                     data.append(`img[${i}]`, activePost[i].img);
                 }
             }
-
-
             const res = axios.post(
                 `${query.priceValue === "0.00"
                     ? "/create_test_order_v2.php"
@@ -107,6 +113,12 @@ const Step3 = (props) => {
             res.then((e) => {
                 if (e?.data?.result === "Ok") {
                     setResult((prev) => e?.data);
+                    setModalData((prev) => ({
+                        ...prev,
+                        userInfo: userInfo,
+                        autoLike: false,
+                        activePost: activePost
+                    }));
                     if (query.priceValue === "0.00") {
                         router.push("/SuccessPurchase", "/success-purchase");
                     } else {
@@ -137,6 +149,7 @@ const Step3 = (props) => {
                 open={true}
                 onClose={() => {
                     // setOpen(false)
+                    modalData.reset();
                     router.push({
                         pathname: url,
                     });
@@ -150,7 +163,7 @@ const Step3 = (props) => {
                         overflowX: "hidden",
                     }}
                 >
-                    {isSkeleton && <ModalSceleton/>}
+                    {isSkeleton && <ModalSceleton isLoading={isLoading} />}
                     <div
                         style={{
                             maxHeight: "calc(100%-10px)",
@@ -160,12 +173,21 @@ const Step3 = (props) => {
                             alignItems: "center",
                             gap: 30,
                             width: "100%",
-                            filter: `${isSkeleton ? "blur(8px)" : "blur(0px)"}`,
+                            filter: `${isSkeleton || isLoading ? "blur(8px)" : "blur(0px)"}`,
                         }}
                     >
                         <p
                             className={styles.backButton}
-                            onClick={() => router.push("/step2")}
+                            onClick={() => router.push({
+                                pathname: `/step2`,
+                                query: {
+                                    service: modalData.service,
+                                    counts: modalData.counts,
+                                    priceValue: modalData.priceValue,
+                                    userName: modalData.userName,
+                                    userEmail: modalData.userEmail
+                                },
+                            })}
                         >
                             {" "}
                             {"< Back"}{" "}
@@ -173,7 +195,10 @@ const Step3 = (props) => {
                         <img
                             className={styles.close}
                             src="/closegrey.svg"
-                            onClick={() => router.push(url)}
+                            onClick={() => {
+                                modalData.reset();
+                                router.push(url);
+                            }}
                             alt=""
                         />
                         <p className={styles.modalBuy_title}>Choose post</p>
@@ -209,7 +234,7 @@ const Step3 = (props) => {
                         )}
                         <div className={styles.addAccount_block}>
                             {userInfo?.posts?.map((post, index) => {
-                                return (
+                                if (index < picturesCount) return (
                                     <div
                                         key={index}
                                         className={`${styles.post} ${activePost.includes(post) ? styles.postChosen : ""
@@ -280,70 +305,77 @@ const Step3 = (props) => {
                                 );
                             })}
                         </div>
-                        <span style={{display: "flex", gap: 10}}>
-              <img src="/ellipsered.svg" alt=""/>
-              <img src="/ellipsered.svg" alt=""/>
-              <img src="/ellipsered.svg" alt=""/>
-            </span>
-                        <div className={styles.addAccount_buttons}>
-                            <ButtonComponent
-                                text={userInfo?.plan?.types?.t1?.name}
-                                style={
-                                    style[
-                                        userInfo?.plan?.types?.t1.name === type.name
-                                            ? "fill"
-                                            : "outline"
-                                        ]
-                                }
-                                type={
-                                    userInfo?.plan?.types?.t1.name === type.name
-                                        ? "fill"
-                                        : "outline"
-                                }
-                                onClick={() => {
-                                    setType(userInfo?.plan?.types?.t1);
-                                    /* setExtras({...extras, e1: false, e2: false, e3: false})
-                                     console.log(extras)*/
-                                }}
-                            />
-                            <ButtonComponent
-                                text={userInfo?.plan?.types?.t2?.name}
-                                disabled={userInfo?.plan?.types?.t2?.name === "Custom"}
-                                style={
-                                    style[
-                                        userInfo?.plan?.types?.t2.name === type.name
-                                            ? "fill"
-                                            : "outline"
-                                        ]
-                                }
-                                type={
-                                    userInfo?.plan?.types?.t2.name === type.name
-                                        ? "fill"
-                                        : "outline"
-                                }
-                                onClick={() => {
-                                    setType(userInfo?.plan?.types?.t2);
-                                }}
-                            />
-                        </div>
-                        <div className={styles.account_item_block}>
+                        {userInfo?.posts?.length > 12 && picturesCount < 59 &&
+                            <span style={{display: "flex", gap: 10, cursor: "pointer"}} onClick={onAddImageHandler}>
+                              <img src="/ellipsered.svg" alt=""/>
+                              <img src="/ellipsered.svg" alt=""/>
+                              <img src="/ellipsered.svg" alt=""/>
+                            </span>
+                        }
+                        {
+                            activePost.length > 0 &&
+                                <>
+                                    <div className={styles.addAccount_buttons} style={{
+                                        flexDirection: (modalData.service === "Likes" || modalData.service === "Views") ? "row-reverse" : "row"
+                                    }}>
+                                        <ButtonComponent
+                                            text={userInfo?.plan?.types?.t1?.name}
+                                            style={
+                                                style[
+                                                    userInfo?.plan?.types?.t1.name === type.name
+                                                        ? "fill"
+                                                        : "outline"
+                                                    ]
+                                            }
+                                            type={
+                                                userInfo?.plan?.types?.t1.name === type.name
+                                                    ? "fill"
+                                                    : "outline"
+                                            }
+                                            onClick={() => {
+                                                setType(userInfo?.plan?.types?.t1);
+                                                /* setExtras({...extras, e1: false, e2: false, e3: false})
+                                                 console.log(extras)*/
+                                            }}
+                                        />
+                                        <ButtonComponent
+                                            text={userInfo?.plan?.types?.t2?.name}
+                                            disabled={userInfo?.plan?.types?.t2?.name === "Custom"}
+                                            style={
+                                                style[
+                                                    userInfo?.plan?.types?.t2.name === type.name
+                                                        ? "fill"
+                                                        : "outline"
+                                                    ]
+                                            }
+                                            type={
+                                                userInfo?.plan?.types?.t2.name === type.name
+                                                    ? "fill"
+                                                    : "outline"
+                                            }
+                                            onClick={() => {
+                                                setType(userInfo?.plan?.types?.t2);
+                                            }}
+                                        />
+                                    </div>
+                                    <div className={styles.account_item_block}>
 
 
-                            < div style={{position: 'relative', width: '100%'}}>
-                                <div
-                                    className={styles.account_item}
-                                    onClick={() => {
-                                        setChoose({...choose, impressions: !choose["impressions"]})
-                                        setExtras({...extras, e1: !extras["e1"]})
-                                        setType({
-                                            ...type,
-                                            price: extras['e1'] ? +type.price - +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.price :
-                                                +type.price + +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.price
-                                        })
+                                        <div style={{position: 'relative', width: '100%'}}>
+                                            <div
+                                                className={styles.account_item}
+                                                onClick={() => {
+                                                    setChoose({...choose, impressions: !choose["impressions"]})
+                                                    setExtras({...extras, e1: !extras["e1"]})
+                                                    setType({
+                                                        ...type,
+                                                        price: extras['e1'] ? +type.price - +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.price :
+                                                            +type.price + +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.price
+                                                    })
 
-                                    }
-                                    }
-                                >
+                                                }
+                                                }
+                                            >
                                     <span style={{display: "flex", alignItems: "center"}}>
                                     <div className={styles.account_check}>
                                 {choose["impressions"] && (
@@ -358,39 +390,39 @@ const Step3 = (props) => {
                                     <p>+ {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.count} {" "}
                                         {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.name}</p>
                                     </span>
-                                    <p style={{color: "red"}}>+
-                                        $ {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.price}</p>
+                                                <p style={{color: "red"}}>+
+                                                    $ {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e1.price}</p>
 
-                                </div>
-                                <img
-                                    src="/info.svg"
-                                    alt=""
-                                    style={{
-                                        width: "22px", height: "22px",
-                                        position: "absolute", top: "-30px", right: "0"
-                                    }}
-                                    onClick={() => {
-                                        setShowModal(true)
-                                    }}
-                                />
-                            </div>
+                                            </div>
+                                            <img
+                                                src="/info.svg"
+                                                alt=""
+                                                style={{
+                                                    width: "22px", height: "22px",
+                                                    position: "absolute", top: "-30px", right: "0"
+                                                }}
+                                                onClick={() => {
+                                                    setShowModal(true)
+                                                }}
+                                            />
+                                        </div>
 
 
-                            <div style={{position: 'relative', width: '100%'}}>
-                                <div
-                                    className={styles.account_item}
-                                    onClick={() => {
-                                        setChoose({...choose, reach: !choose["reach"]});
-                                        setExtras({...extras, e2: !extras["e2"]})
-                                        setType({
-                                            ...type,
-                                            price: extras['e2'] ? +type.price - +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.price :
-                                                +type.price + +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.price
-                                        })
-                                    }
+                                        <div style={{position: 'relative', width: '100%'}}>
+                                            <div
+                                                className={styles.account_item}
+                                                onClick={() => {
+                                                    setChoose({...choose, reach: !choose["reach"]});
+                                                    setExtras({...extras, e2: !extras["e2"]})
+                                                    setType({
+                                                        ...type,
+                                                        price: extras['e2'] ? +type.price - +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.price :
+                                                            +type.price + +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.price
+                                                    })
+                                                }
 
-                                    }
-                                >
+                                                }
+                                            >
                                     <span style={{display: "flex", alignItems: "center"}}>
                                     <div className={styles.account_check}>
                                 {choose["reach"] && (
@@ -405,37 +437,37 @@ const Step3 = (props) => {
                                     <p>+ {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.count} {" "}
                                         {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.name}</p>
                                     </span>
-                                    <p style={{color: "red"}}>+
-                                        $ {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.price}</p>
+                                                <p style={{color: "red"}}>+
+                                                    $ {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e2.price}</p>
 
-                                </div>
-                                <img
-                                    src="/info.svg"
-                                    alt=""
-                                    style={{
-                                        width: "22px", height: "22px",
-                                        position: "absolute", top: "-30px", right: "0"
-                                    }}
-                                    onClick={() => setShowModal(true)}
-                                />
-                            </div>
+                                            </div>
+                                            <img
+                                                src="/info.svg"
+                                                alt=""
+                                                style={{
+                                                    width: "22px", height: "22px",
+                                                    position: "absolute", top: "-30px", right: "0"
+                                                }}
+                                                onClick={() => setShowModal(true)}
+                                            />
+                                        </div>
 
 
-                            <div style={{position: 'relative', width: '100%'}}>
-                                <div
-                                    className={styles.account_item}
-                                    onClick={() => {
-                                        setChoose({...choose, saves: !choose["saves"]})
-                                        setExtras({...extras, e3: !extras["e3"]})
-                                        setType({
-                                            ...type,
-                                            price: extras['e3'] ? +type.price - +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.price :
-                                                +type.price + +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.price
-                                        })
-                                    }
+                                        <div style={{position: 'relative', width: '100%'}}>
+                                            <div
+                                                className={styles.account_item}
+                                                onClick={() => {
+                                                    setChoose({...choose, saves: !choose["saves"]})
+                                                    setExtras({...extras, e3: !extras["e3"]})
+                                                    setType({
+                                                        ...type,
+                                                        price: extras['e3'] ? +type.price - +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.price :
+                                                            +type.price + +price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.price
+                                                    })
+                                                }
 
-                                    }
-                                >
+                                                }
+                                            >
                                     <span style={{display: "flex", alignItems: "center"}}>
                                     <div className={styles.account_check}>
                                 {choose["saves"] && (
@@ -449,89 +481,47 @@ const Step3 = (props) => {
                                     </div>
                                     <p>+ {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.count} {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.name}</p>
                                     </span>
-                                    <p style={{color: "red"}}>+
-                                        $ {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.price}</p>
+                                                <p style={{color: "red"}}>+
+                                                    $ {price[query.service]?.plans?.filter(elem => elem.count === query.counts)[0].extra.e3.price}</p>
 
-                                </div>
-                                <img
-                                    src="/info.svg"
-                                    alt=""
-                                    style={{
-                                        width: "22px", height: "22px",
-                                        position: "absolute", top: "-30px", right: "0"
-                                    }}
-                                    onClick={() => setShowModal(true)}
-                                />
-                            </div>
-                            {/*  {price[query.service]?.plans?.filter(elem => elem.count === query.counts).map(elem => {
-                                const extra = Object.values(elem.extra).map((el, ind) => {
-                                    return <>
-                                        <div
-                                            className={styles.account_item}
-                                            onClick={() => {
-                                                setChoose({...choose, impressions: !choose["impressions"]})
-                                                console.log(choose)
-                                                //    пофиксить что бы выбирался каждый инпут)
-                                            }
-                                            }
-                                        >
-                  <span style={{display: "flex", alignItems: "center"}}>
-                    <div className={styles.account_check}>
-                      {choose["impressions"] && (
-                          <Icon
-                              type="check"
-                              width="24px"
-                              height="24px"
-                              color="green"
-                          />
-                      )}
-                    </div>
-                    <p>+ {el.count} {el.name}</p>
-                  </span>
-                                            <p style={{color: "red"}}>+ $ {el.price}</p>
-
+                                            </div>
+                                            <img
+                                                src="/info.svg"
+                                                alt=""
+                                                style={{
+                                                    width: "22px", height: "22px",
+                                                    position: "absolute", top: "-30px", right: "0"
+                                                }}
+                                                onClick={() => setShowModal(true)}
+                                            />
                                         </div>
-                                        <img
-                                            src="/info.svg"
-                                            alt=""
-                                            style={{
-                                                width: "22px", height: "22px",
-                                                position: "relative", top: "-35px", right: "25px"
-                                            }}
+                                        <Modal open={showModal} onClose={() => setShowModal(false)}>
+                                            <div className={styles.small_modal}>
+                                                <p>The number of times your content,
+                                                    whether a post or a story, was shown to users.
+                                                    Impressions help you to promote your
+                                                    post and improve stat.</p>
+                                                <button onClick={() => setShowModal(false)}>Thank You</button>
+                                            </div>
+                                        </Modal>
+                                    </div>
+                                    <p style={{color: "red", textAlign: "center"}}>{errorMessage}</p>
+                                    <div style={{display: "flex", gap: 20, paddingBottom: "30px"}}>
+                                        <ButtonComponent
+                                            id="PAY"
+                                            text={`Choose payment method for ${allInfo?.sym_b !== null ? allInfo?.sym_b : ''}${
+                                                Number(type.price).toFixed(2)
+                                            } ${!allInfo?.sym_b ? allInfo?.sym_a : " "}`}
+                                            type="fill"
                                             onClick={() => {
-                                                setShowModal(true)
+                                                setIsLoading(true);
+                                                setIsSkeleton(true);
+                                                sendOrder();
                                             }}
                                         />
-                                    </>
-                                });
-                                return extra
-                            })}
-*/}
-                            <Modal open={showModal} onClose={() => setShowModal(false)}>
-                                <div className={styles.small_modal}>
-                                    <p>The number of times your content,
-                                        whether a post or a story, was shown to users.
-                                        Impressions help you to promote your
-                                        post and improve stat.</p>
-                                    <button onClick={() => setShowModal(false)}>Thank You</button>
-                                </div>
-                            </Modal>
-                        </div>
-                        <p style={{color: "red", textAlign: "center"}}>{errorMessage}</p>
-                        <div style={{display: "flex", gap: 20}}>
-                            <ButtonComponent
-                                id="PAY"
-                                text={`Choose payment method for ${allInfo?.sym_b !== null ? allInfo?.sym_b : ''}${
-                                    Number(type.price).toFixed(2)
-                                } ${!allInfo?.sym_b ? allInfo?.sym_a : " "}`}
-                                type="fill"
-                                onClick={() => {
-                                    sendOrder();
-                                }}
-                            />
-
-                            {/* <img src="/basket.svg" alt="" /> */}
-                        </div>
+                                    </div>
+                                </>
+                        }
                     </div>
                 </div>
             </Modal>

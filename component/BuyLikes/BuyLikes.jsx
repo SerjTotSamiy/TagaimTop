@@ -5,19 +5,20 @@ import ModalBuy from "../ModalBuy/ModalBuy";
 import {MeContext} from "../../pages/_app";
 
 const BuyLikes = ({
-                      first,
-                      last,
-                      likes,
-                      price,
-                      banner,
-                      text,
-                      autoLike,
-                      onClick,
-                      bgArray,
-                      index,
-                      id,
-                      icon
-                  }) => {
+    first,
+    last,
+    likes,
+    price,
+    banner,
+    text,
+    autoLike,
+    onClick,
+    bgArray,
+    index,
+    id,
+    icon,
+    service
+}) => {
     const bg = {
         0: "/pricebg1.webp",
         1: "/pricebg2.webp",
@@ -30,7 +31,17 @@ const BuyLikes = ({
         8: "/pricebg1.webp",
         9: "/pricebg1.webp",
     };
-    const {allInfo} = useContext(MeContext);
+    const {allInfo, setModalData} = useContext(MeContext);
+
+    const clickHandler = () => {
+        setModalData((prev) => ({
+            ...prev,
+            service: service,
+            counts: likes,
+            priceValue: price
+        }))
+        onClick();
+    }
 
     return (
         <div className={styles.buyLikes_item_bg}>
@@ -101,7 +112,7 @@ const BuyLikes = ({
                     text="Buy Now"
                     type="fill"
                     style={{width: 200, margin: 10}}
-                    onClick={onClick}
+                    onClick={clickHandler}
                 />
             </div>
         </div>

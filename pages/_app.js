@@ -7,6 +7,25 @@ import MetaTagsDefault from "../shared/MetaTags";
 
 export const MeContext = createContext();
 
+const modalDataInitial = {
+    service: "",
+    counts: 0,
+    priceValue: 0,
+    userName: "",
+    userEmail: "",
+    autoLike: false,
+    activePost: [],
+    reset() {
+        this.service = "";
+        this.counts = 0;
+        this.priceValue = 0;
+        this.userName = "";
+        this.userEmail = "";
+        this.autoLike = false;
+        this.activePost = [];
+    }
+};
+
 function MyApp({Component, pageProps}) {
     const axios = useAxios();
     const [allInfo, setAllInfo] = useState({});
@@ -15,6 +34,7 @@ function MyApp({Component, pageProps}) {
     const [userInfo, setUserInfo] = useState({});
     const [type, setType] = useState({});
     const [url, setUrl] = useState("");
+    const [modalData, setModalData] = useState(modalDataInitial);
     const getAllInfo = async () => {
         try {
             const res = await axios.post("/user_info.php");
@@ -67,6 +87,8 @@ function MyApp({Component, pageProps}) {
                     setType,
                     url,
                     setUrl,
+                    modalData,
+                    setModalData,
                 }}
             >
                 <Component {...pageProps} />

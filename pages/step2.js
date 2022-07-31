@@ -25,6 +25,7 @@ const Step2 = () => {
     setType,
     url,
     setUrl,
+    modalData
   } = useContext(MeContext);
   const [isSkeleton, setIsSkeleton] = useState(true);
 
@@ -40,6 +41,7 @@ const Step2 = () => {
         open={true}
         onClose={() => {
           // setOpen(false)
+          modalData.reset();
           router.push({
             pathname: url,
           });
@@ -53,7 +55,14 @@ const Step2 = () => {
             <p
               className={styles.backButton}
               style={{ filter: `${isSkeleton ? "blur(8px)" : "blur(0px)"}` }}
-              onClick={() => router.push("/step1")}
+              onClick={() => router.push({
+                pathname: `/step1`,
+                query: {
+                  service: modalData.service,
+                  counts: modalData.counts,
+                  priceValue: modalData.priceValue,
+                },
+              })}
             >
               {" "}
               {"< Back"}{" "}
@@ -62,7 +71,10 @@ const Step2 = () => {
               className={styles.close}
               style={{ filter: `${isSkeleton ? "blur(8px)" : "blur(0px)"}` }}
               src="/closegrey.svg"
-              onClick={() => router.push(url)}
+              onClick={() => {
+                modalData.reset();
+                router.push(url);
+              }}
               alt=""
             />
             {query.autoLike ? (
@@ -126,12 +138,12 @@ const Step2 = () => {
                       pathname: "/step3",
                       query: {
                         autoLike: false,
-                        counts: query.counts,
-                        priceValue: query.priceValue,
-                        userEmail: query.userEmail,
+                        counts: modalData.counts,
+                        priceValue: modalData.priceValue,
+                        userEmail: modalData.userEmail,
                         userInfo: userInfo,
-                        service: query.service,
-                        userName: query.userName,
+                        service: modalData.service,
+                        userName: modalData.userName,
                       },
                     })
                   }
@@ -139,7 +151,7 @@ const Step2 = () => {
                   <div className={styles.account_img}>
                     <img style={{ "boxShadow": "0 0 10px 1px #8c66fa" }} src={userInfo?.avatar} alt="" />
                   </div>
-                  <span className={styles.account_title}>{query.userName}</span>
+                  <span className={styles.account_title}>{modalData.userName}</span>
                 </div>
                 <div style={{"padding": "30px"}}>Click on avatar to continue</div>
               </div>

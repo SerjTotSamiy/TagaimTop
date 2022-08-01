@@ -323,7 +323,7 @@ const Step3 = (props) => {
                             </span>
                         }
                         {
-                            activePost.length > 0 || modalData.service === "Followers" &&
+                            (activePost.length > 0 || modalData.service === "Followers") &&
                                 <>
                                     <div className={styles.addAccount_buttons} style={{
                                         flexDirection: (modalData.service === "Likes" || modalData.service === "Views") ? "row-reverse" : "row"

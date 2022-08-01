@@ -171,7 +171,8 @@ const BuyInstagramComments = ({text}) => {
                     </p>
 
                     <div className={`container ${styles1.review_comment_row}`}>
-                        <div className={styles1.comments_container}>
+                        { comment?.length > 0
+                            && <div className={styles1.comments_container}>
                             {comment?.map(
                                 (item, index) =>
                                     index < readMore && (
@@ -193,8 +194,10 @@ const BuyInstagramComments = ({text}) => {
                                 </a>
                             </p>
                         </div>
+                        }
                         <Review service={"Comments"}/>
                     </div>
+
                 </div>
                 <div data-aos="fade-up" data-aos-duration="500" data-aos-offset="400">
                     <InfoBlock

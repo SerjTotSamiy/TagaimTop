@@ -170,7 +170,10 @@ const BuyInstagramComments = ({text}) => {
                         Every review is an indicator of customer satisfaction. We are tracking your feedback
                     </p>
 
-                    <div className={`container ${styles1.review_comment_row}`}>
+                    <div
+                        className={`container ${styles1.review_comment_row}`}
+                        style={{justifyContent: comment?.length > 0 ? "space-between" : "center"}}
+                    >
                         { comment?.length > 0
                             && <div className={styles1.comments_container}>
                             {comment?.map(

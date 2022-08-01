@@ -191,30 +191,35 @@ const BuyInstagramFollowers = ({text}) => {
                     {text[0].content}{" "}
                 </p>
 
-                <div className={`container ${styles1.review_comment_row}`}>
-                    <div className={styles1.comments_container}>
-                        {comment?.map(
-                            (item, index) => {
-                                return index < readMore && (
-                                    <Comment
-                                        key={item.name}
-                                        name={item.name}
-                                        star={item.star}
-                                        text={item.text}
-                                    />
-                                )
-                            }
-                        )}
+                <div
+                    className={`container ${styles1.review_comment_row}`}
+                    style={{justifyContent: comment?.length > 0 ? "space-between" : "center"}}
+                >
+                    {comment?.length > 0
+                        && <div className={styles1.comments_container}>
+                            {comment?.map(
+                                (item, index) => {
+                                    return index < readMore && (
+                                        <Comment
+                                            key={item.name}
+                                            name={item.name}
+                                            star={item.star}
+                                            text={item.text}
+                                        />
+                                    )
+                                }
+                            )}
 
-                        <p style={{marginTop: 20}}>
-                            <a
-                                style={{color: "#8C66FA", cursor: "pointer"}}
-                                onClick={() => comment && setReadMore(comment.length)}
-                            >
-                                Read More Reviews
-                            </a>
-                        </p>
-                    </div>
+                            <p style={{marginTop: 20}}>
+                                <a
+                                    style={{color: "#8C66FA", cursor: "pointer"}}
+                                    onClick={() => comment && setReadMore(comment.length)}
+                                >
+                                    Read More Reviews
+                                </a>
+                            </p>
+                        </div>
+                    }
                     <Review service={"Followers"}/>
                 </div>
 

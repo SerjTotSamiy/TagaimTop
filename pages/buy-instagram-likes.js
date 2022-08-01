@@ -484,32 +484,37 @@ const BuyInstagramLikes = ({text}) => {
                             Every review is an indicator of customer satisfaction. We are tracking your feedback
                         </p>
 
-                        <div className={styles1.review_comment_row}>
-                            <Review service={"Likes"}/>
-                            <div className={styles1.comments_container}>
-                                {comment?.map(
-                                    (item, index) =>
-                                        index < readMore && (
-                                            <Comment
-                                                key={item.name}
-                                                bg="#E4E0FE"
-                                                border="2px dashed #D8BFD8"
-                                                name={item.name}
-                                                star={item.star}
-                                                text={item.text}
-                                            />
-                                        )
-                                )}
+                        <div
+                            className={styles1.review_comment_row}
+                            style={{justifyContent: comment?.length > 0 ? "space-between" : "center"}}
+                        >
+                            {comment?.length > 0
+                                && <div className={styles1.comments_container}>
+                                    {comment?.map(
+                                        (item, index) =>
+                                            index < readMore && (
+                                                <Comment
+                                                    key={item.name}
+                                                    bg="#E4E0FE"
+                                                    border="2px dashed #D8BFD8"
+                                                    name={item.name}
+                                                    star={item.star}
+                                                    text={item.text}
+                                                />
+                                            )
+                                    )}
 
-                                <p style={{marginTop: 20}}>
-                                    <a
-                                        style={{color: "#8C66FA", cursor: "pointer"}}
-                                        onClick={() => comment && setReadMore(comment.length)}
-                                    >
-                                        Read More Reviews
-                                    </a>
-                                </p>
-                            </div>
+                                    <p style={{marginTop: 20}}>
+                                        <a
+                                            style={{color: "#8C66FA", cursor: "pointer"}}
+                                            onClick={() => comment && setReadMore(comment.length)}
+                                        >
+                                            Read More Reviews
+                                        </a>
+                                    </p>
+                                </div>
+                            }
+                            <Review service={"Likes"}/>
                         </div>
                     </div>
                 </div>

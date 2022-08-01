@@ -17,7 +17,8 @@ const BuyLikes = ({
     index,
     id,
     icon,
-    service
+    service,
+    isDisabled
 }) => {
     const bg = {
         0: "/pricebg1.webp",
@@ -44,13 +45,21 @@ const BuyLikes = ({
     }
 
     return (
-        <div className={styles.buyLikes_item_bg}>
-            <img
-                className={styles.imgBg}
-                src={bg[index]}
-                style={{position: "absolute", zIndex: -3}}
-                alt=""
-            />
+        <div
+            className={styles.buyLikes_item_bg}
+            style={{
+                filter: isDisabled ? "blur(3px)" : ""
+            }}
+        >
+            {!isDisabled
+                && <img
+                    className={styles.imgBg}
+                    src={bg[index]}
+                    style={{position: "absolute", zIndex: -3}}
+                    alt=""
+                />
+            }
+
             <div className={styles.buyLikes_item}>
                 <div style={{textAlign: "center", marginBottom: 20}}>
                     <p className={styles.buyLikes_likes}>
@@ -113,6 +122,7 @@ const BuyLikes = ({
                     type="fill"
                     style={{width: 200, margin: 10}}
                     onClick={clickHandler}
+                    disabled={isDisabled}
                 />
             </div>
         </div>

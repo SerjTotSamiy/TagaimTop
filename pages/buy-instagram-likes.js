@@ -17,6 +17,7 @@ import useAxios from "../hooks/useAxios";
 import {NextSeo} from "next-seo";
 import NextHead from "next/head";
 import Image from "next/image";
+import CommonError from "../component/CommonError/CommonError";
 
 const BuyInstagramLikes = ({text}) => {
     const router = useRouter();
@@ -165,7 +166,11 @@ const BuyInstagramLikes = ({text}) => {
                 <div className={styles.header_background}>
                     <PageTitle title={"Buy Instagram likes and auto-likes"}/>
 
-                    <p className={styles.buyLikes_title}>Buy Likes</p>
+                    <p className={styles.buyLikes_title}>Our rates</p>
+                    {price["Likes"]?.info?.length > 0 &&
+                        <CommonError error={price["Likes"]?.info[0]} />
+                    }
+
                     <div className={styles.buyLikes_item_container} ref={ref1}>
                         <Carousel
                             wrapAround={true}
@@ -186,6 +191,7 @@ const BuyInstagramLikes = ({text}) => {
                                     likes={item?.count}
                                     price={item?.price}
                                     bgArray={bgArray}
+                                    isDisabled={item.types.t1.disabled === "1" && item.types.t2.disabled === "1"}
                                     index={index}
                                     banner="/buylikesbanner2.png"
                                     text="Instagram Likes"
@@ -395,6 +401,7 @@ const BuyInstagramLikes = ({text}) => {
                                         likes={item?.count}
                                         price={item?.price}
                                         bgArray={bgArray}
+                                        isDisabled={item.types.t1.disabled === "1" && item.types.t2.disabled === "1"}
                                         index={index}
                                         banner="/buylikesbanner2.png"
                                         text="Instagram Auto-Likes"
@@ -447,6 +454,7 @@ const BuyInstagramLikes = ({text}) => {
                                         likes={item?.count}
                                         price={item?.price}
                                         bgArray={bgArray}
+                                        isDisabled={item.types.t1.disabled === "1" && item.types.t2.disabled === "1"}
                                         index={index}
                                         banner="/buylikesbanner2.png"
                                         text="Instagram Auto-Likes"

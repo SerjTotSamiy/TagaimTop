@@ -14,6 +14,7 @@ import {MeContext} from "./_app";
 import useAxios from "../hooks/useAxios";
 import Head from "next/head";
 import ModalBuy from "../component/ModalBuy/ModalBuy";
+import CommonError from "../component/CommonError/CommonError";
 
 const BuyInstagramComments = ({text}) => {
     const router = useRouter();
@@ -113,6 +114,11 @@ const BuyInstagramComments = ({text}) => {
 
                 <div>
                     <p className={styles.buyLikes_title}>Our rates</p>
+
+                    {price["Comments"]?.info?.length > 0 &&
+                        <CommonError error={price["Comments"]?.info[0]} />
+                    }
+
                     <div className={styles.buyLikes_item_container}>
                         <Carousel
                             wrapAround={true}
@@ -133,6 +139,7 @@ const BuyInstagramComments = ({text}) => {
                                     price={item.price}
                                     banner="/buylikesbanner.png"
                                     index={index}
+                                    isDisabled={item.types.t1.disabled === "1" && item.types.t2.disabled === "1"}
                                     onClick={() => {
                                         setPriceValue((prev) => item?.price);
                                         setCounts((prev) => item?.count);

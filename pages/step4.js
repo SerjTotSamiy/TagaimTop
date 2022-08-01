@@ -127,7 +127,7 @@ const Step4 = () => {
                                     className={styles.payment_block}
                                     onClick={() => {
 
-                                        if (item?.url_to_pay) window.open(item?.url_to_pay, "blonk");
+                                        if (item?.url_to_pay) window.open(item?.url_to_pay, "_blank");
                                     }}
                                 >
                                     <img
@@ -142,7 +142,7 @@ const Step4 = () => {
                                         alt=""
                                     />
                                     <span>
-                    <p>{item?.name}</p>
+                    <p>{item?.title}</p>
                     <p>
                       <p
                           style={{color: item?.url_to_pay ? "#00831D" : "#666"}}

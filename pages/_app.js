@@ -54,6 +54,13 @@ function MyApp({Component, pageProps}) {
             });
             if (res.status === 200) {
                 setPrice((prev) => res?.data?.data?.Instagram);
+                // setPrice({
+                //     ...price,
+                //     Likes: {
+                //         ...price.Likes,
+                //         info: ["Something wrong"]
+                //     }
+                // })
             }
         } catch (e) {
             console.log(e);
@@ -63,6 +70,24 @@ function MyApp({Component, pageProps}) {
     useEffect(() => {
         getAllInfo();
         getPrice();
+        //     .then(() => {
+        //     setPrice((prev) => ({
+        //         ...prev,
+        //         Likes: {
+        //             ...prev.Likes,
+        //             info: ["Something wrong"],
+        //             plans: [
+        //                 ...prev.Likes.plans.map((plan, i) => {
+        //                     if (i === 0) {
+        //                         plan.types.t1.disabled = "1"
+        //                         plan.types.t2.disabled = "1"
+        //                     }
+        //                     return plan;
+        //                 })
+        //             ]
+        //         }
+        //     }))
+        // });
         AOS.init();
     }, []);
 

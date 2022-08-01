@@ -63,12 +63,12 @@ const BuyLikes = ({
                     className={styles.buyLikes_banner}
                     style={{background: `url(${banner})`}}
                 >
-                    <p className={styles.buyLikes_item_price}
-                       style={{marginRight: "20px", textDecorationLine: "line-through", fontSize: "20px"}}>
-                        {allInfo?.sym_b}
-                        {(price * 1.15).toFixed(2)}
-                        {!allInfo?.sym_b ? allInfo?.sym_a : ""}
-                    </p>
+                    {/*<p className={styles.buyLikes_item_price}*/}
+                    {/*   style={{marginRight: "20px", textDecorationLine: "line-through", fontSize: "20px"}}>*/}
+                    {/*    {allInfo?.sym_b}*/}
+                    {/*    {(price * 1.15).toFixed(2)}*/}
+                    {/*    {!allInfo?.sym_b ? allInfo?.sym_a : ""}*/}
+                    {/*</p>*/}
                     <p className={styles.buyLikes_item_price}>
                         {allInfo?.sym_b}
                         {price}

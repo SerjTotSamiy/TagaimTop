@@ -13,6 +13,7 @@ const Code = () => {
 	const [text,setText] = useState(null);
 	const [mail,setMail] = useState(null);
 	const [code,setCode] = useState(null);
+	const [message, setMessage] = useState(null);
 	const router = useRouter();
 	useEffect(()=>{
 		setMail(router.query.email);
@@ -26,10 +27,16 @@ const Code = () => {
 			data.append("text", text.toString());
 			data.append("email", mail.toString());
 			data.append("code", code.toString());
-			const d = await axios.post("/ticket_send.php", data);
-			console.log(d);
+			await axios.post("https://private-anon-c3ca8ffdca-popreyv2aliases.apiary-mock.com/api/ticket_send.php", data);
+
+			const response = await axios.post("https://private-anon-c3ca8ffdca-popreyv2aliases.apiary-mock.com/api/ticket_messages.php", {code});
+			const fixedStr = response.data.replace(/\s/g, '').replaceAll("<br>"," ");
+			const str = fixedStr.substring(0, fixedStr.length -2);
+			const msg = JSON.parse(str+'}')
+			setMessage([msg.data.map(text=>text)]);
+			console.log(message)
 		} catch (e) {
-			console.log(e);
+			console.log(e.message);
 		}
 	}
 	return (
@@ -70,7 +77,13 @@ const Code = () => {
 				<div className={privacyStyles.privacy_container}>
 					<div className={privacyStyles.contactBlock}>
 					<ul>
-						<li></li>
+						{/*{message && message.map((msg, indx)=> {*/}
+						{/*	console.log(msg);*/}
+						{/*	return (*/}
+						{/*		<li key={indx}>{msg}</li>*/}
+						{/*	)*/}
+						{/*})}*/}
+
 					</ul>
 						<span>
 							<TextField

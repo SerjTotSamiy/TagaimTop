@@ -76,12 +76,13 @@ const Code = () => {
 				<PageTitle title={"Code"} />
 				<div className={privacyStyles.privacy_container}>
 					<div className={privacyStyles.contactBlock}>
-					<ul>
+					<ul style={{margin:0,padding:0,maxHeight:"300px",overflowX:"auto"}}>
 						{message && message.map((msg, index)=> {
+							console.log(msg);
 							return (
-									<li key={index} style={{listStyle:"none"}}>
-										{msg.is_admin === 0 && <p style={{color:"red",textAlign: "left"}}>{msg.text}</p>}
-										{msg.is_admin === 1 && <p style={{color:"blue",textAlign: "right"}}>{msg.text}</p>}
+									<li key={index} style={{listStyle:"none",clear:"both",display:"block"}}>
+										{msg.is_admin === 0 && <p style={{color:"red",padding:"22px",border:"1px solid #e5e5e5",borderRadius:"25px",display:"inline-block",marginBottom:"14px"}}>{msg.text}</p>}
+										{msg.is_admin === 1 && <p style={{color:"blue",padding:"22px",border:"1px solid #e5e5e5",borderRadius:"25px",float:"right",display:"inline-block",marginBottom:"14px"}}>{msg.text}</p>}
 									</li>
 							)
 						})}

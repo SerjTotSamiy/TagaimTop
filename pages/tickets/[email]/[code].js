@@ -32,9 +32,9 @@ const Code = () => {
 			const response = await axios.post("https://private-anon-c3ca8ffdca-popreyv2aliases.apiary-mock.com/api/ticket_messages.php", {code});
 			const fixedStr = response.data.replace(/\s/g, '').replaceAll("<br>"," ");
 			const str = fixedStr.substring(0, fixedStr.length -2);
-			const msg = JSON.parse(str+'}')
-			setMessage([msg.data.map(text=>text)]);
-			console.log(message)
+			const msg = JSON.parse(str+'}');
+			setMessage(Object.values(msg.data.list));
+
 		} catch (e) {
 			console.log(e.message);
 		}
@@ -77,13 +77,14 @@ const Code = () => {
 				<div className={privacyStyles.privacy_container}>
 					<div className={privacyStyles.contactBlock}>
 					<ul>
-						{/*{message && message.map((msg, indx)=> {*/}
-						{/*	console.log(msg);*/}
-						{/*	return (*/}
-						{/*		<li key={indx}>{msg}</li>*/}
-						{/*	)*/}
-						{/*})}*/}
-
+						{message && message.map((msg, index)=> {
+							return (
+									<li key={index} style={{listStyle:"none"}}>
+										{msg.is_admin === 0 && <p style={{color:"red",textAlign: "left"}}>{msg.text}</p>}
+										{msg.is_admin === 1 && <p style={{color:"blue",textAlign: "right"}}>{msg.text}</p>}
+									</li>
+							)
+						})}
 					</ul>
 						<span>
 							<TextField

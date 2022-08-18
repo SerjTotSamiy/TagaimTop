@@ -10,7 +10,7 @@ import likeStyles from "../../../styles/BuyInstagramLikes.module.sass";
 import privacyStyles from "../../../styles/PrivacyPolicy.module.sass";
 
 const Code = () => {
-	const [text,setText] = useState(null);
+	const [text,setText] = useState("");
 	const [mail,setMail] = useState(null);
 	const [code,setCode] = useState(null);
 	const [message, setMessage] = useState(null);
@@ -18,10 +18,15 @@ const Code = () => {
 	useEffect(()=>{
 		setMail(router.query.email);
 		setCode(router.query.code);
+		return () => {
+			setMail(null);
+			setCode(null);
+		}
 	},[router])
 
 	const axios = useAxios();
-	const sendRequest = async () => {
+	const sendRequest = async (event) => {
+		event.preventDefault();
 		try {
 			const data = new FormData();
 			data.append("text", text.toString());
@@ -30,13 +35,16 @@ const Code = () => {
 			await axios.post("https://private-anon-c3ca8ffdca-popreyv2aliases.apiary-mock.com/api/ticket_send.php", data);
 
 			const response = await axios.post("https://private-anon-c3ca8ffdca-popreyv2aliases.apiary-mock.com/api/ticket_messages.php", {code});
+
 			const fixedStr = response.data.replace(/\s/g, '').replaceAll("<br>"," ");
 			const str = fixedStr.substring(0, fixedStr.length -2);
 			const msg = JSON.parse(str+'}');
 			setMessage(Object.values(msg.data.list));
-
+			setText("");
 		} catch (e) {
 			console.log(e.message);
+			setText("");
+			setMessage(null);
 		}
 	}
 	return (
@@ -81,19 +89,42 @@ const Code = () => {
 							console.log(msg);
 							return (
 									<li key={index} style={{listStyle:"none",clear:"both",display:"block"}}>
-										{msg.is_admin === 0 && <p style={{color:"red",padding:"22px",border:"1px solid #e5e5e5",borderRadius:"25px",display:"inline-block",marginBottom:"14px"}}>{msg.text}</p>}
-										{msg.is_admin === 1 && <p style={{color:"blue",padding:"22px",border:"1px solid #e5e5e5",borderRadius:"25px",float:"right",display:"inline-block",marginBottom:"14px"}}>{msg.text}</p>}
+										{msg.is_admin === 0 && <p
+											style={{
+												backgroundColor: "rgba(246, 245, 255, 1)",
+												border: "2px dashed #C9C2FD",
+												borderRadius: 10,
+												padding: 20,
+												borderTopLeftRadius: 0,
+												display:"inline-block",
+												marginBottom:"14px"
+											}}
+											>
+											{msg.text}</p>}
+
+										{msg.is_admin === 1 && <p
+											style={{
+												backgroundColor: "rgba(246, 245, 255, 1)",
+												border: "2px dashed #C9C2FD",
+												borderRadius: 10,
+												padding: 20,
+												borderTopRightRadius: 0,
+												maxWidth: 700,
+												float:"right",
+												display:"inline-block",
+												marginBottom:"14px"}}>
+											{msg.text}</p>}
 									</li>
 							)
 						})}
 					</ul>
-						<span>
+						<form onSubmit={sendRequest}>
 							<TextField
 								id="outlined-multiline-static"
 								label="Enter your message"
 								multiline
-								rows={5}
-								style={{width: "100%"}}
+								rows={3}
+								style={{width: "100%",marginBottom:"20px"}}
 								sx={{
 									"& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
 										borderColor: "#8C66FA",
@@ -102,16 +133,17 @@ const Code = () => {
 										color: "#272D4D42",
 									},
 								}}
-								onChange={(e) => setText(e.target.value)}
+								value={text}
+								onChange={(event)=>setText(event.target.value)}
 							/>
-						</span>
-						<span className={privacyStyles.buttons}>
-							<ButtonComponent
-								text="Send Message"
-								type="fill"
-								onClick={sendRequest}
-							/>
-						</span>
+							<span className={privacyStyles.buttons}>
+								<ButtonComponent
+									text="Send Message"
+									type="fill"
+									typeInput="submit"
+								/>
+							</span>
+						</form>
 					</div>
 				</div>
 			</div>

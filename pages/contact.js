@@ -123,7 +123,7 @@ const Contact = () => {
 
             <div className={privacyStyles.privacy_container}>
                 <div className={privacyStyles.contactBlock}>
-          <span>
+                    <span>
             <TextField
                 required
                 id="outlined-required"
@@ -174,12 +174,12 @@ const Contact = () => {
                         onChange={(e) => setText(e.target.value)}
                     />
                     <span className={privacyStyles.buttons}>
-            <ButtonComponent
-                text="Send Message"
-                type="fill"
-                onClick={sendRequest}
-            />
-          </span>
+                        <ButtonComponent
+                            text="Send Message"
+                            type="fill"
+                            onClick={sendRequest}
+                        />
+                    </span>
                 </div>
             </div>
         </Layer>

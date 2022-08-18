@@ -32,20 +32,25 @@ const Code = () => {
 			data.append("text", text.toString());
 			data.append("email", mail.toString());
 			data.append("code", code.toString());
-			await axios.post("https://private-anon-c3ca8ffdca-popreyv2aliases.apiary-mock.com/api/ticket_send.php", data);
+			await axios.post("/ticket_send.php", data);
 
-			const response = await axios.post("https://private-anon-c3ca8ffdca-popreyv2aliases.apiary-mock.com/api/ticket_messages.php", {code});
+			const response = await axios.post("/ticket_messages.php", {code});
 
 			const fixedStr = response.data.replace(/\s/g, '').replaceAll("<br>"," ");
+
 			const str = fixedStr.substring(0, fixedStr.length -2);
 			const msg = JSON.parse(str+'}');
 			setMessage(Object.values(msg.data.list));
-			setText("");
+
 		} catch (e) {
 			console.log(e.message);
-			setText("");
 			setMessage(null);
 		}
+		setText("");
+	}
+	const textHandler = (event) => {
+		event.preventDefault();
+		setText(event.target.value)
 	}
 	return (
 		<Layer firstPage={false}>
@@ -134,7 +139,7 @@ const Code = () => {
 									},
 								}}
 								value={text}
-								onChange={(event)=>setText(event.target.value)}
+								onChange={(event)=>textHandler(event)}
 							/>
 							<span className={privacyStyles.buttons}>
 								<ButtonComponent

@@ -1,11 +1,27 @@
-import React from "react";
+import React, {useContext, useEffect} from "react";
 import styles from "../styles/BuyInstagramLikes.module.sass";
 import { ButtonComponent } from "../component/ButtonComponent/ButtonComponent";
 import { Layer } from "../component/Layer/Layer";
 import { useRouter } from "next/router";
 import purchaseStyles from "../styles/Purchase.module.sass";
-const ErrorPurchase = () => {
+import {MeContext} from "./_app";
+
+const Fail_pay = () => {
+  const {allInfo} = useContext(MeContext);
   const router = useRouter();
+  const {query} = useRouter();
+
+  useEffect(async () => {
+      const currency = allInfo.cur;
+      currency && query.price && Object.keys(dataLayer).length &&
+      dataLayer.push({
+          event: 'payment',
+          'event_label': 'failed',
+          'amount': `${query.price}`,
+          'currency': `${currency}`
+      });
+  }, [allInfo, query])
+
   return (
     <Layer firstPage={false}>
       <div
@@ -24,7 +40,7 @@ const ErrorPurchase = () => {
             account with time. Please check your email address for a letter
             saying whether we have received your payment. After this, your order
             will be realized according to its description. If not - please,
-            write to our support. Thank you for staying witth us!
+            write to our support. Thank you for staying with us!
           </p>
 
           <ButtonComponent
@@ -32,15 +48,10 @@ const ErrorPurchase = () => {
             type="fill"
             onClick={() => router.push("/")}
           />
-          <ButtonComponent
-            text="Home page"
-            type="fill"
-            onClick={() => router.push("SuccessPurchase")}
-          />
         </div>
       </div>
     </Layer>
   );
 };
 
-export default ErrorPurchase;
+export default Fail_pay;

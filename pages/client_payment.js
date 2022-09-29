@@ -1,12 +1,27 @@
-import React from "react";
+import React, {useContext, useEffect} from "react";
 import styles from "../styles/BuyInstagramLikes.module.sass";
 import { ButtonComponent } from "../component/ButtonComponent/ButtonComponent";
 import { Layer } from "../component/Layer/Layer";
 import { useRouter } from "next/router";
 import purchaseStyles from "../styles/Purchase.module.sass";
+import {MeContext} from "./_app";
 
-const SuccessPurchase = () => {
+const Client_payment = () => {
+  const {allInfo} = useContext(MeContext);
   const router = useRouter();
+  const {query} = useRouter();
+
+  useEffect(async () => {
+    const currency = allInfo.cur;
+    currency && query.price && Object.keys(dataLayer).length &&
+    dataLayer.push({
+        event: 'payment',
+        'event_label': 'succesful',
+        'amount': `${query.price}`,
+        'currency': `${currency}`
+    });
+  }, [allInfo, query])
+
   return (
     <Layer firstPage={false}>
       <div
@@ -40,4 +55,4 @@ const SuccessPurchase = () => {
   );
 };
 
-export default SuccessPurchase;
+export default Client_payment;

@@ -126,7 +126,6 @@ const Step4 = () => {
                                     key={item?.url_to_pay}
                                     className={styles.payment_block}
                                     onClick={() => {
-
                                         if (item?.url_to_pay) window.open(item?.url_to_pay, "_blank");
                                     }}
                                 >

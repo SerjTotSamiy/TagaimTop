@@ -189,7 +189,7 @@ const Step1 = () => {
                 if (e?.data?.result === "Ok") {
                     setResult((prev) => e?.data);
                     if (modalData.priceValue === "0.00") {
-                        router.push("/SuccessPurchase", "/success-purchase");
+                        router.push("/Client_payment", "/success-purchase");
                     } else {
                         router.push({
                             pathname: "/step4",

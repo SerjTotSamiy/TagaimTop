@@ -96,7 +96,7 @@ const ModalBuy = ({
                 if (e?.data?.result === "Ok") {
                     setResult((prev) => e?.data);
                     if (amount === "0.00") {
-                        router.push("/SuccessPurchase", "/success-purchase");
+                        router.push("/Client_payment", "/success-purchase");
                     } else {
                         setPageActive(4);
                     }

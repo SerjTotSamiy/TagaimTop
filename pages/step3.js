@@ -122,7 +122,7 @@ const Step3 = (props) => {
                         activePost: activePost
                     }));
                     if (query.priceValue === "0.00") {
-                        router.push("/SuccessPurchase", "/success-purchase");
+                        router.push("/Client_payment", "/success-purchase");
                     } else {
                         router.push({
                             pathname: "/step4",

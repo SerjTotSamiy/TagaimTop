@@ -13,13 +13,15 @@ const Fail_pay = () => {
 
   useEffect(async () => {
       const currency = allInfo.cur;
-      currency && query.price && Object.keys(dataLayer).length &&
-      dataLayer.push({
+      window.dataLayer = window.dataLayer || [];
+      currency && query.price &&
+      window.dataLayer.push({
           event: 'payment',
           'event_label': 'failed',
           'amount': `${query.price}`,
           'currency': `${currency}`
       });
+      console.log('window.dataLayer is', window.dataLayer);
   }, [allInfo, query])
 
   return (

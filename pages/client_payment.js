@@ -12,14 +12,16 @@ const Client_payment = () => {
   const {query} = useRouter();
 
   useEffect(async () => {
-    const currency = allInfo.cur;
-    currency && query.price && Object.keys(dataLayer).length &&
-    dataLayer.push({
+      const currency = allInfo.cur;
+      window.dataLayer = window.dataLayer || [];
+      currency && query.price &&
+      window.dataLayer.push({
         event: 'payment',
-        'event_label': 'succesful',
+        'event_label': 'successful',
         'amount': `${query.price}`,
         'currency': `${currency}`
-    });
+      });
+      console.log('window.dataLayer is', window.dataLayer);
   }, [allInfo, query])
 
   return (

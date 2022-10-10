@@ -17,7 +17,7 @@ const Fail_pay = () => {
     currency &&
       query.price &&
       window.dataLayer.push({
-        event: "payment",
+        event: "payment_failed",
         event_label: "failed",
         amount: `${query.price}`,
         currency: `${currency}`,

@@ -16,7 +16,7 @@ const Client_payment = () => {
       window.dataLayer = window.dataLayer || [];
       currency && query.price &&
       window.dataLayer.push({
-        event: 'payment',
+        event: 'payment_succesful',
         'event_label': 'successful',
         'amount': `${query.price}`,
         'currency': `${currency}`

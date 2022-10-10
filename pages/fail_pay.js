@@ -21,7 +21,7 @@ const Fail_pay = () => {
         amount: `${query.price}`,
         currency: `${currency}`,
       });
-    // console.log('window.dataLayer is', window.dataLayer);
+    console.log('window.dataLayer is', window.dataLayer);
   }, [allInfo, query]);
 
   return (

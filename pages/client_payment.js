@@ -1,28 +1,29 @@
-import React, {useContext, useEffect} from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "../styles/BuyInstagramLikes.module.sass";
 import { ButtonComponent } from "../component/ButtonComponent/ButtonComponent";
 import { Layer } from "../component/Layer/Layer";
 import { useRouter } from "next/router";
 import purchaseStyles from "../styles/Purchase.module.sass";
-import {MeContext} from "./_app";
+import { MeContext } from "./_app";
 
 const Client_payment = () => {
-  const {allInfo} = useContext(MeContext);
+  const { allInfo } = useContext(MeContext);
   const router = useRouter();
-  const {query} = useRouter();
+  const { query } = useRouter();
 
   useEffect(async () => {
-      const currency = allInfo.cur;
-      window.dataLayer = window.dataLayer || [];
-      currency && query.price &&
+    const currency = allInfo.cur;
+    window.dataLayer = window.dataLayer || [];
+    currency &&
+      query.price &&
       window.dataLayer.push({
-        event: 'payment',
-        'event_label': 'successful',
-        'amount': `${query.price}`,
-        'currency': `${currency}`
+        event: "payment",
+        event_label: "successful",
+        amount: `${query.price}`,
+        currency: `${currency}`,
       });
-      console.log('window.dataLayer is', window.dataLayer);
-  }, [allInfo, query])
+    console.log("window.dataLayer is", window.dataLayer);
+  }, [allInfo, query]);
 
   return (
     <Layer firstPage={false}>
@@ -38,7 +39,7 @@ const Client_payment = () => {
           style={{ maxWidth: 1000 }}
         >
           <p className={purchaseStyles.purchaseSuccessTitle}>
-            THANKS <p style={{ color: "green" }}>FOR PURCHASE</p>
+            THANKS <span style={{ color: "green" }}>FOR PURCHASE</span>
           </p>
           <p className={purchaseStyles.purchaseSuccessText}>
             We will fulfilling your order according to its description.

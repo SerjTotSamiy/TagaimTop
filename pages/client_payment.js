@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import {gaEvent} from "../shared/gaEvents.js";
 import styles from "../styles/BuyInstagramLikes.module.sass";
 import { ButtonComponent } from "../component/ButtonComponent/ButtonComponent";
 import { Layer } from "../component/Layer/Layer";
@@ -13,18 +14,19 @@ const Client_payment = () => {
 
   useEffect(async () => {
     const currency = allInfo.cur;
-    console.log('currency', currency);
-    
-    window.dataLayer = window.dataLayer || [];
-    currency &&
-      query.price &&
-      window.dataLayer.push({
-        event: "payment_succesful",
-        event_label: "successful",
-        amount: `${query.price}`,
-        currency: `${currency}`,
-      });
-    console.log("window.dataLayer is", window.dataLayer);
+    gaEvent.successful()
+    // console.log('currency', currency);
+    //
+    // window.dataLayer = window.dataLayer || [];
+    // currency &&
+    //   query.price &&
+    //   window.dataLayer.push({
+    //     event: "payment_succesful",
+    //     event_label: "successful",
+    //     amount: `${query.price}`,
+    //     currency: `${currency}`,
+    //   });
+    // console.log("window.dataLayer is", window.dataLayer);
   }, [allInfo, query]);
 
   return (

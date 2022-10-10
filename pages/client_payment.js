@@ -13,6 +13,8 @@ const Client_payment = () => {
 
   useEffect(async () => {
     const currency = allInfo.cur;
+    console.log('currency', currency);
+    
     window.dataLayer = window.dataLayer || [];
     currency &&
       query.price &&

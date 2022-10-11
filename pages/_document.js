@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheets } from "@material-ui/core/styles";
+import Script from "next/script.js";
 import React from "react";
-import ReactGA from "react-ga4";
 
 class MyDocument extends Document {
 
@@ -11,7 +11,6 @@ class MyDocument extends Document {
   }
 
   render() {
-
     return (
       <Html>
         <title>TagIamTop</title>
@@ -27,6 +26,24 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
 
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <Script
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=G-RDBNGEZT97`}
+          />
+          <Script
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-RDBNGEZT97', {
+              page_path: window.location.pathname,
+            });
+          `,
+              }}
+          />
         </Head>
         <body>
           <Main />
@@ -62,16 +79,7 @@ MyDocument.getInitialProps = async (ctx) => {
 
 export default MyDocument;
 
-// <!-- Google tag (gtag.js) -->
-// {/*<script async src="https://www.googletagmanager.com/gtag/js?id=G-RDBNGEZT97"></script>*/}
-// {/*<script>*/}
-// {/*    window.dataLayer = window.dataLayer || [];*/}
-// {/*    function gtag(){dataLayer.push(arguments);}*/}
-// {/*    gtag('js', new Date());*/}
-//
-// {/*    gtag('config', 'G-RDBNGEZT97');*/}
-// {/*</script>*/}
-// {/*<script*/}
+
 // {/*    dangerouslySetInnerHTML={{*/}
 // {/*      __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':*/}
 // {/*              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],*/}
@@ -80,9 +88,9 @@ export default MyDocument;
 // {/*              })(window,document,'script','dataLayer','GTM-PHCMNFB');`,*/}
 // {/*    }}*/}
 // {/*/>*/}
-// {/*<noscript*/}
-// {/*    dangerouslySetInnerHTML={{*/}
-// {/*      __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHCMNFB"*/}
-// {/*                    height="0" width="0" style="display:none;visibility:hidden"></iframe>`,*/}
-// {/*    }}*/}
-// {/*/>*/}
+{/*<noscript*/}
+{/*    dangerouslySetInnerHTML={{*/}
+{/*      __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHCMNFB"*/}
+{/*                    height="0" width="0" style="display:none;visibility:hidden"></iframe>`,*/}
+{/*    }}*/}
+{/*/>*/}

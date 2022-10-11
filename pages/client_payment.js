@@ -16,18 +16,18 @@ const Client_payment = () => {
     const currency = allInfo.cur;
     gaEvent.successful();
 
-    // console.log('currency', currency);
-    //
-    // window.dataLayer = window.dataLayer || [];
-    // currency &&
-    //   query.price &&
-    //   window.dataLayer.push({
-    //     event: "payment_succesful",
-    //     event_label: "successful",
-    //     amount: `${query.price}`,
-    //     currency: `${currency}`,
-    //   });
-    // console.log("window.dataLayer is", window.dataLayer);
+    console.log('currency', currency);
+
+    window.dataLayer = window.dataLayer || [];
+    currency &&
+      query.price &&
+      window.dataLayer.push({
+        event: "payment_succesful",
+        event_label: "successful",
+        amount: `${query.price}`,
+        currency: `${currency}`,
+      });
+    console.log("window.dataLayer is", window.dataLayer);
   }, [allInfo, query]);
 
   return (

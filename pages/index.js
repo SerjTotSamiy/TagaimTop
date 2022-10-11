@@ -1,4 +1,4 @@
-// import ReactGA from "react-ga4";
+import ReactGA from "react-ga4";
 import {gaEvent} from "../shared/gaEvents.js";
 import styles from "../styles/Home.module.sass";
 import {Layer} from "../component/Layer/Layer";
@@ -23,8 +23,8 @@ export default function Home() {
     const [comment, setComment] = useState([]);
     const axios = useAxios();
     const date = new Date();
-    // ReactGA.initialize("G-RDBNGEZT97");
-    // ReactGA.send({ hitType: "pageview", page: router.pathname });
+    ReactGA.initialize("G-RDBNGEZT97");
+    ReactGA.send({ hitType: "pageview", page: router.pathname });
 
     const getComment = async () => {
         try {

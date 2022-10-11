@@ -1,8 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheets } from "@material-ui/core/styles";
-import Script from "next/script.js";
 import React from "react";
-import ReactGA from "react-ga4";
 
 class MyDocument extends Document {
 
@@ -27,24 +25,24 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          {/* Global Site Tag (gtag.js) - Google Analytics */}
-          <Script
-              strategy="afterInteractive"
-              src={`https://www.googletagmanager.com/gtag/js?id=G-RDBNGEZT97`}
-          />
-          <Script
-              strategy="afterInteractive"
-              dangerouslySetInnerHTML={{
-                __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-RDBNGEZT97', {
-              page_path: window.location.pathname,
-            });
-          `,
-              }}
-          />
+          {/*/!* Global Site Tag (gtag.js) - Google Analytics *!/*/}
+          {/*<Script*/}
+          {/*    strategy="afterInteractive"*/}
+          {/*    src={`https://www.googletagmanager.com/gtag/js?id=G-RDBNGEZT97`}*/}
+          {/*/>*/}
+          {/*<Script*/}
+          {/*    strategy="afterInteractive"*/}
+          {/*    dangerouslySetInnerHTML={{*/}
+          {/*      __html: `*/}
+          {/*  window.dataLayer = window.dataLayer || [];*/}
+          {/*  function gtag(){dataLayer.push(arguments);}*/}
+          {/*  gtag('js', new Date());*/}
+          {/*  gtag('config', 'G-RDBNGEZT97', {*/}
+          {/*    page_path: window.location.pathname,*/}
+          {/*  });*/}
+          {/*`,*/}
+          {/*    }}*/}
+          {/*/>*/}
         </Head>
         <body>
           <Main />
@@ -60,7 +58,6 @@ MyDocument.getInitialProps = async (ctx) => {
   // Render app and page and get the context of the page with collected side effects.
   const sheets = new ServerStyleSheets();
   const originalRenderPage = ctx.renderPage;
-  ReactGA.initialize("G-RDBNGEZT97");
 
   ctx.renderPage = () =>
     originalRenderPage({

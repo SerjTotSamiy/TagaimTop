@@ -15,16 +15,16 @@ const Fail_pay = () => {
   useEffect(async () => {
     const currency = allInfo.cur;
     gaEvent.failed();
-
-    window.dataLayer = window.dataLayer || [];
-    currency &&
-      query.price &&
-      window.dataLayer.push({
-        event: "payment_failed",
-        amount: `${query.price}`,
-        currency: `${currency}`,
-      });
-    console.log('window.dataLayer is', window.dataLayer);
+    //
+    // window.dataLayer = window.dataLayer || [];
+    // currency &&
+    //   query.price &&
+    //   window.dataLayer.push({
+    //     event: "payment_failed",
+    //     amount: `${query.price}`,
+    //     currency: `${currency}`,
+    //   });
+    // console.log('window.dataLayer is', window.dataLayer);
   }, [allInfo, query]);
 
   return (

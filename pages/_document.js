@@ -2,6 +2,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheets } from "@material-ui/core/styles";
 import Script from "next/script.js";
 import React from "react";
+import ReactGA from "react-ga4";
 
 class MyDocument extends Document {
 
@@ -59,6 +60,7 @@ MyDocument.getInitialProps = async (ctx) => {
   // Render app and page and get the context of the page with collected side effects.
   const sheets = new ServerStyleSheets();
   const originalRenderPage = ctx.renderPage;
+  ReactGA.initialize("G-RDBNGEZT97");
 
   ctx.renderPage = () =>
     originalRenderPage({
@@ -78,19 +80,3 @@ MyDocument.getInitialProps = async (ctx) => {
 };
 
 export default MyDocument;
-
-
-// {/*    dangerouslySetInnerHTML={{*/}
-// {/*      __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':*/}
-// {/*              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],*/}
-// {/*              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=*/}
-// {/*              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);*/}
-// {/*              })(window,document,'script','dataLayer','GTM-PHCMNFB');`,*/}
-// {/*    }}*/}
-// {/*/>*/}
-{/*<noscript*/}
-{/*    dangerouslySetInnerHTML={{*/}
-{/*      __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHCMNFB"*/}
-{/*                    height="0" width="0" style="display:none;visibility:hidden"></iframe>`,*/}
-{/*    }}*/}
-{/*/>*/}

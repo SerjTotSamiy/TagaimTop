@@ -1,4 +1,5 @@
-import ReactGA from "react-ga4";
+// import ReactGA from "react-ga4";
+import {gaEvent} from "../shared/gaEvents.js";
 import styles from "../styles/Home.module.sass";
 import {Layer} from "../component/Layer/Layer";
 import {ButtonComponent} from "../component/ButtonComponent/ButtonComponent";
@@ -22,10 +23,9 @@ export default function Home() {
     const [comment, setComment] = useState([]);
     const axios = useAxios();
     const date = new Date();
-    ReactGA.initialize("G-RDBNGEZT97");
-    ReactGA.send({ hitType: "pageview", page: router.pathname });
-    ReactGA.send({ hitType: "payment_failed", page: router.pathname });
-    ReactGA.send({ hitType: "paymentfailed", page: router.pathname });
+    // ReactGA.initialize("G-RDBNGEZT97");
+    // ReactGA.send({ hitType: "pageview", page: router.pathname });
+
     const getComment = async () => {
         try {
             const data = new FormData();
@@ -44,6 +44,11 @@ export default function Home() {
         getComment();
     }, []);
 
+    const handleSubmit = event => {
+        event.preventDefault();
+        console.log('clicked')
+        gaEvent.buttonClick();
+    }
     return (
         <>
             <Head>
@@ -114,7 +119,8 @@ export default function Home() {
                                         <ButtonComponent
                                             text={"Buy followers"}
                                             type={"mainFill"}
-                                            onClick={() => router.push("/buy-instagram-followers")}
+                                            // onClick={() => router.push("/buy-instagram-followers")}
+                                            onClick={handleSubmit}
                                         />
                                     </div>
                                     <img

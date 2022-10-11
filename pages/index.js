@@ -1,3 +1,4 @@
+import ReactGA from "react-ga4";
 import styles from "../styles/Home.module.sass";
 import {Layer} from "../component/Layer/Layer";
 import {ButtonComponent} from "../component/ButtonComponent/ButtonComponent";
@@ -20,7 +21,9 @@ export default function Home() {
     const [readMore, setReadMore] = useState(3);
     const [comment, setComment] = useState([]);
     const axios = useAxios();
-    const date = new Date()
+    const date = new Date();
+    ReactGA.initialize("G-RDBNGEZT97");
+    ReactGA.send({ hitType: "pageview", page: router.pathname });
     const getComment = async () => {
         try {
             const data = new FormData();

@@ -11,7 +11,6 @@ class MyDocument extends Document {
   }
 
   render() {
-    ReactGA.initialize("G-RDBNGEZT97");
 
     return (
       <Html>

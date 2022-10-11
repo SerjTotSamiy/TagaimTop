@@ -24,7 +24,8 @@ export default function Home() {
     const date = new Date();
     ReactGA.initialize("G-RDBNGEZT97");
     ReactGA.send({ hitType: "pageview", page: router.pathname });
-
+    ReactGA.send({ hitType: "payment_failed", page: router.pathname });
+    ReactGA.send({ hitType: "paymentfailed", page: router.pathname });
     const getComment = async () => {
         try {
             const data = new FormData();

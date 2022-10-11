@@ -14,7 +14,8 @@ const Client_payment = () => {
 
   useEffect(async () => {
     const currency = allInfo.cur;
-    gaEvent.successful()
+    gaEvent.successful();
+
     // console.log('currency', currency);
     //
     // window.dataLayer = window.dataLayer || [];

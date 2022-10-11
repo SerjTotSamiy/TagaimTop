@@ -14,7 +14,8 @@ const Fail_pay = () => {
 
   useEffect(async () => {
     const currency = allInfo.cur;
-    gaEvent.failed()
+    gaEvent.failed();
+
     // window.dataLayer = window.dataLayer || [];
     // currency &&
     //   query.price &&

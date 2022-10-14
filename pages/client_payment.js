@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import {gaEvent} from "../shared/gaEvents.js";
+import { gaEvent } from "../shared/gaEvents.js";
 import styles from "../styles/BuyInstagramLikes.module.sass";
 import { ButtonComponent } from "../component/ButtonComponent/ButtonComponent";
 import { Layer } from "../component/Layer/Layer";
@@ -14,7 +14,7 @@ const Client_payment = () => {
 
   useEffect(async () => {
     const currency = allInfo.cur;
-    gaEvent.successful();
+    gaEvent.successful("payment_succesful", query.price, currency);
 
     // console.log('currency', currency);
     //
@@ -28,6 +28,7 @@ const Client_payment = () => {
     //     currency: `${currency}`,
     //   });
     // console.log("window.dataLayer is", window.dataLayer);
+    gaEvent.buttonClick();
   }, [allInfo, query]);
 
   return (

@@ -6,7 +6,6 @@ import { Layer } from "../component/Layer/Layer";
 import { useRouter } from "next/router";
 import purchaseStyles from "../styles/Purchase.module.sass";
 import { MeContext } from "./_app";
-import ReactGA from "react-ga";
 
 const Client_payment = () => {
   const { allInfo } = useContext(MeContext);

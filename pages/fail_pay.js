@@ -14,7 +14,7 @@ const Fail_pay = () => {
 
   useEffect(async () => {
     const currency = allInfo.cur;
-    gaEvent.failed();
+    // gaEvent.failed();
     gaEvent.failed("payment_failed", query.price, currency);
 
     //
@@ -29,6 +29,12 @@ const Fail_pay = () => {
     // console.log('window.dataLayer is', window.dataLayer);
   }, [allInfo, query]);
 
+  useEffect(() => {
+    console.log("fail");
+    const currency = allInfo.cur;
+
+    gaEvent.failed("payment_failed", query.price, currency);
+  }, []);
   return (
     <Layer firstPage={false}>
       <div

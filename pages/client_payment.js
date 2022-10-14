@@ -6,6 +6,7 @@ import { Layer } from "../component/Layer/Layer";
 import { useRouter } from "next/router";
 import purchaseStyles from "../styles/Purchase.module.sass";
 import { MeContext } from "./_app";
+import ReactGA from "react-ga";
 
 const Client_payment = () => {
   const { allInfo } = useContext(MeContext);
@@ -30,6 +31,13 @@ const Client_payment = () => {
     // console.log("window.dataLayer is", window.dataLayer);
     gaEvent.buttonClick();
   }, [allInfo, query]);
+
+  useEffect(() => {
+    console.log("suc");
+
+    const currency = allInfo.cur;
+    gaEvent.successful("payment_succesful", query.price, currency);
+  }, []);
 
   return (
     <Layer firstPage={false}>

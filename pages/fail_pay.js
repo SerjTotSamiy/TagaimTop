@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import {gaEvent} from "../shared/gaEvents.js";
+import { gaEvent } from "../shared/gaEvents.js";
 import styles from "../styles/BuyInstagramLikes.module.sass";
 import { ButtonComponent } from "../component/ButtonComponent/ButtonComponent";
 import { Layer } from "../component/Layer/Layer";
@@ -15,6 +15,8 @@ const Fail_pay = () => {
   useEffect(async () => {
     const currency = allInfo.cur;
     gaEvent.failed();
+    gaEvent.failed("payment_failed", query.price, currency);
+
     //
     // window.dataLayer = window.dataLayer || [];
     // currency &&

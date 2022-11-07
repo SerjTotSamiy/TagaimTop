@@ -12,6 +12,30 @@ const Client_payment = () => {
   const router = useRouter();
   const { query } = useRouter();
 
+  useEffect(() => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ ecommerce: null });
+    const event = {
+      event: "purchase",
+      ecommerce: {
+        transaction_id: query.id, // Передаем идентификатор заказа с админки
+        affiliation: query.service, // Передаем тип купленного продукта (likes – когда купили лайки, followers – когда купили подписчиков, views – когда купили просмотры и comments – когда купили комментарии)
+        value: query.paid, // Передаем сумму заказа
+        currency: query?.cur,
+        items: [{
+          item_name: query?.name, // Передаем название товара
+          item_id: query?.id, // Передаем код/ID товара
+          price: query?.price, // Передаем актуальную цену товара (разделитель десятичных знаков точка «.»)
+          item_brand: "tagiamtop", // Передаем бренд товара
+          item_category: query?.category, // Передаем соответствующую категорию товаров https://take.ms/Gxpmh
+          item_variant: query?.variant, // Передаем информацию про тариф https://take.ms/wKYoS
+          quantity: query?.quantity // Передеам количество купленного товара
+        }]
+      }
+    }
+    console.log('event is', event)
+  }, [])
+
   useEffect(async () => {
     const currency = allInfo.cur;
     gaEvent.successful("payment_succesful", query.price, currency);
@@ -32,8 +56,6 @@ const Client_payment = () => {
   }, [allInfo, query]);
 
   useEffect(() => {
-    console.log("suc");
-
     const currency = allInfo.cur;
     gaEvent.successful("payment_succesful", query.price, currency);
   }, []);

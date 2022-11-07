@@ -1,4 +1,5 @@
 import React, {useContext, useState, useEffect} from "react";
+import { v4 as uuidv4 } from 'uuid';
 import {useRouter} from "next/router";
 import useAxios from "../hooks/useAxios";
 import {Layer} from "../component/Layer/Layer";
@@ -15,6 +16,7 @@ const Step4 = () => {
     const axios = useAxios();
     const [userInfo, setUserInfo] = useState({});
     const [isSkeleton, setIsSkeleton] = useState(true);
+    const purchaseId = uuidv4();
 
     useEffect(() => {
         const delay = setTimeout(() => {
@@ -22,6 +24,51 @@ const Step4 = () => {
         }, 1200);
         return () => clearTimeout(delay);
     }, []);
+
+    console.log('query', query)
+
+    function onCheckout() {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+        window.dataLayer.push({
+            event: "begin_checkout",
+            ecommerce: {
+                items: [{
+                    item_name: `${query.counts} Instagram ${query.service}`, // Name or ID is required.
+                    item_id: purchaseId, // Передаем код/ID товара
+                    price: query.priceValue, // Передаем актуальную цену товара (разделитель десятичных знаков точка «.»)
+                    item_brand: "tagiamtop", // Передаем бренд товара
+                    item_category: `buy instagram ${query.service.toLowerCase()}`, // Передаем соответствующую категорию товаров https://take.ms/Gxpmh
+                    item_variant: `${query.service}-${query.counts}`, // Передаем информацию про тариф https://take.ms/wKYoS
+                    quantity: query.counts // Передеам количество купленного товара
+                }]
+            }
+        });
+    }
+
+    function paymentChoose(paymentService) {
+        dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+        dataLayer.push({
+            event: 'add_payment_info',
+            ecommerce: {
+                payment_type: paymentService, // Передаем сервис оплаты
+                value: query.priceValue, // Передаем сумму
+                currency: allInfo?.cur, // Передаем валюту
+                items: [
+                    {
+                        item_name: `${query.counts} Instagram ${query.service}`,       // Name or ID is required.
+                        item_id: purchaseId,
+                        price: query.priceValue,
+                        item_brand: "tagiamtop", // Передаем бренд товара
+                        item_category: `buy instagram ${query.service.toLowerCase()}`, // Передаем соответствующую категорию товаров https://take.ms/Gxpmh
+                        item_variant: `${query.service}-${query.counts}`, // Передаем информацию про тариф https://take.ms/wKYoS
+                        index: 1,
+                        quantity: query.counts
+                    }]
+            }
+        });
+
+    }
 
     const payType = {
         Coinbase: "/bitcoin.svg",
@@ -121,26 +168,30 @@ const Step4 = () => {
                             className={styles.stage3_container}
                             style={{filter: `${isSkeleton ? "blur(8px)" : "blur(0px)"}`}}
                         >
-                            {result?.data?.methods?.map((item) => (
-                                <div
-                                    key={item?.url_to_pay}
-                                    className={styles.payment_block}
-                                    onClick={() => {
-                                        if (item?.url_to_pay) window.open(item?.url_to_pay, "_blank");
-                                    }}
-                                >
-                                    <img
-                                        src={item?.logo}
-                                        width={55}
-                                        height={55}
-                                        style={{
-                                            border: "1px solid grey",
-                                            padding: "5px",
-                                            borderRadius: "50%",
+                            {result?.data?.methods?.map((item) => {
+                                if (item?.url_to_pay) {
+                                    return (<div
+                                        key={item?.url_to_pay}
+                                        className={styles.payment_block}
+                                        onClick={() => {
+                                            if (item?.url_to_pay) {
+                                                onCheckout();
+                                                window.open(item?.url_to_pay, "_blank");
+                                            }
                                         }}
-                                        alt=""
-                                    />
-                                    <span>
+                                    >
+                                        <img
+                                            src={item?.logo}
+                                            width={55}
+                                            height={55}
+                                            style={{
+                                                border: "1px solid grey",
+                                                padding: "5px",
+                                                borderRadius: "50%",
+                                            }}
+                                            alt=""
+                                        />
+                                        <span>
                     <p>{item?.title}</p>
                     <p>
                       <p
@@ -156,18 +207,19 @@ const Step4 = () => {
                         )}
                     </p>
                   </span>
-                                    <p
-                                        key={item.discount}
-                                        className={
-                                            item?.discount < -0
-                                                ? styles.account_green
-                                                : styles.account_check
-                                        }
-                                    >
-                                        {item?.discount}%
-                                    </p>
-                                </div>
-                            ))}
+                                        <p
+                                            key={item.discount}
+                                            className={
+                                                item?.discount < -0
+                                                    ? styles.account_green
+                                                    : styles.account_check
+                                            }
+                                        >
+                                            {item?.discount}%
+                                        </p>
+                                    </div>)
+                                }
+                            })}
                         </div>
                     )}
                     <p

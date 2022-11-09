@@ -22,12 +22,7 @@ const Step4 = () => {
         const delay = setTimeout(() => {
             setIsSkeleton(false);
         }, 1200);
-        return () => clearTimeout(delay);
-    }, []);
 
-    console.log('query', query)
-
-    function onCheckout() {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
         window.dataLayer.push({
@@ -44,7 +39,9 @@ const Step4 = () => {
                 }]
             }
         });
-    }
+
+        return () => clearTimeout(delay);
+    }, []);
 
     function paymentChoose(paymentService) {
         dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
@@ -175,7 +172,6 @@ const Step4 = () => {
                                         className={styles.payment_block}
                                         onClick={() => {
                                             if (item?.url_to_pay) {
-                                                onCheckout();
                                                 window.open(item?.url_to_pay, "_blank");
                                             }
                                         }}

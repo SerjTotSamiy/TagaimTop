@@ -14,8 +14,9 @@ const Client_payment = () => {
 
   useEffect(() => {
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ ecommerce: null });
-    const event = {
+    window.dataLayer.push({ecommerce: null});
+
+    window.dataLayer.push({
       event: "purchase",
       ecommerce: {
         transaction_id: query.id, // Передаем идентификатор заказа с админки
@@ -32,32 +33,7 @@ const Client_payment = () => {
           quantity: query?.quantity // Передеам количество купленного товара
         }]
       }
-    }
-    console.log('event is', event)
-  }, [])
-
-  useEffect(async () => {
-    const currency = allInfo.cur;
-    gaEvent.successful("payment_succesful", query.price, currency);
-
-    // console.log('currency', currency);
-    //
-    // window.dataLayer = window.dataLayer || [];
-    // currency &&
-    //   query.price &&
-    //   window.dataLayer.push({
-    //     event: "payment_succesful",
-    //     event_label: "successful",
-    //     amount: `${query.price}`,
-    //     currency: `${currency}`,
-    //   });
-    // console.log("window.dataLayer is", window.dataLayer);
-    gaEvent.buttonClick();
-  }, [allInfo, query]);
-
-  useEffect(() => {
-    const currency = allInfo.cur;
-    gaEvent.successful("payment_succesful", query.price, currency);
+    })
   }, []);
 
   return (

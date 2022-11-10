@@ -173,6 +173,7 @@ const Step4 = () => {
                                         onClick={() => {
                                             if (item?.url_to_pay) {
                                                 window.open(item?.url_to_pay, "_blank");
+                                                paymentChoose(item.name);
                                             }
                                         }}
                                     >

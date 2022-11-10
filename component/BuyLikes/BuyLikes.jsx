@@ -3,6 +3,7 @@ import styles from "../../styles/BuyInstagramLikes.module.sass";
 import {ButtonComponent} from "../ButtonComponent/ButtonComponent";
 import ModalBuy from "../ModalBuy/ModalBuy";
 import {MeContext} from "../../pages/_app";
+import {v4 as uuidv4} from "uuid";
 
 const BuyLikes = ({
     first,
@@ -33,6 +34,7 @@ const BuyLikes = ({
         9: "/pricebg1.webp",
     };
     const {allInfo, setModalData} = useContext(MeContext);
+    const purchaseId = uuidv4();
 
     const clickHandler = () => {
         setModalData((prev) => ({
@@ -42,6 +44,25 @@ const BuyLikes = ({
             priceValue: price
         }))
         onClick();
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ ecommerce: null });  // Clear the previous ecommerce object.
+        window.dataLayer.push({
+            event: "add_to_cart",
+            ecommerce: {
+                items: [{
+                    item_name: `${likes} Instagram ${service}`, // Name or ID is required.
+                    item_id: purchaseId, // Передаем код/ID товара
+                    price: price, // Передаем актуальную цену товара (разделитель десятичных знаков точка «.»)
+                    item_brand: "tagiamtop", // Передаем бренд товара
+                    item_category: `buy instagram ${service}`, // Передаем соответствующую категорию товаров https://take.ms/Gxpmh
+                    item_variant: `${service}-${likes}`, // Передаем информацию про тариф https://take.ms/wKYoS
+                    index: 1,
+                    quantity: likes
+                }]
+            }
+        });
+
     }
 
     return (

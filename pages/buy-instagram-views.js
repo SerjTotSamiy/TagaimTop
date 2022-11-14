@@ -145,6 +145,7 @@ const BuyInstagramViews = ({text}) => {
                                 isDisabled={item.types.t1.disabled === "1" && item.types.t2.disabled === "1"}
                                 banner="/buylikesbanner.png"
                                 index={index}
+                                service="Views"
                                 onClick={() => {
                                     setPriceValue((prev) => item?.price);
                                     setCounts((prev) => item?.count);

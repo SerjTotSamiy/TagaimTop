@@ -197,6 +197,7 @@ const BuyInstagramLikes = ({text}) => {
                                     text="Instagram Likes"
                                     id={"LIKES"}
                                     icon="/like0.svg"
+                                    service="Likes"
                                     onClick={() => {
                                         setPriceValue((prev) => item?.price * 0.8);
                                         setCounts((prev) => item?.count);

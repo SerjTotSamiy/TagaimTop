@@ -183,6 +183,7 @@ const BuyInstagramFollowers = ({text}) => {
                                 first={true}
                                 text="Instagram Followers"
                                 icon="follower0.svg"
+                                service="Followers"
                             />
                         ))}
                     </Carousel>

@@ -24,13 +24,13 @@ const Client_payment = () => {
         value: query.paid, // Передаем сумму заказа
         currency: query?.cur,
         items: [{
-          item_name: query?.name, // Передаем название товара
+          item_name: `${query.plan} ${query.system} ${query.service}`, // Передаем название товара
           item_id: query?.id, // Передаем код/ID товара
-          price: query?.price, // Передаем актуальную цену товара (разделитель десятичных знаков точка «.»)
+          price: query?.paid, // Передаем актуальную цену товара (разделитель десятичных знаков точка «.»)
           item_brand: "tagiamtop", // Передаем бренд товара
-          item_category: query?.category, // Передаем соответствующую категорию товаров https://take.ms/Gxpmh
-          item_variant: query?.variant, // Передаем информацию про тариф https://take.ms/wKYoS
-          quantity: query?.quantity // Передеам количество купленного товара
+          item_category: `Buy ${query.system} ${query.service}`, // Передаем соответствующую категорию товаров https://take.ms/Gxpmh
+          item_variant: query.plan, // Передаем информацию про тариф https://take.ms/wKYoS
+          quantity: query.plan // Передеам количество купленного товара
         }]
       }
     })

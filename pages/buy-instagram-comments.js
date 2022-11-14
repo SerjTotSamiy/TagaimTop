@@ -139,6 +139,7 @@ const BuyInstagramComments = ({text}) => {
                                     price={item.price}
                                     banner="/buylikesbanner.png"
                                     index={index}
+                                    service="Comments"
                                     isDisabled={item.types.t1.disabled === "1" && item.types.t2.disabled === "1"}
                                     onClick={() => {
                                         setPriceValue((prev) => item?.price);

@@ -13,28 +13,30 @@ const Client_payment = () => {
   const { query } = useRouter();
 
   useEffect(() => {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ecommerce: null});
+    if (Object.keys(query).length) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ecommerce: null});
 
-    window.dataLayer.push({
-      event: "purchase",
-      ecommerce: {
-        transaction_id: query.id, // Передаем идентификатор заказа с админки
-        affiliation: query.service, // Передаем тип купленного продукта (likes – когда купили лайки, followers – когда купили подписчиков, views – когда купили просмотры и comments – когда купили комментарии)
-        value: query.paid, // Передаем сумму заказа
-        currency: query?.cur,
-        items: [{
-          item_name: `${query.plan} ${query.system} ${query.service}`, // Передаем название товара
-          item_id: query?.id, // Передаем код/ID товара
-          price: query?.paid, // Передаем актуальную цену товара (разделитель десятичных знаков точка «.»)
-          item_brand: "tagiamtop", // Передаем бренд товара
-          item_category: `Buy ${query.system} ${query.service}`, // Передаем соответствующую категорию товаров https://take.ms/Gxpmh
-          item_variant: query.plan, // Передаем информацию про тариф https://take.ms/wKYoS
-          quantity: query.plan // Передеам количество купленного товара
-        }]
-      }
-    })
-  }, []);
+      window.dataLayer.push({
+        event: "purchase",
+        ecommerce: {
+          transaction_id: query.id, // Передаем идентификатор заказа с админки
+          affiliation: query.service, // Передаем тип купленного продукта (likes – когда купили лайки, followers – когда купили подписчиков, views – когда купили просмотры и comments – когда купили комментарии)
+          value: query.paid, // Передаем сумму заказа
+          currency: query?.cur,
+          items: [{
+            item_name: `${query.plan} ${query.system} ${query.service}`, // Передаем название товара
+            item_id: query?.id, // Передаем код/ID товара
+            price: query?.paid, // Передаем актуальную цену товара (разделитель десятичных знаков точка «.»)
+            item_brand: "tagiamtop", // Передаем бренд товара
+            item_category: `Buy ${query.system} ${query.service}`, // Передаем соответствующую категорию товаров https://take.ms/Gxpmh
+            item_variant: query.plan, // Передаем информацию про тариф https://take.ms/wKYoS
+            quantity: query.plan // Передеам количество купленного товара
+          }]
+        }
+      })
+    }
+  }, [Object.keys(query).length]);
 
   return (
     <Layer firstPage={false}>

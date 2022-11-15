@@ -31,7 +31,7 @@ const Step4 = () => {
                 items: [{
                     item_name: `${query.counts} Instagram ${query.service}`, // Name or ID is required.
                     item_id: purchaseId, // Передаем код/ID товара
-                    price: Number(query.priceValue), // Передаем актуальную цену товара (разделитель десятичных знаков точка «.»)
+                    price: query.priceValue, // Передаем актуальную цену товара (разделитель десятичных знаков точка «.»)
                     item_brand: "tagiamtop", // Передаем бренд товара
                     item_category: `buy instagram ${query.service.toLowerCase()}`, // Передаем соответствующую категорию товаров https://take.ms/Gxpmh
                     item_variant: `${query.service}-${query.counts}`, // Передаем информацию про тариф https://take.ms/wKYoS

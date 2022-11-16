@@ -54,7 +54,7 @@ const BuyLikes = ({
                     item_name: `${likes} Instagram ${service}`, // Name or ID is required.
                     item_id: purchaseId, // Передаем код/ID товара
                     // price: Number(price), // Передаем актуальную цену товара (разделитель десятичных знаков точка «.»)
-                    price: 2.8, // Передаем актуальную цену товара (разделитель десятичных знаков точка «.»)
+                    price: Number(price).toString(), // Передаем актуальную цену товара (разделитель десятичных знаков точка «.»)
                     item_brand: "tagiamtop", // Передаем бренд товара
                     item_category: `buy instagram ${service}`, // Передаем соответствующую категорию товаров https://take.ms/Gxpmh
                     item_variant: `${service}-${likes}`, // Передаем информацию про тариф https://take.ms/wKYoS

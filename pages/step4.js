@@ -55,7 +55,7 @@ const Step4 = () => {
                     {
                         item_name: `${query.counts} Instagram ${query.service}`,       // Name or ID is required.
                         item_id: purchaseId,
-                        price: query.priceValue,
+                        price: Number(query.priceValue).toString(),
                         item_brand: "tagiamtop", // Передаем бренд товара
                         item_category: `buy instagram ${query.service.toLowerCase()}`, // Передаем соответствующую категорию товаров https://take.ms/Gxpmh
                         item_variant: `${query.service}-${query.counts}`, // Передаем информацию про тариф https://take.ms/wKYoS
